@@ -23,7 +23,7 @@ crons = ["0 * * * *"]
 [[kv_namespaces]]
 binding = "PRICES"
 # PLACEHOLDER — replace with `bunx wrangler kv namespace create PRICES` output.
-id = "00000000000000000000000000000000"
+id = "7eff4838aa6d49b9a82d1b175d4d0c06"
 
 [observability]
 enabled = true

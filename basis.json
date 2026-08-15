@@ -1,5 +1,5 @@
 {
-  "seededAt": "2026-08-15T23:19:30.801Z",
+  "seededAt": "2026-08-15T23:30:39.472Z",
   "tickers": {
     "ADI": {
       "ticker": "ADI",
@@ -11,7 +11,7 @@
       ],
       "peAuthored": 71.8,
       "capAuthored": 191800000000,
-      "basis": 390.11
+      "basis": 389.34
     },
     "AMAT": {
       "ticker": "AMAT",
@@ -31,7 +31,7 @@
       ],
       "peAuthored": 67.2,
       "capAuthored": 424900000000,
-      "basis": 506.65
+      "basis": 506.69
     },
     "AMZN": {
       "ticker": "AMZN",
@@ -51,7 +51,7 @@
       ],
       "peAuthored": 55.4,
       "capAuthored": 2770000000000,
-      "basis": 264.11
+      "basis": 264.13
     },
     "ASML": {
       "ticker": "ASML",
@@ -71,7 +71,7 @@
       ],
       "peAuthored": 95,
       "capAuthored": 726500000000,
-      "basis": 1848.11
+      "basis": 1847.25
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -91,7 +91,7 @@
       ],
       "peAuthored": 108,
       "capAuthored": 1830000000000,
-      "basis": 396.2
+      "basis": 396.17
     },
     "BKNG": {
       "ticker": "BKNG",
@@ -115,7 +115,7 @@
       ],
       "peAuthored": 19.6,
       "capAuthored": 29100000000,
-      "basis": 16.042
+      "basis": 16.046
     },
     "DELL": {
       "ticker": "DELL",
@@ -135,7 +135,7 @@
       ],
       "peAuthored": 91.2,
       "capAuthored": 343800000000,
-      "basis": 491.85
+      "basis": 491.72
     },
     "FLEX": {
       "ticker": "FLEX",
@@ -171,7 +171,7 @@
       ],
       "peAuthored": 47.8,
       "capAuthored": 4280000000000.0005,
-      "basis": 348.39
+      "basis": 348.27
     },
     "KLAC": {
       "ticker": "KLAC",
@@ -211,7 +211,7 @@
       ],
       "peAuthored": 12.3,
       "capAuthored": 43300000000,
-      "basis": 331.6
+      "basis": 331.48
     },
     "MELI": {
       "ticker": "MELI",
@@ -223,7 +223,7 @@
       ],
       "peAuthored": 76.4,
       "capAuthored": 93700000000,
-      "basis": 1844.7
+      "basis": 1844.9
     },
     "META": {
       "ticker": "META",
@@ -243,7 +243,7 @@
       ],
       "peAuthored": 29,
       "capAuthored": 1490000000000,
-      "basis": 592.1
+      "basis": 591.81
     },
     "MSFT": {
       "ticker": "MSFT",
@@ -263,7 +263,7 @@
       ],
       "peAuthored": 42.7,
       "capAuthored": 3680000000000,
-      "basis": 496.44
+      "basis": 496.48
     },
     "SGOV": {
       "ticker": "SGOV",
@@ -275,7 +275,7 @@
       ],
       "peAuthored": null,
       "capAuthored": null,
-      "basis": 100.69
+      "basis": 100.65
     },
     "TSEM": {
       "ticker": "TSEM",
@@ -291,7 +291,7 @@
       ],
       "peAuthored": 200.5,
       "capAuthored": 29500000000,
-      "basis": 268.85
+      "basis": 267.58
     },
     "TSM": {
       "ticker": "TSM",
@@ -311,7 +311,7 @@
       ],
       "peAuthored": 73.7,
       "capAuthored": 2210000000000,
-      "basis": 425.07
+      "basis": 424.88
     },
     "UNH": {
       "ticker": "UNH",
@@ -327,7 +327,7 @@
       ],
       "peAuthored": 16.8,
       "capAuthored": 374300000000,
-      "basis": 401.52
+      "basis": 401.5
     },
     "V": {
       "ticker": "V",
@@ -343,7 +343,7 @@
       ],
       "peAuthored": 39.9,
       "capAuthored": 707200000000,
-      "basis": 366.22
+      "basis": 366.13
     },
     "VOO": {
       "ticker": "VOO",
@@ -355,7 +355,7 @@
       ],
       "peAuthored": 28.1,
       "capAuthored": null,
-      "basis": 713.14
+      "basis": 713.07
     },
     "VST": {
       "ticker": "VST",
@@ -367,7 +367,7 @@
       ],
       "peAuthored": 38.5,
       "capAuthored": 50100000000,
-      "basis": 148.73
+      "basis": 148.72
     },
     "AAOI": {
       "ticker": "AAOI",
@@ -387,7 +387,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 5600000000,
-      "basis": 154.32
+      "basis": 154.37
     },
     "AAPL": {
       "ticker": "AAPL",
@@ -407,7 +407,7 @@
       ],
       "peAuthored": 46.4,
       "capAuthored": 4650000000000,
-      "basis": 305.93
+      "basis": 305.84
     },
     "ABNB": {
       "ticker": "ABNB",
@@ -419,7 +419,7 @@
       ],
       "peAuthored": 22.9,
       "capAuthored": 117500000000,
-      "basis": 183.84
+      "basis": 184.06
     },
     "ADBE": {
       "ticker": "ADBE",
@@ -439,7 +439,7 @@
       ],
       "peAuthored": 21.4,
       "capAuthored": 118200000000,
-      "basis": 263.8
+      "basis": 263.86
     },
     "AEHR": {
       "ticker": "AEHR",
@@ -455,7 +455,7 @@
       ],
       "peAuthored": 237.3,
       "capAuthored": 3900000000,
-      "basis": 133.9
+      "basis": 133.86
     },
     "ALAB": {
       "ticker": "ALAB",
@@ -475,7 +475,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 51500000000,
-      "basis": 319.37
+      "basis": 319.12
     },
     "AMD": {
       "ticker": "AMD",
@@ -495,7 +495,7 @@
       ],
       "peAuthored": 659.5,
       "capAuthored": 829400000000,
-      "basis": 515.9
+      "basis": 515.79
     },
     "AMGN": {
       "ticker": "AMGN",
@@ -507,7 +507,7 @@
       ],
       "peAuthored": 23.6,
       "capAuthored": 222300000000,
-      "basis": 415.1
+      "basis": 415.04
     },
     "AMKR": {
       "ticker": "AMKR",
@@ -519,7 +519,7 @@
       ],
       "peAuthored": 37.6,
       "capAuthored": 14200000000,
-      "basis": 59.33
+      "basis": 59.2
     },
     "ANET": {
       "ticker": "ANET",
@@ -531,7 +531,7 @@
       ],
       "peAuthored": 26.4,
       "capAuthored": 62900000000,
-      "basis": 199.04
+      "basis": 199.05
     },
     "APD": {
       "ticker": "APD",
@@ -543,7 +543,7 @@
       ],
       "peAuthored": 26.6,
       "capAuthored": 69600000000,
-      "basis": 307.43
+      "basis": 306.23
     },
     "APLD": {
       "ticker": "APLD",
@@ -559,7 +559,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 5900000000,
-      "basis": 31.22
+      "basis": 31.29
     },
     "APP": {
       "ticker": "APP",
@@ -599,7 +599,7 @@
       ],
       "peAuthored": 198,
       "capAuthored": 295400000000,
-      "basis": 279.33
+      "basis": 278.98
     },
     "ASTS": {
       "ticker": "ASTS",
@@ -619,7 +619,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 20400000000,
-      "basis": 72.28
+      "basis": 72.24
     },
     "AVAV": {
       "ticker": "AVAV",
@@ -643,7 +643,7 @@
       ],
       "peAuthored": 144.7,
       "capAuthored": 47300000000,
-      "basis": 613.37
+      "basis": 613.32
     },
     "AXTI": {
       "ticker": "AXTI",
@@ -663,7 +663,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 4000000000,
-      "basis": 80.95
+      "basis": 80.84
     },
     "BABA": {
       "ticker": "BABA",
@@ -679,7 +679,7 @@
       ],
       "peAuthored": 22.7,
       "capAuthored": 296200000000,
-      "basis": 124.96
+      "basis": 124.97
     },
     "BAC": {
       "ticker": "BAC",
@@ -691,7 +691,7 @@
       ],
       "peAuthored": 20.6,
       "capAuthored": 498100000000,
-      "basis": 65.07
+      "basis": 64.83
     },
     "BE": {
       "ticker": "BE",
@@ -711,7 +711,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 57300000000,
-      "basis": 236.76
+      "basis": 236.61
     },
     "BX": {
       "ticker": "BX",
@@ -731,7 +731,7 @@
       ],
       "peAuthored": 38.9,
       "capAuthored": 172200000000,
-      "basis": 144.19
+      "basis": 144.14
     },
     "CAT": {
       "ticker": "CAT",
@@ -747,7 +747,7 @@
       ],
       "peAuthored": 39.7,
       "capAuthored": 424500000000,
-      "basis": 868
+      "basis": 868.02
     },
     "CBRS": {
       "ticker": "CBRS",
@@ -767,7 +767,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 170300000000,
-      "basis": 221.72
+      "basis": 221.73
     },
     "CIEN": {
       "ticker": "CIEN",
@@ -787,7 +787,7 @@
       ],
       "peAuthored": 212,
       "capAuthored": 60900000000,
-      "basis": 430.14
+      "basis": 429.25
     },
     "CL": {
       "ticker": "CL",
@@ -803,7 +803,7 @@
       ],
       "peAuthored": 25,
       "capAuthored": 76100000000,
-      "basis": 81.194
+      "basis": 81.211
     },
     "CMCSA": {
       "ticker": "CMCSA",
@@ -815,7 +815,7 @@
       ],
       "peAuthored": 10.8,
       "capAuthored": 167000000000,
-      "basis": 26.273
+      "basis": 26.218
     },
     "COHR": {
       "ticker": "COHR",
@@ -835,7 +835,7 @@
       ],
       "peAuthored": 126.4,
       "capAuthored": 48600000000,
-      "basis": 330.53
+      "basis": 330.5
     },
     "COIN": {
       "ticker": "COIN",
@@ -855,7 +855,7 @@
       ],
       "peAuthored": 20.5,
       "capAuthored": 36400000000,
-      "basis": 149.22
+      "basis": 149.2
     },
     "COMP": {
       "ticker": "COMP",
@@ -867,7 +867,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 10000000000,
-      "basis": 16.22
+      "basis": 16.21
     },
     "COP": {
       "ticker": "COP",
@@ -899,7 +899,7 @@
       ],
       "peAuthored": 56.9,
       "capAuthored": 426500000000,
-      "basis": 960
+      "basis": 959.3
     },
     "CRCL": {
       "ticker": "CRCL",
@@ -919,7 +919,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 9000000000,
-      "basis": 71.4
+      "basis": 71.33
     },
     "CRDO": {
       "ticker": "CRDO",
@@ -939,7 +939,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 44700000000,
-      "basis": 261.68
+      "basis": 261.45
     },
     "CRM": {
       "ticker": "CRM",
@@ -959,7 +959,7 @@
       ],
       "peAuthored": 28.2,
       "capAuthored": 183600000000,
-      "basis": 195.75
+      "basis": 195.76
     },
     "CRWD": {
       "ticker": "CRWD",
@@ -979,7 +979,7 @@
       ],
       "peAuthored": 472.1,
       "capAuthored": 82400000000,
-      "basis": 216.78
+      "basis": 216.8
     },
     "CSCO": {
       "ticker": "CSCO",
@@ -999,7 +999,7 @@
       ],
       "peAuthored": 36,
       "capAuthored": 449100000000,
-      "basis": 112.09
+      "basis": 112
     },
     "DDOG": {
       "ticker": "DDOG",
@@ -1011,7 +1011,7 @@
       ],
       "peAuthored": 510.9,
       "capAuthored": 88300000000,
-      "basis": 255.72
+      "basis": 255.76
     },
     "DIS": {
       "ticker": "DIS",
@@ -1023,7 +1023,7 @@
       ],
       "peAuthored": 33.4,
       "capAuthored": 193200000000,
-      "basis": 108.26
+      "basis": 108.1
     },
     "DKNG": {
       "ticker": "DKNG",
@@ -1067,7 +1067,7 @@
       ],
       "peAuthored": 53,
       "capAuthored": 178800000000,
-      "basis": 454.68
+      "basis": 454.69
     },
     "EWY": {
       "ticker": "EWY",
@@ -1087,7 +1087,7 @@
       ],
       "peAuthored": 10.8,
       "capAuthored": null,
-      "basis": 180.36
+      "basis": 180.29
     },
     "FLNC": {
       "ticker": "FLNC",
@@ -1119,7 +1119,7 @@
       ],
       "peAuthored": 84.9,
       "capAuthored": 395300000000,
-      "basis": 368.13
+      "basis": 368.74
     },
     "GEV": {
       "ticker": "GEV",
@@ -1139,7 +1139,7 @@
       ],
       "peAuthored": 126.4,
       "capAuthored": 289700000000,
-      "basis": 1064.7
+      "basis": 1064.69
     },
     "GFS": {
       "ticker": "GFS",
@@ -1151,7 +1151,7 @@
       ],
       "peAuthored": 30.4,
       "capAuthored": 30700000000,
-      "basis": 54.675
+      "basis": 54.579
     },
     "GILD": {
       "ticker": "GILD",
@@ -1163,7 +1163,7 @@
       ],
       "peAuthored": 23.3,
       "capAuthored": 174400000000,
-      "basis": 139.01
+      "basis": 138.96
     },
     "GLW": {
       "ticker": "GLW",
@@ -1183,7 +1183,7 @@
       ],
       "peAuthored": 101.7,
       "capAuthored": 142100000000,
-      "basis": 167.08
+      "basis": 166.96
     },
     "GS": {
       "ticker": "GS",
@@ -1211,7 +1211,7 @@
       ],
       "peAuthored": 21.4,
       "capAuthored": 336000000000,
-      "basis": 336.15
+      "basis": 336.16
     },
     "HIMS": {
       "ticker": "HIMS",
@@ -1247,7 +1247,7 @@
       ],
       "peAuthored": 331.3,
       "capAuthored": 83900000000,
-      "basis": 96.02
+      "basis": 96.01
     },
     "HPE": {
       "ticker": "HPE",
@@ -1267,7 +1267,7 @@
       ],
       "peAuthored": 37.2,
       "capAuthored": 76300000000,
-      "basis": 59.65
+      "basis": 59.57
     },
     "IBM": {
       "ticker": "IBM",
@@ -1287,7 +1287,7 @@
       ],
       "peAuthored": 24.7,
       "capAuthored": 216900000000,
-      "basis": 234.63
+      "basis": 234.65
     },
     "IREN": {
       "ticker": "IREN",
@@ -1307,7 +1307,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 12000000000,
-      "basis": 44.56
+      "basis": 44.53
     },
     "ISRG": {
       "ticker": "ISRG",
@@ -1323,7 +1323,7 @@
       ],
       "peAuthored": 63.8,
       "capAuthored": 140500000000,
-      "basis": 396.4
+      "basis": 396.34
     },
     "IWM": {
       "ticker": "IWM",
@@ -1343,7 +1343,7 @@
       ],
       "peAuthored": 15.4,
       "capAuthored": null,
-      "basis": 304.49
+      "basis": 304.4
     },
     "JD": {
       "ticker": "JD",
@@ -1355,7 +1355,7 @@
       ],
       "peAuthored": 8.1,
       "capAuthored": 44900000000,
-      "basis": 29.13
+      "basis": 29.16
     },
     "JOBY": {
       "ticker": "JOBY",
@@ -1367,7 +1367,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 6200000000,
-      "basis": 7.991
+      "basis": 7.95
     },
     "JPM": {
       "ticker": "JPM",
@@ -1415,7 +1415,7 @@
       ],
       "peAuthored": 222.7,
       "capAuthored": 9900000000,
-      "basis": 64.64
+      "basis": 64.67
     },
     "LIN": {
       "ticker": "LIN",
@@ -1427,7 +1427,7 @@
       ],
       "peAuthored": 35,
       "capAuthored": 230900000000,
-      "basis": 483.2
+      "basis": 483.13
     },
     "LITE": {
       "ticker": "LITE",
@@ -1447,7 +1447,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 62400000000,
-      "basis": 923.08
+      "basis": 923.05
     },
     "LLY": {
       "ticker": "LLY",
@@ -1479,7 +1479,7 @@
       ],
       "peAuthored": 19.2,
       "capAuthored": 140500000000,
-      "basis": 610.21
+      "basis": 609.66
     },
     "LUNR": {
       "ticker": "LUNR",
@@ -1491,7 +1491,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 2500000000,
-      "basis": 19.01
+      "basis": 18.96
     },
     "MAR": {
       "ticker": "MAR",
@@ -1503,7 +1503,7 @@
       ],
       "peAuthored": 34.8,
       "capAuthored": 96100000000,
-      "basis": 356.51
+      "basis": 356.59
     },
     "MCD": {
       "ticker": "MCD",
@@ -1515,7 +1515,7 @@
       ],
       "peAuthored": 22.7,
       "capAuthored": 196100000000,
-      "basis": 274.7
+      "basis": 274.69
     },
     "MDB": {
       "ticker": "MDB",
@@ -1527,7 +1527,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 34100000000,
-      "basis": 460.17
+      "basis": 460
     },
     "MP": {
       "ticker": "MP",
@@ -1539,7 +1539,7 @@
       ],
       "peAuthored": 116.4,
       "capAuthored": 8700000000,
-      "basis": 59.08
+      "basis": 59.04
     },
     "MRVL": {
       "ticker": "MRVL",
@@ -1559,7 +1559,7 @@
       ],
       "peAuthored": 211.3,
       "capAuthored": 190500000000,
-      "basis": 221.9
+      "basis": 221.83
     },
     "MSTR": {
       "ticker": "MSTR",
@@ -1579,7 +1579,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 21100000000,
-      "basis": 94.48
+      "basis": 94.45
     },
     "MU": {
       "ticker": "MU",
@@ -1599,7 +1599,7 @@
       ],
       "peAuthored": 283,
       "capAuthored": 1120000000000,
-      "basis": 977.78
+      "basis": 976.85
     },
     "NET": {
       "ticker": "NET",
@@ -1611,7 +1611,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 109100000000,
-      "basis": 310.71
+      "basis": 312.84
     },
     "NFLX": {
       "ticker": "NFLX",
@@ -1631,7 +1631,7 @@
       ],
       "peAuthored": 44.5,
       "capAuthored": 355000000000,
-      "basis": 78.47
+      "basis": 78.48
     },
     "NKE": {
       "ticker": "NKE",
@@ -1643,7 +1643,7 @@
       ],
       "peAuthored": 12.3,
       "capAuthored": 62000000000,
-      "basis": 41.046
+      "basis": 40.886
     },
     "NOK": {
       "ticker": "NOK",
@@ -1659,7 +1659,7 @@
       ],
       "peAuthored": 44.2,
       "capAuthored": 60700000000,
-      "basis": 10.69
+      "basis": 10.7
     },
     "NOW": {
       "ticker": "NOW",
@@ -1679,7 +1679,7 @@
       ],
       "peAuthored": 78.5,
       "capAuthored": 182000000000,
-      "basis": 123.97
+      "basis": 123.87
     },
     "NTAP": {
       "ticker": "NTAP",
@@ -1711,7 +1711,7 @@
       ],
       "peAuthored": 121.9,
       "capAuthored": 5530000000000,
-      "basis": 225.35
+      "basis": 225.25
     },
     "NVO": {
       "ticker": "NVO",
@@ -1735,7 +1735,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 5100000000,
-      "basis": 44.73
+      "basis": 44.72
     },
     "OKTA": {
       "ticker": "OKTA",
@@ -1779,7 +1779,7 @@
       ],
       "peAuthored": 36.5,
       "capAuthored": 416200000000,
-      "basis": 151.23
+      "basis": 151.22
     },
     "OSCR": {
       "ticker": "OSCR",
@@ -1803,7 +1803,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 57000000,
-      "basis": 13.778
+      "basis": 13.756
     },
     "OUST": {
       "ticker": "OUST",
@@ -1815,7 +1815,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 3700000000,
-      "basis": 49.66
+      "basis": 49.58
     },
     "OXY": {
       "ticker": "OXY",
@@ -1827,7 +1827,7 @@
       ],
       "peAuthored": 18.9,
       "capAuthored": 55400000000,
-      "basis": 58.26
+      "basis": 58.29
     },
     "PANW": {
       "ticker": "PANW",
@@ -1843,7 +1843,7 @@
       ],
       "peAuthored": 48.1,
       "capAuthored": 125200000000,
-      "basis": 382.07
+      "basis": 382.2
     },
     "PDD": {
       "ticker": "PDD",
@@ -1855,7 +1855,7 @@
       ],
       "peAuthored": 10.2,
       "capAuthored": 118100000000,
-      "basis": 85.77
+      "basis": 85.91
     },
     "PL": {
       "ticker": "PL",
@@ -1867,7 +1867,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 9200000000,
-      "basis": 24.716
+      "basis": 24.68
     },
     "PLTR": {
       "ticker": "PLTR",
@@ -1903,7 +1903,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 469000000,
-      "basis": 9.539
+      "basis": 9.554
     },
     "PYPL": {
       "ticker": "PYPL",
@@ -1919,7 +1919,7 @@
       ],
       "peAuthored": 14.3,
       "capAuthored": 63900000000,
-      "basis": 64.03
+      "basis": 63.97
     },
     "QCOM": {
       "ticker": "QCOM",
@@ -1939,7 +1939,7 @@
       ],
       "peAuthored": 20.6,
       "capAuthored": 184800000000,
-      "basis": 165.05
+      "basis": 164.9
     },
     "QQQ": {
       "ticker": "QQQ",
@@ -1959,7 +1959,7 @@
       ],
       "peAuthored": 49.7,
       "capAuthored": 438000000000,
-      "basis": 732.11
+      "basis": 732.05
     },
     "RCAT": {
       "ticker": "RCAT",
@@ -1971,7 +1971,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 1100000000,
-      "basis": 11.086
+      "basis": 11.109
     },
     "RDDT": {
       "ticker": "RDDT",
@@ -1991,7 +1991,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 31200000000,
-      "basis": 177.57
+      "basis": 177.69
     },
     "RDW": {
       "ticker": "RDW",
@@ -2007,7 +2007,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 1100000000,
-      "basis": 13.683
+      "basis": 13.681
     },
     "RIOT": {
       "ticker": "RIOT",
@@ -2039,7 +2039,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 41100000000,
-      "basis": 80.31
+      "basis": 80.27
     },
     "ROK": {
       "ticker": "ROK",
@@ -2055,7 +2055,7 @@
       ],
       "peAuthored": 45.4,
       "capAuthored": 51800000000,
-      "basis": 455.07
+      "basis": 454.74
     },
     "SHOP": {
       "ticker": "SHOP",
@@ -2071,7 +2071,7 @@
       ],
       "peAuthored": 137,
       "capAuthored": 199800000000,
-      "basis": 154.64
+      "basis": 154.48
     },
     "SIMO": {
       "ticker": "SIMO",
@@ -2087,7 +2087,7 @@
       ],
       "peAuthored": 94.7,
       "capAuthored": 9300000000,
-      "basis": 268.6
+      "basis": 269.06
     },
     "SITM": {
       "ticker": "SITM",
@@ -2099,7 +2099,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 15900000000,
-      "basis": 714.61
+      "basis": 714.16
     },
     "SMCI": {
       "ticker": "SMCI",
@@ -2175,7 +2175,7 @@
       ],
       "peAuthored": 304.8,
       "capAuthored": 20300000000,
-      "basis": 18.35
+      "basis": 18.39
     },
     "SONY": {
       "ticker": "SONY",
@@ -2195,7 +2195,7 @@
       ],
       "peAuthored": 4.8,
       "capAuthored": 30200000000,
-      "basis": 24.41
+      "basis": 24.39
     },
     "SOXX": {
       "ticker": "SOXX",
@@ -2207,7 +2207,7 @@
       ],
       "peAuthored": 36.4,
       "capAuthored": null,
-      "basis": 551.81
+      "basis": 551.74
     },
     "SPIR": {
       "ticker": "SPIR",
@@ -2239,7 +2239,7 @@
       ],
       "peAuthored": 28.4,
       "capAuthored": null,
-      "basis": 777.24
+      "basis": 777.56
     },
     "TER": {
       "ticker": "TER",
@@ -2271,7 +2271,7 @@
       ],
       "peAuthored": 9,
       "capAuthored": 259100000000.00003,
-      "basis": 190.7
+      "basis": 191.31
     },
     "TSLA": {
       "ticker": "TSLA",
@@ -2291,7 +2291,7 @@
       ],
       "peAuthored": 94.6,
       "capAuthored": 1100000000000,
-      "basis": 343.34
+      "basis": 343.29
     },
     "TTWO": {
       "ticker": "TTWO",
@@ -2311,7 +2311,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 44200000000,
-      "basis": 249.83
+      "basis": 248.85
     },
     "TWLO": {
       "ticker": "TWLO",
@@ -2391,7 +2391,7 @@
       ],
       "peAuthored": 130,
       "capAuthored": 109900000000,
-      "basis": 292.08
+      "basis": 292.55
     },
     "WDC": {
       "ticker": "WDC",
@@ -2411,7 +2411,7 @@
       ],
       "peAuthored": 179,
       "capAuthored": 167400000000,
-      "basis": 504.97
+      "basis": 504.51
     },
     "WEN": {
       "ticker": "WEN",
@@ -2431,7 +2431,7 @@
       ],
       "peAuthored": 8.5,
       "capAuthored": 1800000000,
-      "basis": 8.57
+      "basis": 8.56
     },
     "WMT": {
       "ticker": "WMT",
@@ -2447,7 +2447,7 @@
       ],
       "peAuthored": 49.8,
       "capAuthored": 924800000000,
-      "basis": 115.6
+      "basis": 115.59
     },
     "XOM": {
       "ticker": "XOM",
@@ -2459,7 +2459,7 @@
       ],
       "peAuthored": 18.5,
       "capAuthored": 716800000000,
-      "basis": 160.14
+      "basis": 160.4
     },
     "ZM": {
       "ticker": "ZM",
@@ -2491,7 +2491,7 @@
       ],
       "peAuthored": 16.6,
       "capAuthored": 9600000000,
-      "basis": 14.812
+      "basis": 14.829
     },
     "ACHR": {
       "ticker": "ACHR",
@@ -2503,7 +2503,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 2200000000,
-      "basis": 6.628
+      "basis": 6.631
     },
     "BA": {
       "ticker": "BA",
@@ -2515,7 +2515,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 144000000000,
-      "basis": 231.61
+      "basis": 231.57
     },
     "BB": {
       "ticker": "BB",
@@ -2567,7 +2567,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 437200000000,
-      "basis": 103.02
+      "basis": 103
     },
     "IONQ": {
       "ticker": "IONQ",
@@ -2591,7 +2591,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 611000000,
-      "basis": 5.42
+      "basis": 5.424
     },
     "NIO": {
       "ticker": "NIO",
@@ -2639,7 +2639,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 4099999999.9999995,
-      "basis": 18.764
+      "basis": 18.733
     },
     "RIVN": {
       "ticker": "RIVN",
@@ -2655,7 +2655,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 15400000000,
-      "basis": 15.45
+      "basis": 15.44
     },
     "SMR": {
       "ticker": "SMR",
@@ -2687,7 +2687,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 0,
-      "basis": 1653.16
+      "basis": 1652.3
     },
     "SOXL": {
       "ticker": "SOXL",
@@ -2707,7 +2707,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 32000000000,
-      "basis": 144.43
+      "basis": 144.29
     },
     "SOXS": {
       "ticker": "SOXS",
@@ -2727,7 +2727,7 @@
       ],
       "peAuthored": null,
       "capAuthored": 810000000,
-      "basis": 40.39
+      "basis": 40.41
     },
     "TQQQ": {
       "ticker": "TQQQ",

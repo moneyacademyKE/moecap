@@ -9,7 +9,7 @@
 (function () {
   "use strict";
 
-  var SOURCES = ["/prices.json", "https://moecap-prices.SETUP_PLACEHOLDER.workers.dev/prices"];
+  var SOURCES = ["/prices.json", "https://moecap-prices.iamkingori.workers.dev/prices"];
 
   function apply(payload) {
     var entries = (payload && payload.entries) || {};
