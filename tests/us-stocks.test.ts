@@ -1,8 +1,17 @@
-import { describe, test, expect } from "bun:test";
+import { describe, test, expect, afterAll } from "bun:test";
 import { getMessageText, formatStockBody, parseStockIdeas } from "../src/us-stocks";
-import { writeFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, rmSync } from "node:fs";
+import { join } from "node:path";
+
+const FIXTURE_DIR = join(import.meta.dir, ".tmp_stocks");
 
 describe("US Stocks Engine Tests", () => {
+  mkdirSync(FIXTURE_DIR, { recursive: true });
+
+  afterAll(() => {
+    rmSync(FIXTURE_DIR, { recursive: true, force: true });
+  });
+
   test("getMessageText handles string and array structures", () => {
     expect(getMessageText("test-string")).toBe("test-string");
     
@@ -72,7 +81,7 @@ This is a regular concluding paragraph.`;
       ]
     };
 
-    const tempFilePath = "/tmp/mock-us-stocks.json";
+    const tempFilePath = join(FIXTURE_DIR, "mock-us-stocks.json");
     writeFileSync(tempFilePath, JSON.stringify(mockDb), "utf-8");
 
     const parsed = parseStockIdeas(tempFilePath);
@@ -122,7 +131,7 @@ This is a regular concluding paragraph.`;
       ]
     };
 
-    const tempFilePath = "/tmp/mock-rating-stocks.json";
+    const tempFilePath = join(FIXTURE_DIR, "mock-rating-stocks.json");
     writeFileSync(tempFilePath, JSON.stringify(ratingMockDb), "utf-8");
 
     const parsed = parseStockIdeas(tempFilePath);

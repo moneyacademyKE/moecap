@@ -274,4 +274,41 @@ db = await response.json();
 - **Flawless Local Development**: Developers can preview single files directly or run local test servers without having to configure virtual path mappings or complex host redirection rules.
 - **Operational Robustness**: The page behaves predictably regardless of host variations, reverse-proxy configurations, or CDN rewrite routing rules.
 
+---
+
+## 8. High-Cohesion Data Aggregation (Simplicity over Arbitrary LOC Limits)
+
+### Context & Problem
+Strict, arbitrary line-of-code boundaries (e.g. `<500 LOC`) when applied dogmatically to large domain datasets, full interview transcripts, and comprehensive financial dictionaries can complect the system by artificially fragmenting a single cohesive data model into dozens of tiny files.
+
+### Pattern Solution
+Suspend arbitrary LOC thresholds for pure data and high-cohesion compiler modules. Maintain full-length, immutable data structures in unified records (`src/content.ts`, `data/nse-data.json`), ensuring single-source-of-truth integrity, easy greppability, and zero fragmentation friction.
+
+### Benefits
+- **Zero Cognitive Fragmentation**: Developers can inspect, edit, and reason about the complete dataset in one place.
+- **Atomic Commits**: Data updates remain confined to their natural domain module without requiring synchronized multi-file renames or index wiring.
+
+---
+
+## 9. Babashka Task-Driven Automation DAG (`bb.edn`)
+
+### Context & Problem
+Complex projects often suffer from build complection, where bash scripts, npm scripts, and ad-hoc commands proliferate, requiring fragile shell parsing and introducing platform inconsistencies.
+
+### Pattern Solution
+Model all development tasks as a declarative Directed Acyclic Graph (DAG) in `bb.edn`:
+```clojure
+{:paths ["scripts" "src"]
+ :tasks
+ {clean  {:doc "Remove build outputs" :task (fs/delete-tree "public")}
+  test   {:doc "Run test suite" :task (shell "bun test")}
+  build  {:doc "Compile static site" :task (shell "bun run scripts/build-site.ts")}
+  deploy {:doc "Deploy to Cloudflare Pages" :depends [build] :task (shell "bunx wrangler pages deploy public --project-name moecap")}}}
+```
+
+### Benefits
+- **Instantaneous Execution**: Babashka executes tasks with sub-10ms latency.
+- **Clean Dependency Trees**: `:depends` ensures prerequisite tasks (like `build` before `deploy`) execute deterministically.
+- **Zero NPM / Zero Python Footprint**: Pure Clojure and Bun runtime.
+
 

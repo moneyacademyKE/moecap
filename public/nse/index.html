@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moe Capital | NSE ROIC Financial Terminal</title>
+    <style>
+        :root {
+            --bg: hsl(205, 45%, 8%);
+            --surface: hsl(205, 40%, 12%);
+            --surface-hover: hsl(205, 38%, 15%);
+            --accent: hsl(45, 100%, 55%);
+            --link: hsl(150, 60%, 65%);
+            --text: hsl(205, 10%, 88%);
+            --text-secondary: hsl(205, 15%, 65%);
+            --meta: hsl(205, 20%, 60%);
+            --border: hsl(205, 30%, 20%);
+            --bg-code: hsl(205, 35%, 15%);
+            --shadow: rgba(0, 0, 0, 0.4);
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: hsl(205, 30%, 97%);
+                --surface: hsl(0, 0%, 100%);
+                --surface-hover: hsl(205, 20%, 94%);
+                --accent: hsl(205, 80%, 35%);
+                --link: hsl(355, 60%, 45%);
+                --text: hsl(205, 40%, 15%);
+                --text-secondary: hsl(205, 15%, 45%);
+                --meta: hsl(205, 15%, 45%);
+                --border: hsl(205, 20%, 85%);
+                --bg-code: hsl(205, 25%, 92%);
+                --shadow: rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', ui-monospace, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        h1::before { content: '# '; opacity: 0.5; }
+
+        .tagline {
+            color: var(--meta);
+            margin: 0.25rem 0 0 0;
+            font-size: 0.85rem;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--meta);
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background: var(--bg-code);
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--bg);
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 4px 15px rgba(255, 220, 9, 0.15);
+            transform: translateY(-1px);
+        }
+
+        /* Dual-pane terminal layout */
+        .terminal-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+            flex-grow: 1;
+            align-items: stretch;
+        }
+
+        /* Left directory column */
+        .directory-pane {
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 200px);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--accent);
+            font-family: inherit;
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+
+        .search-box:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(255, 220, 9, 0.15);
+        }
+
+        .stock-directory-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            background: var(--surface);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stock Cards */
+        .stock-item-card {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 4px;
+            margin-bottom: 0.4rem;
+        }
+
+        .stock-item-card:last-child {
+            border-bottom: none;
+        }
+
+        .stock-item-card:hover {
+            background: var(--surface-hover);
+            border-color: var(--accent);
+        }
+
+        .stock-item-card.active {
+            background: var(--bg-code);
+            border: 1px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(255, 220, 9, 0.05);
+        }
+
+        .stock-card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stock-card-ticker {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .stock-item-card.active .stock-card-ticker {
+            color: var(--accent);
+        }
+
+        .stock-card-price {
+            color: var(--link);
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .stock-card-name {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .stock-card-sector {
+            font-size: 0.7rem;
+            color: var(--meta);
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+
+        /* Right Workspace Column */
+        .workspace-pane {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--surface);
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+
+        /* Workspace Empty State */
+        .empty-workspace {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            min-height: 400px;
+            color: var(--meta);
+        }
+
+        .terminal-artwork {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.4;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; }
+        }
+
+        .empty-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-desc {
+            font-size: 0.75rem;
+            max-width: 45ch;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Active Stock Workspace Header */
+        .stock-workspace-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        .stock-header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .stock-title-col h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .stock-workspace-meta {
+            font-size: 0.8rem;
+            color: var(--meta);
+            margin-top: 0.4rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .stock-price-col {
+            text-align: right;
+        }
+
+        .live-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--link);
+        }
+
+        .live-price-label {
+            font-size: 0.75rem;
+            color: var(--meta);
+            margin-top: 0.1rem;
+        }
+
+        /* Metric stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-card {
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1rem;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--meta);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .stat-value.highlight {
+            color: var(--accent);
+        }
+
+        /* Tabs Menu */
+        .workspace-tabs {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--meta);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            color: var(--accent);
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Tab Content Section */
+        .tab-content-area {
+            flex-grow: 1;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Tables styling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-code);
+            color: var(--accent);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--surface-hover);
+        }
+
+        .metric-name {
+            font-weight: 500;
+            color: var(--text);
+            width: 250px;
+            position: sticky;
+            left: 0;
+            background: var(--surface);
+        }
+
+        tr:hover .metric-name {
+            background: var(--surface-hover);
+        }
+
+        .period-val {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Announcement List */
+        .announcement-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.8rem;
+        }
+
+        .announcement-item:last-child {
+            border-bottom: none;
+        }
+
+        .announcement-link {
+            color: var(--link);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .announcement-link:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .announcement-date {
+            color: var(--meta);
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        /* Insights blocks */
+        .insight-card {
+            background: var(--bg-code);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 4px 4px 0;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .insight-header {
+            display: flex;
+            justify-content: space-between;
+            color: var(--meta);
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .insight-content {
+            margin: 0;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .terminal-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .directory-pane {
+                max-height: 350px;
+                margin-bottom: 1.5rem;
+            }
+
+            .workspace-pane {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-container">
+                <div>
+                    <h1>KENYA-ROIC</h1>
+                    <p class="tagline">Nairobi Securities Exchange // Dynamic Financial Intelligence Terminal</p>
+                </div>
+                <div>
+                    <a href="/" class="back-btn">[ ← Back to MoeCapital ]</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="terminal-layout">
+            <!-- Left Pane: Stock Directory -->
+            <article class="directory-pane">
+                <input 
+                    type="text" 
+                    id="nse-search" 
+                    class="search-box" 
+                    placeholder="[ Type ticker, name, or sector... ]"
+                    oninput="filterDirectory()"
+                />
+                <div class="stock-directory-list" id="directory-list">
+                    
+      <div 
+        class="stock-item-card" 
+        data-ticker="ABSA" 
+        data-name="absa bank kenya plc" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('ABSA')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">ABSA</span>
+          <span class="stock-card-price" id="card-price-ABSA">KES 27.95</span>
+        </div>
+        <div class="stock-card-name">Absa Bank Kenya PLC</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BAMB" 
+        data-name="bamburi cement ltd" 
+        data-sector="construction & allied"
+        data-has-financials="true"
+        onclick="selectStock('BAMB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BAMB</span>
+          <span class="stock-card-price" id="card-price-BAMB">KES 83.25</span>
+        </div>
+        <div class="stock-card-name">Bamburi Cement Ltd</div>
+        <div class="stock-card-sector">Construction & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BAT" 
+        data-name="british american tobacco kenya ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('BAT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BAT</span>
+          <span class="stock-card-price" id="card-price-BAT">KES 489.50</span>
+        </div>
+        <div class="stock-card-name">British American Tobacco Kenya Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BK" 
+        data-name="bk" 
+        data-sector="unknown"
+        data-has-financials="true"
+        onclick="selectStock('BK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BK</span>
+          <span class="stock-card-price" id="card-price-BK">KES 46.00</span>
+        </div>
+        <div class="stock-card-name">BK</div>
+        <div class="stock-card-sector">Unknown</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BOC" 
+        data-name="b.o.c kenya ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('BOC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BOC</span>
+          <span class="stock-card-price" id="card-price-BOC">KES 132.50</span>
+        </div>
+        <div class="stock-card-name">B.O.C Kenya Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BRIT" 
+        data-name="britam holdings ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('BRIT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BRIT</span>
+          <span class="stock-card-price" id="card-price-BRIT">KES 9.94</span>
+        </div>
+        <div class="stock-card-name">Britam Holdings Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CARB" 
+        data-name="carbacid investments ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('CARB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CARB</span>
+          <span class="stock-card-price" id="card-price-CARB">KES 30.35</span>
+        </div>
+        <div class="stock-card-name">Carbacid Investments Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CIC" 
+        data-name="cic insurance group ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('CIC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CIC</span>
+          <span class="stock-card-price" id="card-price-CIC">KES 4.48</span>
+        </div>
+        <div class="stock-card-name">CIC Insurance Group Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="COOP" 
+        data-name="the co-operative bank of kenya ltd" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('COOP')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">COOP</span>
+          <span class="stock-card-price" id="card-price-COOP">KES 28.00</span>
+        </div>
+        <div class="stock-card-name">The Co-operative Bank of Kenya Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CTUM" 
+        data-name="centum investment co ltd" 
+        data-sector="investment"
+        data-has-financials="true"
+        onclick="selectStock('CTUM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CTUM</span>
+          <span class="stock-card-price" id="card-price-CTUM">KES 13.55</span>
+        </div>
+        <div class="stock-card-name">Centum Investment Co Ltd</div>
+        <div class="stock-card-sector">Investment</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="DTK" 
+        data-name="diamond trust bank kenya ltd" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('DTK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">DTK</span>
+          <span class="stock-card-price" id="card-price-DTK">KES 129.75</span>
+        </div>
+        <div class="stock-card-name">Diamond Trust Bank Kenya Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EABL" 
+        data-name="east african breweries ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('EABL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EABL</span>
+          <span class="stock-card-price" id="card-price-EABL">KES 251.00</span>
+        </div>
+        <div class="stock-card-name">East African Breweries Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EGAD" 
+        data-name="eaagads ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('EGAD')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EGAD</span>
+          <span class="stock-card-price" id="card-price-EGAD">KES 21.80</span>
+        </div>
+        <div class="stock-card-name">Eaagads Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EQTY" 
+        data-name="equity group holdings" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('EQTY')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EQTY</span>
+          <span class="stock-card-price" id="card-price-EQTY">KES 68.00</span>
+        </div>
+        <div class="stock-card-name">Equity Group Holdings</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="FAMB" 
+        data-name="famb" 
+        data-sector="unknown"
+        data-has-financials="false"
+        onclick="selectStock('FAMB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">FAMB</span>
+          <span class="stock-card-price" id="card-price-FAMB">—</span>
+        </div>
+        <div class="stock-card-name">FAMB</div>
+        <div class="stock-card-sector">Unknown</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="FIRE" 
+        data-name="flame tree group holdings ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('FIRE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">FIRE</span>
+          <span class="stock-card-price" id="card-price-FIRE">—</span>
+        </div>
+        <div class="stock-card-name">Flame Tree Group Holdings Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="HAFR" 
+        data-name="homeafrika ltd" 
+        data-sector="real estate"
+        data-has-financials="true"
+        onclick="selectStock('HAFR')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">HAFR</span>
+          <span class="stock-card-price" id="card-price-HAFR">KES 1.23</span>
+        </div>
+        <div class="stock-card-name">HomeAfrika Ltd</div>
+        <div class="stock-card-sector">Real Estate</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="HFCK" 
+        data-name="hf group ltd" 
+        data-sector="banking"
+        data-has-financials="false"
+        onclick="selectStock('HFCK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">HFCK</span>
+          <span class="stock-card-price" id="card-price-HFCK">KES 10.30</span>
+        </div>
+        <div class="stock-card-name">HF Group Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="IMH" 
+        data-name="i&m holdings ltd" 
+        data-sector="banking"
+        data-has-financials="false"
+        onclick="selectStock('IMH')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">IMH</span>
+          <span class="stock-card-price" id="card-price-IMH">—</span>
+        </div>
+        <div class="stock-card-name">I&M Holdings Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="JUB" 
+        data-name="jubilee holdings ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('JUB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">JUB</span>
+          <span class="stock-card-price" id="card-price-JUB">KES 327.75</span>
+        </div>
+        <div class="stock-card-name">Jubilee Holdings Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KAPC" 
+        data-name="kapc" 
+        data-sector="unknown"
+        data-has-financials="false"
+        onclick="selectStock('KAPC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KAPC</span>
+          <span class="stock-card-price" id="card-price-KAPC">KES 233.00</span>
+        </div>
+        <div class="stock-card-name">KAPC</div>
+        <div class="stock-card-sector">Unknown</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KCB" 
+        data-name="kcb group plc" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('KCB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KCB</span>
+          <span class="stock-card-price" id="card-price-KCB">KES 67.00</span>
+        </div>
+        <div class="stock-card-name">KCB Group Plc</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KEGN" 
+        data-name="kengen plc" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('KEGN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KEGN</span>
+          <span class="stock-card-price" id="card-price-KEGN">KES 9.56</span>
+        </div>
+        <div class="stock-card-name">KenGen PLC</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KNRE" 
+        data-name="kenya re-insurance corporation ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('KNRE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KNRE</span>
+          <span class="stock-card-price" id="card-price-KNRE">KES 3.16</span>
+        </div>
+        <div class="stock-card-name">Kenya Re-Insurance Corporation Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KPLC" 
+        data-name="kenya power & lighting co ltd" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('KPLC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KPLC</span>
+          <span class="stock-card-price" id="card-price-KPLC">KES 15.35</span>
+        </div>
+        <div class="stock-card-name">Kenya Power & Lighting Co Ltd</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KQ" 
+        data-name="kenya airways ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('KQ')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KQ</span>
+          <span class="stock-card-price" id="card-price-KQ">KES 5.04</span>
+        </div>
+        <div class="stock-card-name">Kenya Airways Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KUKZ" 
+        data-name="kakuzi ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('KUKZ')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KUKZ</span>
+          <span class="stock-card-price" id="card-price-KUKZ">KES 390.00</span>
+        </div>
+        <div class="stock-card-name">Kakuzi Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="LKL" 
+        data-name="longhorn publishers ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('LKL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">LKL</span>
+          <span class="stock-card-price" id="card-price-LKL">KES 2.90</span>
+        </div>
+        <div class="stock-card-name">Longhorn Publishers Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="MSC" 
+        data-name="mumias sugar co ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('MSC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">MSC</span>
+          <span class="stock-card-price" id="card-price-MSC">—</span>
+        </div>
+        <div class="stock-card-name">Mumias Sugar Co Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="NBV" 
+        data-name="nairobi business ventures ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('NBV')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NBV</span>
+          <span class="stock-card-price" id="card-price-NBV">KES 1.42</span>
+        </div>
+        <div class="stock-card-name">Nairobi Business Ventures Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="NCBA" 
+        data-name="ncba group plc" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('NCBA')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NCBA</span>
+          <span class="stock-card-price" id="card-price-NCBA">KES 91.00</span>
+        </div>
+        <div class="stock-card-name">NCBA Group PLC</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="NMG" 
+        data-name="nation media group ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('NMG')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NMG</span>
+          <span class="stock-card-price" id="card-price-NMG">KES 13.20</span>
+        </div>
+        <div class="stock-card-name">Nation Media Group Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="NSE" 
+        data-name="nairobi securities exchange ltd" 
+        data-sector="investment services"
+        data-has-financials="true"
+        onclick="selectStock('NSE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NSE</span>
+          <span class="stock-card-price" id="card-price-NSE">KES 19.65</span>
+        </div>
+        <div class="stock-card-name">Nairobi Securities Exchange Ltd</div>
+        <div class="stock-card-sector">Investment Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="OCH" 
+        data-name="och" 
+        data-sector="unknown"
+        data-has-financials="true"
+        onclick="selectStock('OCH')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">OCH</span>
+          <span class="stock-card-price" id="card-price-OCH">KES 7.92</span>
+        </div>
+        <div class="stock-card-name">OCH</div>
+        <div class="stock-card-sector">Unknown</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="PORT" 
+        data-name="east african portland cement co ltd" 
+        data-sector="construction & allied"
+        data-has-financials="true"
+        onclick="selectStock('PORT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">PORT</span>
+          <span class="stock-card-price" id="card-price-PORT">KES 82.25</span>
+        </div>
+        <div class="stock-card-name">East African Portland Cement Co Ltd</div>
+        <div class="stock-card-sector">Construction & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SASN" 
+        data-name="sasini ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('SASN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SASN</span>
+          <span class="stock-card-price" id="card-price-SASN">KES 19.55</span>
+        </div>
+        <div class="stock-card-name">Sasini Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SBIC" 
+        data-name="stanbic holdings plc" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('SBIC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SBIC</span>
+          <span class="stock-card-price" id="card-price-SBIC">KES 197.75</span>
+        </div>
+        <div class="stock-card-name">Stanbic Holdings Plc</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SCAN" 
+        data-name="scangroup ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('SCAN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SCAN</span>
+          <span class="stock-card-price" id="card-price-SCAN">KES 2.46</span>
+        </div>
+        <div class="stock-card-name">Scangroup Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SCBK" 
+        data-name="standard chartered bank kenya ltd" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('SCBK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SCBK</span>
+          <span class="stock-card-price" id="card-price-SCBK">KES 308.25</span>
+        </div>
+        <div class="stock-card-name">Standard Chartered Bank Kenya Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SCOM" 
+        data-name="safaricom plc" 
+        data-sector="telecommunication & technology"
+        data-has-financials="true"
+        onclick="selectStock('SCOM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SCOM</span>
+          <span class="stock-card-price" id="card-price-SCOM">KES 30.00</span>
+        </div>
+        <div class="stock-card-name">Safaricom PLC</div>
+        <div class="stock-card-sector">Telecommunication & Technology</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SLAM" 
+        data-name="slam" 
+        data-sector="unknown"
+        data-has-financials="false"
+        onclick="selectStock('SLAM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SLAM</span>
+          <span class="stock-card-price" id="card-price-SLAM">KES 8.60</span>
+        </div>
+        <div class="stock-card-name">SLAM</div>
+        <div class="stock-card-sector">Unknown</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="TOTL" 
+        data-name="total kenya ltd" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('TOTL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">TOTL</span>
+          <span class="stock-card-price" id="card-price-TOTL">KES 38.75</span>
+        </div>
+        <div class="stock-card-name">Total Kenya Ltd</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="TPSE" 
+        data-name="tps eastern africa (serena) ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('TPSE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">TPSE</span>
+          <span class="stock-card-price" id="card-price-TPSE">KES 15.85</span>
+        </div>
+        <div class="stock-card-name">TPS Eastern Africa (Serena) Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="UNGA" 
+        data-name="unga group ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('UNGA')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">UNGA</span>
+          <span class="stock-card-price" id="card-price-UNGA">KES 22.05</span>
+        </div>
+        <div class="stock-card-name">Unga Group Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="WTK" 
+        data-name="williamson tea kenya ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('WTK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">WTK</span>
+          <span class="stock-card-price" id="card-price-WTK">KES 144.25</span>
+        </div>
+        <div class="stock-card-name">Williamson Tea Kenya Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="XPRS" 
+        data-name="express kenya ltd" 
+        data-sector="commercial & services"
+        data-has-financials="false"
+        onclick="selectStock('XPRS')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">XPRS</span>
+          <span class="stock-card-price" id="card-price-XPRS">KES 7.00</span>
+        </div>
+        <div class="stock-card-name">Express Kenya Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+                </div>
+            </article>
+
+            <!-- Right Pane: Active Workspace -->
+            <article class="workspace-pane" id="active-workspace">
+                <div class="empty-workspace" id="workspace-empty-state">
+                    <div class="terminal-artwork">📡</div>
+                    <div class="empty-title">MoeCapital // NSE Terminal Active</div>
+                    <div class="empty-desc">
+                        Select any listed company in the directory list to load real-time financial metrics, key valuation ratios, and income statement history.
+                    </div>
+                </div>
+                
+                <!-- Workspace detail container (hidden by default) -->
+                <div id="workspace-detail-content" style="display: none;">
+                    <div class="stock-workspace-header">
+                        <div class="stock-header-main">
+                            <div class="stock-title-col">
+                                <h2 id="detail-name">Absa Bank Kenya PLC</h2>
+                                <div class="stock-workspace-meta">
+                                    <span id="detail-ticker">ABSA</span>
+                                    <span>•</span>
+                                    <span>NSE</span>
+                                    <span>•</span>
+                                    <span id="detail-sector">Banking</span>
+                                </div>
+                            </div>
+                            <div class="stock-price-col" id="detail-price-col">
+                                <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
+                                    <span class="live-price-badge" id="detail-price-live-badge" style="display: none; font-size: 0.6rem; color: #4ade80; border: 1px solid #4ade80; border-radius: 4px; padding: 1px 4px; font-weight: bold; letter-spacing: 0.05em; vertical-align: middle;">LIVE</span>
+                                    <div class="live-price" id="detail-price">KES —</div>
+                                </div>
+                                <div class="live-price-label">Current Price</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metric Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Revenue (LTM)</div>
+                            <div class="stat-value" id="stat-revenue">KES —</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Net Income (LTM)</div>
+                            <div class="stat-value" id="stat-netincome">KES —</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">ROIC</div>
+                            <div class="stat-value highlight" id="stat-roic">—</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">ROE</div>
+                            <div class="stat-value highlight" id="stat-roe">—</div>
+                        </div>
+                    </div>
+
+                    <!-- Workspace Tabs -->
+                    <nav class="workspace-tabs">
+                        <button class="tab-btn active" onclick="switchTab('financials')">Financials</button>
+                        <button class="tab-btn" onclick="switchTab('ratios')">Key Ratios</button>
+                        <button class="tab-btn" onclick="switchTab('insights')">Insights</button>
+                        <button class="tab-btn" onclick="switchTab('announcements')">Announcements</button>
+                    </nav>
+
+                    <!-- Tab Contents -->
+                    <div class="tab-content-area">
+                        <!-- Financials Tab -->
+                        <div class="tab-section active" id="tab-financials">
+                            <h3 class="section-title">Income Statement (KES Billions)</h3>
+                            <div class="table-container" id="financials-table-box">
+                                <!-- Pre-rendered dynamically by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Key Ratios Tab -->
+                        <div class="tab-section" id="tab-ratios">
+                            <h3 class="section-title">Valuation & Efficiency Ratios</h3>
+                            <div class="table-container" id="ratios-table-box">
+                                <!-- Pre-rendered dynamically by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Insights Tab -->
+                        <div class="tab-section" id="tab-insights">
+                            <h3 class="section-title">Fundamental Insights & Quotes</h3>
+                            <div id="insights-list-box">
+                                <!-- Pre-rendered dynamically by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Announcements Tab -->
+                        <div class="tab-section" id="tab-announcements">
+                            <h3 class="section-title">Company Disclosures & Filings</h3>
+                            <div id="announcements-list-box">
+                                <!-- Pre-rendered dynamically by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <footer>
+            <p style="font-size: 0.75rem; color: var(--meta); opacity: 0.6;">
+                Built for financial clarity. Monospace. De-complexed. All data sourced locally.
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        let db = null;
+        let activeTicker = null;
+        let activeTab = 'financials';
+
+        // Ticker mapping normalization (from AFX/Kwayisi symbols to Master symbols)
+        const PRICE_TICKER_MAP = {
+            "BKG": "BK",
+            "IMH": "IM",
+            "PORT": "BAMB",
+            "ILAM": "FAHR",
+            "FAHR": "FAHR",
+            "SCAN": "SCAN",
+            "SCOM": "SCOM",
+            "EQTY": "EQTY",
+            "KCB": "KCB",
+            "COOP": "COOP",
+            "ABSA": "ABSA"
+        };
+
+        // Real-time price synchronizer using CORS proxy
+        async function syncPricesRealtime() {
+            console.log("📡 Starting live NSE prices synchronization via CORS proxy...");
+            const kwayisiUrl = "https://afx.kwayisi.org/nse/";
+            const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(kwayisiUrl);
+            
+            try {
+                const response = await fetch(proxyUrl);
+                if (!response.ok) throw new Error("CORS Proxy HTTP error: " + response.status);
+                const html = await response.text();
+                
+                // Regex matches: <tr><td><a href="...">TICKER</a></td><td><a href="...">NAME</a></td><td>VOLUME</td><td>PRICE</td></tr>
+                const rowRegex = /<tr><td><a [^>]+>([A-Z0-9]+)<\/a><td><a [^>]+>[^<]+<\/a><td>(?:[0-9,]+)?<td>([0-9,]+\.[0-9]+)/g;
+                let match;
+                let count = 0;
+                const prices = {};
+                
+                while ((match = rowRegex.exec(html)) !== null) {
+                    const rawTicker = match[1];
+                    const price = parseFloat(match[2].replace(/,/g, ""));
+                    const ticker = PRICE_TICKER_MAP[rawTicker] || rawTicker;
+                    prices[ticker] = price;
+                    count++;
+                }
+                
+                if (count > 0 && db) {
+                    console.log(`✅ Live prices successfully fetched: ${count} tickers updated.`);
+                    if (!db.market) db.market = {};
+                    db.market.prices = { ...db.market.prices, ...prices };
+                    db.market.lastUpdated = new Date().toISOString();
+                    db.market.isLive = true;
+                    
+                    // 1. Update prices in the directory sidebar
+                    updateDirectoryPrices();
+                    
+                    // 2. If an active company is selected, refresh its header price display
+                    if (activeTicker) {
+                        const currentPrice = db.market.prices[activeTicker];
+                        if (currentPrice !== undefined) {
+                            document.getElementById('detail-price').innerText = `KES ${currentPrice.toFixed(2)}`;
+                            const priceCol = document.getElementById('detail-price-col');
+                            if (priceCol) {
+                                priceCol.style.display = 'block';
+                                const badge = document.getElementById('detail-price-live-badge');
+                                if (badge) badge.style.display = 'inline-block';
+                            }
+                        }
+                    }
+                }
+            } catch (err) {
+                console.warn("⚠️ Live price sync failed. Gracefully falling back to static database:", err);
+            }
+        }
+
+        // Update all price badges in the sidebar dynamically
+        function updateDirectoryPrices() {
+            if (!db || !db.market || !db.market.prices) return;
+            Object.entries(db.market.prices).forEach(([ticker, price]) => {
+                const el = document.getElementById(`card-price-${ticker}`);
+                if (el && price !== undefined) {
+                    el.innerText = `KES ${price.toFixed(2)}`;
+                    el.style.color = 'var(--link)';
+                }
+            });
+        }
+
+        // Load database immediately in background
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                let response;
+                try {
+                    response = await fetch('/nse/nse-data.json');
+                    if (!response.ok) throw new Error("Status: " + response.status);
+                } catch (e) {
+                    console.log('⚠️ Host-relative fetch failed, falling back to relative directory fetch...');
+                    response = await fetch('nse-data.json');
+                }
+                db = await response.json();
+                console.log('📡 Database fetched successfully!', db);
+                
+                // Automatically open ticker if URL hash matches
+                const hash = window.location.hash.substring(1).toUpperCase();
+                if (hash && document.querySelector(`[data-ticker="${hash}"]`)) {
+                    selectStock(hash);
+                }
+
+                // Initial live sync
+                await syncPricesRealtime();
+
+                // Periodic refresh loop every 60 seconds
+                setInterval(syncPricesRealtime, 60000);
+            } catch (e) {
+                console.error('❌ Failed to fetch database:', e);
+            }
+        });
+
+        // Search directory filtering
+        function filterDirectory() {
+            const query = document.getElementById('nse-search').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.stock-item-card');
+            
+            cards.forEach(card => {
+                const ticker = card.getAttribute('data-ticker');
+                const name = card.getAttribute('data-name');
+                const sector = card.getAttribute('data-sector');
+                
+                if (ticker.includes(query) || name.includes(query) || sector.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Switch workspace tabs
+        function switchTab(tabId) {
+            activeTab = tabId;
+            
+            // Toggle active classes on tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.innerText.toLowerCase().includes(tabId === 'ratios' ? 'ratios' : tabId)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Toggle display on content sections
+            document.querySelectorAll('.tab-section').forEach(section => {
+                if (section.id === `tab-${tabId}`) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+
+        // Robust dynamic ROIC computation
+        function calculateROIC(metrics) {
+            const ebit = metrics["Operating Income"] !== undefined ? metrics["Operating Income"] : (metrics["EBITDA"] !== undefined ? metrics["EBITDA"] : null);
+            const netIncome = metrics["Net Income"] !== undefined ? metrics["Net Income"] : null;
+            
+            const equity = metrics["Total Equity"] !== undefined ? metrics["Total Equity"] : 
+                         (metrics["Share Capital"] !== undefined && metrics["Retained Earnings"] !== undefined ? metrics["Share Capital"] + metrics["Retained Earnings"] : null);
+            
+            const debt = metrics["Total Debt"] !== undefined ? metrics["Total Debt"] : 0;
+            const cash = metrics["Cash & Bank"] !== undefined ? metrics["Cash & Bank"] : 0;
+
+            if (ebit === null && netIncome === null) return null;
+            
+            const eqVal = equity !== null ? equity : (metrics["Total Assets"] !== undefined ? metrics["Total Assets"] - (metrics["Total Liabilities"] || 0) : null);
+            if (eqVal === null || eqVal <= 0) return null;
+
+            const investedCapital = eqVal + debt - cash;
+            if (investedCapital <= 0) return null;
+
+            const taxExpense = metrics["Income Tax Expense"] !== undefined ? metrics["Income Tax Expense"] : 0;
+            let taxRate = 0.30; // standard corporate tax rate in Kenya is 30%
+            if (ebit && taxExpense < 0) {
+                taxRate = Math.min(0.5, Math.max(0, -taxExpense / ebit));
+            }
+
+            const nopat = ebit !== null ? ebit * (1 - taxRate) : netIncome;
+            return (nopat / investedCapital) * 100;
+        }
+
+        // Robust dynamic ROE computation
+        function calculateROE(metrics, ratios) {
+            if (ratios && ratios["ROE (%)"] !== undefined) {
+                const val = ratios["ROE (%)"];
+                return Math.abs(val) < 1.0 ? val * 100 : val;
+            }
+            const netIncome = metrics["Net Income"];
+            const equity = metrics["Total Equity"] !== undefined ? metrics["Total Equity"] : 
+                         (metrics["Share Capital"] !== undefined && metrics["Retained Earnings"] !== undefined ? metrics["Share Capital"] + metrics["Retained Earnings"] : null);
+            if (netIncome !== undefined && equity && equity > 0) {
+                return (netIncome / equity) * 100;
+            }
+            return null;
+        }
+
+        // Select and render stock details in workspace
+        function selectStock(ticker) {
+            activeTicker = ticker;
+            window.location.hash = ticker;
+
+            // Highlight selected card in sidebar
+            document.querySelectorAll('.stock-item-card').forEach(card => {
+                if (card.getAttribute('data-ticker') === ticker) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            // If database not loaded yet, wait or fetch from DOM
+            if (!db) {
+                console.log('⌛ Database loading...');
+                return;
+            }
+
+            try {
+                const company = db.companies.find(c => c.ticker === ticker);
+                const financials = db.financials[ticker];
+                const price = db.market?.prices[ticker];
+
+                if (!company) return;
+
+                // Show workspace details, hide empty state
+                document.getElementById('workspace-empty-state').style.display = 'none';
+                document.getElementById('workspace-detail-content').style.display = 'block';
+
+                // Populate header
+                document.getElementById('detail-name').innerText = company.name;
+                document.getElementById('detail-ticker').innerText = company.ticker;
+                document.getElementById('detail-sector').innerText = company.sector;
+                
+                const priceCol = document.getElementById('detail-price-col');
+                if (price !== undefined && price !== null) {
+                    const priceNum = typeof price === 'number' ? price : parseFloat(price);
+                    if (!isNaN(priceNum)) {
+                        document.getElementById('detail-price').innerText = `KES ${priceNum.toFixed(2)}`;
+                        priceCol.style.display = 'block';
+                        const badge = document.getElementById('detail-price-live-badge');
+                        if (badge) {
+                            badge.style.display = (db.market && db.market.isLive) ? 'inline-block' : 'none';
+                        }
+                    } else {
+                        priceCol.style.display = 'none';
+                    }
+                } else {
+                    priceCol.style.display = 'none';
+                }
+
+                // Populate stats card & Dynamic ratios
+                if (financials && financials.metrics) {
+                    const periods = Object.keys(financials.metrics).sort().reverse();
+                    const latestPeriod = periods[0];
+                    const latestMetrics = latestPeriod ? financials.metrics[latestPeriod] : {};
+                    const latestRatios = (financials.ratios && latestPeriod) ? financials.ratios[latestPeriod] : {};
+
+                    // Revenue LTM
+                    const rev = latestMetrics["Revenue"];
+                    const revNum = typeof rev === 'number' ? rev : parseFloat(rev);
+                    document.getElementById('stat-revenue').innerText = (!isNaN(revNum) && rev !== null && rev !== undefined) ? `KES ${revNum.toFixed(1)}B` : '—';
+
+                    // Net Income LTM
+                    const net = latestMetrics["Net Income"];
+                    const netNum = typeof net === 'number' ? net : parseFloat(net);
+                    document.getElementById('stat-netincome').innerText = (!isNaN(netNum) && net !== null && net !== undefined) ? `KES ${netNum.toFixed(1)}B` : '—';
+
+                    // Compute dynamic ROIC
+                    const roic = calculateROIC(latestMetrics);
+                    const roicNum = typeof roic === 'number' ? roic : parseFloat(roic);
+                    document.getElementById('stat-roic').innerText = (!isNaN(roicNum) && roic !== null) ? `${roicNum.toFixed(1)}%` : '—';
+
+                    // Compute dynamic ROE
+                    const roe = calculateROE(latestMetrics, latestRatios);
+                    const roeNum = typeof roe === 'number' ? roe : parseFloat(roe);
+                    document.getElementById('stat-roe').innerText = (!isNaN(roeNum) && roe !== null) ? `${roeNum.toFixed(1)}%` : '—';
+
+                    // 1. Render Financial Table
+                    renderFinancialsTable(financials.metrics, periods);
+
+                    // 2. Render Key Ratios Table
+                    renderRatiosTable(financials.ratios || {}, periods, financials.metrics);
+
+                    // 3. Render Insights List
+                    renderInsights(financials.insights || []);
+
+                    // 4. Render Announcements List
+                    renderAnnouncements(financials.announcements || []);
+                } else {
+                    // No financials available
+                    document.getElementById('stat-revenue').innerText = '—';
+                    document.getElementById('stat-netincome').innerText = '—';
+                    document.getElementById('stat-roic').innerText = '—';
+                    document.getElementById('stat-roe').innerText = '—';
+                    
+                    document.getElementById('financials-table-box').innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No financial metrics database found for ${ticker}</p>`;
+                    document.getElementById('ratios-table-box').innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No key efficiency ratios found for ${ticker}</p>`;
+                    document.getElementById('insights-list-box').innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No fundamental analysis quotes found for ${ticker}</p>`;
+                    document.getElementById('announcements-list-box').innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No regulatory announcements registered for ${ticker}</p>`;
+                }
+
+                // Keep current tab active
+                switchTab(activeTab);
+            } catch (err) {
+                console.error("❌ Error rendering stock details:", err);
+            }
+        }
+
+        // Render high-performance financial metrics table
+        function renderFinancialsTable(metrics, periods) {
+            if (!periods || periods.length === 0) return;
+            
+            // Collect all unique metrics keys across periods
+            const allKeys = new Set();
+            periods.forEach(p => {
+                Object.keys(metrics[p] || {}).forEach(k => allKeys.add(k));
+            });
+            const sortedMetricKeys = Array.from(allKeys).sort();
+
+            let headerCols = '<th>Financial Metric</th>';
+            periods.forEach(p => {
+                headerCols += `<th class="period-val">${p}</th>`;
+            });
+
+            let rowHtml = '';
+            sortedMetricKeys.forEach(m => {
+                rowHtml += `<tr><td class="metric-name">${m}</td>`;
+                periods.forEach(p => {
+                    const val = metrics[p]?.[m];
+                    const valNum = typeof val === 'number' ? val : parseFloat(val);
+                    const valStr = (!isNaN(valNum) && val !== null && val !== undefined) ? valNum.toFixed(1) : '—';
+                    rowHtml += `<td class="period-val">${valStr}</td>`;
+                });
+                rowHtml += '</tr>';
+            });
+
+            const tableHtml = `
+                <table>
+                    <thead>
+                        <tr>${headerCols}</tr>
+                    </thead>
+                    <tbody>
+                        ${rowHtml}
+                    </tbody>
+                </table>
+            `;
+            document.getElementById('financials-table-box').innerHTML = tableHtml;
+        }
+
+        // Render ratios table incorporating static and dynamically computed fields
+        function renderRatiosTable(staticRatios, periods, metrics) {
+            if (!periods || periods.length === 0) return;
+
+            // Define ratios we want to check/render
+            const ratioLabels = [
+                "ROE (%)",
+                "ROA (%)",
+                "ROIC (%)",
+                "Net Margin (%)",
+                "Asset Turnover (x)"
+            ];
+
+            let headerCols = '<th>Ratio Metric</th>';
+            periods.forEach(p => {
+                headerCols += `<th class="period-val">${p}</th>`;
+            });
+
+            let rowHtml = '';
+            ratioLabels.forEach(label => {
+                rowHtml += `<tr><td class="metric-name">${label}</td>`;
+                periods.forEach(p => {
+                    let val = null;
+                    const pRatios = staticRatios[p] || {};
+                    const pMetrics = metrics[p] || {};
+
+                    if (label === "ROIC (%)") {
+                        val = calculateROIC(pMetrics);
+                    } else if (label === "ROE (%)") {
+                        val = calculateROE(pMetrics, pRatios);
+                    } else if (pRatios[label] !== undefined) {
+                        val = pRatios[label];
+                        if (label.includes("%") && Math.abs(val) < 1.0) {
+                            val = val * 100;
+                        }
+                    }
+
+                    const valNum = typeof val === 'number' ? val : parseFloat(val);
+                    const valStr = (!isNaN(valNum) && val !== null && val !== undefined) ? valNum.toFixed(2) : '—';
+                    rowHtml += `<td class="period-val">${valStr}${!isNaN(valNum) && val !== null && label.includes("%") ? '%' : ''}</td>`;
+                });
+                rowHtml += '</tr>';
+            });
+
+            const tableHtml = `
+                <table>
+                    <thead>
+                        <tr>${headerCols}</tr>
+                    </thead>
+                    <tbody>
+                        ${rowHtml}
+                    </tbody>
+                </table>
+            `;
+            document.getElementById('ratios-table-box').innerHTML = tableHtml;
+        }
+
+        // Render dynamic insights
+        function renderInsights(insights) {
+            const listContainer = document.getElementById('insights-list-box');
+            if (!insights || insights.length === 0) {
+                listContainer.innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No fundamental analysis quotes found for this ticker.</p>`;
+                return;
+            }
+
+            let cardsHtml = '';
+            insights.forEach(ins => {
+                const dateStr = ins.date ? ins.date : '';
+                cardsHtml += `
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <span>[${ins.category}]</span>
+                            <span>${dateStr}</span>
+                        </div>
+                        <p class="insight-content">${ins.content}</p>
+                    </div>
+                `;
+            });
+            listContainer.innerHTML = cardsHtml;
+        }
+
+        // Render dynamic announcements list
+        function renderAnnouncements(announcements) {
+            const listContainer = document.getElementById('announcements-list-box');
+            if (!announcements || announcements.length === 0) {
+                listContainer.innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No regulatory announcements registered.</p>`;
+                return;
+            }
+
+            let listHtml = '';
+            announcements.forEach(ann => {
+                // If files are MD summaries, we point to their files. If URL scheme doesn't exist, we can use a direct local reference or treat as static lists.
+                const url = `https://github.com/criticalinsight/kenya-roic/blob/main/data/extractions/${ann.file}`;
+                listHtml += `
+                    <div class="announcement-item">
+                        <a href="${url}" target="_blank" class="announcement-link">→ ${ann.title}</a>
+                        <span class="announcement-date">${ann.date}</span>
+                    </div>
+                `;
+            });
+            listContainer.innerHTML = listHtml;
+        }
+    </script>
+</body>
+</html>

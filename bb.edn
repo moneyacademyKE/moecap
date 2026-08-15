@@ -1,0 +1,33 @@
+{:paths ["scripts" "src"]
+ :tasks
+ {clean {:doc "Remove build outputs (public/) and temporary test artifacts"
+         :requires ([babashka.fs :as fs])
+         :task (do
+                 (println "🧹 Cleaning build artifacts and temporary files...")
+                 (when (fs/exists? "public")
+                   (fs/delete-tree "public"))
+                 (when (fs/exists? "tests/.tmp_stocks")
+                   (fs/delete-tree "tests/.tmp_stocks"))
+                 (println "✨ Clean complete."))}
+
+  test {:doc "Run complete test suite via Bun test runner"
+        :requires ([babashka.process :refer [shell]])
+        :task (shell "bun test")}
+
+  build {:doc "Compile and generate static site and terminal outputs"
+         :requires ([babashka.process :refer [shell]])
+         :task (shell "bun scripts/build-site.ts")}
+
+  dev {:doc "Compile site and start local high-speed static dev server"
+       :depends [build]
+       :requires ([babashka.process :refer [shell]])
+       :task (shell "bun scripts/serve.ts")}
+
+  serve {:doc "Start local high-speed static dev server on public/"
+         :requires ([babashka.process :refer [shell]])
+         :task (shell "bun scripts/serve.ts")}
+
+  deploy {:doc "Build and deploy static distribution to Cloudflare Pages"
+          :depends [build]
+          :requires ([babashka.process :refer [shell]])
+          :task (shell "bunx wrangler pages deploy public --project-name moecap")}}}

@@ -116,3 +116,33 @@ Additionally, using a hardcoded, environment-coupled absolute path `/nse/nse-dat
 2. **Environment-Decoupled Resource Fetching**: Rather than coupling resource locations to production directories, the background fetch runs an asynchronous retry-fallback sequence, trying the host-relative `/nse/nse-data.json` first, and dynamically falling back to the directory-relative `nse-data.json` if it fails.
 3. **Granular Try-Catch Isolation**: The central stock selector click handler is encapsulated inside a scoped `try-catch` wrapper. Any data anomalies or dynamic formatting failures are caught, logged, and isolated without ever halting the main thread or freezing the UI workspace, preserving absolute operational uptime.
 
+---
+
+## 9. Suspending LOC Constraints in Favor of High Cohesion & Data Locality
+
+**The Anti-Pattern**:
+Enforcing arbitrary line-of-code thresholds (<500 LOC) on pure data structures or coherent narrative transcripts (such as multi-part long-form investor interviews or exhaustive categorized watchlists). This introduces artificial fragmentation (fracturing a continuous document into arbitrary files), inflating import overhead and increasing complection without improving simplicity.
+
+**The Solution (Rich Hickey De-complecting)**:
+We explicitly suspend arbitrary LOC constraints in this project to prioritize *data locality* and *high cohesion*. As Rich Hickey teaches in *Simple Made Easy*, data is simple in its essence when kept as pure, immutable values. Large structured arrays like `CONTENT` in `src/content.ts` remain unified, self-contained, and easily searchable in a single cohesive location.
+
+---
+
+## 10. Babashka Unified Build & Task Orchestration (`bb.edn`)
+
+**The Anti-Pattern**:
+Relying on ad-hoc shell scripts, bash wrappers, or python automation scripts for build and deployment orchestration, leading to cross-platform compatibility issues, fragile string manipulation, and heavy runtime overhead.
+
+**The Solution**:
+We adopt **Babashka** (`bb.edn`) for declarative task management (`bb build`, `bb test`, `bb clean`, `bb deploy`). Babashka boots in sub-10ms, provides rich Clojure standard library primitives (`babashka.fs`, `babashka.process`), and enforces zero npm / zero python toolchains.
+
+---
+
+## 11. Hermetic Sandbox-Safe Test Fixtures
+
+**The Anti-Pattern**:
+Tests that hardcode machine-specific absolute directories or write fixtures to global system locations like `/tmp`, leading to permission failures (`EPERM`) under secure sandbox environments and environment coupling.
+
+**The Solution**:
+All test suites dynamically compute workspace paths using `process.cwd()` and `import.meta.dir`, writing isolated temporary files to project-local fixture directories (e.g. `tests/.tmp_stocks/`) with guaranteed `afterAll` cleanup.
+

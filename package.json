@@ -5,8 +5,10 @@
     "scripts": {
         "test": "bun test",
         "test:coverage": "bun test --coverage",
+        "dev": "bun run build && bun scripts/serve.ts",
+        "start": "bun scripts/serve.ts",
         "build": "bun run scripts/build-site.ts",
-        "deploy": "bun run build && npx wrangler pages deploy public --project-name moecap"
+        "deploy": "bun run build && bunx wrangler pages deploy public --project-name moecap"
     },
     "devDependencies": {
         "bun-types": "latest"

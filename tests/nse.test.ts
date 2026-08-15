@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { buildNsePage, type NSEData } from "../src/nse";
 
-const BASE_PATH = "/Users/moe/Desktop/moecapital";
+const BASE_PATH = process.cwd();
 const PUBLIC_DIR = join(BASE_PATH, "public");
 
 describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
