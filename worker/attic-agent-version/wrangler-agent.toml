@@ -1,0 +1,29 @@
+# Cloudflare Worker — moecap-prices.
+#
+# Runs hourly via Cron Triggers: three bulk venue fetches (Binance fapi,
+# Bitget v2, OKX v5 — each returns the full ticker universe in one request),
+# hydrates every manifest ticker's P/E and market cap (split/discontinuity
+# guarded), and stores the payload in KV. The static site reads it at
+# GET /prices (CORS-enabled) via src/hydrate.js.
+#
+# Setup (one-time, see scripts/setup-cloudflare.sh):
+#   1. bunx wrangler kv namespace create PRICES
+#   2. Copy the printed `id` into [[kv_namespaces]] below (replacing the placeholder)
+#   3. bun scripts/seed-prices.ts && bunx wrangler kv key put --binding PRICES manifest --path basis.json
+#   4. bunx wrangler deploy   (run from this worker/ directory)
+
+name = "moecap-prices"
+main = "src/index.ts"
+compatibility_date = "2026-07-01"
+
+# Hourly hydration — top of every hour.
+[triggers]
+crons = ["0 * * * *"]
+
+[[kv_namespaces]]
+binding = "PRICES"
+# PLACEHOLDER — replace with `bunx wrangler kv namespace create PRICES` output.
+id = "00000000000000000000000000000000"
+
+[observability]
+enabled = true

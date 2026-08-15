@@ -1,0 +1,430 @@
+/**
+ * ratio.test.ts — pure-function coverage for the price hydration math.
+ * Every function here is deterministic: no mocks, no I/O, no environment.
+ * (tests/prices.test.ts at the repo root covers the seed-side contract;
+ * this suite covers the same module from the worker's perspective plus the
+ * parsing/formatting core in depth.)
+ */
+
+import { describe, test, expect } from "bun:test";
+import {
+  parseNum,
+  parseCap,
+  formatCap,
+  parsePE,
+  parsePe,
+  formatPE,
+  formatPe,
+  parsePrice,
+  formatPrice,
+  priceRatio,
+  pctChange,
+  isDiscontinuity,
+  GUARD_BAND,
+  venueFromHref,
+  extractVenues,
+  parseBinanceBulk,
+  parseBitgetBulk,
+  parseOkxBulk,
+  pickLivePrice,
+  computeEntry,
+  computeAll,
+  type Manifest,
+  type ManifestRow,
+  type VenueBulk,
+} from "./ratio";
+
+describe("parseNum", () => {
+  test("strips currency symbols, commas and whitespace", () => {
+    expect(parseNum("$389.39")).toBe(389.39);
+    expect(parseNum("1,234.50")).toBe(1234.5);
+    expect(parseNum(" 71.8 ")).toBe(71.8);
+    expect(parseNum(42)).toBe(42);
+  });
+
+  test("returns null for unusable input", () => {
+    expect(parseNum("N/A")).toBeNull();
+    expect(parseNum("n/a")).toBeNull();
+    expect(parseNum("")).toBeNull();
+    expect(parseNum("-")).toBeNull();
+    expect(parseNum("abc")).toBeNull();
+    expect(parseNum(null)).toBeNull();
+    expect(parseNum(undefined)).toBeNull();
+    expect(parseNum(Number.NaN)).toBeNull();
+    expect(parseNum(Number.POSITIVE_INFINITY)).toBeNull();
+  });
+});
+
+describe("parseCap (us-stocks.json frontmatter dialect)", () => {
+  test("unitless numbers mean billions", () => {
+    expect(parseCap("191.8")).toBe(191.8e9);
+    expect(parseCap(191.8)).toBe(191.8e9);
+    expect(parseCap("12")).toBe(12e9);
+    expect(parseCap("2768.3")).toBe(2768.3e9);
+  });
+
+  test("suffixed and worded forms parse to absolute dollars", () => {
+    expect(parseCap("$2.77T")).toBe(2.77e12);
+    expect(parseCap("1.03T")).toBe(1.03e12);
+    expect(parseCap("$1.2 trillion")).toBe(1.2e12);
+    expect(parseCap("$0.81B")).toBe(0.81e9);
+    expect(parseCap("$355B")).toBe(355e9);
+    expect(parseCap("$9.0B")).toBe(9e9);
+    expect(parseCap("$1.1B")).toBe(1.1e9);
+    expect(parseCap("$57 Million")).toBe(57e6);
+    expect(parseCap("$57M")).toBe(57e6);
+    expect(parseCap("1.5K")).toBe(1500);
+    expect(parseCap("1,234.5")).toBe(1234.5e9);
+  });
+
+  test("non-positive or garbage caps yield null", () => {
+    expect(parseCap("$0B")).toBeNull();
+    expect(parseCap("0")).toBeNull();
+    expect(parseCap("N/A")).toBeNull();
+    expect(parseCap("growth co")).toBeNull();
+    expect(parseCap("garbage")).toBeNull();
+    expect(parseCap("")).toBeNull();
+    expect(parseCap(null)).toBeNull();
+    expect(parseCap(undefined)).toBeNull();
+  });
+});
+
+describe("formatCap", () => {
+  test("canonical precision: T=2dp, B=1dp, M=0dp", () => {
+    expect(formatCap(2768.3e9)).toBe("$2.77T");
+    expect(formatCap(4.65e12)).toBe("$4.65T");
+    expect(formatCap(1.03e12)).toBe("$1.03T");
+    expect(formatCap(191.8e9)).toBe("$191.8B");
+    expect(formatCap(980e9)).toBe("$980.0B");
+    expect(formatCap(10e9)).toBe("$10.0B");
+    expect(formatCap(810e6)).toBe("$810M");
+    expect(formatCap(57e6)).toBe("$57M");
+    expect(formatCap(0)).toBe("$0B");
+    expect(formatCap(-5e9)).toBe("$0B");
+    expect(formatCap(null)).toBe("$0B");
+  });
+
+  test("boundary rollover instead of overflowing the unit", () => {
+    expect(formatCap(999.99e9)).toBe("$1.00T");
+    expect(formatCap(999.6e6)).toBe("$1.0B");
+  });
+
+  test("round-trips through parseCap within display precision", () => {
+    for (const dollars of [57e6, 810e6, 1.55e9, 191.8e9, 726.5e9, 2.7683e12]) {
+      const roundTripped = parseCap(formatCap(dollars));
+      expect(roundTripped).not.toBeNull();
+      expect(Math.abs(roundTripped! - dollars) / dollars).toBeLessThanOrEqual(0.06);
+    }
+  });
+});
+
+describe("parsePE/parsePe and formatPE/formatPe (aliases of one implementation)", () => {
+  test("parses numeric strings and numbers, rejects the rest", () => {
+    expect(parsePE("71.8")).toBe(71.8);
+    expect(parsePe(" 31.0 ")).toBe(31.0);
+    expect(parsePe("46")).toBe(46);
+    expect(parsePE("108.0")).toBe(108);
+    expect(parsePE(55.4)).toBe(55.4);
+    expect(parsePE("N/A")).toBeNull();
+    expect(parsePe("n/a")).toBeNull();
+    expect(parsePE("")).toBeNull();
+    expect(parsePE("0")).toBeNull();
+    expect(parsePE("-3")).toBeNull();
+    expect(parsePE("abc")).toBeNull();
+    expect(parsePE(null)).toBeNull();
+    expect(parsePe(undefined)).toBeNull();
+    expect(parsePe).toBe(parsePE);
+  });
+
+  test("formats with one decimal, N/A when unknown", () => {
+    expect(formatPE(71.84)).toBe("71.8");
+    expect(formatPe(46.41)).toBe("46.4");
+    expect(formatPE(108)).toBe("108.0");
+    expect(formatPE(20)).toBe("20.0");
+    expect(formatPE(null)).toBe("N/A");
+    expect(formatPe).toBe(formatPE);
+  });
+});
+
+describe("parsePrice / formatPrice", () => {
+  test("parses dollar-prefixed and comma-grouped prices", () => {
+    expect(parsePrice("$389.39")).toBe(389.39);
+    expect(parsePrice("1,234.50")).toBe(1234.5);
+    expect(parsePrice(42)).toBe(42);
+    expect(parsePrice("N/A")).toBeNull();
+    expect(parsePrice(0)).toBeNull();
+    expect(parsePrice(-5)).toBeNull();
+    expect(parsePrice(Number.NaN)).toBeNull();
+    expect(parsePrice("")).toBeNull();
+  });
+
+  test("formats to two decimals with thousands separators", () => {
+    expect(formatPrice(1234.5)).toBe("$1,234.50");
+    expect(formatPrice(305.933)).toBe("$305.93");
+    expect(formatPrice(1234567.891)).toBe("$1,234,567.89");
+    expect(formatPrice(389.394)).toBe("$389.39");
+    expect(formatPrice(50)).toBe("$50.00");
+    expect(formatPrice(26.5, "KES ")).toBe("KES 26.50");
+    expect(formatPrice(null)).toBe("N/A");
+  });
+});
+
+describe("priceRatio / pctChange", () => {
+  test("computes the move between two usable positives", () => {
+    expect(priceRatio(100, 150)).toBe(1.5);
+    expect(priceRatio(100, 100)).toBe(1);
+    expect(pctChange(100, 110)).toBe(10);
+    expect(pctChange(100, 90)).toBe(-10);
+    expect(pctChange(100, 105)).toBe(5);
+  });
+
+  test("null on any unusable side", () => {
+    expect(priceRatio(0, 10)).toBeNull();
+    expect(priceRatio(10, 0)).toBeNull();
+    expect(priceRatio(null, 5)).toBeNull();
+    expect(priceRatio(100, null)).toBeNull();
+    expect(pctChange(null, 5)).toBeNull();
+  });
+});
+
+describe("isDiscontinuity (±35% guard band)", () => {
+  test("inside band is not a discontinuity", () => {
+    expect(isDiscontinuity(100, 100)).toBe(false);
+    expect(isDiscontinuity(130, 100)).toBe(false); // +30%
+    expect(isDiscontinuity(70, 100)).toBe(false); // -30%
+    expect(isDiscontinuity(135, 100)).toBe(false); // exact boundary is float-adjacent
+  });
+
+  test("outside band flags — splits and crashes carry the same signature", () => {
+    expect(isDiscontinuity(136, 100)).toBe(true);
+    expect(isDiscontinuity(64, 100)).toBe(true);
+    expect(isDiscontinuity(4, 100)).toBe(true); // 25:1 split signature
+    expect(isDiscontinuity(50, 100)).toBe(true); // 2:1 split signature
+  });
+
+  test("degenerate inputs are safe (guard stays out of the way)", () => {
+    expect(isDiscontinuity(Number.NaN, 100)).toBe(false);
+    expect(isDiscontinuity(100, 0)).toBe(false);
+    expect(isDiscontinuity(null, 100)).toBe(false);
+    expect(isDiscontinuity(100, null)).toBe(false);
+  });
+
+  test("band is configurable", () => {
+    expect(isDiscontinuity(120, 100, GUARD_BAND)).toBe(false);
+    expect(isDiscontinuity(120, 100, 0.1)).toBe(true);
+  });
+});
+
+describe("venue link extraction", () => {
+  test("real URL shapes from us-stocks.json", () => {
+    expect(venueFromHref("https://www.binance.com/en/futures/AMATUSDT")).toEqual({
+      venue: "binance",
+      symbol: "AMATUSDT",
+    });
+    expect(venueFromHref("https://www.bitget.com/futures/usdt/AALUSDT")).toEqual({
+      venue: "bitget",
+      symbol: "AALUSDT",
+    });
+    expect(venueFromHref("https://www.okx.com/trade-swap/aaoi-usdt-swap")).toEqual({
+      venue: "okx",
+      symbol: "AAOI-USDT-SWAP",
+    });
+    expect(venueFromHref("https://example.com/nope")).toBeNull();
+    expect(venueFromHref(null)).toBeNull();
+  });
+
+  test("extractVenues dedupes across link lines, first-seen order", () => {
+    const body = [
+      '<p>Trade This Idea:</p>',
+      '<a href="https://www.bitget.com/futures/usdt/SPYUSDT">Bitget</a>',
+      '<a href="https://www.binance.com/en/futures/SPYUSDT">Binance</a>',
+      '<a href="https://www.bitget.com/futures/usdt/SPYUSDT">Bitget again</a>',
+      '<a href="https://www.okx.com/trade-swap/spy-usdt-swap">OKX</a>',
+    ].join("\n");
+    const refs = extractVenues(body);
+    expect(refs.map((r) => r.venue)).toEqual(["bitget", "binance", "okx"]);
+    expect(refs.map((r) => r.symbol)).toEqual(["SPYUSDT", "SPYUSDT", "SPY-USDT-SWAP"]);
+    expect(extractVenues("no links here")).toEqual([]);
+    expect(extractVenues(null)).toEqual([]);
+  });
+});
+
+describe("bulk venue parsers (shapes verified against the live endpoints)", () => {
+  test("binance fapi shape", () => {
+    const m = parseBinanceBulk([
+      { symbol: "AAPLUSDT", price: "305.5", time: 1 },
+      { symbol: "x", price: "bad" },
+      "junk",
+      null,
+      { price: "9" },
+    ]);
+    expect(m).toEqual({ AAPLUSDT: 305.5 });
+  });
+
+  test("bitget v2 shape", () => {
+    const m = parseBitgetBulk({ data: [{ symbol: "AAPLUSDT", lastPr: "306" }], msg: "ok" });
+    expect(m).toEqual({ AAPLUSDT: 306 });
+  });
+
+  test("okx v5 shape", () => {
+    const m = parseOkxBulk({ code: "0", data: [{ instId: "AAPL-USDT-SWAP", last: "307" }] });
+    expect(m).toEqual({ "AAPL-USDT-SWAP": 307 });
+  });
+
+  test("non-array / missing-data input yields an empty map", () => {
+    expect(parseBinanceBulk({ error: 1 })).toEqual({});
+    expect(parseBinanceBulk(null)).toEqual({});
+    expect(parseBitgetBulk(null)).toEqual({});
+    expect(parseBitgetBulk({ msg: "error" })).toEqual({});
+    expect(parseOkxBulk([])).toEqual({});
+    expect(parseOkxBulk("nope")).toEqual({});
+  });
+
+  test("non-positive and non-finite prices are dropped", () => {
+    expect(parseBinanceBulk([{ symbol: "AUSDT", price: "0" }, { symbol: "BUSDT", price: "-1" }])).toEqual({});
+    expect(parseBitgetBulk({ data: [{ symbol: "AUSDT", lastPr: "NaN" }] })).toEqual({});
+  });
+});
+
+describe("pickLivePrice (venue priority)", () => {
+  const row: ManifestRow = {
+    ticker: "X",
+    venues: [
+      { venue: "okx", symbol: "X-USDT-SWAP" },
+      { venue: "binance", symbol: "XUSDT" },
+      { venue: "bitget", symbol: "XUSDT" },
+    ],
+    peAuthored: null,
+    capAuthored: null,
+    basis: 10,
+  };
+  const bulk: VenueBulk = {
+    binance: { XUSDT: 11 },
+    bitget: { XUSDT: 12 },
+    okx: { "X-USDT-SWAP": 13 },
+  };
+
+  test("binance wins over the others regardless of link order", () => {
+    expect(pickLivePrice(row, bulk)).toBe(11);
+  });
+
+  test("falls through when the priority venue is missing", () => {
+    expect(pickLivePrice(row, { ...bulk, binance: {} })).toBe(12);
+    expect(pickLivePrice(row, { binance: {}, bitget: {}, okx: bulk.okx })).toBe(13);
+    expect(pickLivePrice(row, { binance: {}, bitget: {}, okx: {} })).toBeNull();
+  });
+
+  test("unusable quotes (NaN) are treated as absent", () => {
+    expect(pickLivePrice(row, { ...bulk, binance: { XUSDT: Number.NaN } })).toBe(12);
+  });
+});
+
+describe("computeEntry", () => {
+  const row: ManifestRow = {
+    ticker: "TEST",
+    venues: [{ venue: "bitget", symbol: "TESTUSDT" }],
+    peAuthored: 40,
+    capAuthored: 1e12,
+    basis: 100,
+  };
+
+  test("scales PE and cap by live/basis; prev only feeds the guard", () => {
+    const e = computeEntry(row, 120, 110)!; // +9% vs prev — inside guard band
+    expect(e.p).toBe("$120.00");
+    expect(e.pe).toBe("48.0"); // 40 × 120/100 — scaled by basis, not prev
+    expect(e.cap).toBe("$1.20T");
+    expect(e.review).toBeUndefined();
+    expect(e.raw).toBe(120);
+  });
+
+  test("null authored fields stay null", () => {
+    const sparse: ManifestRow = { ...row, peAuthored: null, capAuthored: null };
+    const e = computeEntry(sparse, 120, 100)!;
+    expect(e.pe).toBeNull();
+    expect(e.cap).toBeNull();
+    expect(e.p).toBe("$120.00");
+  });
+
+  test("discontinuity freezes PE/cap and flags review", () => {
+    const e = computeEntry(row, 4, 100)!; // 25:1 split shape
+    expect(e.p).toBe("$4.00");
+    expect(e.pe).toBeNull();
+    expect(e.cap).toBeNull();
+    expect(e.review).toBe(true);
+  });
+
+  test("no live price returns null (authored numbers stand)", () => {
+    expect(computeEntry(row, null, 100)).toBeNull();
+    expect(computeEntry(row, Number.NaN, 100)).toBeNull();
+    expect(computeEntry(row, 0, 100)).toBeNull();
+  });
+
+  test("first run uses basis as the guard baseline", () => {
+    const e = computeEntry(row, 110, null)!;
+    expect(e.review).toBeUndefined();
+    expect(e.pe).toBe("44.0"); // 40 × 110/100
+  });
+
+  test("zero basis cannot scale — price still served, pe/cap null", () => {
+    const noBasis: ManifestRow = { ...row, basis: 0 };
+    const e = computeEntry(noBasis, 110, 100)!;
+    expect(e.p).toBe("$110.00");
+    expect(e.pe).toBeNull();
+    expect(e.cap).toBeNull();
+  });
+});
+
+describe("computeAll", () => {
+  const manifest: Manifest = {
+    seededAt: "2026-08-15T00:00:00Z",
+    tickers: {
+      AAA: { ticker: "AAA", venues: [{ venue: "binance", symbol: "AAAUSDT" }], peAuthored: 10, capAuthored: 1e9, basis: 100 },
+      SPLIT: { ticker: "SPLIT", venues: [{ venue: "okx", symbol: "SPLIT-USDT-SWAP" }], peAuthored: 20, capAuthored: 2e9, basis: 100 },
+      GONE: { ticker: "GONE", venues: [{ venue: "binance", symbol: "GONEUSDT" }], peAuthored: 5, capAuthored: 5e8, basis: 50 },
+    },
+  };
+  const bulk: VenueBulk = {
+    binance: { AAAUSDT: 120, GONEUSDT: Number.NaN },
+    bitget: {},
+    okx: { "SPLIT-USDT-SWAP": 4 },
+  };
+
+  test("computes entries, skips dead symbols, flags discontinuities", () => {
+    const payload = computeAll(manifest, bulk, null);
+    expect(Object.keys(payload.entries).sort()).toEqual(["AAA", "SPLIT"]);
+    expect(payload.entries.AAA.pe).toBe("12.0");
+    expect(payload.entries.AAA.raw).toBe(120);
+    expect(payload.flagged).toEqual(["SPLIT"]);
+    expect(payload.entries.SPLIT.review).toBe(true);
+  });
+
+  test("previous payload provides the guard baseline (day-over-day guard)", () => {
+    const first = computeAll(manifest, bulk, null);
+    // SPLIT re-run at the same 4: no NEW discontinuity vs the stored raw 4.
+    const second = computeAll(manifest, bulk, first);
+    expect(second.flagged).toEqual([]);
+    expect(second.entries.SPLIT.review).toBeUndefined();
+    // PE is now un-frozen and tracks live/basis (20 × 4/100).
+    expect(second.entries.SPLIT.pe).toBe("0.8");
+  });
+
+  test("empty or broken manifests produce empty results, never throw", () => {
+    expect(computeAll(null, bulk, null)).toEqual({ entries: {}, flagged: [] });
+    expect(computeAll({ tickers: {} }, bulk, null)).toEqual({ entries: {}, flagged: [] });
+    expect(computeAll({ tickers: { X: null as unknown as ManifestRow } }, bulk, null)).toEqual({
+      entries: {},
+      flagged: [],
+    });
+  });
+
+  test("flagged preserves manifest order", () => {
+    const m: Manifest = {
+      tickers: {
+        B2: { ticker: "B2", venues: [{ venue: "okx", symbol: "B2-USDT-SWAP" }], peAuthored: 1, capAuthored: 1e9, basis: 100 },
+        A1: { ticker: "A1", venues: [{ venue: "okx", symbol: "A1-USDT-SWAP" }], peAuthored: 1, capAuthored: 1e9, basis: 100 },
+      },
+    };
+    const b: VenueBulk = { binance: {}, bitget: {}, okx: { "B2-USDT-SWAP": 10, "A1-USDT-SWAP": 20 } };
+    expect(computeAll(m, b, null).flagged).toEqual(["B2", "A1"]);
+  });
+});

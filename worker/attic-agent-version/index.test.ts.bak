@@ -1,0 +1,318 @@
+/**
+ * index.test.ts — deterministic coverage of the worker contract:
+ *   - scheduled(): exactly 3 bulk venue fetches → one merged KV put
+ *   - fetch(): GET /prices with CORS, OPTIONS preflight, 404/405/503 paths
+ *
+ * All networking is stubbed by swapping globalThis.fetch; the KV binding is
+ * an in-memory map. No live calls, no Cloudflare account needed.
+ */
+
+import { describe, test, expect, afterEach } from "bun:test";
+import worker, {
+  scheduled,
+  runHydration,
+  MANIFEST_KEY,
+  PRICES_KEY,
+  SNAPSHOT_TTL_SECONDS,
+  VENUE_URLS,
+  fetchVenueBulk,
+} from "./index";
+import type { Env, ExecutionContext, ScheduledController } from "./index";
+import type { Manifest, ManifestRow, PricesPayload } from "./ratio";
+
+const realFetch = globalThis.fetch;
+const fetchCalls: string[] = [];
+
+/** In-memory KV double recording every put. */
+function makeEnv(seed: Record<string, string> = {}): {
+  env: Env;
+  store: Map<string, string>;
+  puts: Array<{ key: string; value: string; opts?: { expirationTtl?: number } }>;
+} {
+  const store = new Map(Object.entries(seed));
+  const puts: Array<{ key: string; value: string; opts?: { expirationTtl?: number } }> = [];
+  const env: Env = {
+    PRICES: {
+      get: (async (key: string, type?: "json") => {
+        const v = store.get(key) ?? null;
+        return type === "json" ? (v === null ? null : JSON.parse(v)) : v;
+      }) as Env["PRICES"]["get"],
+      put: async (key, value, opts) => {
+        store.set(key, value);
+        puts.push({ key, value, opts });
+      },
+    },
+  };
+  return { env, store, puts };
+}
+
+/* Live endpoint shapes (verified against the real APIs). */
+const BINANCE_BODY = JSON.stringify([
+  { symbol: "AAPLUSDT", price: "306.06", time: 1 },
+  { symbol: "AMATUSDT", price: "506.64", time: 1 },
+  { symbol: "BTCUSDT", price: "99000.0", time: 1 },
+]);
+const BITGET_BODY = JSON.stringify({
+  msg: "success",
+  data: [
+    { symbol: "AMATUSDT", lastPr: "506.9" },
+    { symbol: "AALUSDT", lastPr: "14.812" },
+  ],
+});
+const OKX_BODY = JSON.stringify({
+  code: "0",
+  data: [
+    { instId: "AMAT-USDT-SWAP", last: "506.54" },
+    { instId: "AAOI-USDT-SWAP", last: "154.27" },
+  ],
+});
+
+type FetchBehavior = { fail?: "binance" | "bitget" | "okx"; binanceBody?: string };
+
+function installFetchMock(behavior: FetchBehavior = {}): void {
+  fetchCalls.length = 0;
+  globalThis.fetch = (async (input: string | Request | URL): Promise<Response> => {
+    const url = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
+    fetchCalls.push(url);
+    const status = (() => {
+      for (const [venue, base] of Object.entries(VENUE_URLS)) {
+        if (url.startsWith(base) && behavior.fail === venue) return 503;
+      }
+      return 200;
+    })();
+    const body = url.startsWith(VENUE_URLS.binance)
+      ? behavior.binanceBody ?? BINANCE_BODY
+      : url.startsWith(VENUE_URLS.bitget)
+        ? BITGET_BODY
+        : url.startsWith(VENUE_URLS.okx)
+          ? OKX_BODY
+          : "not found";
+    return new Response(body, { status });
+  }) as typeof fetch;
+}
+
+afterEach(() => {
+  globalThis.fetch = realFetch;
+});
+
+const CONTROLLER = { cron: "0 * * * *", scheduledTime: 0, noRetry: () => {} } as ScheduledController;
+const CTX = { waitUntil: () => {}, passThroughOnException: () => {} } as ExecutionContext;
+
+const MANIFEST: Manifest = {
+  seededAt: "2026-08-15T22:59:29.068Z",
+  tickers: {
+    AAPL: { ticker: "AAPL", venues: [{ venue: "binance", symbol: "AAPLUSDT" }], peAuthored: 30.6, capAuthored: 4.65e12, basis: 305.933 },
+    AMAT: {
+      ticker: "AMAT",
+      venues: [
+        { venue: "bitget", symbol: "AMATUSDT" },
+        { venue: "binance", symbol: "AMATUSDT" },
+        { venue: "okx", symbol: "AMAT-USDT-SWAP" },
+      ],
+      peAuthored: 67.2,
+      capAuthored: 424.9e9,
+      basis: 506.64,
+    },
+  },
+};
+
+describe("scheduled handler", () => {
+  test("runs exactly 3 bulk venue fetches and puts one merged payload", async () => {
+    installFetchMock();
+    const { env, puts } = makeEnv({ [MANIFEST_KEY]: JSON.stringify(MANIFEST) });
+
+    await scheduled(CONTROLLER, env, CTX);
+
+    // Exactly one fetch per venue source.
+    expect(fetchCalls.filter((u) => u.startsWith(VENUE_URLS.binance)).length).toBe(1);
+    expect(fetchCalls.filter((u) => u.startsWith(VENUE_URLS.bitget)).length).toBe(1);
+    expect(fetchCalls.filter((u) => u.startsWith(VENUE_URLS.okx)).length).toBe(1);
+    expect(fetchCalls.length).toBe(3);
+
+    // Exactly one KV put of the payload, with a TTL.
+    expect(puts.length).toBe(1);
+    expect(puts[0].key).toBe(PRICES_KEY);
+    expect(puts[0].opts?.expirationTtl).toBe(SNAPSHOT_TTL_SECONDS);
+
+    const payload: PricesPayload = JSON.parse(puts[0].value);
+    expect(() => new Date(payload.asOf!).toISOString()).not.toThrow();
+    expect(payload.flagged).toEqual([]);
+
+    // AAPL: binance quote scales authored numbers by live/basis.
+    expect(payload.entries.AAPL).toEqual({
+      p: "$306.06",
+      pe: "30.6", // 30.6 × 306.06/305.933 = 30.612… → 30.6
+      cap: "$4.65T", // 4.65e12 × 1.000416 → 4.6519e12 → "$4.65T"
+      raw: 306.06,
+    });
+
+    // AMAT: binance priority wins over bitget/okx despite link order.
+    expect(payload.entries.AMAT.p).toBe("$506.64");
+    expect(payload.entries.AMAT.raw).toBe(506.64);
+    expect(payload.entries.AMAT.pe).toBe("67.2"); // ratio 1.0 → unchanged
+
+    // Every venue reports healthy with its parsed row count.
+    expect(payload.sources).toEqual({
+      binance: { ok: true, count: 3 },
+      bitget: { ok: true, count: 2 },
+      okx: { ok: true, count: 2 },
+    });
+  });
+
+  test("previous KV payload provides the day-over-day guard baseline", async () => {
+    // Previous run saw AAPL at 300; binance now prints 150 — a 2:1 split shape.
+    installFetchMock({
+      binanceBody: JSON.stringify([
+        { symbol: "AAPLUSDT", price: "150.00", time: 1 },
+        { symbol: "AMATUSDT", price: "506.64", time: 1 },
+      ]),
+    });
+    const prev: PricesPayload = {
+      asOf: "2026-08-15T21:00:00.000Z",
+      entries: { AAPL: { p: "$300.00", pe: "30.0", cap: "$4.60T", raw: 300 } },
+      flagged: [],
+    };
+    const { env, puts } = makeEnv({
+      [MANIFEST_KEY]: JSON.stringify(MANIFEST),
+      [PRICES_KEY]: JSON.stringify(prev),
+    });
+
+    await scheduled(CONTROLLER, env, CTX);
+
+    const payload: PricesPayload = JSON.parse(puts[0].value);
+    expect(payload.flagged).toEqual(["AAPL"]);
+    expect(payload.entries.AAPL.review).toBe(true);
+    expect(payload.entries.AAPL.p).toBe("$150.00"); // price still shown
+    expect(payload.entries.AAPL.pe).toBeNull(); // P/E frozen pending review
+    expect(payload.entries.AAPL.cap).toBeNull();
+    expect(payload.entries.AMAT.review).toBeUndefined(); // unaffected ticker
+  });
+
+  test("one failing venue degrades gracefully — payload is still written", async () => {
+    installFetchMock({ fail: "binance" });
+    const { env, puts } = makeEnv({ [MANIFEST_KEY]: JSON.stringify(MANIFEST) });
+
+    await scheduled(CONTROLLER, env, CTX);
+
+    expect(puts.length).toBe(1);
+    const payload: PricesPayload = JSON.parse(puts[0].value);
+    expect(payload.sources!.binance).toEqual({ ok: false, count: 0, error: "binance HTTP 503" });
+    expect(payload.sources!.bitget.ok).toBe(true);
+    expect(payload.sources!.okx.ok).toBe(true);
+
+    // AAPL has no binance listing elsewhere → absent; AMAT falls through to
+    // its bitget quote (506.9).
+    expect(payload.entries.AAPL).toBeUndefined();
+    expect(payload.entries.AMAT.raw).toBe(506.9);
+  });
+
+  test("without a manifest the payload is empty but still written (and never throws)", async () => {
+    installFetchMock();
+    const { env, puts } = makeEnv();
+
+    await scheduled(CONTROLLER, env, CTX);
+
+    expect(puts.length).toBe(1);
+    const payload: PricesPayload = JSON.parse(puts[0].value);
+    expect(payload.entries).toEqual({});
+    expect(payload.flagged).toEqual([]);
+    expect(payload.sources!.binance.ok).toBe(true); // venues were fetched anyway
+  });
+});
+
+describe("fetch handler (GET /prices, CORS)", () => {
+  const snapshot: PricesPayload = {
+    asOf: "2026-08-15T23:00:00.000Z",
+    entries: { AAPL: { p: "$306.06", pe: "30.6", cap: "$4.65T", raw: 306.06 } },
+    flagged: [],
+    sources: { binance: { ok: true, count: 3 }, bitget: { ok: true, count: 2 }, okx: { ok: true, count: 2 } },
+  };
+
+  test("serves the KV payload as JSON with permissive CORS", async () => {
+    const { env } = makeEnv({ [PRICES_KEY]: JSON.stringify(snapshot) });
+    const res = await worker.fetch(new Request("https://moecap-prices.example.workers.dev/prices"), env, CTX);
+
+    expect(res.status).toBe(200);
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
+    expect(res.headers.get("Content-Type")).toContain("application/json");
+    expect(res.headers.get("Cache-Control")).toBe("public, max-age=300");
+    expect(await res.json()).toEqual(snapshot);
+  });
+
+  test("also serves /prices.json (same-origin source tried first by hydrate.js)", async () => {
+    const { env } = makeEnv({ [PRICES_KEY]: JSON.stringify(snapshot) });
+    const res = await worker.fetch(new Request("https://moecap-prices.example.workers.dev/prices.json"), env, CTX);
+    expect(res.status).toBe(200);
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
+  });
+
+  test("answers OPTIONS preflight with 204 + CORS", async () => {
+    const { env } = makeEnv();
+    const res = await worker.fetch(
+      new Request("https://moecap-prices.example.workers.dev/prices", { method: "OPTIONS" }),
+      env,
+      CTX,
+    );
+    expect(res.status).toBe(204);
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
+    expect(res.headers.get("Access-Control-Allow-Methods")).toBe("GET, OPTIONS");
+  });
+
+  test("503 with CORS when no payload exists yet", async () => {
+    const { env } = makeEnv();
+    const res = await worker.fetch(new Request("https://moecap-prices.example.workers.dev/prices"), env, CTX);
+    expect(res.status).toBe(503);
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
+    const body = (await res.json()) as { error: string };
+    expect(body.error).toContain("no price snapshot");
+  });
+
+  test("404 for unknown paths, 405 for non-GET /prices", async () => {
+    const { env } = makeEnv();
+    const notFound = await worker.fetch(new Request("https://moecap-prices.example.workers.dev/other"), env, CTX);
+    expect(notFound.status).toBe(404);
+    expect(notFound.headers.get("Access-Control-Allow-Origin")).toBe("*");
+
+    const post = await worker.fetch(
+      new Request("https://moecap-prices.example.workers.dev/prices", { method: "POST" }),
+      env,
+      CTX,
+    );
+    expect(post.status).toBe(405);
+  });
+});
+
+describe("fetchVenueBulk / runHydration", () => {
+  test("a venue returning no usable tickers is treated as failed, not empty-success", async () => {
+    installFetchMock({ binanceBody: JSON.stringify({ error: 1 }) });
+    await expect(fetchVenueBulk("binance")).rejects.toThrow(/no usable tickers/);
+  });
+
+  test("runHydration returns the payload without writing KV", async () => {
+    installFetchMock();
+    const { env, puts } = makeEnv({ [MANIFEST_KEY]: JSON.stringify(MANIFEST) });
+    const payload = await runHydration(env);
+    expect(puts.length).toBe(0);
+    expect(payload.entries.AAPL.raw).toBe(306.06);
+    expect(payload.asOf).toBeDefined();
+  });
+
+  test("empty venue responses everywhere still produce a well-formed payload", async () => {
+    installFetchMock({
+      binanceBody: JSON.stringify([]),
+    });
+    // bitget/okx mocks still return rows; force them empty via failure:
+    globalThis.fetch = (async (input: string | Request | URL): Promise<Response> => {
+      const url = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
+      fetchCalls.push(url);
+      return new Response("[]", { status: 200 });
+    }) as typeof fetch;
+    const { env } = makeEnv({ [MANIFEST_KEY]: JSON.stringify(MANIFEST) });
+    const payload = await runHydration(env);
+    expect(payload.entries).toEqual({});
+    expect(payload.flagged).toEqual([]);
+    expect(Object.keys(payload.sources!)).toEqual(["binance", "bitget", "okx"]);
+    expect(payload.sources!.binance.ok).toBe(false);
+    expect(payload.sources!.okx.ok).toBe(false);
+  });
+});
