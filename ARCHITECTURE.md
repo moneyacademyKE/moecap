@@ -116,3 +116,10 @@ Quality is enforced through a strict double-layered verification system:
 - **Context**: Tests previously had hardcoded machine directory strings (`/Users/moe/Desktop/moecapital`) and wrote to `/tmp`, triggering sandbox permission errors.
 - **Decision**: Refactor all test suites to resolve paths dynamically via `process.cwd()` and `import.meta.dir`, isolating temporary files to local `tests/.tmp_stocks/` fixtures with automated teardown.
 - **Consequences**: 100% green test pass rate in all development and sandboxed CI environments.
+
+### ADR-005: Venue-Sourced Price Hydration (moecap-prices Worker)
+- **Status**: Accepted
+- **Context**: Authored prices/P-E/caps in `us-stocks.json` go stale the day they are published; rebuilding the static site daily would pollute git history with bot commits.
+- **Decision**: Keep the site static. An hourly cron Worker (`worker/`) fetches three bulk venue tickers (Binance fapi, Bitget v2, OKX v5 — the exact instruments the page links to), recomputes P/E and market cap as `authored x (live / seeded basis)` in a pure module (`worker/src/ratio.ts`), and stores one JSON payload in KV, served at `/prices` with CORS. `src/hydrate.js` patches `data-field` spans client-side; if the fetch fails, authored build-time numbers remain (progressive enhancement). A >35% day-over-day discontinuity updates the price but freezes P/E and cap at authored values and flags the ticker for review (split guard).
+- **Alternatives rejected**: daily GitHub-Actions rebuild (commit pollution, CI porting); local-cron rebuild (not Cloudflare-level, laptop-bound); Yahoo as price source (bot-gated from datacenter IPs; venue APIs are the page's own listings).
+- **Consequences**: Zero marginal cost (3 subrequests + 1 KV write per hour), no redeploy for price freshness, git history stays content-only. Editing authored numbers requires re-seeding the manifest (`scripts/seed-prices.ts` + KV put).

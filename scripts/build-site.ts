@@ -3,7 +3,7 @@ import { getManifest } from "../src/assets";
 import { CONTENT, METADATA } from "../src/content";
 import { getUsStocksNode } from "../src/us-stocks";
 import { buildNsePage } from "../src/nse";
-import { writeFileSync, existsSync, mkdirSync, rmSync, cpSync } from "node:fs";
+import { writeFileSync, existsSync, mkdirSync, rmSync, cpSync, copyFileSync } from "node:fs";
 import * as fs from "node:fs";
 import { join } from "node:path";
 import type { ContentNode } from "../src/assets";
@@ -53,9 +53,14 @@ try {
 
     // 3. Render and Write
     const html = renderPage(allNodes, METADATA);
+    const withHydration = html.replace(
+        "</body>",
+        '    <script src="/hydrate.js" defer></script>\n</body>'
+    );
 
     const outputPath = join(PUBLIC_DIR, "index.html");
-    writeFileSync(outputPath, html);
+    writeFileSync(outputPath, withHydration);
+    copyFileSync(join(BASE_PATH, "src", "hydrate.js"), join(PUBLIC_DIR, "hydrate.js"));
 
     // 4. Compile NSE terminal
     buildNsePage(PUBLIC_DIR);

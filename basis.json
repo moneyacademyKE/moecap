@@ -1,0 +1,2753 @@
+{
+  "seededAt": "2026-08-15T23:19:30.801Z",
+  "tickers": {
+    "ADI": {
+      "ticker": "ADI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ADIUSDT"
+        }
+      ],
+      "peAuthored": 71.8,
+      "capAuthored": 191800000000,
+      "basis": 390.11
+    },
+    "AMAT": {
+      "ticker": "AMAT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AMATUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AMATUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AMAT-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 67.2,
+      "capAuthored": 424900000000,
+      "basis": 506.65
+    },
+    "AMZN": {
+      "ticker": "AMZN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AMZNUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AMZNUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AMZN-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 55.4,
+      "capAuthored": 2770000000000,
+      "basis": 264.11
+    },
+    "ASML": {
+      "ticker": "ASML",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ASMLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ASMLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ASML-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 95,
+      "capAuthored": 726500000000,
+      "basis": 1848.11
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AVGOUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AVGOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AVGO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 108,
+      "capAuthored": 1830000000000,
+      "basis": 396.2
+    },
+    "BKNG": {
+      "ticker": "BKNG",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "BKNGUSDT"
+        }
+      ],
+      "peAuthored": 26.4,
+      "capAuthored": 147200000000,
+      "basis": 212.1
+    },
+    "CPNG": {
+      "ticker": "CPNG",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CPNGUSDT"
+        }
+      ],
+      "peAuthored": 19.6,
+      "capAuthored": 29100000000,
+      "basis": 16.042
+    },
+    "DELL": {
+      "ticker": "DELL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "DELLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "DELLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "DELL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 91.2,
+      "capAuthored": 343800000000,
+      "basis": 491.85
+    },
+    "FLEX": {
+      "ticker": "FLEX",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "FLEXUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "FLEXUSDT"
+        }
+      ],
+      "peAuthored": 49.1,
+      "capAuthored": 51200000000,
+      "basis": 127.14
+    },
+    "GOOGL": {
+      "ticker": "GOOGL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GOOGLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "GOOGLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "GOOGL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 47.8,
+      "capAuthored": 4280000000000.0005,
+      "basis": 348.39
+    },
+    "KLAC": {
+      "ticker": "KLAC",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "KLACUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "KLACUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "KLAC-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 35.2,
+      "capAuthored": 102500000000,
+      "basis": 204.13
+    },
+    "LRCX": {
+      "ticker": "LRCX",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "LRCXUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "LRCXUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "LRCX-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 12.3,
+      "capAuthored": 43300000000,
+      "basis": 331.6
+    },
+    "MELI": {
+      "ticker": "MELI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MELIUSDT"
+        }
+      ],
+      "peAuthored": 76.4,
+      "capAuthored": 93700000000,
+      "basis": 1844.7
+    },
+    "META": {
+      "ticker": "META",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "METAUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "METAUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "META-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 29,
+      "capAuthored": 1490000000000,
+      "basis": 592.1
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MSFTUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "MSFTUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "MSFT-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 42.7,
+      "capAuthored": 3680000000000,
+      "basis": 496.44
+    },
+    "SGOV": {
+      "ticker": "SGOV",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SGOVUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": null,
+      "basis": 100.69
+    },
+    "TSEM": {
+      "ticker": "TSEM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TSEMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TSEM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 200.5,
+      "capAuthored": 29500000000,
+      "basis": 268.85
+    },
+    "TSM": {
+      "ticker": "TSM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TSMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "TSMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TSM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 73.7,
+      "capAuthored": 2210000000000,
+      "basis": 425.07
+    },
+    "UNH": {
+      "ticker": "UNH",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "UNHUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "UNH-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 16.8,
+      "capAuthored": 374300000000,
+      "basis": 401.52
+    },
+    "V": {
+      "ticker": "V",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "VUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "VUSDT"
+        }
+      ],
+      "peAuthored": 39.9,
+      "capAuthored": 707200000000,
+      "basis": 366.22
+    },
+    "VOO": {
+      "ticker": "VOO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "VOOUSDT"
+        }
+      ],
+      "peAuthored": 28.1,
+      "capAuthored": null,
+      "basis": 713.14
+    },
+    "VST": {
+      "ticker": "VST",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "VSTUSDT"
+        }
+      ],
+      "peAuthored": 38.5,
+      "capAuthored": 50100000000,
+      "basis": 148.73
+    },
+    "AAOI": {
+      "ticker": "AAOI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AAOIUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AAOIUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AAOI-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 5600000000,
+      "basis": 154.32
+    },
+    "AAPL": {
+      "ticker": "AAPL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AAPLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AAPLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AAPL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 46.4,
+      "capAuthored": 4650000000000,
+      "basis": 305.93
+    },
+    "ABNB": {
+      "ticker": "ABNB",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ABNBUSDT"
+        }
+      ],
+      "peAuthored": 22.9,
+      "capAuthored": 117500000000,
+      "basis": 183.84
+    },
+    "ADBE": {
+      "ticker": "ADBE",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ADBEUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ADBEUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ADBE-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 21.4,
+      "capAuthored": 118200000000,
+      "basis": 263.8
+    },
+    "AEHR": {
+      "ticker": "AEHR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AEHRUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AEHR-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 237.3,
+      "capAuthored": 3900000000,
+      "basis": 133.9
+    },
+    "ALAB": {
+      "ticker": "ALAB",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ALABUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ALABUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ALAB-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 51500000000,
+      "basis": 319.37
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AMDUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AMDUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AMD-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 659.5,
+      "capAuthored": 829400000000,
+      "basis": 515.9
+    },
+    "AMGN": {
+      "ticker": "AMGN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AMGNUSDT"
+        }
+      ],
+      "peAuthored": 23.6,
+      "capAuthored": 222300000000,
+      "basis": 415.1
+    },
+    "AMKR": {
+      "ticker": "AMKR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AMKRUSDT"
+        }
+      ],
+      "peAuthored": 37.6,
+      "capAuthored": 14200000000,
+      "basis": 59.33
+    },
+    "ANET": {
+      "ticker": "ANET",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ANETUSDT"
+        }
+      ],
+      "peAuthored": 26.4,
+      "capAuthored": 62900000000,
+      "basis": 199.04
+    },
+    "APD": {
+      "ticker": "APD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "APDUSDT"
+        }
+      ],
+      "peAuthored": 26.6,
+      "capAuthored": 69600000000,
+      "basis": 307.43
+    },
+    "APLD": {
+      "ticker": "APLD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "APLDUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "APLD-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 5900000000,
+      "basis": 31.22
+    },
+    "APP": {
+      "ticker": "APP",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "APPUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "APPUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "APP-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 97.8,
+      "capAuthored": 107600000000,
+      "basis": 317.9
+    },
+    "ARM": {
+      "ticker": "ARM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ARMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ARMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ARM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 198,
+      "capAuthored": 295400000000,
+      "basis": 279.33
+    },
+    "ASTS": {
+      "ticker": "ASTS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ASTSUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ASTSUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ASTS-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 20400000000,
+      "basis": 72.28
+    },
+    "AVAV": {
+      "ticker": "AVAV",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AVAVUSDT"
+        }
+      ],
+      "peAuthored": 151,
+      "capAuthored": 5300000000,
+      "basis": 193.04
+    },
+    "AXON": {
+      "ticker": "AXON",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AXONUSDT"
+        }
+      ],
+      "peAuthored": 144.7,
+      "capAuthored": 47300000000,
+      "basis": 613.37
+    },
+    "AXTI": {
+      "ticker": "AXTI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AXTIUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "AXTIUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "AXTI-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 4000000000,
+      "basis": 80.95
+    },
+    "BABA": {
+      "ticker": "BABA",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "BABAUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BABAUSDT"
+        }
+      ],
+      "peAuthored": 22.7,
+      "capAuthored": 296200000000,
+      "basis": 124.96
+    },
+    "BAC": {
+      "ticker": "BAC",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "BACUSDT"
+        }
+      ],
+      "peAuthored": 20.6,
+      "capAuthored": 498100000000,
+      "basis": 65.07
+    },
+    "BE": {
+      "ticker": "BE",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "BEUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BEUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "BE-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 57300000000,
+      "basis": 236.76
+    },
+    "BX": {
+      "ticker": "BX",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "BXUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BXUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "BX-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 38.9,
+      "capAuthored": 172200000000,
+      "basis": 144.19
+    },
+    "CAT": {
+      "ticker": "CAT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CATUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CATUSDT"
+        }
+      ],
+      "peAuthored": 39.7,
+      "capAuthored": 424500000000,
+      "basis": 868
+    },
+    "CBRS": {
+      "ticker": "CBRS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CBRSUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CBRSUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CBRS-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 170300000000,
+      "basis": 221.72
+    },
+    "CIEN": {
+      "ticker": "CIEN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CIENUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CIENUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CIEN-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 212,
+      "capAuthored": 60900000000,
+      "basis": 430.14
+    },
+    "CL": {
+      "ticker": "CL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 25,
+      "capAuthored": 76100000000,
+      "basis": 81.194
+    },
+    "CMCSA": {
+      "ticker": "CMCSA",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CMCSAUSDT"
+        }
+      ],
+      "peAuthored": 10.8,
+      "capAuthored": 167000000000,
+      "basis": 26.273
+    },
+    "COHR": {
+      "ticker": "COHR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "COHRUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "COHRUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "COHR-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 126.4,
+      "capAuthored": 48600000000,
+      "basis": 330.53
+    },
+    "COIN": {
+      "ticker": "COIN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "COINUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "COINUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "COIN-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 20.5,
+      "capAuthored": 36400000000,
+      "basis": 149.22
+    },
+    "COMP": {
+      "ticker": "COMP",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "COMP-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 10000000000,
+      "basis": 16.22
+    },
+    "COP": {
+      "ticker": "COP",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "COPUSDT"
+        }
+      ],
+      "peAuthored": 14.2,
+      "capAuthored": 151500000000,
+      "basis": 126.21
+    },
+    "COST": {
+      "ticker": "COST",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "COSTUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "COSTUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "COST-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 56.9,
+      "capAuthored": 426500000000,
+      "basis": 960
+    },
+    "CRCL": {
+      "ticker": "CRCL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CRCLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CRCLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CRCL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 9000000000,
+      "basis": 71.4
+    },
+    "CRDO": {
+      "ticker": "CRDO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CRDOUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CRDOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CRDO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 44700000000,
+      "basis": 261.68
+    },
+    "CRM": {
+      "ticker": "CRM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CRMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CRMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CRM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 28.2,
+      "capAuthored": 183600000000,
+      "basis": 195.75
+    },
+    "CRWD": {
+      "ticker": "CRWD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CRWDUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CRWDUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CRWD-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 472.1,
+      "capAuthored": 82400000000,
+      "basis": 216.78
+    },
+    "CSCO": {
+      "ticker": "CSCO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "CSCOUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "CSCOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "CSCO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 36,
+      "capAuthored": 449100000000,
+      "basis": 112.09
+    },
+    "DDOG": {
+      "ticker": "DDOG",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "DDOGUSDT"
+        }
+      ],
+      "peAuthored": 510.9,
+      "capAuthored": 88300000000,
+      "basis": 255.72
+    },
+    "DIS": {
+      "ticker": "DIS",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "DISUSDT"
+        }
+      ],
+      "peAuthored": 33.4,
+      "capAuthored": 193200000000,
+      "basis": 108.26
+    },
+    "DKNG": {
+      "ticker": "DKNG",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "DKNGUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "DKNGUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "DKNG-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 12900000000,
+      "basis": 26.23
+    },
+    "EBAY": {
+      "ticker": "EBAY",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "EBAYUSDT"
+        }
+      ],
+      "peAuthored": 23.4,
+      "capAuthored": 53600000000,
+      "basis": 104.49
+    },
+    "ETN": {
+      "ticker": "ETN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ETNUSDT"
+        }
+      ],
+      "peAuthored": 53,
+      "capAuthored": 178800000000,
+      "basis": 454.68
+    },
+    "EWY": {
+      "ticker": "EWY",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "EWYUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "EWYUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "EWY-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 10.8,
+      "capAuthored": null,
+      "basis": 180.36
+    },
+    "FLNC": {
+      "ticker": "FLNC",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "FLNCUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "FLNCUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "FLNC-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 2400000000,
+      "basis": 13.21
+    },
+    "GE": {
+      "ticker": "GE",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GEUSDT"
+        }
+      ],
+      "peAuthored": 84.9,
+      "capAuthored": 395300000000,
+      "basis": 368.13
+    },
+    "GEV": {
+      "ticker": "GEV",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GEVUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "GEVUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "GEV-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 126.4,
+      "capAuthored": 289700000000,
+      "basis": 1064.7
+    },
+    "GFS": {
+      "ticker": "GFS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GFSUSDT"
+        }
+      ],
+      "peAuthored": 30.4,
+      "capAuthored": 30700000000,
+      "basis": 54.675
+    },
+    "GILD": {
+      "ticker": "GILD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GILDUSDT"
+        }
+      ],
+      "peAuthored": 23.3,
+      "capAuthored": 174400000000,
+      "basis": 139.01
+    },
+    "GLW": {
+      "ticker": "GLW",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GLWUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "GLWUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "GLW-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 101.7,
+      "capAuthored": 142100000000,
+      "basis": 167.08
+    },
+    "GS": {
+      "ticker": "GS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GSUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "GSUSDT"
+        }
+      ],
+      "peAuthored": 28.8,
+      "capAuthored": 332300000000,
+      "basis": 1034.06
+    },
+    "HD": {
+      "ticker": "HD",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "HDUSDT"
+        }
+      ],
+      "peAuthored": 21.4,
+      "capAuthored": 336000000000,
+      "basis": 336.15
+    },
+    "HIMS": {
+      "ticker": "HIMS",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "HIMSUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "HIMS-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 296.3,
+      "capAuthored": 6000000000,
+      "basis": 28.53
+    },
+    "HOOD": {
+      "ticker": "HOOD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "HOODUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "HOODUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "HOOD-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 331.3,
+      "capAuthored": 83900000000,
+      "basis": 96.02
+    },
+    "HPE": {
+      "ticker": "HPE",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "HPEUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "HPEUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "HPE-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 37.2,
+      "capAuthored": 76300000000,
+      "basis": 59.65
+    },
+    "IBM": {
+      "ticker": "IBM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "IBMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "IBMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "IBM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 24.7,
+      "capAuthored": 216900000000,
+      "basis": 234.63
+    },
+    "IREN": {
+      "ticker": "IREN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "IRENUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "IRENUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "IREN-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 12000000000,
+      "basis": 44.56
+    },
+    "ISRG": {
+      "ticker": "ISRG",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ISRGUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ISRG-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 63.8,
+      "capAuthored": 140500000000,
+      "basis": 396.4
+    },
+    "IWM": {
+      "ticker": "IWM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "IWMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "IWMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "IWM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 15.4,
+      "capAuthored": null,
+      "basis": 304.49
+    },
+    "JD": {
+      "ticker": "JD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "JDUSDT"
+        }
+      ],
+      "peAuthored": 8.1,
+      "capAuthored": 44900000000,
+      "basis": 29.13
+    },
+    "JOBY": {
+      "ticker": "JOBY",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "JOBYUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 6200000000,
+      "basis": 7.991
+    },
+    "JPM": {
+      "ticker": "JPM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "JPMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "JPMUSDT"
+        }
+      ],
+      "peAuthored": 19.3,
+      "capAuthored": 1030000000000,
+      "basis": 363.79
+    },
+    "KO": {
+      "ticker": "KO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "KOUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "KOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "KO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 32.1,
+      "capAuthored": 379100000000,
+      "basis": 87.42
+    },
+    "KTOS": {
+      "ticker": "KTOS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "KTOSUSDT"
+        }
+      ],
+      "peAuthored": 222.7,
+      "capAuthored": 9900000000,
+      "basis": 64.64
+    },
+    "LIN": {
+      "ticker": "LIN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "LINUSDT"
+        }
+      ],
+      "peAuthored": 35,
+      "capAuthored": 230900000000,
+      "basis": 483.2
+    },
+    "LITE": {
+      "ticker": "LITE",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "LITEUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "LITEUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "LITE-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 62400000000,
+      "basis": 923.08
+    },
+    "LLY": {
+      "ticker": "LLY",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "LLYUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "LLYUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "LLY-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 141.7,
+      "capAuthored": 1120000000000,
+      "basis": 1181.44
+    },
+    "LMT": {
+      "ticker": "LMT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "LMTUSDT"
+        }
+      ],
+      "peAuthored": 19.2,
+      "capAuthored": 140500000000,
+      "basis": 610.21
+    },
+    "LUNR": {
+      "ticker": "LUNR",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "LUNR-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 2500000000,
+      "basis": 19.01
+    },
+    "MAR": {
+      "ticker": "MAR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MARUSDT"
+        }
+      ],
+      "peAuthored": 34.8,
+      "capAuthored": 96100000000,
+      "basis": 356.51
+    },
+    "MCD": {
+      "ticker": "MCD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MCDUSDT"
+        }
+      ],
+      "peAuthored": 22.7,
+      "capAuthored": 196100000000,
+      "basis": 274.7
+    },
+    "MDB": {
+      "ticker": "MDB",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MDBUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 34100000000,
+      "basis": 460.17
+    },
+    "MP": {
+      "ticker": "MP",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MPUSDT"
+        }
+      ],
+      "peAuthored": 116.4,
+      "capAuthored": 8700000000,
+      "basis": 59.08
+    },
+    "MRVL": {
+      "ticker": "MRVL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MRVLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "MRVLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "MRVL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 211.3,
+      "capAuthored": 190500000000,
+      "basis": 221.9
+    },
+    "MSTR": {
+      "ticker": "MSTR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MSTRUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "MSTRUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "MSTR-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 21100000000,
+      "basis": 94.48
+    },
+    "MU": {
+      "ticker": "MU",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "MUUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "MUUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "MU-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 283,
+      "capAuthored": 1120000000000,
+      "basis": 977.78
+    },
+    "NET": {
+      "ticker": "NET",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "NET-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 109100000000,
+      "basis": 310.71
+    },
+    "NFLX": {
+      "ticker": "NFLX",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "NFLXUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "NFLXUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "NFLX-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 44.5,
+      "capAuthored": 355000000000,
+      "basis": 78.47
+    },
+    "NKE": {
+      "ticker": "NKE",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "NKEUSDT"
+        }
+      ],
+      "peAuthored": 12.3,
+      "capAuthored": 62000000000,
+      "basis": 41.046
+    },
+    "NOK": {
+      "ticker": "NOK",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "NOKUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "NOK-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 44.2,
+      "capAuthored": 60700000000,
+      "basis": 10.69
+    },
+    "NOW": {
+      "ticker": "NOW",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "NOWUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "NOWUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "NOW-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 78.5,
+      "capAuthored": 182000000000,
+      "basis": 123.97
+    },
+    "NTAP": {
+      "ticker": "NTAP",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "NTAPUSDT"
+        }
+      ],
+      "peAuthored": 40.3,
+      "capAuthored": 43000000000,
+      "basis": 207.05
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "NVDAUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "NVDAUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "NVDA-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 121.9,
+      "capAuthored": 5530000000000,
+      "basis": 225.35
+    },
+    "NVO": {
+      "ticker": "NVO",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "NVOUSDT"
+        }
+      ],
+      "peAuthored": 15,
+      "capAuthored": 205300000000,
+      "basis": 45.82
+    },
+    "OKLO": {
+      "ticker": "OKLO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "OKLOUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 5100000000,
+      "basis": 44.73
+    },
+    "OKTA": {
+      "ticker": "OKTA",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "OKTA-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 24100000000,
+      "basis": 146.61
+    },
+    "ON": {
+      "ticker": "ON",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "ON-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 17.1,
+      "capAuthored": 28400000000,
+      "basis": 81.54
+    },
+    "ORCL": {
+      "ticker": "ORCL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ORCLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ORCLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ORCL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 36.5,
+      "capAuthored": 416200000000,
+      "basis": 151.23
+    },
+    "OSCR": {
+      "ticker": "OSCR",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "OSCR-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 8300000000.000001,
+      "basis": 33.11
+    },
+    "OSS": {
+      "ticker": "OSS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "OSSUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 57000000,
+      "basis": 13.778
+    },
+    "OUST": {
+      "ticker": "OUST",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "OUSTUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 3700000000,
+      "basis": 49.66
+    },
+    "OXY": {
+      "ticker": "OXY",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "OXYUSDT"
+        }
+      ],
+      "peAuthored": 18.9,
+      "capAuthored": 55400000000,
+      "basis": 58.26
+    },
+    "PANW": {
+      "ticker": "PANW",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "PANWUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "PANWUSDT"
+        }
+      ],
+      "peAuthored": 48.1,
+      "capAuthored": 125200000000,
+      "basis": 382.07
+    },
+    "PDD": {
+      "ticker": "PDD",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "PDDUSDT"
+        }
+      ],
+      "peAuthored": 10.2,
+      "capAuthored": 118100000000,
+      "basis": 85.77
+    },
+    "PL": {
+      "ticker": "PL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "PLUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 9200000000,
+      "basis": 24.716
+    },
+    "PLTR": {
+      "ticker": "PLTR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "PLTRUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "PLTRUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "PLTR-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 764.3,
+      "capAuthored": 397400000000,
+      "basis": 175.43
+    },
+    "POET": {
+      "ticker": "POET",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "POETUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "POET-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 469000000,
+      "basis": 9.539
+    },
+    "PYPL": {
+      "ticker": "PYPL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "PYPLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "PYPLUSDT"
+        }
+      ],
+      "peAuthored": 14.3,
+      "capAuthored": 63900000000,
+      "basis": 64.03
+    },
+    "QCOM": {
+      "ticker": "QCOM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "QCOMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "QCOMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "QCOM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 20.6,
+      "capAuthored": 184800000000,
+      "basis": 165.05
+    },
+    "QQQ": {
+      "ticker": "QQQ",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "QQQUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "QQQUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "QQQ-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 49.7,
+      "capAuthored": 438000000000,
+      "basis": 732.11
+    },
+    "RCAT": {
+      "ticker": "RCAT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "RCATUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 1100000000,
+      "basis": 11.086
+    },
+    "RDDT": {
+      "ticker": "RDDT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "RDDTUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "RDDTUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "RDDT-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 31200000000,
+      "basis": 177.57
+    },
+    "RDW": {
+      "ticker": "RDW",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "RDWUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "RDW-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 1100000000,
+      "basis": 13.683
+    },
+    "RIOT": {
+      "ticker": "RIOT",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "RIOT-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 5400000000,
+      "basis": 18.8
+    },
+    "RKLB": {
+      "ticker": "RKLB",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "RKLBUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "RKLBUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "RKLB-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 41100000000,
+      "basis": 80.31
+    },
+    "ROK": {
+      "ticker": "ROK",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ROKUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ROK-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 45.4,
+      "capAuthored": 51800000000,
+      "basis": 455.07
+    },
+    "SHOP": {
+      "ticker": "SHOP",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SHOPUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SHOP-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 137,
+      "capAuthored": 199800000000,
+      "basis": 154.64
+    },
+    "SIMO": {
+      "ticker": "SIMO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SIMOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SIMO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 94.7,
+      "capAuthored": 9300000000,
+      "basis": 268.6
+    },
+    "SITM": {
+      "ticker": "SITM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SITMUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 15900000000,
+      "basis": 714.61
+    },
+    "SMCI": {
+      "ticker": "SMCI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SMCIUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SMCIUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SMCI-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 8.5,
+      "capAuthored": 23400000000,
+      "basis": 39.88
+    },
+    "SMH": {
+      "ticker": "SMH",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SMHUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SMHUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SMH-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 35.8,
+      "capAuthored": null,
+      "basis": 588.75
+    },
+    "SNOW": {
+      "ticker": "SNOW",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SNOWUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SNOWUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SNOW-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 113900000000,
+      "basis": 329.49
+    },
+    "SOFI": {
+      "ticker": "SOFI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SOFIUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SOFIUSDT"
+        }
+      ],
+      "peAuthored": 304.8,
+      "capAuthored": 20300000000,
+      "basis": 18.35
+    },
+    "SONY": {
+      "ticker": "SONY",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SONYUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SONYUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SONY-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 4.8,
+      "capAuthored": 30200000000,
+      "basis": 24.41
+    },
+    "SOXX": {
+      "ticker": "SOXX",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SOXXUSDT"
+        }
+      ],
+      "peAuthored": 36.4,
+      "capAuthored": null,
+      "basis": 551.81
+    },
+    "SPIR": {
+      "ticker": "SPIR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SPIRUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 318000000,
+      "basis": 13.79
+    },
+    "SPY": {
+      "ticker": "SPY",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SPYUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SPYUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SPY-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 28.4,
+      "capAuthored": null,
+      "basis": 777.24
+    },
+    "TER": {
+      "ticker": "TER",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TERUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "TERUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TER-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 129.5,
+      "capAuthored": 65700000000,
+      "basis": 418.45
+    },
+    "TM": {
+      "ticker": "TM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TMUSDT"
+        }
+      ],
+      "peAuthored": 9,
+      "capAuthored": 259100000000.00003,
+      "basis": 190.7
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TSLAUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "TSLAUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TSLA-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 94.6,
+      "capAuthored": 1100000000000,
+      "basis": 343.34
+    },
+    "TTWO": {
+      "ticker": "TTWO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TTWOUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "TTWOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TTWO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 44200000000,
+      "basis": 249.83
+    },
+    "TWLO": {
+      "ticker": "TWLO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TWLOUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TWLO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 41200000000,
+      "basis": 242.86
+    },
+    "TXN": {
+      "ticker": "TXN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TXNUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "TXNUSDT"
+        }
+      ],
+      "peAuthored": 41.1,
+      "capAuthored": 255100000000,
+      "basis": 282.04
+    },
+    "UBER": {
+      "ticker": "UBER",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "UBERUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "UBERUSDT"
+        }
+      ],
+      "peAuthored": 37.9,
+      "capAuthored": 157900000000,
+      "basis": 76.23
+    },
+    "USO": {
+      "ticker": "USO",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "USO-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 1900000000,
+      "basis": 125.48
+    },
+    "VRT": {
+      "ticker": "VRT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "VRTUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "VRTUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "VRT-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 130,
+      "capAuthored": 109900000000,
+      "basis": 292.08
+    },
+    "WDC": {
+      "ticker": "WDC",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "WDCUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "WDCUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "WDC-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 179,
+      "capAuthored": 167400000000,
+      "basis": 504.97
+    },
+    "WEN": {
+      "ticker": "WEN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "WENUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "WENUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "WEN-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 8.5,
+      "capAuthored": 1800000000,
+      "basis": 8.57
+    },
+    "WMT": {
+      "ticker": "WMT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "WMTUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "WMTUSDT"
+        }
+      ],
+      "peAuthored": 49.8,
+      "capAuthored": 924800000000,
+      "basis": 115.6
+    },
+    "XOM": {
+      "ticker": "XOM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "XOMUSDT"
+        }
+      ],
+      "peAuthored": 18.5,
+      "capAuthored": 716800000000,
+      "basis": 160.14
+    },
+    "ZM": {
+      "ticker": "ZM",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ZMUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "ZMUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "ZM-USDT-SWAP"
+        }
+      ],
+      "peAuthored": 31,
+      "capAuthored": 32799999999.999996,
+      "basis": 107.42
+    },
+    "AAL": {
+      "ticker": "AAL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "AALUSDT"
+        }
+      ],
+      "peAuthored": 16.6,
+      "capAuthored": 9600000000,
+      "basis": 14.812
+    },
+    "ACHR": {
+      "ticker": "ACHR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "ACHRUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 2200000000,
+      "basis": 6.628
+    },
+    "BA": {
+      "ticker": "BA",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "BAUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 144000000000,
+      "basis": 231.61
+    },
+    "BB": {
+      "ticker": "BB",
+      "venues": [
+        {
+          "venue": "okx",
+          "symbol": "BB-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 5200000000,
+      "basis": 8.853
+    },
+    "GME": {
+      "ticker": "GME",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "GMEUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "GMEUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "GME-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 5700000000,
+      "basis": 18.83
+    },
+    "INTC": {
+      "ticker": "INTC",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "INTCUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "INTCUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "INTC-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 437200000000,
+      "basis": 103.02
+    },
+    "IONQ": {
+      "ticker": "IONQ",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "IONQUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 10400000000,
+      "basis": 46.9
+    },
+    "KOPN": {
+      "ticker": "KOPN",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "KOPNUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 611000000,
+      "basis": 5.42
+    },
+    "NIO": {
+      "ticker": "NIO",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "NIOUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 9500000000,
+      "basis": 4.55
+    },
+    "QBTS": {
+      "ticker": "QBTS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "QBTSUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 3600000000,
+      "basis": 21.042
+    },
+    "QUBT": {
+      "ticker": "QUBT",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "QUBTUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 1900000000,
+      "basis": 8.954
+    },
+    "RGTI": {
+      "ticker": "RGTI",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "RGTIUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 4099999999.9999995,
+      "basis": 18.764
+    },
+    "RIVN": {
+      "ticker": "RIVN",
+      "venues": [
+        {
+          "venue": "binance",
+          "symbol": "RIVNUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "RIVN-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 15400000000,
+      "basis": 15.45
+    },
+    "SMR": {
+      "ticker": "SMR",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SMRUSDT"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 960000000,
+      "basis": 9.406
+    },
+    "SNDK": {
+      "ticker": "SNDK",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SNDKUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SNDKUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SNDK-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 0,
+      "basis": 1653.16
+    },
+    "SOXL": {
+      "ticker": "SOXL",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SOXLUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SOXLUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SOXL-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 32000000000,
+      "basis": 144.43
+    },
+    "SOXS": {
+      "ticker": "SOXS",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "SOXSUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "SOXSUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "SOXS-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": 810000000,
+      "basis": 40.39
+    },
+    "TQQQ": {
+      "ticker": "TQQQ",
+      "venues": [
+        {
+          "venue": "bitget",
+          "symbol": "TQQQUSDT"
+        },
+        {
+          "venue": "binance",
+          "symbol": "TQQQUSDT"
+        },
+        {
+          "venue": "okx",
+          "symbol": "TQQQ-USDT-SWAP"
+        }
+      ],
+      "peAuthored": null,
+      "capAuthored": null,
+      "basis": 77.19
+    }
+  }
+}
