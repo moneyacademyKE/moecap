@@ -31,7 +31,7 @@ export interface SiteMetadata {
   tagline: string;
   bio: string;
   socials: SocialLink[];
-  cryptoTelegram: {
+  substackFeed: {
     url: string;
     label: string;
   };

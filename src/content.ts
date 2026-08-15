@@ -10,9 +10,9 @@ export const METADATA: SiteMetadata = {
     { platform: 'Substack', url: 'https://moneyacademy.substack.com/', handle: 'Substack' },
     { platform: 'Whatsapp', url: "https://wa.me/+25469000111?text=I'm%20interested%20in%20your%20whatsapp%20news%20updates", handle: 'Whatsapp' }
   ],
-  cryptoTelegram: {
-    url: 'https://t.me/s/moecrypto',
-    label: 'telegram crypto'
+  substackFeed: {
+    url: 'https://subs.moecapital.com',
+    label: 'substack idea feed'
   },
   watchlist: {
     date: '3rd November 2025',

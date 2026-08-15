@@ -90,7 +90,7 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
                 <p class="bio">${metadata.bio}</p>
                 
                 <p class="crypto-note">
-                    🚀 Join our <a href="${metadata.cryptoTelegram.url}" target="_blank">${metadata.cryptoTelegram.label}</a> community.
+                    🚀 Read our <a href="${metadata.substackFeed.url}" target="_blank">${metadata.substackFeed.label}</a>.
                 </p>
                 
                 <div class="social-badges">
