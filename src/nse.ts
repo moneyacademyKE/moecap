@@ -5,6 +5,7 @@ export interface Company {
   ticker: string;
   name: string;
   sector: string;
+  blurb?: string;
 }
 
 export interface CompanyFinancials {
@@ -51,12 +52,18 @@ export function buildNsePage(publicDir: string) {
   copyFileSync(nseDataPath, join(nseOutputDir, "nse-data.json"));
   console.log(`📂 Copied database to: ${join(nseOutputDir, "nse-data.json")}`);
 
-  // Generate Stock Items HTML for Left Pane Pre-rendering
-  const stockItemsHtml = companies.map(c => {
+  // Generate Stock Items HTML — grouped by sector, "Start here" pinned on top
+  const bySector = new Map<string, typeof companies>();
+  for (const c of companies) {
+    const list = bySector.get(c.sector) || [];
+    list.push(c);
+    bySector.set(c.sector, list);
+  }
+  const cardHtml = (c: (typeof companies)[number]) => {
     const price = rawData.market?.prices[c.ticker];
     const priceStr = price !== undefined ? `KES ${price.toFixed(2)}` : "—";
     const hasFin = rawData.financials[c.ticker] ? "true" : "false";
-    
+
     return `
       <div 
         class="stock-item-card" 
@@ -74,7 +81,25 @@ export function buildNsePage(publicDir: string) {
         <div class="stock-card-sector">${c.sector}</div>
       </div>
     `;
-  }).join("\n");
+  };
+  const startSet = new Set((rawData as NSEData & { startHere?: string[] }).startHere || []);
+  const startHereCards = companies.filter(c => startSet.has(c.ticker)).map(cardHtml).join("\n");
+  const sectorGroups = [...bySector.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([sector, list]) => `
+      <div class="sector-group" data-sector-group="${sector.toLowerCase()}">
+        <div class="sector-label">${sector}</div>
+        ${list.map(cardHtml).join("\n")}
+      </div>
+    `)
+    .join("\n");
+  const stockItemsHtml = `
+      <div class="sector-group start-here-group">
+        <div class="sector-label start-here-label">★ Start here</div>
+        ${startHereCards}
+      </div>
+      ${sectorGroups}
+  `;
 
   // Construct complete single page HTML
   const html = `<!DOCTYPE html>
@@ -234,6 +259,75 @@ export function buildNsePage(publicDir: string) {
         }
 
         /* Stock Cards */
+        /* Tier 2: plain-english + grouping additions */
+        .sector-group { margin-bottom: 0.4rem; }
+        .sector-label {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--meta);
+            padding: 0.6rem 0.75rem 0.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .start-here-label {
+            color: var(--accent);
+            border-top: none;
+            font-weight: bold;
+        }
+        .prices-asof-line {
+            font-size: 0.68rem;
+            color: var(--meta);
+            padding: 0.35rem 0.1rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        #prices-live-badge {
+            color: #4ade80;
+            border: 1px solid #4ade80;
+            border-radius: 4px;
+            padding: 0 4px;
+            font-size: 0.58rem;
+            font-weight: bold;
+            margin-left: 0.4rem;
+        }
+        .stock-blurb {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            max-width: 46rem;
+        }
+        .mode-toggle { display: flex; gap: 0.35rem; justify-content: flex-end; margin-top: 0.5rem; }
+        .mode-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--meta);
+            font-family: inherit;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            padding: 3px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .mode-btn.active { color: var(--accent); border-color: var(--accent); }
+        .plain-summary {
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+        }
+        .verdict-chip {
+            display: inline-block;
+            font-size: 0.72rem;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 2px 10px;
+            margin: 0 0.35rem 0.35rem 0;
+        }
+        .chip-good { color: #4ade80; border-color: #4ade80; }
+        .chip-bad { color: #f87171; border-color: #f87171; }
+        .chip-neutral { color: var(--meta); }
+        body.nse-simple .expert-only { display: none; }
+        body.nse-expert .plain-only { display: none; }
+
         .stock-item-card {
             padding: 0.9rem 1rem;
             border-bottom: 1px solid var(--border);
@@ -650,6 +744,10 @@ export function buildNsePage(publicDir: string) {
                     placeholder="[ Type ticker, name, or sector... ]"
                     oninput="filterDirectory()"
                 />
+                <div class="prices-asof-line">
+                    Prices as of <span id="prices-asof">…</span>
+                    <span id="prices-live-badge" style="display: none;">LIVE</span>
+                </div>
                 <div class="stock-directory-list" id="directory-list">
                     ${stockItemsHtml}
                 </div>
@@ -678,6 +776,7 @@ export function buildNsePage(publicDir: string) {
                                     <span>•</span>
                                     <span id="detail-sector">Banking</span>
                                 </div>
+                                <p class="stock-blurb" id="detail-blurb" style="display: none;"></p>
                             </div>
                             <div class="stock-price-col" id="detail-price-col">
                                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
@@ -685,6 +784,10 @@ export function buildNsePage(publicDir: string) {
                                     <div class="live-price" id="detail-price">KES —</div>
                                 </div>
                                 <div class="live-price-label">Current Price</div>
+                                <div class="mode-toggle" id="mode-toggle">
+                                    <button id="mode-simple-btn" class="mode-btn" onclick="setMode('simple')">SIMPLE</button>
+                                    <button id="mode-expert-btn" class="mode-btn" onclick="setMode('expert')">EXPERT</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -706,7 +809,15 @@ export function buildNsePage(publicDir: string) {
                         <div class="stat-card">
                             <div class="stat-label">ROE</div>
                             <div class="stat-value highlight" id="stat-roe">—</div>
+                            <div class="roe-context" id="stat-roe-context" style="font-size: 0.65rem; color: var(--meta);"></div>
                         </div>
+                    </div>
+
+                    <!-- Plain-English summary (Simple mode core; stays visible in Expert) -->
+                    <div class="plain-summary plain-only" id="plain-summary">
+                        <div class="verdict-chips" id="verdict-chips"></div>
+                        <p class="plain-roe" id="plain-roe" style="margin: 0.6rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);"></p>
+                        <p class="plain-note" style="margin: 0.4rem 0 0 0; font-size: 0.72rem; color: var(--meta);">Switch to EXPERT (top right) for the full tables.</p>
                     </div>
 
                     <!-- Workspace Tabs -->
@@ -722,7 +833,7 @@ export function buildNsePage(publicDir: string) {
                         <!-- Financials Tab -->
                         <div class="tab-section active" id="tab-financials">
                             <h3 class="section-title">Key Figures — FY (KES, as reported)</h3>
-                            <div class="table-container" id="financials-table-box">
+                            <div class="table-container expert-only" id="financials-table-box">
                                 <!-- Pre-rendered dynamically by JS -->
                             </div>
                         </div>
@@ -730,7 +841,7 @@ export function buildNsePage(publicDir: string) {
                         <!-- Key Ratios Tab -->
                         <div class="tab-section" id="tab-ratios">
                             <h3 class="section-title">Valuation & Efficiency Ratios</h3>
-                            <div class="table-container" id="ratios-table-box">
+                            <div class="table-container expert-only" id="ratios-table-box">
                                 <!-- Pre-rendered dynamically by JS -->
                             </div>
                         </div>
@@ -767,73 +878,61 @@ export function buildNsePage(publicDir: string) {
         let activeTicker = null;
         let activeTab = 'financials';
 
-        // Ticker mapping normalization (from AFX/Kwayisi symbols to Master symbols)
-        const PRICE_TICKER_MAP = {
-            "BKG": "BK",
-            "IMH": "IM",
-            "PORT": "BAMB",
-            "ILAM": "FAHR",
-            "FAHR": "FAHR",
-            "SCAN": "SCAN",
-            "SCOM": "SCOM",
-            "EQTY": "EQTY",
-            "KCB": "KCB",
-            "COOP": "COOP",
-            "ABSA": "ABSA"
-        };
+        // Worker-backed price sync: one KV-cached source (moecap-prices worker),
+        // refreshed hourly server-side. No third-party CORS proxy, no per-visitor
+        // external scraping. Falls back to the static snapshot on any failure.
+        const NSE_PRICES_URL = "https://moecap-prices.iamkingori.workers.dev/nse";
 
-        // Real-time price synchronizer using CORS proxy
         async function syncPricesRealtime() {
-            console.log("📡 Starting live NSE prices synchronization via CORS proxy...");
-            const kwayisiUrl = "https://afx.kwayisi.org/nse/";
-            const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(kwayisiUrl);
-            
+            console.log("📡 Syncing NSE prices from moecap-prices worker...");
             try {
-                const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error("CORS Proxy HTTP error: " + response.status);
-                const html = await response.text();
-                
-                // Regex matches: <tr><td><a href="...">TICKER</a></td><td><a href="...">NAME</a></td><td>VOLUME</td><td>PRICE</td></tr>
-                const rowRegex = /<tr><td><a [^>]+>([A-Z0-9]+)<\\/a><td><a [^>]+>[^<]+<\\/a><td>(?:[0-9,]+)?<td>([0-9,]+\\.[0-9]+)/g;
-                let match;
-                let count = 0;
-                const prices = {};
-                
-                while ((match = rowRegex.exec(html)) !== null) {
-                    const rawTicker = match[1];
-                    const price = parseFloat(match[2].replace(/,/g, ""));
-                    const ticker = PRICE_TICKER_MAP[rawTicker] || rawTicker;
-                    prices[ticker] = price;
-                    count++;
+                const response = await fetch(NSE_PRICES_URL);
+                if (!response.ok) throw new Error("worker HTTP error: " + response.status);
+                const payload = await response.json();
+                if (!payload || !payload.prices || Object.keys(payload.prices).length === 0) {
+                    throw new Error("empty payload");
                 }
-                
-                if (count > 0 && db) {
-                    console.log(\`✅ Live prices successfully fetched: \${count} tickers updated.\`);
-                    if (!db.market) db.market = {};
-                    db.market.prices = { ...db.market.prices, ...prices };
-                    db.market.lastUpdated = new Date().toISOString();
-                    db.market.isLive = true;
-                    
-                    // 1. Update prices in the directory sidebar
-                    updateDirectoryPrices();
-                    
-                    // 2. If an active company is selected, refresh its header price display
-                    if (activeTicker) {
-                        const currentPrice = db.market.prices[activeTicker];
-                        if (currentPrice !== undefined) {
-                            document.getElementById('detail-price').innerText = \`KES \${currentPrice.toFixed(2)}\`;
-                            const priceCol = document.getElementById('detail-price-col');
-                            if (priceCol) {
-                                priceCol.style.display = 'block';
-                                const badge = document.getElementById('detail-price-live-badge');
-                                if (badge) badge.style.display = 'inline-block';
-                            }
+
+                if (!db) db = {};
+                if (!db.market) db.market = {};
+                db.market.prices = { ...db.market.prices, ...payload.prices };
+                db.market.lastUpdated = payload.asOf || db.market.lastUpdated;
+                db.market.isLive = !!payload.live;
+
+                updatePricesAsOf();
+                updateDirectoryPrices();
+
+                if (activeTicker) {
+                    const currentPrice = db.market.prices[activeTicker];
+                    if (currentPrice !== undefined) {
+                        document.getElementById('detail-price').innerText = \`KES \${currentPrice.toFixed(2)}\`;
+                        const priceCol = document.getElementById('detail-price-col');
+                        if (priceCol) {
+                            priceCol.style.display = 'block';
+                            const badge = document.getElementById('detail-price-live-badge');
+                            if (badge) badge.style.display = db.market.isLive ? 'inline-block' : 'none';
                         }
                     }
                 }
             } catch (err) {
-                console.warn("⚠️ Live price sync failed. Gracefully falling back to static database:", err);
+                console.warn("⚠️ Worker price sync failed. Using snapshot prices:", err);
+                if (db && db.market) db.market.isLive = false;
+                updatePricesAsOf();
             }
+        }
+
+        // Honest "as of" labelling — snapshot dates are shown, never hidden
+        function updatePricesAsOf() {
+            const el = document.getElementById('prices-asof');
+            const badge = document.getElementById('prices-live-badge');
+            if (!el || !db || !db.market) return;
+            if (db.market.lastUpdated) {
+                const d = new Date(db.market.lastUpdated);
+                el.innerText = isNaN(d.getTime()) ? db.market.lastUpdated : d.toLocaleDateString('en-KE', { day: 'numeric', month: 'short', year: 'numeric' });
+            } else {
+                el.innerText = 'archive snapshot';
+            }
+            if (badge) badge.style.display = (db.market && db.market.isLive) ? 'inline' : 'none';
         }
 
         // Update all price badges in the sidebar dynamically
@@ -861,7 +960,12 @@ export function buildNsePage(publicDir: string) {
                 }
                 db = await response.json();
                 console.log('📡 Database fetched successfully!', db);
-                
+
+                // Simple/Expert mode: default Simple, persisted per visitor
+                setMode(localStorage.getItem('nse-mode') || 'simple');
+                updatePricesAsOf();
+                computeSectorMedians();
+
                 // Automatically open ticker if URL hash matches
                 const hash = window.location.hash.substring(1).toUpperCase();
                 if (hash && document.querySelector(\`[data-ticker="\${hash}"]\`)) {
@@ -894,6 +998,13 @@ export function buildNsePage(publicDir: string) {
                     card.style.display = 'none';
                 }
             });
+
+            // Hide sector groups whose cards all got filtered out
+            document.querySelectorAll('.sector-group').forEach(group => {
+                const anyVisible = Array.from(group.querySelectorAll('.stock-item-card'))
+                    .some(card => card.style.display === 'block');
+                group.style.display = anyVisible ? 'block' : 'none';
+            });
         }
 
         // Switch workspace tabs
@@ -917,6 +1028,88 @@ export function buildNsePage(publicDir: string) {
                     section.classList.remove('active');
                 }
             });
+        }
+
+        // Mode toggle: Simple (default) hides expert tables, keeps plain summary
+        function setMode(mode) {
+            const simple = mode !== 'expert';
+            document.body.classList.toggle('nse-simple', simple);
+            document.body.classList.toggle('nse-expert', !simple);
+            localStorage.setItem('nse-mode', simple ? 'simple' : 'expert');
+            const sBtn = document.getElementById('mode-simple-btn');
+            const eBtn = document.getElementById('mode-expert-btn');
+            if (sBtn) sBtn.classList.toggle('active', simple);
+            if (eBtn) eBtn.classList.toggle('active', !simple);
+        }
+
+        // Sector-median ROE for honest context ("good for a bank?")
+        let sectorMedians = {};
+        function computeSectorMedians() {
+            if (!db || !db.companies || !db.financials) return;
+            const bySector = {};
+            db.companies.forEach(c => {
+                const fin = db.financials[c.ticker];
+                if (!fin || !fin.metrics) return;
+                const periods = Object.keys(fin.metrics).sort().reverse();
+                const yr = fin.canonicalYear || periods[0];
+                if (!yr) return;
+                const roe = calculateROE(fin.metrics[yr] || {}, (fin.ratios || {})[yr] || {});
+                if (roe === null || isNaN(roe)) return;
+                (bySector[c.sector] = bySector[c.sector] || []).push(roe);
+            });
+            sectorMedians = {};
+            Object.entries(bySector).forEach(([sector, vals]) => {
+                const sorted = vals.slice().sort((a, b) => a - b);
+                const mid = Math.floor(sorted.length / 2);
+                sectorMedians[sector] = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+            });
+        }
+
+        // Profit signal: Net Income from canonical year, else any year that has it
+        function findNetIncome(fin) {
+            if (!fin || !fin.metrics) return null;
+            const periods = Object.keys(fin.metrics).sort().reverse();
+            const yr = fin.canonicalYear || periods[0];
+            const canonicalNI = (fin.metrics[yr] || {})["Net Income"];
+            if (typeof canonicalNI === 'number') return { value: canonicalNI, year: yr };
+            for (const p of periods) {
+                const v = (fin.metrics[p] || {})["Net Income"];
+                if (typeof v === 'number') return { value: v, year: p };
+            }
+            return null;
+        }
+
+        // Verdict chips: data-derived, honest absence when profit isn't archived
+        function renderVerdictChips(fin) {
+            const box = document.getElementById('verdict-chips');
+            if (!box) return;
+            const chips = [];
+            const ni = findNetIncome(fin);
+            if (ni && ni.value > 0) {
+                chips.push('<span class="verdict-chip chip-good">🟢 Profitable (' + ni.year + ')</span>');
+            } else if (ni && ni.value < 0) {
+                chips.push('<span class="verdict-chip chip-bad">🔴 Loss-making (' + ni.year + ')</span>');
+            } else {
+                chips.push('<span class="verdict-chip chip-neutral">📊 Profit not archived</span>');
+            }
+            if (fin && fin.canonicalYear) {
+                chips.push('<span class="verdict-chip chip-neutral">📅 Figures FY ' + fin.canonicalYear + '</span>');
+            }
+            box.innerHTML = chips.join('');
+        }
+
+        // Plain-English ROE sentence
+        function renderPlainRoe(company, roe) {
+            const el = document.getElementById('plain-roe');
+            if (!el) return;
+            if (roe === null || isNaN(roe)) {
+                el.innerText = 'Returns could not be computed from the archived figures.';
+                return;
+            }
+            const kes = Math.abs(roe).toFixed(0);
+            el.innerText = roe >= 0
+                ? \`For every KES 100 of owners' money, \${company.name} made KES \${kes} that year.\`
+                : \`For every KES 100 of owners' money, \${company.name} LOST KES \${kes} that year.\`;
         }
 
         // Robust dynamic ROIC computation
@@ -998,6 +1191,18 @@ export function buildNsePage(publicDir: string) {
                 document.getElementById('detail-name').innerText = company.name;
                 document.getElementById('detail-ticker').innerText = company.ticker;
                 document.getElementById('detail-sector').innerText = company.sector;
+
+                // Plain-English one-liner (authored where identity is confident)
+                const blurbEl = document.getElementById('detail-blurb');
+                if (blurbEl) {
+                    if (company.blurb) {
+                        blurbEl.innerText = company.blurb;
+                        blurbEl.style.display = 'block';
+                    } else {
+                        blurbEl.innerText = '';
+                        blurbEl.style.display = 'none';
+                    }
+                }
                 
                 const priceCol = document.getElementById('detail-price-col');
                 if (price !== undefined && price !== null) {
@@ -1055,6 +1260,18 @@ export function buildNsePage(publicDir: string) {
                     const roeNum = typeof roe === 'number' ? roe : parseFloat(roe);
                     document.getElementById('stat-roe').innerText = (!isNaN(roeNum) && roe !== null) ? \`\${roeNum.toFixed(1)}%\` : '—';
 
+                    // ROE in sector context (median of the sector's computable ROEs)
+                    const roeCtx = document.getElementById('stat-roe-context');
+                    if (roeCtx) {
+                        const med = sectorMedians[company.sector];
+                        roeCtx.innerText = (!isNaN(roeNum) && roe !== null && typeof med === 'number')
+                            ? \`sector median \${med.toFixed(1)}%\` : '';
+                    }
+
+                    // Plain-English layer: chips + ROE sentence
+                    renderVerdictChips(financials);
+                    renderPlainRoe(company, (!isNaN(roeNum) && roe !== null) ? roeNum : null);
+
                     // 1. Render Financial Table (canonical year only — other years
                     //    carry unreconciled native units by design)
                     renderFinancialsTable(financials.metrics, [latestPeriod], financials.unitHint);
@@ -1073,6 +1290,10 @@ export function buildNsePage(publicDir: string) {
                     document.getElementById('stat-netincome').innerText = '—';
                     document.getElementById('stat-roic').innerText = '—';
                     document.getElementById('stat-roe').innerText = '—';
+                    const roeCtx0 = document.getElementById('stat-roe-context');
+                    if (roeCtx0) roeCtx0.innerText = '';
+                    renderVerdictChips(undefined);
+                    renderPlainRoe(company, null);
                     
                     document.getElementById('financials-table-box').innerHTML = \`<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No financial metrics database found for \${ticker}</p>\`;
                     document.getElementById('ratios-table-box').innerHTML = \`<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No key efficiency ratios found for \${ticker}</p>\`;
@@ -1230,14 +1451,15 @@ export function buildNsePage(publicDir: string) {
                 return;
             }
 
-            let listHtml = '';
+            let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Source documents are not held locally — titles and dates from the archive.</p>';
             announcements.forEach(ann => {
-                // If files are MD summaries, we point to their files. If URL scheme doesn't exist, we can use a direct local reference or treat as static lists.
-                const url = \`https://github.com/criticalinsight/kenya-roic/blob/main/data/extractions/\${ann.file}\`;
+                // Rendered as local rows: the referenced document repository is gone
+                // (links 404 for every visitor). Titles/dates are the data we hold.
+                const esc = (s) => String(s || '').replace(/[<>&]/g, ch => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[ch] || ch));
                 listHtml += \`
                     <div class="announcement-item">
-                        <a href="\${url}" target="_blank" class="announcement-link">→ \${ann.title}</a>
-                        <span class="announcement-date">\${ann.date}</span>
+                        <span class="announcement-link" style="cursor: default;">📄 \${esc(ann.title)}</span>
+                        <span class="announcement-date">\${esc(ann.date)}</span>
                     </div>
                 \`;
             });

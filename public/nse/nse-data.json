@@ -2,79 +2,97 @@
   "companies" : [ {
     "ticker" : "ABSA",
     "name" : "Absa Bank Kenya Plc",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Retail and business bank in Kenya, part of South Africa's Absa group."
   }, {
     "ticker" : "ALP",
     "name" : "ALP Real Estate Investment Trust",
-    "sector" : "Other"
+    "sector" : "Funds & REITs",
+    "blurb" : "Property fund investing in income-producing real estate (a REIT)."
   }, {
     "ticker" : "AMAC",
     "name" : "Africa Mega Agricorp",
-    "sector" : "Other"
+    "sector" : "Agricultural"
   }, {
     "ticker" : "ARM",
     "name" : "ARM Cement Ltd",
-    "sector" : "Other"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Cement and lime maker. Has been under administration since 2018 — check status before acting."
   }, {
     "ticker" : "BAMB",
     "name" : "Bamburi Cement Ltd",
-    "sector" : "Construction & Allied"
+    "sector" : "Construction & Allied",
+    "blurb" : "Makes cement for building. Also runs tree plantations and power lines as side businesses."
   }, {
     "ticker" : "BAT",
     "name" : "British American Tobacco Kenya",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Makes and sells cigarettes in Kenya (Sportsman, Dunhill)."
   }, {
     "ticker" : "BKG",
     "name" : "BK Group Plc",
-    "sector" : "Unknown"
+    "sector" : "Banking",
+    "blurb" : "Parent of Bank of Kigali, Rwanda's largest bank. Cross-listed in Nairobi."
   }, {
     "ticker" : "BOC",
     "name" : "BOC Kenya Ltd",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Supplies industrial and medical gases — oxygen, nitrogen and the like."
   }, {
     "ticker" : "BRIT",
     "name" : "Britam Holdings Ltd",
-    "sector" : "Insurance"
+    "sector" : "Insurance",
+    "blurb" : "Insurance and asset-management group (Britam)."
   }, {
     "ticker" : "CABL",
     "name" : "East African Cables",
-    "sector" : "Other"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Makes electrical cables. Has struggled financially in recent years."
   }, {
     "ticker" : "CARB",
     "name" : "Carbacid Investments",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Harvests industrial carbon dioxide gas for drinks and industry."
   }, {
     "ticker" : "CGEN",
     "name" : "Car and General Kenya Ltd",
-    "sector" : "Other"
+    "sector" : "Commercial & Services",
+    "blurb" : "Sells and services cars, motorbikes and generators (Car & General)."
   }, {
     "ticker" : "CIC",
     "name" : "CIC Insurance Group Ltd",
-    "sector" : "Insurance"
+    "sector" : "Insurance",
+    "blurb" : "Co-operative insurer — general and life insurance, strong in farm cover."
   }, {
     "ticker" : "COOP",
     "name" : "Co-operative Bank of Kenya",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Bank built around the co-operative movement — farmer and Sacco banking plus normal retail banking."
   }, {
     "ticker" : "CRWN",
     "name" : "Crown Paints Kenya Ltd",
-    "sector" : "Other"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Makes paint (Duracoat) for homes and industry."
   }, {
     "ticker" : "CTUM",
     "name" : "Centum Investment Company",
-    "sector" : "Investment"
+    "sector" : "Investment",
+    "blurb" : "Invests in companies and property (Centum) — aims to buy cheap, grow, then sell."
   }, {
     "ticker" : "DCON",
     "name" : "Deacons East Africa",
-    "sector" : "Other"
+    "sector" : "Commercial & Services",
+    "blurb" : "Clothing retailer. Struggling — most stores closed over the years."
   }, {
     "ticker" : "DTK",
     "name" : "Diamond Trust Bank Kenya Ltd",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Bank focused on trade finance and business lending across East Africa."
   }, {
     "ticker" : "EABL",
     "name" : "East African Breweries Ltd",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Makes beer and spirits — Tusker, Guinness and Johnnie Walker for East Africa."
   }, {
     "ticker" : "EGAD",
     "name" : "Eaagads Ltd",
@@ -82,99 +100,122 @@
   }, {
     "ticker" : "EQTY",
     "name" : "Equity Group Holdings Ltd",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Banking group serving Kenya and six other African countries. Interest and fees on loans."
   }, {
     "ticker" : "EVRD",
     "name" : "Eveready East Africa Ltd",
-    "sector" : "Other"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Made batteries and torches. Largely wound down — very small company."
   }, {
     "ticker" : "FMLY",
     "name" : "Family Bank Ltd",
-    "sector" : "Unknown"
+    "sector" : "Banking",
+    "blurb" : "Mid-sized Kenyan retail bank."
   }, {
     "ticker" : "FTGH",
     "name" : "Flame Tree Group Holdings",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Makes hair and beauty products, medicines and home goods for East Africa."
   }, {
     "ticker" : "GLD",
     "name" : "Absa NewGold ETF",
-    "sector" : "Other"
+    "sector" : "Funds & REITs",
+    "blurb" : "Fund that tracks the gold price — a way to own gold without a vault."
   }, {
     "ticker" : "HAFR",
     "name" : "Home Afrika Ltd",
-    "sector" : "Real Estate"
+    "sector" : "Real Estate",
+    "blurb" : "Small property developer (share long suspended)."
   }, {
     "ticker" : "HBE",
     "name" : "Homeboyz Entertainment",
-    "sector" : "Other"
+    "sector" : "Commercial & Services",
+    "blurb" : "Radio station and events company (Homeboyz)."
   }, {
     "ticker" : "HFCB",
     "name" : "HFCB Group",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Bank and mortgage lender (HF Group). Home loans plus normal banking."
   }, {
     "ticker" : "IMH",
     "name" : "I&M Holdings Plc",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Banking group running I&M Bank in Kenya plus banks in Rwanda, Tanzania and Uganda."
   }, {
     "ticker" : "JUB",
     "name" : "Jubilee Holdings Ltd",
-    "sector" : "Insurance"
+    "sector" : "Insurance",
+    "blurb" : "Insurance company: life, health and general cover across East Africa."
   }, {
     "ticker" : "KAPC",
     "name" : "Kapchorua Tea Company Ltd",
-    "sector" : "Unknown"
+    "sector" : "Agricultural",
+    "blurb" : "Small tea-growing company."
   }, {
     "ticker" : "KCB",
     "name" : "KCB Group",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "One of Kenya's largest banks. Earns interest on loans and fees on banking services."
   }, {
     "ticker" : "KEGN",
     "name" : "KenGen Plc",
-    "sector" : "Energy & Petroleum"
+    "sector" : "Energy & Petroleum",
+    "blurb" : "Generates most of Kenya's electricity from geothermal steam at Olkaria."
   }, {
     "ticker" : "KNRE",
     "name" : "Kenya Re-Insurance Corporation",
-    "sector" : "Insurance"
+    "sector" : "Insurance",
+    "blurb" : "State-backed reinsurer — insures the insurance companies."
   }, {
     "ticker" : "KPC",
     "name" : "Kenya Pipeline Company",
-    "sector" : "Other"
+    "sector" : "Energy & Petroleum",
+    "blurb" : "State-owned oil pipeline company. Not traded on the NSE — treat any data with caution."
   }, {
     "ticker" : "KPLC",
     "name" : "Kenya Power & Lighting Company",
-    "sector" : "Energy & Petroleum"
+    "sector" : "Energy & Petroleum",
+    "blurb" : "Buys power from generators and delivers it to your meter — the electricity-bill company."
   }, {
     "ticker" : "KQ",
     "name" : "Kenya Airways Ltd",
-    "sector" : "Commercial & Services"
+    "sector" : "Commercial & Services",
+    "blurb" : "Kenya's national airline. Flies passengers and cargo; majority state-owned and loss-prone."
   }, {
     "ticker" : "KUKZ",
     "name" : "Kakuzi Ltd",
-    "sector" : "Agricultural"
+    "sector" : "Agricultural",
+    "blurb" : "Grows avocados, macadamia nuts and pineapples, and raises cattle for export."
   }, {
     "ticker" : "KURV",
     "name" : "Kurwitu Ventures Ltd",
-    "sector" : "Other"
+    "sector" : "Investment",
+    "blurb" : "Small Sharia-compliant (halal) investment company."
   }, {
     "ticker" : "LAPR",
     "name" : "Laptrust Imara Income-REIT",
-    "sector" : "Other"
+    "sector" : "Funds & REITs",
+    "blurb" : "REIT earning rent from properties leased to government (Laptrust Imara)."
   }, {
     "ticker" : "LBTY",
     "name" : "Liberty Kenya Holdings Ltd",
-    "sector" : "Other"
+    "sector" : "Insurance",
+    "blurb" : "Insurance group (Liberty Kenya): short-term and life cover plus investments."
   }, {
     "ticker" : "LIMT",
     "name" : "Limuru Tea Company Ltd",
-    "sector" : "Other"
+    "sector" : "Agricultural"
   }, {
     "ticker" : "LKL",
     "name" : "Longhorn Publishers Ltd",
-    "sector" : "Commercial & Services"
+    "sector" : "Commercial & Services",
+    "blurb" : "Publishes school textbooks (Longhorn)."
   }, {
     "ticker" : "MSC",
     "name" : "Mumias Sugar Company Ltd",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Sugar grower and miller. Long-struggling: repeated losses and bailouts."
   }, {
     "ticker" : "NBV",
     "name" : "Nairobi Business Ventures Ltd",
@@ -182,47 +223,58 @@
   }, {
     "ticker" : "NCBA",
     "name" : "NCBA Group Plc",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Bank formed from NIC and CBA. Known for asset finance and the Loop digital bank."
   }, {
     "ticker" : "NMG",
     "name" : "Nation Media Group",
-    "sector" : "Commercial & Services"
+    "sector" : "Commercial & Services",
+    "blurb" : "Publisher of the Daily Nation newspaper and nation.africa."
   }, {
     "ticker" : "NSE",
     "name" : "Nairobi Securities Exchange Ltd",
-    "sector" : "Investment Services"
+    "sector" : "Investment Services",
+    "blurb" : "Runs the Nairobi Securities Exchange — the marketplace this page shows."
   }, {
     "ticker" : "OCH",
     "name" : "Olympia Capital Holdings Ltd",
-    "sector" : "Unknown"
+    "sector" : "Investment",
+    "blurb" : "Small investment company with property interests."
   }, {
     "ticker" : "PORT",
     "name" : "East African Portland Cement",
-    "sector" : "Construction & Allied"
+    "sector" : "Construction & Allied",
+    "blurb" : "State-controlled cement maker — the other big cement producer after Bamburi."
   }, {
     "ticker" : "SASN",
     "name" : "Sasini Tea and Coffee Ltd",
-    "sector" : "Agricultural"
+    "sector" : "Agricultural",
+    "blurb" : "Grows tea and coffee and keeps dairy cattle — export agriculture."
   }, {
     "ticker" : "SBIC",
     "name" : "Stanbic Holdings Ltd",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Kenyan arm of Standard Bank (Stanbic). Retail and corporate banking."
   }, {
     "ticker" : "SCAN",
     "name" : "ScanGroup Ltd",
-    "sector" : "Commercial & Services"
+    "sector" : "Commercial & Services",
+    "blurb" : "Advertising and marketing group — Ogilvy Africa's parent (WPP Scangroup)."
   }, {
     "ticker" : "SCBK",
     "name" : "Standard Chartered Bank Ltd",
-    "sector" : "Banking"
+    "sector" : "Banking",
+    "blurb" : "Kenyan arm of Standard Chartered. Corporate and retail banking."
   }, {
     "ticker" : "SCOM",
     "name" : "Safaricom Plc",
-    "sector" : "Telecommunication & Technology"
+    "sector" : "Telecommunication & Technology",
+    "blurb" : "Kenya's biggest mobile network. Makes money from calls, data and M-PESA mobile money."
   }, {
     "ticker" : "SGL",
     "name" : "Standard Group Ltd",
-    "sector" : "Other"
+    "sector" : "Commercial & Services",
+    "blurb" : "Publisher of The Standard newspaper and KTN television."
   }, {
     "ticker" : "SKL",
     "name" : "Shri Krishana Overseas Ltd",
@@ -230,51 +282,62 @@
   }, {
     "ticker" : "SLAM",
     "name" : "Sanlam Allianz Holdings",
-    "sector" : "Unknown"
+    "sector" : "Insurance"
   }, {
     "ticker" : "SMER",
     "name" : "Sameer Africa Plc",
-    "sector" : "Other"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Industrial group: tyres, cables and property."
   }, {
     "ticker" : "SMWF",
     "name" : "Satrix MSCI World Feeder ETF",
-    "sector" : "Other"
+    "sector" : "Funds & REITs",
+    "blurb" : "Fund tracking world stock markets (Satrix MSCI World feeder ETF)."
   }, {
     "ticker" : "TCL",
     "name" : "TransCentury Plc",
-    "sector" : "Other"
+    "sector" : "Investment",
+    "blurb" : "Investment holding company with stakes in infrastructure and engineering businesses."
   }, {
     "ticker" : "TOTL",
     "name" : "Total Kenya Ltd",
-    "sector" : "Energy & Petroleum"
+    "sector" : "Energy & Petroleum",
+    "blurb" : "Runs fuel stations — petrol, diesel and lubricants (TotalEnergies Kenya)."
   }, {
     "ticker" : "TPSE",
     "name" : "TPS Eastern Africa Serena Ltd",
-    "sector" : "Commercial & Services"
+    "sector" : "Commercial & Services",
+    "blurb" : "Runs the Serena hotels and tourism lodges."
   }, {
     "ticker" : "TRFC",
     "name" : "TRIFIC Green USD I-REIT",
-    "sector" : "Other"
+    "sector" : "Funds & REITs",
+    "blurb" : "US-dollar green REIT — income from renewable-energy property."
   }, {
     "ticker" : "UCHM",
     "name" : "Uchumi Supermarket Ltd",
-    "sector" : "Other"
+    "sector" : "Commercial & Services",
+    "blurb" : "Supermarket chain, shrunk heavily after financial troubles."
   }, {
     "ticker" : "UMME",
     "name" : "Umeme Ltd",
-    "sector" : "Other"
+    "sector" : "Energy & Petroleum",
+    "blurb" : "Uganda's electricity distributor, cross-listed in Nairobi."
   }, {
     "ticker" : "UNGA",
     "name" : "Unga Group Ltd",
-    "sector" : "Manufacturing & Allied"
+    "sector" : "Manufacturing & Allied",
+    "blurb" : "Makes flour and animal feeds — the ugali-flour business."
   }, {
     "ticker" : "WTK",
     "name" : "Williamson Tea Kenya Ltd",
-    "sector" : "Agricultural"
+    "sector" : "Agricultural",
+    "blurb" : "Tea grower with large estates (linked to Finlays)."
   }, {
     "ticker" : "XPRS",
     "name" : "Express Kenya Ltd",
-    "sector" : "Commercial & Services"
+    "sector" : "Commercial & Services",
+    "blurb" : "Courier and logistics company."
   } ],
   "financials" : {
     "COOP" : {
@@ -15135,5 +15198,6 @@
     },
     "lastUpdated" : "2026-02-04T03:18:21.468Z",
     "source" : "NSE/BD-Official (Safari)"
-  }
+  },
+  "startHere" : [ "SCOM", "KCB", "EABL", "EQTY" ]
 }

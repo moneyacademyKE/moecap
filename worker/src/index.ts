@@ -12,6 +12,7 @@ import {
   type PricesPayload,
   type VenueBulk,
 } from "./ratio";
+import { fetchNsePrices } from "./nse";
 
 export interface Env {
   PRICES: KVNamespace;
@@ -53,6 +54,15 @@ export default {
       `prices updated: ${Object.keys(payload.entries).length} entries, ` +
         `${payload.flagged.length} flagged (${payload.flagged.join(", ") || "none"})`
     );
+
+    // NSE snapshot — best-effort; the last good KV value survives a failed fetch
+    try {
+      const nse = await fetchNsePrices();
+      await env.PRICES.put("nse", JSON.stringify(nse));
+      console.log(`nse updated: ${Object.keys(nse.prices).length} tickers`);
+    } catch (e) {
+      console.log(`nse update failed (keeping last good): ${e}`);
+    }
   },
 
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -69,6 +79,12 @@ export default {
       const prices = await env.PRICES.get("prices");
       if (!prices) return new Response('{"error":"not seeded"}', { status: 503, headers });
       return new Response(prices, { headers });
+    }
+
+    if (path === "/nse") {
+      const nse = await env.PRICES.get("nse");
+      if (!nse) return new Response('{"error":"not seeded"}', { status: 503, headers });
+      return new Response(nse, { headers });
     }
 
     if (path === "/manifest") {

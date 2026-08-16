@@ -155,6 +155,75 @@
         }
 
         /* Stock Cards */
+        /* Tier 2: plain-english + grouping additions */
+        .sector-group { margin-bottom: 0.4rem; }
+        .sector-label {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--meta);
+            padding: 0.6rem 0.75rem 0.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .start-here-label {
+            color: var(--accent);
+            border-top: none;
+            font-weight: bold;
+        }
+        .prices-asof-line {
+            font-size: 0.68rem;
+            color: var(--meta);
+            padding: 0.35rem 0.1rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        #prices-live-badge {
+            color: #4ade80;
+            border: 1px solid #4ade80;
+            border-radius: 4px;
+            padding: 0 4px;
+            font-size: 0.58rem;
+            font-weight: bold;
+            margin-left: 0.4rem;
+        }
+        .stock-blurb {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            max-width: 46rem;
+        }
+        .mode-toggle { display: flex; gap: 0.35rem; justify-content: flex-end; margin-top: 0.5rem; }
+        .mode-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--meta);
+            font-family: inherit;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            padding: 3px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .mode-btn.active { color: var(--accent); border-color: var(--accent); }
+        .plain-summary {
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+        }
+        .verdict-chip {
+            display: inline-block;
+            font-size: 0.72rem;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 2px 10px;
+            margin: 0 0.35rem 0.35rem 0;
+        }
+        .chip-good { color: #4ade80; border-color: #4ade80; }
+        .chip-bad { color: #f87171; border-color: #f87171; }
+        .chip-neutral { color: var(--meta); }
+        body.nse-simple .expert-only { display: none; }
+        body.nse-expert .plain-only { display: none; }
+
         .stock-item-card {
             padding: 0.9rem 1rem;
             border-bottom: 1px solid var(--border);
@@ -571,314 +640,15 @@
                     placeholder="[ Type ticker, name, or sector... ]"
                     oninput="filterDirectory()"
                 />
+                <div class="prices-asof-line">
+                    Prices as of <span id="prices-asof">…</span>
+                    <span id="prices-live-badge" style="display: none;">LIVE</span>
+                </div>
                 <div class="stock-directory-list" id="directory-list">
                     
-      <div 
-        class="stock-item-card" 
-        data-ticker="ABSA" 
-        data-name="absa bank kenya plc" 
-        data-sector="banking"
-        data-has-financials="true"
-        onclick="selectStock('ABSA')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">ABSA</span>
-          <span class="stock-card-price" id="card-price-ABSA">KES 27.95</span>
-        </div>
-        <div class="stock-card-name">Absa Bank Kenya Plc</div>
-        <div class="stock-card-sector">Banking</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="ALP" 
-        data-name="alp real estate investment trust" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('ALP')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">ALP</span>
-          <span class="stock-card-price" id="card-price-ALP">—</span>
-        </div>
-        <div class="stock-card-name">ALP Real Estate Investment Trust</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="AMAC" 
-        data-name="africa mega agricorp" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('AMAC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">AMAC</span>
-          <span class="stock-card-price" id="card-price-AMAC">KES 77.50</span>
-        </div>
-        <div class="stock-card-name">Africa Mega Agricorp</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="ARM" 
-        data-name="arm cement ltd" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('ARM')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">ARM</span>
-          <span class="stock-card-price" id="card-price-ARM">—</span>
-        </div>
-        <div class="stock-card-name">ARM Cement Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="BAMB" 
-        data-name="bamburi cement ltd" 
-        data-sector="construction & allied"
-        data-has-financials="true"
-        onclick="selectStock('BAMB')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">BAMB</span>
-          <span class="stock-card-price" id="card-price-BAMB">KES 83.25</span>
-        </div>
-        <div class="stock-card-name">Bamburi Cement Ltd</div>
-        <div class="stock-card-sector">Construction & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="BAT" 
-        data-name="british american tobacco kenya" 
-        data-sector="manufacturing & allied"
-        data-has-financials="true"
-        onclick="selectStock('BAT')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">BAT</span>
-          <span class="stock-card-price" id="card-price-BAT">KES 489.50</span>
-        </div>
-        <div class="stock-card-name">British American Tobacco Kenya</div>
-        <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="BKG" 
-        data-name="bk group plc" 
-        data-sector="unknown"
-        data-has-financials="true"
-        onclick="selectStock('BKG')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">BKG</span>
-          <span class="stock-card-price" id="card-price-BKG">—</span>
-        </div>
-        <div class="stock-card-name">BK Group Plc</div>
-        <div class="stock-card-sector">Unknown</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="BOC" 
-        data-name="boc kenya ltd" 
-        data-sector="manufacturing & allied"
-        data-has-financials="true"
-        onclick="selectStock('BOC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">BOC</span>
-          <span class="stock-card-price" id="card-price-BOC">KES 132.50</span>
-        </div>
-        <div class="stock-card-name">BOC Kenya Ltd</div>
-        <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="BRIT" 
-        data-name="britam holdings ltd" 
-        data-sector="insurance"
-        data-has-financials="true"
-        onclick="selectStock('BRIT')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">BRIT</span>
-          <span class="stock-card-price" id="card-price-BRIT">KES 9.94</span>
-        </div>
-        <div class="stock-card-name">Britam Holdings Ltd</div>
-        <div class="stock-card-sector">Insurance</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="CABL" 
-        data-name="east african cables" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('CABL')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">CABL</span>
-          <span class="stock-card-price" id="card-price-CABL">KES 1.71</span>
-        </div>
-        <div class="stock-card-name">East African Cables</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="CARB" 
-        data-name="carbacid investments" 
-        data-sector="manufacturing & allied"
-        data-has-financials="true"
-        onclick="selectStock('CARB')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">CARB</span>
-          <span class="stock-card-price" id="card-price-CARB">KES 30.35</span>
-        </div>
-        <div class="stock-card-name">Carbacid Investments</div>
-        <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="CGEN" 
-        data-name="car and general kenya ltd" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('CGEN')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">CGEN</span>
-          <span class="stock-card-price" id="card-price-CGEN">KES 56.50</span>
-        </div>
-        <div class="stock-card-name">Car and General Kenya Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="CIC" 
-        data-name="cic insurance group ltd" 
-        data-sector="insurance"
-        data-has-financials="true"
-        onclick="selectStock('CIC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">CIC</span>
-          <span class="stock-card-price" id="card-price-CIC">KES 4.48</span>
-        </div>
-        <div class="stock-card-name">CIC Insurance Group Ltd</div>
-        <div class="stock-card-sector">Insurance</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="COOP" 
-        data-name="co-operative bank of kenya" 
-        data-sector="banking"
-        data-has-financials="true"
-        onclick="selectStock('COOP')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">COOP</span>
-          <span class="stock-card-price" id="card-price-COOP">KES 28.00</span>
-        </div>
-        <div class="stock-card-name">Co-operative Bank of Kenya</div>
-        <div class="stock-card-sector">Banking</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="CRWN" 
-        data-name="crown paints kenya ltd" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('CRWN')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">CRWN</span>
-          <span class="stock-card-price" id="card-price-CRWN">KES 58.25</span>
-        </div>
-        <div class="stock-card-name">Crown Paints Kenya Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="CTUM" 
-        data-name="centum investment company" 
-        data-sector="investment"
-        data-has-financials="true"
-        onclick="selectStock('CTUM')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">CTUM</span>
-          <span class="stock-card-price" id="card-price-CTUM">KES 13.55</span>
-        </div>
-        <div class="stock-card-name">Centum Investment Company</div>
-        <div class="stock-card-sector">Investment</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="DCON" 
-        data-name="deacons east africa" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('DCON')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">DCON</span>
-          <span class="stock-card-price" id="card-price-DCON">—</span>
-        </div>
-        <div class="stock-card-name">Deacons East Africa</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="DTK" 
-        data-name="diamond trust bank kenya ltd" 
-        data-sector="banking"
-        data-has-financials="true"
-        onclick="selectStock('DTK')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">DTK</span>
-          <span class="stock-card-price" id="card-price-DTK">KES 129.75</span>
-        </div>
-        <div class="stock-card-name">Diamond Trust Bank Kenya Ltd</div>
-        <div class="stock-card-sector">Banking</div>
-      </div>
-    
-
+      <div class="sector-group start-here-group">
+        <div class="sector-label start-here-label">★ Start here</div>
+        
       <div 
         class="stock-item-card" 
         data-ticker="EABL" 
@@ -893,23 +663,6 @@
         </div>
         <div class="stock-card-name">East African Breweries Ltd</div>
         <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="EGAD" 
-        data-name="eaagads ltd" 
-        data-sector="agricultural"
-        data-has-financials="true"
-        onclick="selectStock('EGAD')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">EGAD</span>
-          <span class="stock-card-price" id="card-price-EGAD">KES 21.80</span>
-        </div>
-        <div class="stock-card-name">Eaagads Ltd</div>
-        <div class="stock-card-sector">Agricultural</div>
       </div>
     
 
@@ -932,18 +685,248 @@
 
       <div 
         class="stock-item-card" 
-        data-ticker="EVRD" 
-        data-name="eveready east africa ltd" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('EVRD')"
+        data-ticker="KCB" 
+        data-name="kcb group" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('KCB')"
       >
         <div class="stock-card-row">
-          <span class="stock-card-ticker">EVRD</span>
-          <span class="stock-card-price" id="card-price-EVRD">KES 1.36</span>
+          <span class="stock-card-ticker">KCB</span>
+          <span class="stock-card-price" id="card-price-KCB">KES 67.00</span>
         </div>
-        <div class="stock-card-name">Eveready East Africa Ltd</div>
-        <div class="stock-card-sector">Other</div>
+        <div class="stock-card-name">KCB Group</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SCOM" 
+        data-name="safaricom plc" 
+        data-sector="telecommunication & technology"
+        data-has-financials="true"
+        onclick="selectStock('SCOM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SCOM</span>
+          <span class="stock-card-price" id="card-price-SCOM">KES 30.00</span>
+        </div>
+        <div class="stock-card-name">Safaricom Plc</div>
+        <div class="stock-card-sector">Telecommunication & Technology</div>
+      </div>
+    
+      </div>
+      
+      <div class="sector-group" data-sector-group="agricultural">
+        <div class="sector-label">Agricultural</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="AMAC" 
+        data-name="africa mega agricorp" 
+        data-sector="agricultural"
+        data-has-financials="false"
+        onclick="selectStock('AMAC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">AMAC</span>
+          <span class="stock-card-price" id="card-price-AMAC">KES 77.50</span>
+        </div>
+        <div class="stock-card-name">Africa Mega Agricorp</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EGAD" 
+        data-name="eaagads ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('EGAD')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EGAD</span>
+          <span class="stock-card-price" id="card-price-EGAD">KES 21.80</span>
+        </div>
+        <div class="stock-card-name">Eaagads Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KAPC" 
+        data-name="kapchorua tea company ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('KAPC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KAPC</span>
+          <span class="stock-card-price" id="card-price-KAPC">KES 233.00</span>
+        </div>
+        <div class="stock-card-name">Kapchorua Tea Company Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KUKZ" 
+        data-name="kakuzi ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('KUKZ')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KUKZ</span>
+          <span class="stock-card-price" id="card-price-KUKZ">KES 390.00</span>
+        </div>
+        <div class="stock-card-name">Kakuzi Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="LIMT" 
+        data-name="limuru tea company ltd" 
+        data-sector="agricultural"
+        data-has-financials="false"
+        onclick="selectStock('LIMT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">LIMT</span>
+          <span class="stock-card-price" id="card-price-LIMT">KES 445.25</span>
+        </div>
+        <div class="stock-card-name">Limuru Tea Company Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SASN" 
+        data-name="sasini tea and coffee ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('SASN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SASN</span>
+          <span class="stock-card-price" id="card-price-SASN">KES 19.55</span>
+        </div>
+        <div class="stock-card-name">Sasini Tea and Coffee Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="WTK" 
+        data-name="williamson tea kenya ltd" 
+        data-sector="agricultural"
+        data-has-financials="true"
+        onclick="selectStock('WTK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">WTK</span>
+          <span class="stock-card-price" id="card-price-WTK">KES 144.25</span>
+        </div>
+        <div class="stock-card-name">Williamson Tea Kenya Ltd</div>
+        <div class="stock-card-sector">Agricultural</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="banking">
+        <div class="sector-label">Banking</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="ABSA" 
+        data-name="absa bank kenya plc" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('ABSA')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">ABSA</span>
+          <span class="stock-card-price" id="card-price-ABSA">KES 27.95</span>
+        </div>
+        <div class="stock-card-name">Absa Bank Kenya Plc</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BKG" 
+        data-name="bk group plc" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('BKG')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BKG</span>
+          <span class="stock-card-price" id="card-price-BKG">—</span>
+        </div>
+        <div class="stock-card-name">BK Group Plc</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="COOP" 
+        data-name="co-operative bank of kenya" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('COOP')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">COOP</span>
+          <span class="stock-card-price" id="card-price-COOP">KES 28.00</span>
+        </div>
+        <div class="stock-card-name">Co-operative Bank of Kenya</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="DTK" 
+        data-name="diamond trust bank kenya ltd" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('DTK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">DTK</span>
+          <span class="stock-card-price" id="card-price-DTK">KES 129.75</span>
+        </div>
+        <div class="stock-card-name">Diamond Trust Bank Kenya Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EQTY" 
+        data-name="equity group holdings ltd" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('EQTY')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EQTY</span>
+          <span class="stock-card-price" id="card-price-EQTY">KES 68.00</span>
+        </div>
+        <div class="stock-card-name">Equity Group Holdings Ltd</div>
+        <div class="stock-card-sector">Banking</div>
       </div>
     
 
@@ -951,7 +934,7 @@
         class="stock-item-card" 
         data-ticker="FMLY" 
         data-name="family bank ltd" 
-        data-sector="unknown"
+        data-sector="banking"
         data-has-financials="false"
         onclick="selectStock('FMLY')"
       >
@@ -960,75 +943,7 @@
           <span class="stock-card-price" id="card-price-FMLY">—</span>
         </div>
         <div class="stock-card-name">Family Bank Ltd</div>
-        <div class="stock-card-sector">Unknown</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="FTGH" 
-        data-name="flame tree group holdings" 
-        data-sector="manufacturing & allied"
-        data-has-financials="true"
-        onclick="selectStock('FTGH')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">FTGH</span>
-          <span class="stock-card-price" id="card-price-FTGH">KES 1.61</span>
-        </div>
-        <div class="stock-card-name">Flame Tree Group Holdings</div>
-        <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="GLD" 
-        data-name="absa newgold etf" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('GLD')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">GLD</span>
-          <span class="stock-card-price" id="card-price-GLD">KES 5915.00</span>
-        </div>
-        <div class="stock-card-name">Absa NewGold ETF</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="HAFR" 
-        data-name="home afrika ltd" 
-        data-sector="real estate"
-        data-has-financials="true"
-        onclick="selectStock('HAFR')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">HAFR</span>
-          <span class="stock-card-price" id="card-price-HAFR">KES 1.23</span>
-        </div>
-        <div class="stock-card-name">Home Afrika Ltd</div>
-        <div class="stock-card-sector">Real Estate</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="HBE" 
-        data-name="homeboyz entertainment" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('HBE')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">HBE</span>
-          <span class="stock-card-price" id="card-price-HBE">KES 4.66</span>
-        </div>
-        <div class="stock-card-name">Homeboyz Entertainment</div>
-        <div class="stock-card-sector">Other</div>
+        <div class="stock-card-sector">Banking</div>
       </div>
     
 
@@ -1068,40 +983,6 @@
 
       <div 
         class="stock-item-card" 
-        data-ticker="JUB" 
-        data-name="jubilee holdings ltd" 
-        data-sector="insurance"
-        data-has-financials="true"
-        onclick="selectStock('JUB')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">JUB</span>
-          <span class="stock-card-price" id="card-price-JUB">KES 327.75</span>
-        </div>
-        <div class="stock-card-name">Jubilee Holdings Ltd</div>
-        <div class="stock-card-sector">Insurance</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KAPC" 
-        data-name="kapchorua tea company ltd" 
-        data-sector="unknown"
-        data-has-financials="true"
-        onclick="selectStock('KAPC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KAPC</span>
-          <span class="stock-card-price" id="card-price-KAPC">KES 233.00</span>
-        </div>
-        <div class="stock-card-name">Kapchorua Tea Company Ltd</div>
-        <div class="stock-card-sector">Unknown</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
         data-ticker="KCB" 
         data-name="kcb group" 
         data-sector="banking"
@@ -1114,227 +995,6 @@
         </div>
         <div class="stock-card-name">KCB Group</div>
         <div class="stock-card-sector">Banking</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KEGN" 
-        data-name="kengen plc" 
-        data-sector="energy & petroleum"
-        data-has-financials="true"
-        onclick="selectStock('KEGN')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KEGN</span>
-          <span class="stock-card-price" id="card-price-KEGN">KES 9.56</span>
-        </div>
-        <div class="stock-card-name">KenGen Plc</div>
-        <div class="stock-card-sector">Energy & Petroleum</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KNRE" 
-        data-name="kenya re-insurance corporation" 
-        data-sector="insurance"
-        data-has-financials="true"
-        onclick="selectStock('KNRE')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KNRE</span>
-          <span class="stock-card-price" id="card-price-KNRE">KES 3.16</span>
-        </div>
-        <div class="stock-card-name">Kenya Re-Insurance Corporation</div>
-        <div class="stock-card-sector">Insurance</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KPC" 
-        data-name="kenya pipeline company" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('KPC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KPC</span>
-          <span class="stock-card-price" id="card-price-KPC">—</span>
-        </div>
-        <div class="stock-card-name">Kenya Pipeline Company</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KPLC" 
-        data-name="kenya power & lighting company" 
-        data-sector="energy & petroleum"
-        data-has-financials="true"
-        onclick="selectStock('KPLC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KPLC</span>
-          <span class="stock-card-price" id="card-price-KPLC">KES 15.35</span>
-        </div>
-        <div class="stock-card-name">Kenya Power & Lighting Company</div>
-        <div class="stock-card-sector">Energy & Petroleum</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KQ" 
-        data-name="kenya airways ltd" 
-        data-sector="commercial & services"
-        data-has-financials="true"
-        onclick="selectStock('KQ')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KQ</span>
-          <span class="stock-card-price" id="card-price-KQ">KES 5.04</span>
-        </div>
-        <div class="stock-card-name">Kenya Airways Ltd</div>
-        <div class="stock-card-sector">Commercial & Services</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KUKZ" 
-        data-name="kakuzi ltd" 
-        data-sector="agricultural"
-        data-has-financials="true"
-        onclick="selectStock('KUKZ')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KUKZ</span>
-          <span class="stock-card-price" id="card-price-KUKZ">KES 390.00</span>
-        </div>
-        <div class="stock-card-name">Kakuzi Ltd</div>
-        <div class="stock-card-sector">Agricultural</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="KURV" 
-        data-name="kurwitu ventures ltd" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('KURV')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">KURV</span>
-          <span class="stock-card-price" id="card-price-KURV">KES 1500.00</span>
-        </div>
-        <div class="stock-card-name">Kurwitu Ventures Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="LAPR" 
-        data-name="laptrust imara income-reit" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('LAPR')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">LAPR</span>
-          <span class="stock-card-price" id="card-price-LAPR">KES 20.00</span>
-        </div>
-        <div class="stock-card-name">Laptrust Imara Income-REIT</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="LBTY" 
-        data-name="liberty kenya holdings ltd" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('LBTY')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">LBTY</span>
-          <span class="stock-card-price" id="card-price-LBTY">KES 9.70</span>
-        </div>
-        <div class="stock-card-name">Liberty Kenya Holdings Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="LIMT" 
-        data-name="limuru tea company ltd" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('LIMT')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">LIMT</span>
-          <span class="stock-card-price" id="card-price-LIMT">KES 445.25</span>
-        </div>
-        <div class="stock-card-name">Limuru Tea Company Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="LKL" 
-        data-name="longhorn publishers ltd" 
-        data-sector="commercial & services"
-        data-has-financials="true"
-        onclick="selectStock('LKL')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">LKL</span>
-          <span class="stock-card-price" id="card-price-LKL">KES 2.90</span>
-        </div>
-        <div class="stock-card-name">Longhorn Publishers Ltd</div>
-        <div class="stock-card-sector">Commercial & Services</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="MSC" 
-        data-name="mumias sugar company ltd" 
-        data-sector="manufacturing & allied"
-        data-has-financials="true"
-        onclick="selectStock('MSC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">MSC</span>
-          <span class="stock-card-price" id="card-price-MSC">—</span>
-        </div>
-        <div class="stock-card-name">Mumias Sugar Company Ltd</div>
-        <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="NBV" 
-        data-name="nairobi business ventures ltd" 
-        data-sector="commercial & services"
-        data-has-financials="true"
-        onclick="selectStock('NBV')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">NBV</span>
-          <span class="stock-card-price" id="card-price-NBV">KES 1.42</span>
-        </div>
-        <div class="stock-card-name">Nairobi Business Ventures Ltd</div>
-        <div class="stock-card-sector">Commercial & Services</div>
       </div>
     
 
@@ -1357,91 +1017,6 @@
 
       <div 
         class="stock-item-card" 
-        data-ticker="NMG" 
-        data-name="nation media group" 
-        data-sector="commercial & services"
-        data-has-financials="true"
-        onclick="selectStock('NMG')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">NMG</span>
-          <span class="stock-card-price" id="card-price-NMG">KES 13.20</span>
-        </div>
-        <div class="stock-card-name">Nation Media Group</div>
-        <div class="stock-card-sector">Commercial & Services</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="NSE" 
-        data-name="nairobi securities exchange ltd" 
-        data-sector="investment services"
-        data-has-financials="true"
-        onclick="selectStock('NSE')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">NSE</span>
-          <span class="stock-card-price" id="card-price-NSE">KES 19.65</span>
-        </div>
-        <div class="stock-card-name">Nairobi Securities Exchange Ltd</div>
-        <div class="stock-card-sector">Investment Services</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="OCH" 
-        data-name="olympia capital holdings ltd" 
-        data-sector="unknown"
-        data-has-financials="true"
-        onclick="selectStock('OCH')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">OCH</span>
-          <span class="stock-card-price" id="card-price-OCH">KES 7.92</span>
-        </div>
-        <div class="stock-card-name">Olympia Capital Holdings Ltd</div>
-        <div class="stock-card-sector">Unknown</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="PORT" 
-        data-name="east african portland cement" 
-        data-sector="construction & allied"
-        data-has-financials="true"
-        onclick="selectStock('PORT')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">PORT</span>
-          <span class="stock-card-price" id="card-price-PORT">KES 82.25</span>
-        </div>
-        <div class="stock-card-name">East African Portland Cement</div>
-        <div class="stock-card-sector">Construction & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="SASN" 
-        data-name="sasini tea and coffee ltd" 
-        data-sector="agricultural"
-        data-has-financials="true"
-        onclick="selectStock('SASN')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SASN</span>
-          <span class="stock-card-price" id="card-price-SASN">KES 19.55</span>
-        </div>
-        <div class="stock-card-name">Sasini Tea and Coffee Ltd</div>
-        <div class="stock-card-sector">Agricultural</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
         data-ticker="SBIC" 
         data-name="stanbic holdings ltd" 
         data-sector="banking"
@@ -1454,6 +1029,147 @@
         </div>
         <div class="stock-card-name">Stanbic Holdings Ltd</div>
         <div class="stock-card-sector">Banking</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SCBK" 
+        data-name="standard chartered bank ltd" 
+        data-sector="banking"
+        data-has-financials="true"
+        onclick="selectStock('SCBK')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SCBK</span>
+          <span class="stock-card-price" id="card-price-SCBK">KES 308.25</span>
+        </div>
+        <div class="stock-card-name">Standard Chartered Bank Ltd</div>
+        <div class="stock-card-sector">Banking</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="commercial & services">
+        <div class="sector-label">Commercial & Services</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="CGEN" 
+        data-name="car and general kenya ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('CGEN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CGEN</span>
+          <span class="stock-card-price" id="card-price-CGEN">KES 56.50</span>
+        </div>
+        <div class="stock-card-name">Car and General Kenya Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="DCON" 
+        data-name="deacons east africa" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('DCON')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">DCON</span>
+          <span class="stock-card-price" id="card-price-DCON">—</span>
+        </div>
+        <div class="stock-card-name">Deacons East Africa</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="HBE" 
+        data-name="homeboyz entertainment" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('HBE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">HBE</span>
+          <span class="stock-card-price" id="card-price-HBE">KES 4.66</span>
+        </div>
+        <div class="stock-card-name">Homeboyz Entertainment</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KQ" 
+        data-name="kenya airways ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('KQ')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KQ</span>
+          <span class="stock-card-price" id="card-price-KQ">KES 5.04</span>
+        </div>
+        <div class="stock-card-name">Kenya Airways Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="LKL" 
+        data-name="longhorn publishers ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('LKL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">LKL</span>
+          <span class="stock-card-price" id="card-price-LKL">KES 2.90</span>
+        </div>
+        <div class="stock-card-name">Longhorn Publishers Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="NBV" 
+        data-name="nairobi business ventures ltd" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('NBV')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NBV</span>
+          <span class="stock-card-price" id="card-price-NBV">KES 1.42</span>
+        </div>
+        <div class="stock-card-name">Nairobi Business Ventures Ltd</div>
+        <div class="stock-card-sector">Commercial & Services</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="NMG" 
+        data-name="nation media group" 
+        data-sector="commercial & services"
+        data-has-financials="true"
+        onclick="selectStock('NMG')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NMG</span>
+          <span class="stock-card-price" id="card-price-NMG">KES 13.20</span>
+        </div>
+        <div class="stock-card-name">Nation Media Group</div>
+        <div class="stock-card-sector">Commercial & Services</div>
       </div>
     
 
@@ -1476,43 +1192,9 @@
 
       <div 
         class="stock-item-card" 
-        data-ticker="SCBK" 
-        data-name="standard chartered bank ltd" 
-        data-sector="banking"
-        data-has-financials="true"
-        onclick="selectStock('SCBK')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SCBK</span>
-          <span class="stock-card-price" id="card-price-SCBK">KES 308.25</span>
-        </div>
-        <div class="stock-card-name">Standard Chartered Bank Ltd</div>
-        <div class="stock-card-sector">Banking</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="SCOM" 
-        data-name="safaricom plc" 
-        data-sector="telecommunication & technology"
-        data-has-financials="true"
-        onclick="selectStock('SCOM')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SCOM</span>
-          <span class="stock-card-price" id="card-price-SCOM">KES 30.00</span>
-        </div>
-        <div class="stock-card-name">Safaricom Plc</div>
-        <div class="stock-card-sector">Telecommunication & Technology</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
         data-ticker="SGL" 
         data-name="standard group ltd" 
-        data-sector="other"
+        data-sector="commercial & services"
         data-has-financials="true"
         onclick="selectStock('SGL')"
       >
@@ -1521,109 +1203,7 @@
           <span class="stock-card-price" id="card-price-SGL">KES 5.98</span>
         </div>
         <div class="stock-card-name">Standard Group Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="SKL" 
-        data-name="shri krishana overseas ltd" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('SKL')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SKL</span>
-          <span class="stock-card-price" id="card-price-SKL">KES 8.16</span>
-        </div>
-        <div class="stock-card-name">Shri Krishana Overseas Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="SLAM" 
-        data-name="sanlam allianz holdings" 
-        data-sector="unknown"
-        data-has-financials="false"
-        onclick="selectStock('SLAM')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SLAM</span>
-          <span class="stock-card-price" id="card-price-SLAM">KES 8.60</span>
-        </div>
-        <div class="stock-card-name">Sanlam Allianz Holdings</div>
-        <div class="stock-card-sector">Unknown</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="SMER" 
-        data-name="sameer africa plc" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('SMER')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SMER</span>
-          <span class="stock-card-price" id="card-price-SMER">KES 15.65</span>
-        </div>
-        <div class="stock-card-name">Sameer Africa Plc</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="SMWF" 
-        data-name="satrix msci world feeder etf" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('SMWF')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">SMWF</span>
-          <span class="stock-card-price" id="card-price-SMWF">KES 859.00</span>
-        </div>
-        <div class="stock-card-name">Satrix MSCI World Feeder ETF</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="TCL" 
-        data-name="transcentury plc" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('TCL')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">TCL</span>
-          <span class="stock-card-price" id="card-price-TCL">KES 1.12</span>
-        </div>
-        <div class="stock-card-name">TransCentury Plc</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="TOTL" 
-        data-name="total kenya ltd" 
-        data-sector="energy & petroleum"
-        data-has-financials="true"
-        onclick="selectStock('TOTL')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">TOTL</span>
-          <span class="stock-card-price" id="card-price-TOTL">KES 38.75</span>
-        </div>
-        <div class="stock-card-name">Total Kenya Ltd</div>
-        <div class="stock-card-sector">Energy & Petroleum</div>
+        <div class="stock-card-sector">Commercial & Services</div>
       </div>
     
 
@@ -1646,26 +1226,9 @@
 
       <div 
         class="stock-item-card" 
-        data-ticker="TRFC" 
-        data-name="trific green usd i-reit" 
-        data-sector="other"
-        data-has-financials="false"
-        onclick="selectStock('TRFC')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">TRFC</span>
-          <span class="stock-card-price" id="card-price-TRFC">—</span>
-        </div>
-        <div class="stock-card-name">TRIFIC Green USD I-REIT</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
         data-ticker="UCHM" 
         data-name="uchumi supermarket ltd" 
-        data-sector="other"
+        data-sector="commercial & services"
         data-has-financials="true"
         onclick="selectStock('UCHM')"
       >
@@ -1674,58 +1237,7 @@
           <span class="stock-card-price" id="card-price-UCHM">KES 1.30</span>
         </div>
         <div class="stock-card-name">Uchumi Supermarket Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="UMME" 
-        data-name="umeme ltd" 
-        data-sector="other"
-        data-has-financials="true"
-        onclick="selectStock('UMME')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">UMME</span>
-          <span class="stock-card-price" id="card-price-UMME">KES 8.30</span>
-        </div>
-        <div class="stock-card-name">Umeme Ltd</div>
-        <div class="stock-card-sector">Other</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="UNGA" 
-        data-name="unga group ltd" 
-        data-sector="manufacturing & allied"
-        data-has-financials="true"
-        onclick="selectStock('UNGA')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">UNGA</span>
-          <span class="stock-card-price" id="card-price-UNGA">KES 22.05</span>
-        </div>
-        <div class="stock-card-name">Unga Group Ltd</div>
-        <div class="stock-card-sector">Manufacturing & Allied</div>
-      </div>
-    
-
-      <div 
-        class="stock-item-card" 
-        data-ticker="WTK" 
-        data-name="williamson tea kenya ltd" 
-        data-sector="agricultural"
-        data-has-financials="true"
-        onclick="selectStock('WTK')"
-      >
-        <div class="stock-card-row">
-          <span class="stock-card-ticker">WTK</span>
-          <span class="stock-card-price" id="card-price-WTK">KES 144.25</span>
-        </div>
-        <div class="stock-card-name">Williamson Tea Kenya Ltd</div>
-        <div class="stock-card-sector">Agricultural</div>
+        <div class="stock-card-sector">Commercial & Services</div>
       </div>
     
 
@@ -1745,6 +1257,705 @@
         <div class="stock-card-sector">Commercial & Services</div>
       </div>
     
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="construction & allied">
+        <div class="sector-label">Construction & Allied</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="BAMB" 
+        data-name="bamburi cement ltd" 
+        data-sector="construction & allied"
+        data-has-financials="true"
+        onclick="selectStock('BAMB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BAMB</span>
+          <span class="stock-card-price" id="card-price-BAMB">KES 83.25</span>
+        </div>
+        <div class="stock-card-name">Bamburi Cement Ltd</div>
+        <div class="stock-card-sector">Construction & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="PORT" 
+        data-name="east african portland cement" 
+        data-sector="construction & allied"
+        data-has-financials="true"
+        onclick="selectStock('PORT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">PORT</span>
+          <span class="stock-card-price" id="card-price-PORT">KES 82.25</span>
+        </div>
+        <div class="stock-card-name">East African Portland Cement</div>
+        <div class="stock-card-sector">Construction & Allied</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="energy & petroleum">
+        <div class="sector-label">Energy & Petroleum</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="KEGN" 
+        data-name="kengen plc" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('KEGN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KEGN</span>
+          <span class="stock-card-price" id="card-price-KEGN">KES 9.56</span>
+        </div>
+        <div class="stock-card-name">KenGen Plc</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KPC" 
+        data-name="kenya pipeline company" 
+        data-sector="energy & petroleum"
+        data-has-financials="false"
+        onclick="selectStock('KPC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KPC</span>
+          <span class="stock-card-price" id="card-price-KPC">—</span>
+        </div>
+        <div class="stock-card-name">Kenya Pipeline Company</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KPLC" 
+        data-name="kenya power & lighting company" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('KPLC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KPLC</span>
+          <span class="stock-card-price" id="card-price-KPLC">KES 15.35</span>
+        </div>
+        <div class="stock-card-name">Kenya Power & Lighting Company</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="TOTL" 
+        data-name="total kenya ltd" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('TOTL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">TOTL</span>
+          <span class="stock-card-price" id="card-price-TOTL">KES 38.75</span>
+        </div>
+        <div class="stock-card-name">Total Kenya Ltd</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="UMME" 
+        data-name="umeme ltd" 
+        data-sector="energy & petroleum"
+        data-has-financials="true"
+        onclick="selectStock('UMME')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">UMME</span>
+          <span class="stock-card-price" id="card-price-UMME">KES 8.30</span>
+        </div>
+        <div class="stock-card-name">Umeme Ltd</div>
+        <div class="stock-card-sector">Energy & Petroleum</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="funds & reits">
+        <div class="sector-label">Funds & REITs</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="ALP" 
+        data-name="alp real estate investment trust" 
+        data-sector="funds & reits"
+        data-has-financials="false"
+        onclick="selectStock('ALP')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">ALP</span>
+          <span class="stock-card-price" id="card-price-ALP">—</span>
+        </div>
+        <div class="stock-card-name">ALP Real Estate Investment Trust</div>
+        <div class="stock-card-sector">Funds & REITs</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="GLD" 
+        data-name="absa newgold etf" 
+        data-sector="funds & reits"
+        data-has-financials="true"
+        onclick="selectStock('GLD')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">GLD</span>
+          <span class="stock-card-price" id="card-price-GLD">KES 5915.00</span>
+        </div>
+        <div class="stock-card-name">Absa NewGold ETF</div>
+        <div class="stock-card-sector">Funds & REITs</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="LAPR" 
+        data-name="laptrust imara income-reit" 
+        data-sector="funds & reits"
+        data-has-financials="false"
+        onclick="selectStock('LAPR')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">LAPR</span>
+          <span class="stock-card-price" id="card-price-LAPR">KES 20.00</span>
+        </div>
+        <div class="stock-card-name">Laptrust Imara Income-REIT</div>
+        <div class="stock-card-sector">Funds & REITs</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SMWF" 
+        data-name="satrix msci world feeder etf" 
+        data-sector="funds & reits"
+        data-has-financials="false"
+        onclick="selectStock('SMWF')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SMWF</span>
+          <span class="stock-card-price" id="card-price-SMWF">KES 859.00</span>
+        </div>
+        <div class="stock-card-name">Satrix MSCI World Feeder ETF</div>
+        <div class="stock-card-sector">Funds & REITs</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="TRFC" 
+        data-name="trific green usd i-reit" 
+        data-sector="funds & reits"
+        data-has-financials="false"
+        onclick="selectStock('TRFC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">TRFC</span>
+          <span class="stock-card-price" id="card-price-TRFC">—</span>
+        </div>
+        <div class="stock-card-name">TRIFIC Green USD I-REIT</div>
+        <div class="stock-card-sector">Funds & REITs</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="insurance">
+        <div class="sector-label">Insurance</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="BRIT" 
+        data-name="britam holdings ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('BRIT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BRIT</span>
+          <span class="stock-card-price" id="card-price-BRIT">KES 9.94</span>
+        </div>
+        <div class="stock-card-name">Britam Holdings Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CIC" 
+        data-name="cic insurance group ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('CIC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CIC</span>
+          <span class="stock-card-price" id="card-price-CIC">KES 4.48</span>
+        </div>
+        <div class="stock-card-name">CIC Insurance Group Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="JUB" 
+        data-name="jubilee holdings ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('JUB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">JUB</span>
+          <span class="stock-card-price" id="card-price-JUB">KES 327.75</span>
+        </div>
+        <div class="stock-card-name">Jubilee Holdings Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KNRE" 
+        data-name="kenya re-insurance corporation" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('KNRE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KNRE</span>
+          <span class="stock-card-price" id="card-price-KNRE">KES 3.16</span>
+        </div>
+        <div class="stock-card-name">Kenya Re-Insurance Corporation</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="LBTY" 
+        data-name="liberty kenya holdings ltd" 
+        data-sector="insurance"
+        data-has-financials="true"
+        onclick="selectStock('LBTY')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">LBTY</span>
+          <span class="stock-card-price" id="card-price-LBTY">KES 9.70</span>
+        </div>
+        <div class="stock-card-name">Liberty Kenya Holdings Ltd</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SLAM" 
+        data-name="sanlam allianz holdings" 
+        data-sector="insurance"
+        data-has-financials="false"
+        onclick="selectStock('SLAM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SLAM</span>
+          <span class="stock-card-price" id="card-price-SLAM">KES 8.60</span>
+        </div>
+        <div class="stock-card-name">Sanlam Allianz Holdings</div>
+        <div class="stock-card-sector">Insurance</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="investment">
+        <div class="sector-label">Investment</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="CTUM" 
+        data-name="centum investment company" 
+        data-sector="investment"
+        data-has-financials="true"
+        onclick="selectStock('CTUM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CTUM</span>
+          <span class="stock-card-price" id="card-price-CTUM">KES 13.55</span>
+        </div>
+        <div class="stock-card-name">Centum Investment Company</div>
+        <div class="stock-card-sector">Investment</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="KURV" 
+        data-name="kurwitu ventures ltd" 
+        data-sector="investment"
+        data-has-financials="true"
+        onclick="selectStock('KURV')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">KURV</span>
+          <span class="stock-card-price" id="card-price-KURV">KES 1500.00</span>
+        </div>
+        <div class="stock-card-name">Kurwitu Ventures Ltd</div>
+        <div class="stock-card-sector">Investment</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="OCH" 
+        data-name="olympia capital holdings ltd" 
+        data-sector="investment"
+        data-has-financials="true"
+        onclick="selectStock('OCH')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">OCH</span>
+          <span class="stock-card-price" id="card-price-OCH">KES 7.92</span>
+        </div>
+        <div class="stock-card-name">Olympia Capital Holdings Ltd</div>
+        <div class="stock-card-sector">Investment</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="TCL" 
+        data-name="transcentury plc" 
+        data-sector="investment"
+        data-has-financials="true"
+        onclick="selectStock('TCL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">TCL</span>
+          <span class="stock-card-price" id="card-price-TCL">KES 1.12</span>
+        </div>
+        <div class="stock-card-name">TransCentury Plc</div>
+        <div class="stock-card-sector">Investment</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="investment services">
+        <div class="sector-label">Investment Services</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="NSE" 
+        data-name="nairobi securities exchange ltd" 
+        data-sector="investment services"
+        data-has-financials="true"
+        onclick="selectStock('NSE')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">NSE</span>
+          <span class="stock-card-price" id="card-price-NSE">KES 19.65</span>
+        </div>
+        <div class="stock-card-name">Nairobi Securities Exchange Ltd</div>
+        <div class="stock-card-sector">Investment Services</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="manufacturing & allied">
+        <div class="sector-label">Manufacturing & Allied</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="ARM" 
+        data-name="arm cement ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('ARM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">ARM</span>
+          <span class="stock-card-price" id="card-price-ARM">—</span>
+        </div>
+        <div class="stock-card-name">ARM Cement Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BAT" 
+        data-name="british american tobacco kenya" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('BAT')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BAT</span>
+          <span class="stock-card-price" id="card-price-BAT">KES 489.50</span>
+        </div>
+        <div class="stock-card-name">British American Tobacco Kenya</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="BOC" 
+        data-name="boc kenya ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('BOC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">BOC</span>
+          <span class="stock-card-price" id="card-price-BOC">KES 132.50</span>
+        </div>
+        <div class="stock-card-name">BOC Kenya Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CABL" 
+        data-name="east african cables" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('CABL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CABL</span>
+          <span class="stock-card-price" id="card-price-CABL">KES 1.71</span>
+        </div>
+        <div class="stock-card-name">East African Cables</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CARB" 
+        data-name="carbacid investments" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('CARB')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CARB</span>
+          <span class="stock-card-price" id="card-price-CARB">KES 30.35</span>
+        </div>
+        <div class="stock-card-name">Carbacid Investments</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="CRWN" 
+        data-name="crown paints kenya ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('CRWN')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">CRWN</span>
+          <span class="stock-card-price" id="card-price-CRWN">KES 58.25</span>
+        </div>
+        <div class="stock-card-name">Crown Paints Kenya Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EABL" 
+        data-name="east african breweries ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('EABL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EABL</span>
+          <span class="stock-card-price" id="card-price-EABL">KES 251.00</span>
+        </div>
+        <div class="stock-card-name">East African Breweries Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="EVRD" 
+        data-name="eveready east africa ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="false"
+        onclick="selectStock('EVRD')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">EVRD</span>
+          <span class="stock-card-price" id="card-price-EVRD">KES 1.36</span>
+        </div>
+        <div class="stock-card-name">Eveready East Africa Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="FTGH" 
+        data-name="flame tree group holdings" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('FTGH')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">FTGH</span>
+          <span class="stock-card-price" id="card-price-FTGH">KES 1.61</span>
+        </div>
+        <div class="stock-card-name">Flame Tree Group Holdings</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="MSC" 
+        data-name="mumias sugar company ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('MSC')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">MSC</span>
+          <span class="stock-card-price" id="card-price-MSC">—</span>
+        </div>
+        <div class="stock-card-name">Mumias Sugar Company Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="SMER" 
+        data-name="sameer africa plc" 
+        data-sector="manufacturing & allied"
+        data-has-financials="false"
+        onclick="selectStock('SMER')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SMER</span>
+          <span class="stock-card-price" id="card-price-SMER">KES 15.65</span>
+        </div>
+        <div class="stock-card-name">Sameer Africa Plc</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+
+      <div 
+        class="stock-item-card" 
+        data-ticker="UNGA" 
+        data-name="unga group ltd" 
+        data-sector="manufacturing & allied"
+        data-has-financials="true"
+        onclick="selectStock('UNGA')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">UNGA</span>
+          <span class="stock-card-price" id="card-price-UNGA">KES 22.05</span>
+        </div>
+        <div class="stock-card-name">Unga Group Ltd</div>
+        <div class="stock-card-sector">Manufacturing & Allied</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="other">
+        <div class="sector-label">Other</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="SKL" 
+        data-name="shri krishana overseas ltd" 
+        data-sector="other"
+        data-has-financials="false"
+        onclick="selectStock('SKL')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SKL</span>
+          <span class="stock-card-price" id="card-price-SKL">KES 8.16</span>
+        </div>
+        <div class="stock-card-name">Shri Krishana Overseas Ltd</div>
+        <div class="stock-card-sector">Other</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="real estate">
+        <div class="sector-label">Real Estate</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="HAFR" 
+        data-name="home afrika ltd" 
+        data-sector="real estate"
+        data-has-financials="true"
+        onclick="selectStock('HAFR')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">HAFR</span>
+          <span class="stock-card-price" id="card-price-HAFR">KES 1.23</span>
+        </div>
+        <div class="stock-card-name">Home Afrika Ltd</div>
+        <div class="stock-card-sector">Real Estate</div>
+      </div>
+    
+      </div>
+    
+
+      <div class="sector-group" data-sector-group="telecommunication & technology">
+        <div class="sector-label">Telecommunication & Technology</div>
+        
+      <div 
+        class="stock-item-card" 
+        data-ticker="SCOM" 
+        data-name="safaricom plc" 
+        data-sector="telecommunication & technology"
+        data-has-financials="true"
+        onclick="selectStock('SCOM')"
+      >
+        <div class="stock-card-row">
+          <span class="stock-card-ticker">SCOM</span>
+          <span class="stock-card-price" id="card-price-SCOM">KES 30.00</span>
+        </div>
+        <div class="stock-card-name">Safaricom Plc</div>
+        <div class="stock-card-sector">Telecommunication & Technology</div>
+      </div>
+    
+      </div>
+    
+  
                 </div>
             </article>
 
@@ -1771,6 +1982,7 @@
                                     <span>•</span>
                                     <span id="detail-sector">Banking</span>
                                 </div>
+                                <p class="stock-blurb" id="detail-blurb" style="display: none;"></p>
                             </div>
                             <div class="stock-price-col" id="detail-price-col">
                                 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
@@ -1778,6 +1990,10 @@
                                     <div class="live-price" id="detail-price">KES —</div>
                                 </div>
                                 <div class="live-price-label">Current Price</div>
+                                <div class="mode-toggle" id="mode-toggle">
+                                    <button id="mode-simple-btn" class="mode-btn" onclick="setMode('simple')">SIMPLE</button>
+                                    <button id="mode-expert-btn" class="mode-btn" onclick="setMode('expert')">EXPERT</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1799,7 +2015,15 @@
                         <div class="stat-card">
                             <div class="stat-label">ROE</div>
                             <div class="stat-value highlight" id="stat-roe">—</div>
+                            <div class="roe-context" id="stat-roe-context" style="font-size: 0.65rem; color: var(--meta);"></div>
                         </div>
+                    </div>
+
+                    <!-- Plain-English summary (Simple mode core; stays visible in Expert) -->
+                    <div class="plain-summary plain-only" id="plain-summary">
+                        <div class="verdict-chips" id="verdict-chips"></div>
+                        <p class="plain-roe" id="plain-roe" style="margin: 0.6rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);"></p>
+                        <p class="plain-note" style="margin: 0.4rem 0 0 0; font-size: 0.72rem; color: var(--meta);">Switch to EXPERT (top right) for the full tables.</p>
                     </div>
 
                     <!-- Workspace Tabs -->
@@ -1815,7 +2039,7 @@
                         <!-- Financials Tab -->
                         <div class="tab-section active" id="tab-financials">
                             <h3 class="section-title">Key Figures — FY (KES, as reported)</h3>
-                            <div class="table-container" id="financials-table-box">
+                            <div class="table-container expert-only" id="financials-table-box">
                                 <!-- Pre-rendered dynamically by JS -->
                             </div>
                         </div>
@@ -1823,7 +2047,7 @@
                         <!-- Key Ratios Tab -->
                         <div class="tab-section" id="tab-ratios">
                             <h3 class="section-title">Valuation & Efficiency Ratios</h3>
-                            <div class="table-container" id="ratios-table-box">
+                            <div class="table-container expert-only" id="ratios-table-box">
                                 <!-- Pre-rendered dynamically by JS -->
                             </div>
                         </div>
@@ -1860,73 +2084,61 @@
         let activeTicker = null;
         let activeTab = 'financials';
 
-        // Ticker mapping normalization (from AFX/Kwayisi symbols to Master symbols)
-        const PRICE_TICKER_MAP = {
-            "BKG": "BK",
-            "IMH": "IM",
-            "PORT": "BAMB",
-            "ILAM": "FAHR",
-            "FAHR": "FAHR",
-            "SCAN": "SCAN",
-            "SCOM": "SCOM",
-            "EQTY": "EQTY",
-            "KCB": "KCB",
-            "COOP": "COOP",
-            "ABSA": "ABSA"
-        };
+        // Worker-backed price sync: one KV-cached source (moecap-prices worker),
+        // refreshed hourly server-side. No third-party CORS proxy, no per-visitor
+        // external scraping. Falls back to the static snapshot on any failure.
+        const NSE_PRICES_URL = "https://moecap-prices.iamkingori.workers.dev/nse";
 
-        // Real-time price synchronizer using CORS proxy
         async function syncPricesRealtime() {
-            console.log("📡 Starting live NSE prices synchronization via CORS proxy...");
-            const kwayisiUrl = "https://afx.kwayisi.org/nse/";
-            const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(kwayisiUrl);
-            
+            console.log("📡 Syncing NSE prices from moecap-prices worker...");
             try {
-                const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error("CORS Proxy HTTP error: " + response.status);
-                const html = await response.text();
-                
-                // Regex matches: <tr><td><a href="...">TICKER</a></td><td><a href="...">NAME</a></td><td>VOLUME</td><td>PRICE</td></tr>
-                const rowRegex = /<tr><td><a [^>]+>([A-Z0-9]+)<\/a><td><a [^>]+>[^<]+<\/a><td>(?:[0-9,]+)?<td>([0-9,]+\.[0-9]+)/g;
-                let match;
-                let count = 0;
-                const prices = {};
-                
-                while ((match = rowRegex.exec(html)) !== null) {
-                    const rawTicker = match[1];
-                    const price = parseFloat(match[2].replace(/,/g, ""));
-                    const ticker = PRICE_TICKER_MAP[rawTicker] || rawTicker;
-                    prices[ticker] = price;
-                    count++;
+                const response = await fetch(NSE_PRICES_URL);
+                if (!response.ok) throw new Error("worker HTTP error: " + response.status);
+                const payload = await response.json();
+                if (!payload || !payload.prices || Object.keys(payload.prices).length === 0) {
+                    throw new Error("empty payload");
                 }
-                
-                if (count > 0 && db) {
-                    console.log(`✅ Live prices successfully fetched: ${count} tickers updated.`);
-                    if (!db.market) db.market = {};
-                    db.market.prices = { ...db.market.prices, ...prices };
-                    db.market.lastUpdated = new Date().toISOString();
-                    db.market.isLive = true;
-                    
-                    // 1. Update prices in the directory sidebar
-                    updateDirectoryPrices();
-                    
-                    // 2. If an active company is selected, refresh its header price display
-                    if (activeTicker) {
-                        const currentPrice = db.market.prices[activeTicker];
-                        if (currentPrice !== undefined) {
-                            document.getElementById('detail-price').innerText = `KES ${currentPrice.toFixed(2)}`;
-                            const priceCol = document.getElementById('detail-price-col');
-                            if (priceCol) {
-                                priceCol.style.display = 'block';
-                                const badge = document.getElementById('detail-price-live-badge');
-                                if (badge) badge.style.display = 'inline-block';
-                            }
+
+                if (!db) db = {};
+                if (!db.market) db.market = {};
+                db.market.prices = { ...db.market.prices, ...payload.prices };
+                db.market.lastUpdated = payload.asOf || db.market.lastUpdated;
+                db.market.isLive = !!payload.live;
+
+                updatePricesAsOf();
+                updateDirectoryPrices();
+
+                if (activeTicker) {
+                    const currentPrice = db.market.prices[activeTicker];
+                    if (currentPrice !== undefined) {
+                        document.getElementById('detail-price').innerText = `KES ${currentPrice.toFixed(2)}`;
+                        const priceCol = document.getElementById('detail-price-col');
+                        if (priceCol) {
+                            priceCol.style.display = 'block';
+                            const badge = document.getElementById('detail-price-live-badge');
+                            if (badge) badge.style.display = db.market.isLive ? 'inline-block' : 'none';
                         }
                     }
                 }
             } catch (err) {
-                console.warn("⚠️ Live price sync failed. Gracefully falling back to static database:", err);
+                console.warn("⚠️ Worker price sync failed. Using snapshot prices:", err);
+                if (db && db.market) db.market.isLive = false;
+                updatePricesAsOf();
             }
+        }
+
+        // Honest "as of" labelling — snapshot dates are shown, never hidden
+        function updatePricesAsOf() {
+            const el = document.getElementById('prices-asof');
+            const badge = document.getElementById('prices-live-badge');
+            if (!el || !db || !db.market) return;
+            if (db.market.lastUpdated) {
+                const d = new Date(db.market.lastUpdated);
+                el.innerText = isNaN(d.getTime()) ? db.market.lastUpdated : d.toLocaleDateString('en-KE', { day: 'numeric', month: 'short', year: 'numeric' });
+            } else {
+                el.innerText = 'archive snapshot';
+            }
+            if (badge) badge.style.display = (db.market && db.market.isLive) ? 'inline' : 'none';
         }
 
         // Update all price badges in the sidebar dynamically
@@ -1954,7 +2166,12 @@
                 }
                 db = await response.json();
                 console.log('📡 Database fetched successfully!', db);
-                
+
+                // Simple/Expert mode: default Simple, persisted per visitor
+                setMode(localStorage.getItem('nse-mode') || 'simple');
+                updatePricesAsOf();
+                computeSectorMedians();
+
                 // Automatically open ticker if URL hash matches
                 const hash = window.location.hash.substring(1).toUpperCase();
                 if (hash && document.querySelector(`[data-ticker="${hash}"]`)) {
@@ -1987,6 +2204,13 @@
                     card.style.display = 'none';
                 }
             });
+
+            // Hide sector groups whose cards all got filtered out
+            document.querySelectorAll('.sector-group').forEach(group => {
+                const anyVisible = Array.from(group.querySelectorAll('.stock-item-card'))
+                    .some(card => card.style.display === 'block');
+                group.style.display = anyVisible ? 'block' : 'none';
+            });
         }
 
         // Switch workspace tabs
@@ -2010,6 +2234,88 @@
                     section.classList.remove('active');
                 }
             });
+        }
+
+        // Mode toggle: Simple (default) hides expert tables, keeps plain summary
+        function setMode(mode) {
+            const simple = mode !== 'expert';
+            document.body.classList.toggle('nse-simple', simple);
+            document.body.classList.toggle('nse-expert', !simple);
+            localStorage.setItem('nse-mode', simple ? 'simple' : 'expert');
+            const sBtn = document.getElementById('mode-simple-btn');
+            const eBtn = document.getElementById('mode-expert-btn');
+            if (sBtn) sBtn.classList.toggle('active', simple);
+            if (eBtn) eBtn.classList.toggle('active', !simple);
+        }
+
+        // Sector-median ROE for honest context ("good for a bank?")
+        let sectorMedians = {};
+        function computeSectorMedians() {
+            if (!db || !db.companies || !db.financials) return;
+            const bySector = {};
+            db.companies.forEach(c => {
+                const fin = db.financials[c.ticker];
+                if (!fin || !fin.metrics) return;
+                const periods = Object.keys(fin.metrics).sort().reverse();
+                const yr = fin.canonicalYear || periods[0];
+                if (!yr) return;
+                const roe = calculateROE(fin.metrics[yr] || {}, (fin.ratios || {})[yr] || {});
+                if (roe === null || isNaN(roe)) return;
+                (bySector[c.sector] = bySector[c.sector] || []).push(roe);
+            });
+            sectorMedians = {};
+            Object.entries(bySector).forEach(([sector, vals]) => {
+                const sorted = vals.slice().sort((a, b) => a - b);
+                const mid = Math.floor(sorted.length / 2);
+                sectorMedians[sector] = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+            });
+        }
+
+        // Profit signal: Net Income from canonical year, else any year that has it
+        function findNetIncome(fin) {
+            if (!fin || !fin.metrics) return null;
+            const periods = Object.keys(fin.metrics).sort().reverse();
+            const yr = fin.canonicalYear || periods[0];
+            const canonicalNI = (fin.metrics[yr] || {})["Net Income"];
+            if (typeof canonicalNI === 'number') return { value: canonicalNI, year: yr };
+            for (const p of periods) {
+                const v = (fin.metrics[p] || {})["Net Income"];
+                if (typeof v === 'number') return { value: v, year: p };
+            }
+            return null;
+        }
+
+        // Verdict chips: data-derived, honest absence when profit isn't archived
+        function renderVerdictChips(fin) {
+            const box = document.getElementById('verdict-chips');
+            if (!box) return;
+            const chips = [];
+            const ni = findNetIncome(fin);
+            if (ni && ni.value > 0) {
+                chips.push('<span class="verdict-chip chip-good">🟢 Profitable (' + ni.year + ')</span>');
+            } else if (ni && ni.value < 0) {
+                chips.push('<span class="verdict-chip chip-bad">🔴 Loss-making (' + ni.year + ')</span>');
+            } else {
+                chips.push('<span class="verdict-chip chip-neutral">📊 Profit not archived</span>');
+            }
+            if (fin && fin.canonicalYear) {
+                chips.push('<span class="verdict-chip chip-neutral">📅 Figures FY ' + fin.canonicalYear + '</span>');
+            }
+            box.innerHTML = chips.join('');
+        }
+
+        // Plain-English ROE sentence
+        function renderPlainRoe(company, roe) {
+            const el = document.getElementById('plain-roe');
+            if (!el) return;
+            if (roe === null || isNaN(roe)) {
+                el.innerText = 'Returns could not be computed from the archived figures.';
+                return;
+            }
+            const kes = Math.abs(roe).toFixed(0);
+            el.innerText = roe >= 0
+                ? `For every KES 100 of owners' money, ${company.name} made KES ${kes} that year.`
+                : `For every KES 100 of owners' money, ${company.name} LOST KES ${kes} that year.`;
         }
 
         // Robust dynamic ROIC computation
@@ -2091,6 +2397,18 @@
                 document.getElementById('detail-name').innerText = company.name;
                 document.getElementById('detail-ticker').innerText = company.ticker;
                 document.getElementById('detail-sector').innerText = company.sector;
+
+                // Plain-English one-liner (authored where identity is confident)
+                const blurbEl = document.getElementById('detail-blurb');
+                if (blurbEl) {
+                    if (company.blurb) {
+                        blurbEl.innerText = company.blurb;
+                        blurbEl.style.display = 'block';
+                    } else {
+                        blurbEl.innerText = '';
+                        blurbEl.style.display = 'none';
+                    }
+                }
                 
                 const priceCol = document.getElementById('detail-price-col');
                 if (price !== undefined && price !== null) {
@@ -2148,6 +2466,18 @@
                     const roeNum = typeof roe === 'number' ? roe : parseFloat(roe);
                     document.getElementById('stat-roe').innerText = (!isNaN(roeNum) && roe !== null) ? `${roeNum.toFixed(1)}%` : '—';
 
+                    // ROE in sector context (median of the sector's computable ROEs)
+                    const roeCtx = document.getElementById('stat-roe-context');
+                    if (roeCtx) {
+                        const med = sectorMedians[company.sector];
+                        roeCtx.innerText = (!isNaN(roeNum) && roe !== null && typeof med === 'number')
+                            ? `sector median ${med.toFixed(1)}%` : '';
+                    }
+
+                    // Plain-English layer: chips + ROE sentence
+                    renderVerdictChips(financials);
+                    renderPlainRoe(company, (!isNaN(roeNum) && roe !== null) ? roeNum : null);
+
                     // 1. Render Financial Table (canonical year only — other years
                     //    carry unreconciled native units by design)
                     renderFinancialsTable(financials.metrics, [latestPeriod], financials.unitHint);
@@ -2166,6 +2496,10 @@
                     document.getElementById('stat-netincome').innerText = '—';
                     document.getElementById('stat-roic').innerText = '—';
                     document.getElementById('stat-roe').innerText = '—';
+                    const roeCtx0 = document.getElementById('stat-roe-context');
+                    if (roeCtx0) roeCtx0.innerText = '';
+                    renderVerdictChips(undefined);
+                    renderPlainRoe(company, null);
                     
                     document.getElementById('financials-table-box').innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No financial metrics database found for ${ticker}</p>`;
                     document.getElementById('ratios-table-box').innerHTML = `<p style="color: var(--meta); font-size: 0.8rem; margin: 1rem 0;">No key efficiency ratios found for ${ticker}</p>`;
@@ -2323,14 +2657,15 @@
                 return;
             }
 
-            let listHtml = '';
+            let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Source documents are not held locally — titles and dates from the archive.</p>';
             announcements.forEach(ann => {
-                // If files are MD summaries, we point to their files. If URL scheme doesn't exist, we can use a direct local reference or treat as static lists.
-                const url = `https://github.com/criticalinsight/kenya-roic/blob/main/data/extractions/${ann.file}`;
+                // Rendered as local rows: the referenced document repository is gone
+                // (links 404 for every visitor). Titles/dates are the data we hold.
+                const esc = (s) => String(s || '').replace(/[<>&]/g, ch => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[ch] || ch));
                 listHtml += `
                     <div class="announcement-item">
-                        <a href="${url}" target="_blank" class="announcement-link">→ ${ann.title}</a>
-                        <span class="announcement-date">${ann.date}</span>
+                        <span class="announcement-link" style="cursor: default;">📄 ${esc(ann.title)}</span>
+                        <span class="announcement-date">${esc(ann.date)}</span>
                     </div>
                 `;
             });

@@ -86,4 +86,56 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toContain("function updateDirectoryPrices()");
     expect(htmlContent).toContain("setInterval(syncPricesRealtime, 60000)");
   });
+
+  test("Tier 2: plain-English layer renders (chips, toggle, grouping, blurbs)", () => {
+    const htmlContent = readFileSync(join(PUBLIC_DIR, "nse/index.html"), "utf-8");
+
+    // Plain summary + verdict chips + ROE sentence
+    expect(htmlContent).toContain('id="plain-summary"');
+    expect(htmlContent).toContain('id="verdict-chips"');
+    expect(htmlContent).toContain('id="plain-roe"');
+    expect(htmlContent).toContain("function renderVerdictChips");
+    expect(htmlContent).toContain("function renderPlainRoe");
+    expect(htmlContent).toContain("function findNetIncome");
+
+    // Simple/Expert toggle defaults Simple
+    expect(htmlContent).toContain("function setMode(mode)");
+    expect(htmlContent).toContain("setMode(localStorage.getItem('nse-mode') || 'simple')");
+    expect(htmlContent).toContain("body.nse-simple .expert-only { display: none; }");
+
+    // Sector-grouped directory + Start here row
+    expect(htmlContent).toContain("★ Start here");
+    expect(htmlContent).toContain('class="sector-label"');
+    expect(htmlContent).toContain("data-sector-group=");
+
+    // Sector-median ROE context
+    expect(htmlContent).toContain("function computeSectorMedians()");
+    expect(htmlContent).toContain('id="stat-roe-context"');
+
+    // Blurbs + startHere in the data copy
+    const copied = JSON.parse(readFileSync(join(PUBLIC_DIR, "nse/nse-data.json"), "utf-8")) as NSEData & { startHere?: string[] };
+    expect(copied.startHere).toEqual(["SCOM", "KCB", "EABL", "EQTY"]);
+    const scom = copied.companies.find((c) => c.ticker === "SCOM");
+    expect(scom?.blurb).toBeTruthy();
+  });
+
+  test("Tier 3: prices come from the worker, not a per-visitor proxy scrape", () => {
+    const htmlContent = readFileSync(join(PUBLIC_DIR, "nse/index.html"), "utf-8");
+
+    // Worker-backed sync + honest as-of labelling
+    expect(htmlContent).toContain("moecap-prices.iamkingori.workers.dev/nse");
+    expect(htmlContent).toContain('id="prices-asof"');
+    expect(htmlContent).toContain("function updatePricesAsOf()");
+
+    // The CORS-proxy scrape is dead — these must never come back
+    expect(htmlContent).not.toContain("allorigins");
+    expect(htmlContent).not.toContain("kwayisi");
+  });
+
+  test("Tier 3: announcements render locally, no dead external repo links", () => {
+    const htmlContent = readFileSync(join(PUBLIC_DIR, "nse/index.html"), "utf-8");
+    expect(htmlContent).not.toContain("criticalinsight");
+    expect(htmlContent).not.toContain("github.com");
+    expect(htmlContent).toContain("Source documents are not held locally");
+  });
 });
