@@ -1,0 +1,76 @@
+# Quarterly 13F holders rebuild.
+#
+# 13F filings for a quarter are due 45 days after quarter end
+# (Feb 14 / May 15 / Aug 14 / Nov 14). This job runs a few days after each
+# deadline (19th), scans the CURRENT quarter's EDGAR full-index for the
+# just-filed reports, rebuilds holders.json, and pushes it to the
+# moecap-prices Worker's KV namespace — the same key the /holders route
+# serves and public/hydrate.js consumes. No page rebuild needed.
+#
+# Requires repo secret CLOUDFLARE_API_TOKEN (Workers KV:Edit on namespace
+# 7eff4838aa6d49b9a82d1b175d4d0c06). Until it is set, the KV step is skipped
+# and the artifact is attached to the run instead.
+
+name: quarterly-13f
+
+on:
+  schedule:
+    - cron: "0 6 19 2,5,8,11 *"
+  workflow_dispatch:
+    inputs:
+      data-quarter:
+        description: "Label for the as-of quarter (e.g. 'Q2 2026')"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Compute quarters and download EDGAR index
+        run: |
+          YEAR=$(date -u +%Y)
+          QTR=$(( ($(date -u +%m) - 1) / 3 + 1 ))
+          PREV_QTR=$(( QTR == 1 ? 4 : QTR - 1 ))
+          PREV_YEAR=$(( QTR == 1 ? YEAR - 1 : YEAR ))
+          if [ -n "${{ github.event.inputs.data-quarter }}" ]; then
+            echo "DATA_QUARTER=${{ github.event.inputs.data-quarter }}" >> "$GITHUB_ENV"
+          else
+            echo "DATA_QUARTER=Q${PREV_QTR} ${PREV_YEAR}" >> "$GITHUB_ENV"
+          fi
+          curl -sSf -A "Moecap Research admin@moecapital.com" \
+            -o /tmp/master.idx.gz \
+            "https://www.sec.gov/Archives/edgar/full-index/${YEAR}/QTR${QTR}/master.gz"
+          gunzip -f /tmp/master.idx.gz
+          curl -sSf -A "Moecap Research admin@moecapital.com" \
+            -o /tmp/company_tickers.json \
+            "https://www.sec.gov/files/company_tickers.json"
+          echo "index: ${YEAR} QTR${QTR}  data-quarter: Q${PREV_QTR} ${PREV_YEAR}"
+
+      - name: Build holders index
+        run: |
+          bun scripts/build-13f-index.ts \
+            --index /tmp/master.idx \
+            --data-quarter "$DATA_QUARTER" \
+            --out scripts/out/holders.json
+          bun -e 'const d=require("./scripts/out/holders.json");console.log("covered:",Object.keys(d.entries).length,"filings:",d.filingsScanned)'
+
+      - name: Upload to Worker KV
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        run: |
+          bunx wrangler kv key put holders ./scripts/out/holders.json \
+            --namespace-id 7eff4838aa6d49b9a82d1b175d4d0c06 --remote
+
+      - name: Attach artifact (always)
+        uses: actions/upload-artifact@v4
+        with:
+          name: holders-${{ env.DATA_QUARTER }}
+          path: scripts/out/holders.json
+

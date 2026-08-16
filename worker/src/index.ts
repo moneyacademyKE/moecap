@@ -77,6 +77,14 @@ export default {
       return new Response(manifest, { headers });
     }
 
+    if (path === "/holders") {
+      const holders = await env.PRICES.get("holders");
+      if (!holders) return new Response('{"error":"not seeded"}', { status: 503, headers });
+      return new Response(holders, {
+        headers: { ...headers, "cache-control": "public, max-age=21600, s-maxage=21600" },
+      });
+    }
+
     return new Response('{"error":"not found"}', { status: 404, headers });
   },
 };

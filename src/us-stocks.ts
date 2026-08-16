@@ -144,6 +144,16 @@ export function formatStockBody(body: string): string {
   }).join('\n');
 }
 
+// Injects the 13F holders hydration slot after the first body section
+// (before the second <h4> header, or at the end for single-section bodies).
+function withHoldersSlot(bodyHtml: string, ticker: string): string {
+  const first = bodyHtml.indexOf("<h4");
+  const second = first === -1 ? -1 : bodyHtml.indexOf("<h4", first + 1);
+  const slot = `<div data-field="holders" data-ticker="${ticker.toUpperCase()}"></div>`;
+  if (second === -1) return bodyHtml + slot;
+  return bodyHtml.slice(0, second) + slot + bodyHtml.slice(second);
+}
+
 // Get sorting weight of rating: green gets highest priority, then yellow, then red
 function getRatingWeight(rating: string | undefined): number {
   if (!rating) return 3;
@@ -290,7 +300,7 @@ export function renderStockAccordions(stocks: StockIdea[], nodeId: string): stri
               </div>
               
               <div class="stock-analysis-text">
-                ${formatStockBody(stock.body)}
+                ${withHoldersSlot(formatStockBody(stock.body), stock.ticker)}
               </div>
             </div>
           </details>

@@ -68,3 +68,82 @@
     tryNext(0);
   }
 })();
+
+// 13F holders hydration — same pattern, quarterly data. Renders a
+// "Major 13F Holders" block into each entry's holders slot (placed after
+// section 1 by the build). All DOM is built via textContent/properties —
+// filer names from EDGAR are never parsed as HTML.
+(function () {
+  "use strict";
+
+  var SOURCES = ["/holders.json", "https://moecap-prices.iamkingori.workers.dev/holders"];
+
+  function fmtUsd(v) {
+    if (v >= 1e12) return "$" + (v / 1e12).toFixed(1) + "T";
+    if (v >= 1e9) return "$" + (v / 1e9).toFixed(1) + "B";
+    if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + "M";
+    return "$" + Math.round(v).toLocaleString();
+  }
+
+  function apply(payload) {
+    var entries = (payload && payload.entries) || {};
+    var quarter = payload && payload.dataQuarter ? " — " + payload.dataQuarter : "";
+    var rendered = 0;
+    document.querySelectorAll('[data-field="holders"]').forEach(function (el) {
+      var list = entries[el.getAttribute("data-ticker")];
+      if (!list || !list.length) return; // stays invisible
+
+      var h = document.createElement("h4");
+      h.style.cssText =
+        "color:var(--accent);font-size:1.05rem;font-weight:bold;margin-top:2rem;" +
+        "margin-bottom:0.8rem;border-bottom:1px dashed var(--border);padding-bottom:0.3rem;";
+      h.textContent = "🏛 Major 13F Holders" + quarter + " (SEC EDGAR)";
+
+      var note = document.createElement("p");
+      note.style.cssText = "font-size:0.75rem;color:var(--meta);margin:0 0 0.5rem 0;";
+      note.textContent =
+        "Funds with ≥$1B reported portfolios holding ≥3% in this stock. " +
+        "13F data is quarterly and filed up to 45 days after quarter end.";
+
+      var ul = document.createElement("ul");
+      ul.style.cssText = "margin:0.5rem 0 1.2rem 0;padding-left:1.5rem;";
+      list.forEach(function (x) {
+        var li = document.createElement("li");
+        li.style.cssText = "margin-bottom:0.3rem;";
+        var a = document.createElement("a");
+        a.href = x.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = x.fund;
+        li.appendChild(a);
+        li.appendChild(
+          document.createTextNode(
+            " — " + x.weightPct + "% of portfolio (" + fmtUsd(x.valueUsd) + "), filed " + x.filed
+          )
+        );
+        ul.appendChild(li);
+      });
+
+      el.textContent = "";
+      el.appendChild(h);
+      el.appendChild(note);
+      el.appendChild(ul);
+      rendered++;
+    });
+    return rendered > 0;
+  }
+
+  function tryNext(i) {
+    if (i >= SOURCES.length) return; // silent: slots stay invisible
+    fetch(SOURCES[i], { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (payload) { if (!apply(payload)) tryNext(i + 1); })
+      .catch(function () { tryNext(i + 1); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { tryNext(0); });
+  } else {
+    tryNext(0);
+  }
+})();
