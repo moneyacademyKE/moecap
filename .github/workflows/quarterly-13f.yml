@@ -65,7 +65,7 @@ jobs:
       - name: Upload to Worker KV
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: |
-          bunx wrangler kv key put holders ./scripts/out/holders.json \
+          bunx wrangler kv key put holders --path ./scripts/out/holders.json \
             --namespace-id 7eff4838aa6d49b9a82d1b175d4d0c06 --remote
 
       - name: Attach artifact (always)
