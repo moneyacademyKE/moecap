@@ -721,7 +721,7 @@ export function buildNsePage(publicDir: string) {
                     <div class="tab-content-area">
                         <!-- Financials Tab -->
                         <div class="tab-section active" id="tab-financials">
-                            <h3 class="section-title">Income Statement (KES Billions)</h3>
+                            <h3 class="section-title">Key Figures — FY (KES, as reported)</h3>
                             <div class="table-container" id="financials-table-box">
                                 <!-- Pre-rendered dynamically by JS -->
                             </div>
@@ -1019,19 +1019,31 @@ export function buildNsePage(publicDir: string) {
                 // Populate stats card & Dynamic ratios
                 if (financials && financials.metrics) {
                     const periods = Object.keys(financials.metrics).sort().reverse();
-                    const latestPeriod = periods[0];
+                    // canonical year: the fullest, coherence-cleaned year chosen at data-build time
+                    const latestPeriod = financials.canonicalYear || periods[0];
                     const latestMetrics = latestPeriod ? financials.metrics[latestPeriod] : {};
                     const latestRatios = (financials.ratios && latestPeriod) ? financials.ratios[latestPeriod] : {};
+                    const unitHint = financials.unitHint || 'M';
+
+                    // KES display: hint K = thousands-native; >=1000 = millions-native; else billions-native
+                    const toBillions = (v) => {
+                        if (unitHint === 'K') return v / 1e6;
+                        return v >= 1000 ? v / 1000 : v;
+                    };
+                    const displayKES = (v) => {
+                        const b = toBillions(v);
+                        return b >= 1 ? \`KES \${b.toFixed(1)}B\` : \`KES \${Math.round(b * 1000)}M\`;
+                    };
 
                     // Revenue LTM
                     const rev = latestMetrics["Revenue"];
                     const revNum = typeof rev === 'number' ? rev : parseFloat(rev);
-                    document.getElementById('stat-revenue').innerText = (!isNaN(revNum) && rev !== null && rev !== undefined) ? \`KES \${revNum.toFixed(1)}B\` : '—';
+                    document.getElementById('stat-revenue').innerText = (!isNaN(revNum) && rev !== null && rev !== undefined) ? displayKES(revNum) : '—';
 
                     // Net Income LTM
                     const net = latestMetrics["Net Income"];
                     const netNum = typeof net === 'number' ? net : parseFloat(net);
-                    document.getElementById('stat-netincome').innerText = (!isNaN(netNum) && net !== null && net !== undefined) ? \`KES \${netNum.toFixed(1)}B\` : '—';
+                    document.getElementById('stat-netincome').innerText = (!isNaN(netNum) && net !== null && net !== undefined) ? displayKES(netNum) : '—';
 
                     // Compute dynamic ROIC
                     const roic = calculateROIC(latestMetrics);
@@ -1043,8 +1055,9 @@ export function buildNsePage(publicDir: string) {
                     const roeNum = typeof roe === 'number' ? roe : parseFloat(roe);
                     document.getElementById('stat-roe').innerText = (!isNaN(roeNum) && roe !== null) ? \`\${roeNum.toFixed(1)}%\` : '—';
 
-                    // 1. Render Financial Table
-                    renderFinancialsTable(financials.metrics, periods);
+                    // 1. Render Financial Table (canonical year only — other years
+                    //    carry unreconciled native units by design)
+                    renderFinancialsTable(financials.metrics, [latestPeriod], financials.unitHint);
 
                     // 2. Render Key Ratios Table
                     renderRatiosTable(financials.ratios || {}, periods, financials.metrics);
@@ -1075,15 +1088,24 @@ export function buildNsePage(publicDir: string) {
         }
 
         // Render high-performance financial metrics table
-        function renderFinancialsTable(metrics, periods) {
+        function renderFinancialsTable(metrics, periods, unitHint) {
             if (!periods || periods.length === 0) return;
-            
+
             // Collect all unique metrics keys across periods
             const allKeys = new Set();
             periods.forEach(p => {
                 Object.keys(metrics[p] || {}).forEach(k => allKeys.add(k));
             });
             const sortedMetricKeys = Array.from(allKeys).sort();
+            const hint = unitHint || 'M';
+            const toBillions = (v) => {
+                if (hint === 'K') return v / 1e6;
+                return v >= 1000 ? v / 1000 : v;
+            };
+            const displayKES = (v) => {
+                const b = toBillions(v);
+                return b >= 1 ? \`\${b.toFixed(1)}B\` : \`\${Math.round(b * 1000)}M\`;
+            };
 
             let headerCols = '<th>Financial Metric</th>';
             periods.forEach(p => {
@@ -1091,12 +1113,16 @@ export function buildNsePage(publicDir: string) {
             });
 
             let rowHtml = '';
+            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %"]);
             sortedMetricKeys.forEach(m => {
                 rowHtml += \`<tr><td class="metric-name">\${m}</td>\`;
                 periods.forEach(p => {
                     const val = metrics[p]?.[m];
                     const valNum = typeof val === 'number' ? val : parseFloat(val);
-                    const valStr = (!isNaN(valNum) && val !== null && val !== undefined) ? valNum.toFixed(1) : '—';
+                    let valStr = '—';
+                    if (!isNaN(valNum) && val !== null && val !== undefined) {
+                        valStr = ratioFields.has(m) ? \`\${valNum.toFixed(1)}\` : displayKES(valNum);
+                    }
                     rowHtml += \`<td class="period-val">\${valStr}</td>\`;
                 });
                 rowHtml += '</tr>';
