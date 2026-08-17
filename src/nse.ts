@@ -1334,7 +1334,7 @@ export function buildNsePage(publicDir: string) {
             });
 
             let rowHtml = '';
-            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %"]);
+            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS"]);
             sortedMetricKeys.forEach(m => {
                 rowHtml += \`<tr><td class="metric-name">\${m}</td>\`;
                 periods.forEach(p => {
@@ -1451,14 +1451,18 @@ export function buildNsePage(publicDir: string) {
                 return;
             }
 
-            let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Source documents are not held locally — titles and dates from the archive.</p>';
+            let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Official PDFs link to nse.co.ke listed-company announcements.</p>';
             announcements.forEach(ann => {
-                // Rendered as local rows: the referenced document repository is gone
-                // (links 404 for every visitor). Titles/dates are the data we hold.
+                // Live http(s) links open the official PDF on nse.co.ke;
+                // legacy entries (dead repository filenames) stay as local rows.
                 const esc = (s) => String(s || '').replace(/[<>&]/g, ch => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[ch] || ch));
+                const isLive = String(ann.file || "").startsWith("http");
+                const label = isLive
+                    ? \`<a class="announcement-link" href="\${esc(ann.file)}" target="_blank" rel="noopener">📄 \${esc(ann.title)}</a>\`
+                    : \`<span class="announcement-link" style="cursor: default;">📄 \${esc(ann.title)}</span>\`;
                 listHtml += \`
                     <div class="announcement-item">
-                        <span class="announcement-link" style="cursor: default;">📄 \${esc(ann.title)}</span>
+                        \${label}
                         <span class="announcement-date">\${esc(ann.date)}</span>
                     </div>
                 \`;

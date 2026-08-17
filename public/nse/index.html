@@ -794,7 +794,7 @@
         data-ticker="LIMT" 
         data-name="limuru tea company ltd" 
         data-sector="agricultural"
-        data-has-financials="false"
+        data-has-financials="true"
         onclick="selectStock('LIMT')"
       >
         <div class="stock-card-row">
@@ -1246,7 +1246,7 @@
         data-ticker="XPRS" 
         data-name="express kenya ltd" 
         data-sector="commercial & services"
-        data-has-financials="false"
+        data-has-financials="true"
         onclick="selectStock('XPRS')"
       >
         <div class="stock-card-row">
@@ -1898,7 +1898,7 @@
         data-ticker="SKL" 
         data-name="shri krishana overseas ltd" 
         data-sector="other"
-        data-has-financials="false"
+        data-has-financials="true"
         onclick="selectStock('SKL')"
       >
         <div class="stock-card-row">
@@ -2540,7 +2540,7 @@
             });
 
             let rowHtml = '';
-            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %"]);
+            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS"]);
             sortedMetricKeys.forEach(m => {
                 rowHtml += `<tr><td class="metric-name">${m}</td>`;
                 periods.forEach(p => {
@@ -2657,14 +2657,18 @@
                 return;
             }
 
-            let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Source documents are not held locally — titles and dates from the archive.</p>';
+            let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Official PDFs link to nse.co.ke listed-company announcements.</p>';
             announcements.forEach(ann => {
-                // Rendered as local rows: the referenced document repository is gone
-                // (links 404 for every visitor). Titles/dates are the data we hold.
+                // Live http(s) links open the official PDF on nse.co.ke;
+                // legacy entries (dead repository filenames) stay as local rows.
                 const esc = (s) => String(s || '').replace(/[<>&]/g, ch => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[ch] || ch));
+                const isLive = String(ann.file || "").startsWith("http");
+                const label = isLive
+                    ? `<a class="announcement-link" href="${esc(ann.file)}" target="_blank" rel="noopener">📄 ${esc(ann.title)}</a>`
+                    : `<span class="announcement-link" style="cursor: default;">📄 ${esc(ann.title)}</span>`;
                 listHtml += `
                     <div class="announcement-item">
-                        <span class="announcement-link" style="cursor: default;">📄 ${esc(ann.title)}</span>
+                        ${label}
                         <span class="announcement-date">${esc(ann.date)}</span>
                     </div>
                 `;

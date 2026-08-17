@@ -740,6 +740,14 @@
           "Inventories" : 4206.1,
           "Total Debt" : 5500
         },
+        "2026" : {
+          "Service Revenue" : 414137.4,
+          "Revenue" : 414137.4,
+          "EBITDA" : 220262.0,
+          "Net Income" : 153900.0,
+          "EPS" : 2.39,
+          "DPS" : 2.0
+        },
         "2019" : {
           "Cash & Bank" : 16871,
           "Retained Earnings" : 92726,
@@ -834,6 +842,14 @@
         }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Audited Results for the Year Ended 31 March 2026",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Safaricom-Plc-%E2%80%93Audited-Results-for-the-Year-Ended-31-March-2026.pdf"
+      }, {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Safaricom-Plc-2026-Forward-Looking-Calendar-of-Events.pdf"
+      }, {
         "date" : "2025",
         "title" : "Safaricom PLC Announcement of an Interim Dividend For The Year Ended 31 03 2025",
         "file" : "Safaricom-PLC-Announcement-of-an-Interim-Dividend-For-The-Year-Ended-31-03-2025.pdf.md"
@@ -1117,8 +1133,8 @@
         "source" : "safaricom-limited-change-in-directors-16-march-2015.pdf.md",
         "date" : "2015-03-16"
       } ],
-      "canonicalYear" : "2018",
-      "unitHint" : "M"
+      "canonicalYear" : "2026",
+      "unitHint" : "B"
     },
     "MSC" : {
       "metrics" : {
@@ -2287,6 +2303,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KENYA-AIRWAYS-PLC-FORWARD-LOOKING-CALENDAR-2026.pdf"
+      }, {
         "date" : "2024",
         "title" : "Public Notice Extension of suspension from trading of Kenya Airways Plc shares",
         "file" : "Public-Notice-Extension-of-suspension-from-trading-of-Kenya-Airways-Plc-shares.pdf.md"
@@ -2732,6 +2752,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Audited Financial Results for the Year Ended 31 Dec 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/TotalEnergies-Marketing-Kenya-PLC-Audited-Financial-Results-for-the-Year-Ended-31-Dec-2025.pdf"
+      }, {
         "date" : "2024-06-26",
         "title" : "TotalEnergies Marketing Kenya Plc AGM Resolutions",
         "file" : "TotalEnergies-Marketing-Kenya-Plc-AGM-Resolutions.pdf.md"
@@ -3058,6 +3082,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Standard-Chartered-Bank-Calendar-of-events-2026.pdf"
+      }, {
         "date" : "2024-05-23",
         "title" : "Standard Chartered Bank Kenya Ltd AGM Resolutions",
         "file" : "Standard-Chartered-Bank-Kenya-Ltd-AGM-Resolutions.pdf.md"
@@ -3370,6 +3398,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/SASINI-PLC-INVESTOR-CALENDAR-FOR-THE-YEAR-2026-FINAL.pdf"
+      }, {
         "date" : "2024-09-30",
         "title" : "Sasini Plc Audited Results for the Year Ended 31 Sep 2024",
         "file" : "Sasini-Plc-Audited-Results-for-the-Year-Ended-31-Sep-2024.pdf.md"
@@ -3639,6 +3671,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KPLC-Calendar-of-events.pdf"
+      }, {
         "date" : "2024-12-31",
         "title" : "The Kenya Power Lighting Company Plc Unaudited Trading Results for the 6 months ended 31 12 2024",
         "file" : "The-Kenya-Power-Lighting-Company-Plc-Unaudited-Trading-Results-for-the-6-months-ended-31-12-2024.pdf.md"
@@ -3775,6 +3811,13 @@
       "canonicalYear" : "2019",
       "unitHint" : "M"
     },
+    "XPRS" : {
+      "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Financial Statement for The Year Ended 31st December 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Express-Kenya-Plc-Financial-Statement-for-The-Year-Ended-31st-December-2025.pdf"
+      } ]
+    },
     "JUB" : {
       "metrics" : {
         "2016" : {
@@ -3807,6 +3850,10 @@
         "2020" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Jubilee-Holdings-2026-Forward-facing-calendar.pdf"
+      }, {
         "date" : "2020-06-30",
         "title" : "jubilee holdings ltd unaudited consolidated financial results for the half year ended 30 jun 2020",
         "file" : "jubilee-holdings-ltd-unaudited-consolidated-financial-results-for-the-half-year-ended-30-jun-2020.pdf.md"
@@ -3998,6 +4045,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/BOC-Calendar-of-events-2026.pdf"
+      }, {
         "date" : "2024-06-26",
         "title" : "BOC Kenya Plc Notice of AGM 1",
         "file" : "BOC-Kenya-Plc-Notice-of-AGM-1.pdf.md"
@@ -4177,6 +4228,10 @@
         "2016" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/NBV-FORWARD-LOOKING-CALENDAR-2026.pdf"
+      }, {
         "date" : "2016-09-30",
         "title" : "nbv ltd un audited financial results for the period ended 30 sep 2016 additional infomation",
         "file" : "nbv-ltd-un-audited-financial-results-for-the-period-ended-30-sep-2016-additional-infomation.pdf.md"
@@ -4322,6 +4377,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Carbacid-Investments-plc-2026_Calendar_of_Corporate_Events.pdf"
+      }, {
         "date" : "2024-07-31",
         "title" : "Carbacid Investments Plc Audited Group Results for the Year Ended 31st July 2025 1",
         "file" : "Carbacid-Investments-Plc-Audited-Group-Results-for-the-Year-Ended-31st-July-2025-1.pdf.md"
@@ -4577,6 +4636,10 @@
         }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Stanbic-Holdings-Plc-2026-Events-Calendar.pdf"
+      }, {
         "date" : "2024-12-31",
         "title" : "Stanbic Holdings Plc Audited Results of the Group for the year ended 31 December 2024",
         "file" : "Stanbic-Holdings-Plc-Audited-Results-of-the-Group-for-the-year-ended-31-December-2024.pdf.md"
@@ -4807,6 +4870,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/LKH-Corporate-Calendar-FY-2026_Approved-by-the-Board.pdf"
+      }, {
         "date" : "2024-05-31",
         "title" : "Liberty Kenya Holdings Plc Notice of Annual General Meeting 1",
         "file" : "Liberty-Kenya-Holdings-Plc-Notice-of-Annual-General-Meeting-1.pdf.md"
@@ -5166,6 +5233,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KAPCHORUA-TEA-KENYA-PLC-FORWARD-CORPORATE-CALENDER-FINANCIAL-YEAR-2026.pdf"
+      }, {
         "date" : "2024-09-30",
         "title" : "Kapchorua Tea Kenya Plc Unaudited Summarised Results for the 6 Months Ended 30th September 2024",
         "file" : "Kapchorua-Tea-Kenya-Plc-Unaudited-Summarised-Results-for-the-6-Months-Ended-30th-September-2024.pdf.md"
@@ -5393,6 +5464,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/NCBA-Group-PLC-Forward-Looking-Event-Calendar-for-2026-updated.pdf"
+      }, {
         "date" : "2024-09-30",
         "title" : "NCBA Group Plc Unaudited Financial Results of the Group and Bank for the period ended 30 Sep 2025",
         "file" : "NCBA-Group-Plc-Unaudited-Financial-Results-of-the-Group-and-Bank-for-the-period-ended-30-Sep-2025.pdf.md"
@@ -5843,6 +5918,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/WPP-CALENDAR-OF-EVENTS-2026.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "Wpp Scangroup Plc Unaudited Half Year Results For the Period Ended 30 Jun 2024",
         "file" : "Wpp-Scangroup-Plc-Unaudited-Half-Year-Results-For-the-Period-Ended-30-Jun-2024.pdf.md"
@@ -6155,6 +6234,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/THE-NSE-2026-FORWARD-LOOKING-CALENDER-FINAL.pdf"
+      }, {
         "date" : "2025",
         "title" : "Nairobi Securities Exchange Plc 71st Annual General Meeting Resolutions_21st May 2025",
         "file" : "Nairobi-Securities-Exchange-Plc-71st-Annual-General-Meeting-Resolutions_21st-May-2025.pdf.md"
@@ -6704,6 +6787,10 @@
         "2025" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/BK-Group-Calendar-of-events-2026.pdf"
+      }, {
         "date" : "2025-05-21",
         "title" : "BK Group Plc Q1 2025 Unaudited Financial Results",
         "file" : "BK-Group-Plc-Q1-2025-Unaudited-Financial-Results.pdf.md"
@@ -6896,20 +6983,32 @@
     },
     "CGEN" : {
       "metrics" : {
-        "2016" : {
-          "Cash & Bank" : 163514,
-          "Retained Earnings" : 2616.331,
-          "Net PP&E" : 1071.76,
+        "2022" : {
+          "Lease Liabilities" : 286419,
+          "Cash & Bank" : 876.263,
+          "Retained Earnings" : 4603.061,
+          "Current Assets" : 8926.903,
+          "Net PP&E" : 1939.521,
           "Total Assets" : null,
-          "Income Tax Expense" : -52154,
-          "Accounts Payable" : 1514.249,
-          "Finance Costs" : -246846,
-          "Revenue" : 9842.67,
-          "Intangible Assets" : 11887,
-          "Accounts Receivable" : 1419.052,
-          "Share Capital" : 401031,
-          "Inventories" : 2342.674,
-          "Total Debt" : 451213
+          "Income Tax Expense" : -269150,
+          "Non-Current Assets" : 5616.114,
+          "Accounts Payable" : 3747.381,
+          "Finance Costs" : -521.691,
+          "Current Liabilities" : 8191.979,
+          "Non-Current Liabilities" : 1460.25,
+          "Revenue" : 19394.136,
+          "Intangible Assets" : 120600,
+          "Accounts Receivable" : 4143.622,
+          "Share Capital" : 200515,
+          "Inventories" : 4964.284,
+          "Total Debt" : 2757.984
+        },
+        "2025" : {
+          "Revenue" : 25000.0,
+          "Turnover" : 25000.0,
+          "EBITDA" : 3800.0,
+          "Net Income" : 2400.0,
+          "DPS" : 3.42
         },
         "2017" : {
           "Cash & Bank" : 212504,
@@ -6926,6 +7025,41 @@
           "Share Capital" : 200511,
           "Inventories" : 2423.734,
           "Total Debt" : 1046.086
+        },
+        "2021" : {
+          "Lease Liabilities" : 243307,
+          "Cash & Bank" : 682.536,
+          "Retained Earnings" : 4064.269,
+          "Current Assets" : 10.14775,
+          "Net PP&E" : 1743.894,
+          "Total Assets" : null,
+          "Income Tax Expense" : -0.22700099999999998,
+          "Non-Current Assets" : 5.420183,
+          "Accounts Payable" : 2746.4,
+          "Finance Costs" : -0.502408,
+          "Current Liabilities" : 9.164458999999999,
+          "Non-Current Liabilities" : 1.480511,
+          "Revenue" : 17143.776,
+          "Intangible Assets" : 120600,
+          "Accounts Receivable" : 3099.286,
+          "Share Capital" : 200515,
+          "Inventories" : 3924.965,
+          "Total Debt" : 1234.449
+        },
+        "2016" : {
+          "Cash & Bank" : 163514,
+          "Retained Earnings" : 2616.331,
+          "Net PP&E" : 1071.76,
+          "Total Assets" : null,
+          "Income Tax Expense" : -52154,
+          "Accounts Payable" : 1514.249,
+          "Finance Costs" : -246846,
+          "Revenue" : 9842.67,
+          "Intangible Assets" : 11887,
+          "Accounts Receivable" : 1419.052,
+          "Share Capital" : 401031,
+          "Inventories" : 2342.674,
+          "Total Debt" : 451213
         },
         "2018" : {
           "Cash & Bank" : 162568,
@@ -6978,46 +7112,6 @@
           "Inventories" : 2.423178,
           "Total Debt" : 1.027333
         },
-        "2021" : {
-          "Lease Liabilities" : 243307,
-          "Cash & Bank" : 682.536,
-          "Retained Earnings" : 4064.269,
-          "Current Assets" : 10.14775,
-          "Net PP&E" : 1743.894,
-          "Total Assets" : null,
-          "Income Tax Expense" : -0.22700099999999998,
-          "Non-Current Assets" : 5.420183,
-          "Accounts Payable" : 2746.4,
-          "Finance Costs" : -0.502408,
-          "Current Liabilities" : 9.164458999999999,
-          "Non-Current Liabilities" : 1.480511,
-          "Revenue" : 17143.776,
-          "Intangible Assets" : 120600,
-          "Accounts Receivable" : 3099.286,
-          "Share Capital" : 200515,
-          "Inventories" : 3924.965,
-          "Total Debt" : 1234.449
-        },
-        "2022" : {
-          "Lease Liabilities" : 286419,
-          "Cash & Bank" : 876.263,
-          "Retained Earnings" : 4603.061,
-          "Current Assets" : 8926.903,
-          "Net PP&E" : 1939.521,
-          "Total Assets" : null,
-          "Income Tax Expense" : -269150,
-          "Non-Current Assets" : 5616.114,
-          "Accounts Payable" : 3747.381,
-          "Finance Costs" : -521.691,
-          "Current Liabilities" : 8191.979,
-          "Non-Current Liabilities" : 1460.25,
-          "Revenue" : 19394.136,
-          "Intangible Assets" : 120600,
-          "Accounts Receivable" : 4143.622,
-          "Share Capital" : 200515,
-          "Inventories" : 4964.284,
-          "Total Debt" : 2757.984
-        },
         "2023" : {
           "Finance Costs" : -1069.324,
           "Income Tax Expense" : -148879,
@@ -7057,6 +7151,14 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Consolidated Audited Financial Statements for the Period Ended 31 December 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Car-General-Kenya-Plc-Consolidated-Audited-Financial-Statements-for-the-Period-Ended-31-December-2025.pdf"
+      }, {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Car-General-plc-Calendar-of-Corporate-Events-2026.pdf"
+      }, {
         "date" : "2024",
         "title" : "Car General Kenya Plc Notice of AGM 1",
         "file" : "Car-General-Kenya-Plc-Notice-of-AGM-1.pdf.md"
@@ -7154,7 +7256,7 @@
         "source" : "car-general-kenya-ltd-annual-financial-statements-for-the-year-ended-30th-september-2017.pdf.md",
         "date" : "2017-09-30"
       } ],
-      "canonicalYear" : "2016",
+      "canonicalYear" : "2025",
       "unitHint" : "M"
     },
     "BAT" : {
@@ -7323,6 +7425,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/BAT-Kenya-2026-Forward-looking-Event-Corporate-Calendar.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "BAT Kenya Unaudited HY 2025 Results Announcement",
         "file" : "BAT-Kenya-Unaudited-HY-2025-Results-Announcement.pdf.md"
@@ -7498,6 +7604,10 @@
         "2017" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Kenya-Corporate-Events-Calendar-NewGold-Issuer.pdf"
+      }, {
         "date" : "2017-03-31",
         "title" : "newgold issuer rf ltd 2017 annual audited financial statements",
         "file" : "newgold-issuer-rf-ltd-2017-annual-audited-financial-statements.pdf.md"
@@ -7683,6 +7793,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Centum-2026-Corporate-Events-Calendar.pdf"
+      }, {
         "date" : "2024-09-20",
         "title" : "Centum Investment Co Plc Notice of AGM",
         "file" : "Centum-Investment-Co-Plc-Notice-of-AGM.pdf.md"
@@ -7911,6 +8025,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/TPS-East-Africa-2026-Events-Calendar.pdf"
+      }, {
         "date" : "2024",
         "title" : "TPS Eastern Africa Plc %E2%80%93 Appointment of Executive Group Finance Director",
         "file" : "TPS-Eastern-Africa-Plc-%E2%80%93-Appointment-of-Executive-Group-Finance-Director.pdf.md"
@@ -8448,6 +8566,10 @@
         }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KENGEN-2026-FORWARD-LOOKING-EVENT-CALENDAR.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "KenGen Plc Abridged Financial Results for the Year Ended 30th Jun 2024 AGM Notice",
         "file" : "KenGen-Plc-Abridged-Financial-Results-for-the-Year-Ended-30th-Jun-2024-AGM-Notice.pdf.md"
@@ -8952,6 +9074,11 @@
           "Share Capital" : 0.405255,
           "Inventories" : 2.748093,
           "Total Debt" : 0.599235
+        },
+        "2025" : {
+          "Revenue" : 0.5087,
+          "Profit Before Tax" : 0.1187,
+          "Net Income" : 0.1179
         }
       },
       "ratios" : {
@@ -8962,6 +9089,10 @@
         "2022" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Audited Consolidated Financial Report 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Home-Afrika-Audited-Consolidated-Financial-Report-2025.pdf"
+      }, {
         "date" : "2024",
         "title" : "Home Afrika Ltd Notice of AGM",
         "file" : "Home-Afrika-Ltd-Notice-of-AGM.pdf.md"
@@ -9078,7 +9209,7 @@
         "source" : "home-afrika-ltd-audited-financial-statements-for-the-period-ended-june-2018.pdf.md",
         "date" : "2018-06-30"
       } ],
-      "canonicalYear" : "2020",
+      "canonicalYear" : "2025",
       "unitHint" : "B"
     },
     "IMH" : {
@@ -10502,6 +10633,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KAKUZI-PLC-2026-CORPORATE-ACTIONS-CALENDAR.pdf"
+      }, {
         "date" : "2024-01-22",
         "title" : "Kakuzi Plc Profit warning announcement",
         "file" : "Kakuzi-Plc-Profit-warning-announcement.pdf.md"
@@ -10594,6 +10729,10 @@
       "metrics" : { },
       "ratios" : { },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/UMEME-Corporate-Events-Calendar.pdf"
+      }, {
         "date" : "2024-03-27",
         "title" : "umeme ltd public notice",
         "file" : "umeme-ltd-public-notice.pdf.md"
@@ -10764,6 +10903,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/WILLIAMSON-TEA-KENYA-PLC-FORWARD-CORPORATE-CALENDER-FINANCIAL-YEAR-2026.pdf"
+      }, {
         "date" : "2024-09-30",
         "title" : "Williamson Tea Kenya Unaudited Results for the Year Ended 30th September 2024",
         "file" : "Williamson-Tea-Kenya-Unaudited-Results-for-the-Year-Ended-30th-September-2024.pdf.md"
@@ -11017,6 +11160,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Calendar-for-Absa-Bank-KE.pdf"
+      }, {
         "date" : "2024-09-30",
         "title" : "ABSA Bank Kenya Plc Unaudited Group Results for the period Ended 30 Sep 2025",
         "file" : "ABSA-Bank-Kenya-Plc-Unaudited-Group-Results-for-the-period-Ended-30-Sep-2025.pdf.md"
@@ -11419,6 +11566,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Corporate-Events-Calendar-January-December-2026-EABL.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "East African Breweries Plc Audited Results for the Year Ended 30th June 2024",
         "file" : "East-African-Breweries-Plc-Audited-Results-for-the-Year-Ended-30th-June-2024.pdf.md"
@@ -11814,6 +11965,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KCB-Calendar-of-events-2026.pdf"
+      }, {
         "date" : "2024-12-31",
         "title" : "KCB Group Plc Audited Financial Statements Other Disclosures for the Period Ended 31 Dec 2024",
         "file" : "KCB-Group-Plc-Audited-Financial-Statements-Other-Disclosures-for-the-Period-Ended-31-Dec-2024.pdf.md"
@@ -12513,6 +12668,12 @@
           "Share Capital" : 471.4,
           "Inventories" : 1385.2
         },
+        "2025" : {
+          "Revenue" : 6039.4,
+          "Turnover" : 6039.4,
+          "Net Income" : -681.0,
+          "EPS" : -1.8
+        },
         "2017" : {
           "Cash & Bank" : 2.1507,
           "Retained Earnings" : 6.3690999999999995,
@@ -12641,6 +12802,14 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Audited Group Financial Results for the Year Ended 31 Dec 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Nation-Media-Group-Plc-Audited-Group-Financial-Results-for-the-Year-Ended-31-Dec-2025.pdf"
+      }, {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Nation-Media-Group-Corporate-Events-Calendar-January-2026-to-December-2026.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "Nation Media Group Plc Unaudited Group Financial Results for the 6 months to 30 June 2024",
         "file" : "Nation-Media-Group-Plc-Unaudited-Group-Financial-Results-for-the-6-months-to-30-June-2024.pdf.md"
@@ -12738,8 +12907,8 @@
         "source" : "nation-media-group-ltd-unaudited-financial-results-for-the-period-ended-30th-june-2017-2.pdf.md",
         "date" : "2017-06-30"
       } ],
-      "canonicalYear" : "2022",
-      "unitHint" : "B"
+      "canonicalYear" : "2025",
+      "unitHint" : "M"
     },
     "DCON" : {
       "metrics" : {
@@ -12898,6 +13067,10 @@
         "2022" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Laptrust-Imara-I-REIT-Forward-Looking-Events-Calendar.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "Longhorn Publishers Plc Audited Financial Results for the Year Ended 30 June 2024",
         "file" : "Longhorn-Publishers-Plc-Audited-Financial-Results-for-the-Year-Ended-30-June-2024.pdf.md"
@@ -13097,6 +13270,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Crown-Paints-Kenya-PLC-Corporate-Events-Calendar-January-December-2026.pdf"
+      }, {
         "date" : "2024-06-30",
         "title" : "Crown Paints Kenya Plc Unaudited Half Year Results for The Period Ended 30 06 2025",
         "file" : "Crown-Paints-Kenya-Plc-Unaudited-Half-Year-Results-for-The-Period-Ended-30-06-2025.pdf.md"
@@ -13444,6 +13621,23 @@
       } ],
       "canonicalYear" : "2021",
       "unitHint" : "B"
+    },
+    "LIMT" : {
+      "metrics" : {
+        "2025" : {
+          "Revenue" : 0.131,
+          "Turnover" : 0.131,
+          "Loss Before Tax" : -0.05,
+          "EPS" : -21.88
+        }
+      },
+      "unitHint" : "B",
+      "canonicalYear" : "2025",
+      "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Audited Results for the Year Ended 31st December 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Limuru-Tea-Plc-Audited-Results-for-the-Year-Ended-31st-December-2025.pdf"
+      } ]
     },
     "CABL" : {
       "metrics" : {
@@ -13867,6 +14061,10 @@
         "2024" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Equity-Group-Plc-Calendar-of-events-2026.pdf"
+      }, {
         "date" : "2024-12-31",
         "title" : "Equity Group Holdings Plc Audited Financial Statements Other Disclosures for the Period Ended 31 Dec 2024",
         "file" : "Equity-Group-Holdings-Plc-Audited-Financial-Statements-Other-Disclosures-for-the-Period-Ended-31-Dec-2024.pdf.md"
@@ -14242,6 +14440,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/HOMEBOYZ-ENTERTAINMENT-PLC-INVESTOR-CALENDAR-FOR-THE-YEAR-2025-2026.pdf"
+      }, {
         "date" : "2023-12-31",
         "title" : "Homeboyz Entertainment Plc Audited Results for the Year Ended 31 Dec 2023",
         "file" : "Homeboyz-Entertainment-Plc-Audited-Results-for-the-Year-Ended-31-Dec-2023.pdf.md"
@@ -14394,6 +14596,10 @@
         }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/CIC-Insurance-Group-PLC-Investor-Calendar-Events.pdf"
+      }, {
         "date" : "2024-12-31",
         "title" : "CIC Insurance Group Plc Audited Results for the Financial Year Ended 31 Dec 2024",
         "file" : "CIC-Insurance-Group-Plc-Audited-Results-for-the-Financial-Year-Ended-31-Dec-2024.pdf.md"
@@ -14618,6 +14824,10 @@
         }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Unga-Group-plc-2026-Corporate-Calendar.pdf"
+      }, {
         "date" : "2024-07-23",
         "title" : "Unga Group Plc %E2%80%93 Appointment of Acting Group Managing Director",
         "file" : "Unga-Group-Plc-%E2%80%93-Appointment-of-Acting-Group-Managing-Director.pdf.md"
@@ -14746,6 +14956,27 @@
       } ],
       "canonicalYear" : "2022",
       "unitHint" : "M"
+    },
+    "SKL" : {
+      "metrics" : {
+        "2025" : {
+          "Revenue" : 0.3511,
+          "Profit Before Tax" : 0.0083,
+          "Net Income" : 0.0041,
+          "EPS" : 4.1
+        }
+      },
+      "unitHint" : "B",
+      "canonicalYear" : "2025",
+      "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "Financial Statements for the year ended 31st December 2025",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/Shri-Krishana-Overseas-PLC-Financial-statements-For-the-year-ended-31st-December-2025.pdf"
+      }, {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/SKO-FORWARD-LOOKING-CALENDAR-2026.pdf"
+      } ]
     },
     "PORT" : {
       "metrics" : {
@@ -14880,6 +15111,10 @@
         "2023" : { }
       },
       "announcements" : [ {
+        "date" : "2026-08-17",
+        "title" : "2026 Corporate Events Calendar (NSE)",
+        "file" : "https://www.nse.co.ke/wp-content/uploads/KMRC-2026-Calendar.pdf"
+      }, {
         "date" : "2024",
         "title" : "East African Portland Cement Plc Changes in Senior Management",
         "file" : "East-African-Portland-Cement-Plc-Changes-in-Senior-Management.pdf.md"
