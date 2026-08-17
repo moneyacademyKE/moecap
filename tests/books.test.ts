@@ -5,14 +5,19 @@ import { join } from "node:path";
 const notesPath = join(import.meta.dir, "..", "data", "book-notes.json");
 
 describe("book notes accordion", () => {
-    test("renders both books with chapter accordions", () => {
+    test("renders all books with chapter accordions", async () => {
         const html = renderBooksAccordion(notesPath);
         expect(html).toContain('class="book-note"');
         expect(html).toContain("Optimal Thinking");
         expect(html).toContain("Market Makers");
-        // 9 OT chapters + 8 MM arcs = 17 chapter accordions
+        expect(html).toContain("The Psychology of Money"); // Housel
+        expect(html).toContain("The Snowball"); // Schroeder
+        // every book in the data renders all of its chapter accordions
+        const books = JSON.parse(await Bun.file(notesPath).text()).books as { chapters: unknown[] }[];
+        const expected = books.reduce((n, b) => n + b.chapters.length, 0);
         const chapterCount = (html.match(/<details class="chapter-note">/g) || []).length;
-        expect(chapterCount).toBe(17);
+        expect(chapterCount).toBe(expected);
+        expect(books.length).toBe(13);
     });
 
     test("escapes HTML in authored note text", () => {

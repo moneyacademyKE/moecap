@@ -220,6 +220,1267 @@
           ]
         }
       ]
+    },
+    {
+      "id": "psychology-of-money",
+      "title": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "source": "lib/PsychologyofMoney.epub",
+      "tldr": "Doing well with money has little to do with how smart you are and everything to do with how you behave. Twenty short chapters on the psychology that drives wealth, ruin, and everything between — told in stories, because stories are how money actually happens to people.",
+      "takeaways": [
+        "No one is crazy — everyone's money views were earned in a different economy, a different childhood. Judge less, assume context.",
+        "Luck and risk are siblings; nothing is as good or as bad as it seems. Arrange finances so a bad break doesn't end the game.",
+        "Enough is the most powerful word in finance — reputation, freedom and family are the assets you don't risk for more.",
+        "Good investing isn't the highest returns — it's pretty good returns you can stick with for the longest time.",
+        "Wealth is what you don't see: the cars not bought, the savings not spent. Savings rate beats income and returns."
+      ],
+      "chapters": [
+        {
+          "label": "Introduction — The Greatest Show on Earth",
+          "tldr": "The tech-exec valet story: genius who threw gold coins into the Pacific went broke. Behavior, not intelligence, decides money outcomes.",
+          "points": [
+            "A valet at a nice LA hotel watched a Wi-Fi patent genius with a stack of hundred-dollar bills — who later went broke.",
+            "Ronald Read, a janitor, died with $8M — patience and frugality quietly beat brilliance.",
+            "Finance is the only field where a nobody can outperform the elite, because it rewards behavior over IQ.",
+            "The book's premise: soft skills matter more than spreadsheets."
+          ]
+        },
+        {
+          "label": "1. No One's Crazy",
+          "tldr": "Everyone is anchored to their own experience of how money works. Nobody's fully acclimated — modern finance is too young.",
+          "points": [
+            "The Depression broker and the 1990s tech worker hold opposite views, both honestly earned.",
+            "Dogs had 10,000 years to adapt to people; we've had 20–50 years to adapt to modern money.",
+            "Judge less; the person who looks crazy may just carry a different history."
+          ]
+        },
+        {
+          "label": "2. Luck & Risk",
+          "tldr": "Bill Gates went to one of the only high schools with a computer in 1968 — luck. His friend Kent Evans died in a mountaineering accident — risk. Same magnitude, opposite signs.",
+          "points": [
+            "Nothing is as good or as bad as it seems.",
+            "Outcomes are driven by forces outside your effort; forgive failure, yours and others'.",
+            "Focus less on individuals, more on patterns — patterns survive the luck."
+          ]
+        },
+        {
+          "label": "3. Never Enough",
+          "tldr": "Heller at the billionaire's party: 'I have something he will never have — enough.' Rajat Gupta and Bernie Madoff destroyed priceless things chasing more of what they already had.",
+          "points": [
+            "Knowing what enough is beats knowing how to earn more.",
+            "Reputation, freedom, family and health can't be rebought at any price.",
+            "Quit while ahead: the hardest, rarest skill."
+          ],
+          "action": "Define 'enough' in writing before the next big risk."
+        },
+        {
+          "label": "4. Confounding Compounding",
+          "tldr": "Ice ages came from cool summers that failed to melt winter snow — small excesses compounding for millennia. Buffett's fortune is overwhelmingly a product of time, not skill alone.",
+          "points": [
+            "$84.5B of Buffett's $84.9B came after his 50th birthday — the big numbers arrive decades in.",
+            "Good investing is repeatable returns you can hold longest, not the highest one-off.",
+            "Compounding's counterintuitive rule: time is the exponent, returns are just the base."
+          ]
+        },
+        {
+          "label": "5. Getting Wealthy vs. Staying Wealthy",
+          "tldr": "Jesse Livermore made a fortune shorting the 1929 crash — and went broke within years. Getting money requires risk and optimism; keeping it requires the opposite.",
+          "points": [
+            "Survival is the strategy — the compounding only works if you stay in the game.",
+            "Sequoia's Michael Moritz: 'we assume it won't work' — paranoia as preservation.",
+            "Bar room rule: nothing competes with staying at the table."
+          ],
+          "action": "Raise savings one notch — savings without a stated purpose count double."
+        },
+        {
+          "label": "6. Tails, You Win",
+          "tldr": "Heinz Berggruen's billion-dollar art collection: he bought vast quantities and a tiny subset became the masterpieces. Index funds of art.",
+          "points": [
+            "You can be wrong half the time and still make a fortune — what matters is the size when you're right.",
+            "Soros: it's how much you make when right vs lose when wrong, not your hit rate.",
+            "Most of a portfolio's return comes from a handful of positions — expect it, don't fight it."
+          ]
+        },
+        {
+          "label": "7. Freedom",
+          "tldr": "Angus Campbell's research: controlling your own time is the most dependable predictor of wellbeing — more than salary, house size, or prestige.",
+          "points": [
+            "The highest dividend money pays is control over your time.",
+            "No salary or job title outranks doing what you want, when you want, with whom you want.",
+            "Freedom compounds too — autonomy buys health, relationships, and ideas."
+          ]
+        },
+        {
+          "label": "8. Man in the Car Paradox",
+          "tldr": "The valet gawking at Ferraris never once looked at the driver. People buy status objects to be admired — but admirers skip past you and imagine themselves in the car.",
+          "points": [
+            "Humility, kindness and empathy bring more respect than horsepower.",
+            "Status purchased is attention borrowed, not earned.",
+            "The paradox: the admiration you bought is directed at the object, never at you."
+          ]
+        },
+        {
+          "label": "9. Wealth Is What You Don't See",
+          "tldr": "Rich is current income; wealth is income not spent. We learn wealth badly because wealth is invisible — it's the options not exercised.",
+          "points": [
+            "We judge wealth by what's visible, so we mimic spending, which is the opposite of wealth.",
+            "Wealth is the cars not bought, the upgrades not taken, the savings not spent.",
+            "Money's greatest value is optionality — the ability to change course later."
+          ]
+        },
+        {
+          "label": "10. Save Money",
+          "tldr": "The 1970s oil crisis was solved less by drilling more than by efficiency. Savings needs no reason.",
+          "points": [
+            "Savings is the gap between ego and income.",
+            "The most valuable use of savings is the one you can't predict yet — optionality.",
+            "You don't need a specific goal to save; a world of unpredictability is reason enough."
+          ]
+        },
+        {
+          "label": "11. Reasonable > Rational",
+          "tldr": "Wagner-Jauregg cured syphilis with malaria fevers and won the Nobel — the mathematically optimal is often not the sustainable.",
+          "points": [
+            "A strategy you can stick with beats a better one you'll abandon.",
+            "Bogle kept money in his son's active funds — 'we do some things for family reasons'.",
+            "Aim to be reasonable, not coldly rational — you're not a spreadsheet."
+          ]
+        },
+        {
+          "label": "12. Surprise!",
+          "tldr": "Sagan: 'Things that have never happened before happen all the time.' History is the study of surprises — treating it as a map of the future is the historians-as-prophets fallacy.",
+          "points": [
+            "The biggest economic events of the last century were unprecedented — by definition unforecastable.",
+            "Use history for behavior patterns (greed, fear), not specific events (rates, crashes).",
+            "The future will be shaped by surprises; plan for fragility, not for the script."
+          ]
+        },
+        {
+          "label": "13. Room for Error",
+          "tldr": "Card counters bet on odds, not certainties — and size bets so being wrong doesn't wipe them out. The most important part of every plan is planning on the plan not going to plan.",
+          "points": [
+            "Margin of safety is the only reliable way to cross a world governed by odds, not certainties.",
+            "Room for error lets you endure long enough for low-probability payoff of compounding.",
+            "The single most important thing: avoiding going to zero."
+          ]
+        },
+        {
+          "label": "14. You'll Change",
+          "tldr": "The friend who bulldozed his way into medicine: 'Awful career.' The end-of-history illusion — we underestimate how much we'll change.",
+          "points": [
+            "Long-term planning should emphasize avoiding regret over maximizing returns.",
+            "Sunk costs — of identity as much as money — should be abandoned without mercy.",
+            "Aim to be moderately happy with most decisions rather than ecstatic about a few."
+          ]
+        },
+        {
+          "label": "15. Nothing's Free",
+          "tldr": "GE was the world's most valuable company in 2004; then everything fell apart. Market volatility is the admission fee for returns, not a fine.",
+          "points": [
+            "View volatility as the price of Disneyland, not a punishment for misbehavior.",
+            "Everything worthwhile has a price — the trick is paying it up front, willingly.",
+            "Investors who treat drawdowns as fees get returns; those who treat them as fines quit."
+          ]
+        },
+        {
+          "label": "16. You & Me",
+          "tldr": "Bubbles aren't greed — they're people rationally playing a different game (momentum), whose actions look insane to long-term investors.",
+          "points": [
+            "The dot-com day traders weren't crazy; they were playing a different game with different rules.",
+            "Know what game you're playing — write the mission statement.",
+            "Everything outside your mission statement is a game you're not playing; ignore it."
+          ],
+          "action": "Write a one-line investment mission statement; ignore everything outside it."
+        },
+        {
+          "label": "17. The Seduction of Pessimism",
+          "tldr": "Pessimism sounds smarter; optimism seems oblivious. Real optimism means the odds of good outcomes are in your favor over time, setbacks included.",
+          "points": [
+            "Pessimists sound like they're trying to help; optimists sound like salesmen.",
+            "Realistic optimism: expect setbacks as part of the price, not as disproof.",
+            "Progress is slow and compounding; setbacks are fast — both are real."
+          ]
+        },
+        {
+          "label": "18. When You'll Believe Anything",
+          "tldr": "An alien hovering over Times Square from 2007 to 2009 sees nothing change — the economy's story is invisible from above. You see a fraction and fill the rest with narrative.",
+          "points": [
+            "The more you want something to be true, the more likely you believe a story over the evidence.",
+            "Everyone has an incomplete view of the world; we all fill gaps with narratives that feel right.",
+            "Humility about what you don't see is the antidote to confident nonsense."
+          ]
+        },
+        {
+          "label": "19. All Together Now",
+          "tldr": "The 1931 dentist anecdote: advice is only right for the person whose game you're playing. Respect the mess — there's no single right answer.",
+          "points": [
+            "Know what game you're playing before taking or giving advice.",
+            "The most effective money strategy is one you can live with — mess and all.",
+            "Respecting the mess means accepting imperfection in others' choices too."
+          ]
+        },
+        {
+          "label": "20. Confessions",
+          "tldr": "Housel's own finances: house paid without a mortgage, index funds, a cash cushion — independence as the goal. 'Independent of everyone else' is the highest form of wealth.",
+          "points": [
+            "His goal isn't the highest return, it's sleeping well.",
+            "The ultimate answer to why he invests simply: independence.",
+            "Money's real product is freedom — the ability to do what you want, when you want."
+          ]
+        }
+      ],
+      "pages": 128
+    },
+    {
+      "id": "same-as-ever",
+      "title": "Same as Ever",
+      "author": "Morgan Housel",
+      "source": "lib/SameasEver.epub",
+      "tldr": "A book of short stories about what never changes in a changing world. You can't forecast the surprises, but you can prepare for the constants: greed, fear, incentives, imperfection, and the arithmetic of time.",
+      "takeaways": [
+        "Risk is what you don't see — the biggest risks are the ones nobody's prepared for because nobody saw them coming.",
+        "Happiness = reality − expectations; the goalposts move unless you hold them still.",
+        "The best story wins, not the best idea — narratives beat statistics every time.",
+        "Good news compounds slowly; bad news arrives instantly. Plan for both speeds.",
+        "Save like a pessimist, invest like an optimist — progress requires both mindsets at once."
+      ],
+      "chapters": [
+        {
+          "label": "Introduction — The Little Laws of Life",
+          "tldr": "Buffett in Omaha, 2009: 'What was the bestselling candy bar in 1962? Snickers. Today? Snickers.' The whole book in one silence.",
+          "points": [
+            "You can't predict the surprises, but you can prepare for the constants.",
+            "The book's method: study what stays the same, not what changes.",
+            "Compounding, incentives, and fear are the little laws that never repeal."
+          ]
+        },
+        {
+          "label": "Hanging by a Thread",
+          "tldr": "Squaw Valley ski team — one teammate's near-miss shows the world hangs by threads: tiny unforeseeable nudges change everything.",
+          "points": [
+            "Events compound from small beginnings nobody notices.",
+            "The biggest changes often hinge on trivial-seeming details.",
+            "Appreciate the threads — luck is structural, not incidental."
+          ]
+        },
+        {
+          "label": "Risk Is What You Don't See",
+          "tldr": "Victor Prather survived the edge of space in 1961 — then drowned when he slipped off the helicopter rescue hoist.",
+          "points": [
+            "We predict the future well, except for the surprises — which are all that matter.",
+            "The biggest risk is what no one's prepared for, because no one saw it.",
+            "Preparation beats prediction: resilience over forecasts."
+          ]
+        },
+        {
+          "label": "Expectations Move Slowly",
+          "tldr": "The first rule of happiness is low expectations. Montesquieu 275 years ago: we wish to be happier than other people, which is always difficult.",
+          "points": [
+            "In a world that improves, the gap between expectations and reality is what you feel.",
+            "Happiness = reality − expectations; both terms move.",
+            "Manage the goalposts as deliberately as the results."
+          ],
+          "action": "Re-price your expectations: half the happiness gap is the goalpost, not the result."
+        },
+        {
+          "label": "Wild Minds",
+          "tldr": "Kipchoge staring at a wall for hours in Olympic staging: 'He is not human.' People whose thinking you admire in one domain will think in ways you won't like in another.",
+          "points": [
+            "Genius is domain-specific — know which is which in your role models.",
+            "Talent comes bundled with traits you may not want to import wholesale.",
+            "Admire the specific skill, not the whole person."
+          ]
+        },
+        {
+          "label": "Wild Numbers",
+          "tldr": "People don't want accuracy; they want certainty. Seinfeld's airbag joke and confidence-grading: 100% confidence on a wrong answer = failing the test.",
+          "points": [
+            "Airbags save rare events; we overweight dramatic risks, underweight compounding ones.",
+            "Certainty sells; probability doesn't.",
+            "Attach confidence levels to your views or you're guessing with volume."
+          ]
+        },
+        {
+          "label": "Best Story Wins",
+          "tldr": "Morgan Freeman narrating a grocery list beats an inarticulate scientist curing a disease. Stories beat statistics because people are busy and emotional.",
+          "points": [
+            "If you have the right answer, you may get ahead; a great storyteller with the wrong answer probably will (for a while).",
+            "Facts aren't enough — the story that carries them wins.",
+            "Great ideas die in bad narratives every day."
+          ]
+        },
+        {
+          "label": "Does Not Compute",
+          "tldr": "McNamara's quantified war vs what actually happened. The world is driven by forces that cannot be measured.",
+          "points": [
+            "'Logic is an invention of man and may be ignored by the universe.'",
+            "Not everything that counts can be counted — McNamara's lesson.",
+            "Leave room in your models for the unmeasurable."
+          ]
+        },
+        {
+          "label": "Calm Plants the Seeds of Crazy",
+          "tldr": "The full cycle of greed and fear: permanent good news → oblivious → deny → panic → accept → and around again. Stability breeds instability.",
+          "points": [
+            "Calm plants the seeds of crazy — good times fund the recklessness that ends them.",
+            "The cycle has no final state; every extreme contains its reversal.",
+            "Position for the cycle, not the moment."
+          ]
+        },
+        {
+          "label": "Too Much, Too Soon, Too Fast",
+          "tldr": "Robert Wadlow, the largest human ever — gigantism kills. A good idea on steroids becomes a terrible idea.",
+          "points": [
+            "Everything has a natural size and speed.",
+            "Growth beyond what infrastructure supports is decay in disguise.",
+            "Wadlow's towns loved him — scale kills even what people root for."
+          ]
+        },
+        {
+          "label": "When the Magic Happens",
+          "tldr": "Triangle Shirtwaist fire (1911) → workplace safety reform. Stress focuses attention in ways good times can't.",
+          "points": [
+            "The biggest innovations follow the worst events.",
+            "Pain is the tuition for progress.",
+            "Don't waste a crisis — it's the only teacher everyone believes."
+          ]
+        },
+        {
+          "label": "Overnight Tragedies and Long-Term Miracles",
+          "tldr": "Eisenhower's heart attack: near-death in an evening, then decades of cardiac progress. Good news compounds slowly; bad news is instant.",
+          "points": [
+            "1% growth sounds tiny; over 50 years it's a miracle.",
+            "Bad news arrives at the speed of a headline; good news at the speed of compounding.",
+            "Read the news accordingly — the front page is not the trendline."
+          ]
+        },
+        {
+          "label": "Tiny and Magnificent",
+          "tldr": "Obesity comes from small snacks, not bigger meals. Most catastrophes and most miracles are tiny things multiplied.",
+          "points": [
+            "Tsar Bomba vs the compounding of small habits.",
+            "The magnitude of an outcome says nothing about the size of its cause.",
+            "Watch the small daily numbers; the big ones are downstream."
+          ]
+        },
+        {
+          "label": "Elation and Despair",
+          "tldr": "The best financial plan is to save like a pessimist and invest like an optimist. Those who can't hold both end up bitter pessimists or bankrupt optimists.",
+          "points": [
+            "Pessimism protects the downside; optimism captures the upside.",
+            "Both must run simultaneously, not alternately.",
+            "The tension is the strategy — resolve it in either direction and you break."
+          ],
+          "action": "Hold both: your savings rate is the pessimist's job, your equity allocation the optimist's."
+        },
+        {
+          "label": "Casualties of Perfection",
+          "tldr": "Schmalhausen's rule: perfecting one trait creates vulnerability in another. Evolution's 99% extinction rate — there is no perfect species, and no perfect portfolio.",
+          "points": [
+            "Efficiency leaves no room for error — optimization is fragility.",
+            "Redundancy looks like waste until the day it's survival.",
+            "Perfection is a direction, not a destination; aim for robustness."
+          ]
+        },
+        {
+          "label": "It's Supposed to Be Hard",
+          "tldr": "The Donner Party took a shortcut. Everything worth pursuing comes with an optimal amount of hassle.",
+          "points": [
+            "The price of anything good is putting up with pain shortcuts try to skip.",
+            "When a path looks effortless, price the hidden fee.",
+            "Difficulty is often the moat — if it were easy, it wouldn't pay."
+          ]
+        },
+        {
+          "label": "Keep Running",
+          "tldr": "Cope's Rule: species grow bigger, then die when the environment shifts. Most competitive advantages eventually die — including yours.",
+          "points": [
+            "Size is not safety; adaptation is.",
+            "Advantage has a half-life; plan its replacement before it decays.",
+            "The dinosaurs were optimized right up until they weren't."
+          ]
+        },
+        {
+          "label": "The Wonders of the Future",
+          "tldr": "The 10-stage technology adoption ladder: from 'never heard of it' to 'it's too powerful and needs to be regulated.' We judge tech at stage 3 and miss stage 9.",
+          "points": [
+            "We systematically discount where technology goes.",
+            "Every transformative tech was dismissed, then feared, then regulated.",
+            "Extrapolate the curve, not the snapshot."
+          ]
+        },
+        {
+          "label": "Harder Than It Looks",
+          "tldr": "'The grass is always greener on the side that's fertilized with bullshit.' Everyone's dealing with problems they don't advertise.",
+          "points": [
+            "Comparison is the thief of joy — especially against edited highlight reels.",
+            "Forgiveness of self and others follows from knowing everyone struggles unseen.",
+            "Judge your inside against their outside and you'll always lose."
+          ]
+        },
+        {
+          "label": "Incentives: The Most Powerful Force",
+          "tldr": "Zweig's three ways to be a writer: lie to people who want lies (rich), truth to truth-seekers (living), truth to liars (broke). Ask which of your views would change if your incentives were different.",
+          "points": [
+            "'None' means you're blind, not that you're objective.",
+            "Incentives explain more behavior than character does.",
+            "Audit your own convictions for their funding sources."
+          ],
+          "action": "Ask the incentives question of your own convictions quarterly."
+        },
+        {
+          "label": "Now You Get It",
+          "tldr": "Truman: the next generation never learns from the previous one until knocked in the head by experience. Nothing persuades like firsthand experience.",
+          "points": [
+            "Forecasts are imagined in a vacuum; reality is lived.",
+            "Wisdom that arrives by inheritance arrives too late.",
+            "Respect the scar tissue — it encodes lessons data can't."
+          ]
+        },
+        {
+          "label": "Time Horizons",
+          "tldr": "Elizabeth Taylor, five days before filing for divorce: 'We will probably be married another ten years.' Long-term thinking is easier to believe in than to accomplish.",
+          "points": [
+            "Long horizons are simple to endorse and brutal to hold.",
+            "The payoff goes to those who endure, not those who agree.",
+            "Everything valuable in markets prices in endurance, not intellect."
+          ]
+        },
+        {
+          "label": "Trying Too Hard",
+          "tldr": "The war on cancer's treatment bias vs prevention. There are no points awarded for difficulty — simple and effective loses to complex and clever because simple doesn't feel like expertise.",
+          "points": [
+            "Complexity signals effort; simplicity signals mastery — the world pays the wrong one.",
+            "Doing something feels productive; often the right move is doing less.",
+            "The most effective strategies fit on an index card."
+          ]
+        },
+        {
+          "label": "Wounds Heal, Scars Last",
+          "tldr": "The Pentagon shows no trace of 9/11; Reagan National three minutes away shows nothing but. Disagreement is about experience, not knowledge.",
+          "points": [
+            "Ask what someone lived through before arguing with their worldview.",
+            "Scars shape risk tolerance more than data ever will.",
+            "Two rational people with different histories reach opposite correct conclusions."
+          ]
+        },
+        {
+          "label": "Coda — Questions",
+          "tldr": "Eleanor Roosevelt on uncertainty: don't forecast harder; look backward and be broad — study what stays the same.",
+          "points": [
+            "The final question list: What's always been true? What's the same as ever?",
+            "The constants are few and they compound forever.",
+            "Anchor your plans to the invariants, not the predictions."
+          ],
+          "action": "Replace one forecast with one invariant: what stays constant in your plan if the world surprises you?"
+        }
+      ],
+      "pages": 137
+    },
+    {
+      "id": "little-book-still-beats-market",
+      "title": "The Little Book That Still Beats the Market",
+      "author": "Joel Greenblatt",
+      "source": "lib/StillBeatstheMarket.epub",
+      "tldr": "A formula a sixth-grader can run: rank every stock by cheapness (earnings yield) and quality (return on capital), buy the top 30, hold a year, repeat. It works — but only if you can stomach the years it doesn't.",
+      "takeaways": [
+        "Buy good companies at bargain prices — the whole formula is earnings yield × return on capital.",
+        "Mr. Market is moody daily but reasonable over 2–3 years; bargains get corrected eventually.",
+        "The formula fails for stretches — often years. Belief through the drought is the actual edge.",
+        "Most professionals can't help you beat the market; doing it yourself with a simple system can.",
+        "Choosing stocks without knowing what you're looking for is 'running through a dynamite factory with a burning match.'"
+      ],
+      "chapters": [
+        {
+          "label": "Ch 1–2 — Jason's Gum and the 6% Floor",
+          "tldr": "Jason buys gum at 25¢ and sells sticks for $1.25 a pack. Every investment must beat the risk-free alternative — or it's not an investment.",
+          "points": [
+            "Jason's gum business: $1 profit per pack, four packs a day — sixth-grade economics.",
+            "The 10-year government bond sets the floor (Greenblatt pins it at 6% for simplicity).",
+            "If a business can't beat the risk-free rate, it's destroying money even while 'profitable'."
+          ]
+        },
+        {
+          "label": "Ch 3–4 — Shares, Value, and Mr. Market",
+          "tldr": "A share is a slice of future earnings; value is a guess; Mr. Market is a moody partner quoting prices daily that have little to do with the business.",
+          "points": [
+            "GE traded from $53 to $35 within a year — the business didn't change by half.",
+            "Ben Graham's Mr. Market: buy at a big discount to value — the margin of safety.",
+            "Prices move wildly short-term; values move slowly — that gap is the bargain."
+          ]
+        },
+        {
+          "label": "Ch 5 — Return on Capital (Just Broccoli)",
+          "tldr": "Jimbo's Just Broccoli earns 2.5% on new stores while bonds pay 6% — building them is throwing money away. High return on capital means the business has something special.",
+          "points": [
+            "Earnings yield = what you earn per dollar invested in the stock.",
+            "Return on capital = what the company earns per dollar invested in the business.",
+            "A special advantage keeps competitors from destroying above-average profits."
+          ]
+        },
+        {
+          "label": "Ch 6–7 — The Formula and Its Results",
+          "tldr": "Graham had a formula (buy below liquidation value); Greenblatt's modern version ranks stocks on earnings yield + return on capital. The 17-year backtest looked too good.",
+          "points": [
+            "Rank #1 on both metrics beats ranking #1 on either alone.",
+            "The magic formula picked large and small stocks successfully — not a small-cap illusion.",
+            "Tested across 17 years; results so good they demanded the next chapter's interrogation."
+          ]
+        },
+        {
+          "label": "Ch 8–9 — Why It Keeps Working (and Failing)",
+          "tldr": "The Revolutionary War anecdote: fighting the last war loses. The formula often underperforms for years — that failure is exactly why it keeps working.",
+          "points": [
+            "Most investors abandon any strategy that lags 2–3 years — leaving the returns to the stubborn.",
+            "You must believe deep in your bones or you'll quit at the worst time.",
+            "The formula's logic is timeless, like 2+2 — that's what lets you hold."
+          ],
+          "quote": "Choosing individual stocks without any idea of what you're looking for is like running through a dynamite factory with a burning match. You may live, but you're still an idiot."
+        },
+        {
+          "label": "Ch 10–11 — If You Still Want to Pick",
+          "tldr": "For the determined stock-picker: use normal (not last-year) earnings, demand a margin of safety, and consider that owning 5–8 businesses you know deeply can beat diversification into ignorance.",
+          "points": [
+            "Last year's earnings mislead — estimate normalized earnings power.",
+            "Owning fewer, well-understood businesses can be more profitable AND safer.",
+            "The formula as screen: start from its rankings, then apply judgment."
+          ]
+        },
+        {
+          "label": "Ch 12–13 — No Tooth Fairy, and What Money Is For",
+          "tldr": "Wall Street has no tooth fairy — most professionals can't beat the market either. The closing chapter pivots to giving: money's highest use.",
+          "points": [
+            "On Wall Street, ain't no tooth fairy.",
+            "Maxing IRA contributions ($28K over 6 years) could compound to $1.3M in 30 years.",
+            "The last chapter applies return-on-capital thinking to charity and schools — capital flows to what's measured."
+          ]
+        },
+        {
+          "label": "Step-by-Step — Running It",
+          "tldr": "The practical recipe: hold 20–30 positions, one-year holds, sell losers just before the year mark and winners just after (tax-aware), add a few new positions per month to spread entry.",
+          "points": [
+            "Buy 5–7 new positions a month for 4–5 months until fully invested.",
+            "Sell losers a few days before one year (short-term loss treatment), winners a day or two after (long-term gains).",
+            "Getting started is the hardest part; consistency is the whole game."
+          ],
+          "action": "If you'll never run it yourself: index. If you will: commit to 3–5 years minimum before judging."
+        }
+      ],
+      "pages": 93
+    },
+    {
+      "id": "little-book-valuation",
+      "title": "The Little Book of Valuation",
+      "author": "Aswath Damodaran",
+      "source": "lib/ValuationLittleBook.epub",
+      "tldr": "The dean of valuation's field guide: every asset has an intrinsic value (cash flows × risk), relative valuation is a shortcut with rules, and every company type — young, growth, mature, declining, bank, cyclical — needs its own lens.",
+      "takeaways": [
+        "Two approaches only: intrinsic (DCF) and relative (multiples). Everything else is packaging.",
+        "Success in investing comes not from being right but from being wrong less often than everyone else.",
+        "Life cycle changes everything: the tools that value Google can't value GM in decline.",
+        "Growth is not free and not always good — firms whose returns lag capital destroy value as they grow.",
+        "Convert stories to numbers — a valuation you can't express in inputs is a vibe."
+      ],
+      "chapters": [
+        {
+          "label": "Ch 1 — Value Is More Than a Number",
+          "tldr": "Oscar Wilde's cynic knows the price of everything and the value of nothing. Paying more than an asset is worth can't be fixed by finding a bigger fool forever.",
+          "points": [
+            "Musical chairs: 'where will you be when the music stops?'",
+            "Intrinsic value = expected cash flows, discounted for their uncertainty.",
+            "Buying on the greater-fool theory is trading, not investing."
+          ]
+        },
+        {
+          "label": "Ch 2 — Power Tools: Time, Risk, Statistics",
+          "tldr": "A dollar tomorrow is worth less than a dollar today (preference, inflation, risk). Discounting is the bridge, and the discount rate prices the risk.",
+          "points": [
+            "Three reasons cash loses value waiting: impatience, inflation, non-delivery.",
+            "Risk-and-return models turn uncertainty into a cost of capital.",
+            "Less is more: if three years of forecasts do the job, forecasting ten invites trouble."
+          ]
+        },
+        {
+          "label": "Ch 3 — Intrinsic Value (DCF in Practice)",
+          "tldr": "Value the business (cash flow to firm) then subtract debt, or value equity directly. Damodaran's 3M example: estimates of cash flows and risk become a number you can compare to price.",
+          "points": [
+            "Value of business − debt = value of equity; both paths must agree.",
+            "His own trade: valued a firm at $72 while it traded at $54 — bought only when the gap exceeded his margin of error.",
+            "A well-done intrinsic valuation needs no garnish — management quality is already in the cash flows."
+          ]
+        },
+        {
+          "label": "Ch 4 — Relative Value and Multiples",
+          "tldr": "Dell at 17×, Apple at 21×, Microsoft at 11× — which is cheapest? Relative valuation is quick but only works with true comparables adjusted for growth, risk, and cash flow.",
+          "points": [
+            "Three steps: find comparables, standardize (multiples), adjust for differences.",
+            "A stock can be cheap on DCF and expensive relative to an overpriced sector — both true.",
+            "Most valuations you'll see in the wild are relative — faster, and more crowd-sensitive."
+          ]
+        },
+        {
+          "label": "Ch 5 — Young Companies: Promise Aplenty",
+          "tldr": "Groupon in 2010: one year old, $500M revenue, operating losses, Google bidding $6B. Value what the idea could become, discounted for the chance it dies.",
+          "points": [
+            "No history, negative earnings — value comes from future potential, not the past.",
+            "Survival odds matter most: access to capital decides who gets to grow up.",
+            "Look for tough-to-imitate products, huge markets, expense discipline."
+          ]
+        },
+        {
+          "label": "Ch 6 — Growth Companies: Growing Pains",
+          "tldr": "Google 2001 vs 2009: the same company at different scales. Growth firms get most value from future investments — the quality of growth decides everything.",
+          "points": [
+            "Growth that earns less than its cost of capital destroys value while revenue climbs.",
+            "Right price matters: great growth companies can be bad investments.",
+            "Time is your ally — the inevitable disappointment offers the entry."
+          ]
+        },
+        {
+          "label": "Ch 7 — Mature Companies: Valuation Viagra",
+          "tldr": "Coca-Cola, Hormel, GE — easy to value, hard to improve. The play is management change: better capital structure or a spin-off can unlock dormant value.",
+          "points": [
+            "Mature = most value from existing investments, revenue growth near GDP.",
+            "Buy where management change is possible (aging CEO, new board member) and not yet priced.",
+            "The payoff comes when the market sees the change coming — you don't wait for it to happen."
+          ]
+        },
+        {
+          "label": "Ch 8 — Declining Companies: Doomsday",
+          "tldr": "GM drove the economy in 1960; bankrupt by 2009. Decline and distress are different problems: orderly decline can still feed shareholders; insolvency feeds lawyers.",
+          "points": [
+            "Returns below cost of capital = value destruction; growth can't fix it.",
+            "In distress, debt restructuring and access to new capital decide survival.",
+            "Spread your bets in distressed names — the winners must cover the corpses."
+          ]
+        },
+        {
+          "label": "Ch 9 — Banks: Bank on It",
+          "tldr": "Banks and insurers broke the 'safe dividend' story in 2008. Value them on equity, dividends, and return on equity — and distrust opacity.",
+          "points": [
+            "Four money-machines: spread lending, insurance float, advisory fees, management fees.",
+            "Regulation caps returns but also bars entrants — the moat and the ceiling are the same wall.",
+            "High dividends + low transparency = a story too good to audit."
+          ]
+        },
+        {
+          "label": "Ch 10 — Cyclicals: Roller-Coaster Investing",
+          "tldr": "Toyota 2007 vs 2009: same company, different economy. Value cyclicals on normalized earnings across the cycle, not last year's snapshot.",
+          "points": [
+            "Cyclical earnings track GDP; commodity earnings track prices — both mean-revert.",
+            "Never extrapolate a peak or a trough — you're valuing the cycle, not the year.",
+            "The bargains appear exactly when the headlines are worst."
+          ]
+        },
+        {
+          "label": "Ch 11 — Intangibles + 10 Rules for the Road",
+          "tldr": "Brand, patents, human capital — the modern economy's assets hide from accountants. Closing rules: abandon models if you must, never first principles.",
+          "points": [
+            "R&D and brand spends are investments accountants expense — adjust or you'll misvalue everything.",
+            "The 10 rules: risk affects value; growth is not free; nothing is forever; watch truncation risk; convert stories to numbers.",
+            "Success comes not from being right but from being wrong less often than everyone else."
+          ],
+          "quote": "Success in investing comes not from being right but from being wrong less often than everyone else.",
+          "action": "Pick one holding and ask: young, growth, mature, or declining? Value it with that lens only."
+        }
+      ],
+      "pages": 100
+    },
+    {
+      "id": "buffett-essays",
+      "title": "The Essays of Warren Buffett",
+      "author": "Warren Buffett, arranged by Lawrence Cunningham",
+      "source": "lib/WBEssays.epub",
+      "tldr": "Cunningham re-arranged 40 years of Buffett's shareholder letters into a coherent curriculum: governance, investing, valuation, and accounting — the closest thing to a Buffett operating manual.",
+      "takeaways": [
+        "Managers are stewards of shareholder capital — the best think like owners because they are owners.",
+        "Beta is volatility; risk is permanent loss of capital. Efficient-market dogma made a generation dumber about both.",
+        "Owner earnings (a + b − c) beats both GAAP earnings and 'cash flow' for measuring reality.",
+        "Franchise businesses can raise prices without losing volume — pay premiums only for those, or for extraordinary managers.",
+        "The institutional imperative — lemming-like imitation — explains more bad CEO behavior than stupidity does."
+      ],
+      "chapters": [
+        {
+          "label": "I. Corporate Governance — Candor and Stewardship",
+          "tldr": "Buffett reports as if readers were average-intelligence partners: same information, same time, no predictions, no gloss. Pick able, honest, hard-working people over org charts.",
+          "points": [
+            "98% of shares held year-over-year lets the annual report build instead of restate.",
+            "No quarterly narratives — long horizons make them noise.",
+            "First-rate people matter more than reporting hierarchies; CEO selection is the board's real job."
+          ]
+        },
+        {
+          "label": "II. Finance & Investing — Debunking the Dogma",
+          "tldr": "Modern finance theory says darts beat research. Buffett's answer: risk isn't beta, markets aren't always efficient, and 'value investing' is a redundancy — investing is value investing.",
+          "points": [
+            "Mr. Market quotes daily; his mood is your opportunity, never your guide.",
+            "Cigar butts (Graham's last puff) worked until they didn't — quality compounds better.",
+            "Life and Debt: leverage is the only way a smart person goes broke fast."
+          ],
+          "quote": "If we aren't happy owning a piece of that business with the Exchange closed, we're not happy owning it with the Exchange open."
+        },
+        {
+          "label": "III–IV. Alternatives & Common Stock — Friction Costs",
+          "tldr": "Trading rearranges who owns what and pays an army to do it — Buffett estimates frictional costs consume ~20% of American corporate earnings. He wants Berkshire's stock at intrinsic value, never a bubble.",
+          "points": [
+            "On NYSE listing day 1988: 'consider me a success if the next trade is two years from now.'",
+            "He warned buyers away from the Class B offering — issuing stock below value steals from existing shareholders.",
+            "Derivatives, junk bonds, zeros: each essay prices the instrument against the business."
+          ]
+        },
+        {
+          "label": "V. Mergers & Acquisitions — The Buyer of Choice",
+          "tldr": "Rarely pay a premium — only for franchises (price power) or extraordinary managers unlocking value. Berkshire is 'the Louvre': adding a Botticelli by giving up a Rembrandt is a bad trade.",
+          "points": [
+            "Three motives behind most high-premium deals: thrill, size, and synergy optimism.",
+            "Berkshire's currency is high-quality stock plus managerial autonomy — that's how it becomes the seller's buyer of choice.",
+            "Check every previous seller's experience — promises vs later actions."
+          ]
+        },
+        {
+          "label": "VI. Valuation & Accounting — Aesop to Owner Earnings",
+          "tldr": "Aesop had it right: a bird in the hand is worth two in the bush. Valuation is counting cash — and the right count is owner earnings: net income + depreciation − maintenance capex.",
+          "points": [
+            "Intrinsic value = discounted cash that can be taken out over remaining life; book value is bookkeeping, not value.",
+            "Economic goodwill (untaught franchise power) grows; accounting goodwill amortizes — trust the former.",
+            "When (c) exceeds (b), 'cash flow' analysis overstates reality — most businesses, most of the time."
+          ]
+        },
+        {
+          "label": "VII–VIII. Accounting Shenanigans",
+          "tldr": "The 1935 U.S. Steel satire: fixed assets at minus $1B, wages 'adjusted' — 'modern accounting' as weapon. Buffett's point: where numbers are flexible, honesty is the only control.",
+          "points": [
+            "Restructuring charges, pension estimates, option expensing — each essay finds the bias.",
+            "He reserves special scorn for stock options booked as free.",
+            "Read footnotes like a prosecutor."
+          ]
+        },
+        {
+          "label": "IX. Tax Matters — The Long Game's Rebate",
+          "tldr": "The quiet edge of long-term holding: compounding pre-tax, paying the taxman once, at capital gains rates, decades later.",
+          "points": [
+            "Long-term investing defers and reduces tax — a structural return most strategies forfeit.",
+            "On his own mortality, Buffett: 'it won't be as negative for the holders as it will be for me.'",
+            "Full circle: the owner's principles apply to a life as much as a portfolio."
+          ],
+          "action": "Re-read one annual letter per quarter — the essays are just the letters, arranged."
+        }
+      ],
+      "pages": 296
+    },
+    {
+      "id": "the-outsiders",
+      "title": "The Outsiders",
+      "author": "William N. Thorndike, Jr.",
+      "source": "lib/Outsiders.epub",
+      "tldr": "Eight CEOs who beat the market and Jack Welch by ignoring Wall Street's growth religion: they ran companies like investors, treated share repurchases as purchases, and understood that capital allocation is the CEO's real job.",
+      "takeaways": [
+        "Capital allocation is the CEO's primary job — everything else is delegation.",
+        "Buybacks are purchases: buy when cheap, never to support the price or hit EPS targets.",
+        "Growth for its own sake destroys value — the best CEOs shrank, spun off, and sold divisions.",
+        "Decentralize ruthlessly, keep headquarters skeletal, and let operators operate.",
+        "A dollar invested with these eight compounded over 20% annually — roughly 2× the S&P and 7× GE under Welch."
+      ],
+      "chapters": [
+        {
+          "label": "1. Tom Murphy — Capital Cities",
+          "tldr": "The rowboat that beat the QE2: Cap Cities was 1/16th CBS's size in 1966; by sale to Disney in 1996, three times more valuable.",
+          "points": [
+            "Murphy cut costs to the bone, then bought media properties and applied the same discipline.",
+            "He paid down debt between deals, bought back stock at the 'low-50s' level, and sold the whole company at the top of the Disney negotiation.",
+            "Buffett's model: he studied Cap Cities before restructuring Berkshire."
+          ]
+        },
+        {
+          "label": "2. Henry Singleton — Teledyne",
+          "tldr": "The best operating and capital-deployment record in American business: bought 130 companies with cheap stock in the 60s, then bought back ~90% of Teledyne's shares with dear cash from 1972–1984.",
+          "points": [
+            "Singleton's buybacks at an average ~7× earnings were the greatest in history — he called them 'the easiest decision of my life.'",
+            "Famously decentralized: a headquarters you could fit in a closet.",
+            "'After we acquired a number of businesses, we reflected on business. Our conclusion was that the key was cash flow.'"
+          ]
+        },
+        {
+          "label": "3. Bill Anders — General Dynamics",
+          "tldr": "The Berlin Wall fell and the defense business model with it. Anders shrank the company dramatically — sold divisions, returned billions — and the stock multiplied.",
+          "points": [
+            "He focused only on businesses that were #1 or #2 in their niche, then returned the cash rather than diversifying.",
+            "Growth was the industry religion — Anders inverted it, and outperformed every peer that kept chasing scale.",
+            "Northrop Grumman later ran the same playbook: the formula outlived its inventor."
+          ]
+        },
+        {
+          "label": "4. John Malone — TCI",
+          "tldr": "Cable's cash-flow machine: utility-like subscription revenue plus aggressive leverage and tax efficiency. Malone maximized value per subscriber, not reported earnings.",
+          "points": [
+            "'They haven't repealed the laws of arithmetic — yet, anyway.'",
+            "TCI was the largest, cheapest-to-run, most complex, and highest-return cable operator simultaneously.",
+            "Asceticism as strategy: every element optimized for shareholder returns."
+          ]
+        },
+        {
+          "label": "5. Katharine Graham — The Washington Post Co.",
+          "tldr": "The widow who'd never held a job becomes CEO at 46, terrified — and compounds shareholder returns ~22% annually over three decades while steering the Pentagon Papers and Watergate.",
+          "points": [
+            "She bought back massive amounts of stock and paid down debt while peers bought portals and towers.",
+            "Her son Donald ran the same playbook: repurchasing 20% of shares 2009–2011.",
+            "Contrast: the Sulzbergers' NYT overpaid for Ask.com, built a skyline HQ — and lost 90% of its value."
+          ]
+        },
+        {
+          "label": "6. Bill Stiritz — Ralston Purina",
+          "tldr": "A 'public LBO': Stiritz ran a stodgy packaged-goods company with LBO economics — high leverage, no diversification religion, share repurchases, then sold to Nestlé at a premium.",
+          "points": [
+            "He inherited a mess of mushroom farms, the St. Louis Blues, and a ski resort — and sold them all.",
+            "Focus on the core (pet food, cereal) + financial engineering = outperformance without an LBO's fees.",
+            "Sara Lee copied the playbook a decade later — it's teachable."
+          ]
+        },
+        {
+          "label": "7. Dick Smith — General Cinema",
+          "tldr": "From a drive-in chain to a diversified holding company (publishing, beverages, insurance) with 11× S&P outperformance — run like a private firm, family-controlled.",
+          "points": [
+            "Smith deployed drive-in cash flow into new industries with exceptional operating discipline and patience.",
+            "Autonomy attracted elite operators — 'we all just had so much fun.'",
+            "Grew by circles of competence, not grand strategy."
+          ]
+        },
+        {
+          "label": "8. Warren Buffett — Berkshire Hathaway",
+          "tldr": "The investor as CEO: a $18M doomed textile mill becomes history's greatest compounding machine by redeploying its cash into insurance float and bought-whole businesses.",
+          "points": [
+            "Buffett's primary objective: turnover reduction — select the best people and businesses, avoid churn.",
+            "Insurance float = other people's money invested for shareholders' benefit.",
+            "Zen-like: associating with the best and avoiding unnecessary change is both good returns and a good life."
+          ]
+        },
+        {
+          "label": "9. The Outsider's Mind-Set",
+          "tldr": "The synthesis: five traits — always do the math, decentralize, be a lifelong learner, remain calm and confident, think like an owner. The Pre-Paid Legal and ExxonMobil epilogues prove it's replicable.",
+          "points": [
+            "Always lead with the numbers: every capital-allocation decision reduced to cash-flow math.",
+            "AOL's Steve Case passed on buying Pre-Paid Legal cheap — a reminder that incumbents rarely see it.",
+            "ExxonMobil's buyback-and-discipline decades: the outsiders' playbook at mega-scale."
+          ],
+          "action": "For each holding you own, find who allocates its capital — and check whether they buy back stock only when it's cheap."
+        }
+      ],
+      "pages": 155
+    },
+    {
+      "id": "richer-wiser-happier",
+      "title": "Richer, Wiser, Happier",
+      "author": "William Green",
+      "source": "lib/RicherWiserHappier.epub",
+      "tldr": "Forty interviews with the world's great investors, distilled into life strategies: clone shamelessly, embrace loneliness, expect impermanence, build resilience, keep it simple, defer gratification, compound habits, and invert your way out of stupidity.",
+      "takeaways": [
+        "Cloning works: nobody's that smart, so master the best that others have figured out (Munger).",
+        "To beat the market you must be brave, independent, and strange enough to stray from the crowd (Templeton).",
+        "Mujo — impermanence — is the only constant; accommodate change instead of predicting it (Marks).",
+        "The resilient investor survives first: margins of safety, no permanent capital loss (Eveillard, McLennan).",
+        "Inversion beats brilliance: be consistently not stupid rather than intermittently brilliant (Munger)."
+      ],
+      "chapters": [
+        {
+          "label": "1. The Man Who Cloned Warren Buffett",
+          "tldr": "Mohnish Pabrai built his career and his Dakshana foundation for gifted poor kids on shameless cloning: find the best playbooks, copy the moves, improve them.",
+          "points": [
+            "'I have very few original ideas. Virtually everything has been lifted from somewhere.'",
+            "He read Buffett's letters 50+ times, copied the fee structure, copied the concentration.",
+            "Cloning is a game like bridge or blackjack — 'it's all about the odds.'",
+            "The Dakshana Foundation: ~$99/month for two years takes a gifted poor student to IIT — cloned compounding applied to lives."
+          ]
+        },
+        {
+          "label": "2. The Willingness to Be Lonely",
+          "tldr": "Templeton: 'It is impossible to produce superior performance unless you do something different from the majority.' The Bahamas beach walker power-walking against the tide — literally.",
+          "points": [
+            "Bought 100 shares of every $1-or-less NYSE stock in 1939, including 104 in bankruptcy — quadrupled his money in four years.",
+            "The Templeton Growth Fund: 14.5% annual over 38 years; $100K became $17M.",
+            "He controlled what he could — valuations, information, judgment — and let go of the rest.",
+            "The inner game outranks the outer one."
+          ]
+        },
+        {
+          "label": "3. Everything Changes",
+          "tldr": "Howard Marks, evicted from an art class into Japanese literature, found mujo — impermanence — and built Oaktree on accommodating cycles instead of forecasting them.",
+          "points": [
+            "'Change is inevitable. The only constant is impermanence.'",
+            "Marks's memos ask where we are in the cycle, never where we're going.",
+            "Becoming a billionaire hasn't brought suffering — but his humility about luck protects him from the pride that precedes falls.",
+            "Zen + credit markets = the most-photocopied memos in finance."
+          ]
+        },
+        {
+          "label": "4. The Resilient Investor",
+          "tldr": "Eveillard's First Eagle and McLennan's First Eagle Global: survival-first investing — hold cash, distrust leverage, expect the system to seize.",
+          "points": [
+            "Eveillard: 'It's much warmer inside the herd' — and he left anyway, returning ~15% annually over two decades.",
+            "McLennan's pandemic playbook: pre-positioned resilience turns defense into offense when others reel.",
+            "Nietzsche warning: don't stare into the abyss so long that risk-awareness becomes paralysis.",
+            "Disruption brings profit — to those still standing."
+          ]
+        },
+        {
+          "label": "5. Simplicity Is the Ultimate Sophistication",
+          "tldr": "Greenblatt in the Hamptons: the magic formula is value investing compressed to two ratios; and for most people, a boring 80/20 index fund beats brilliance.",
+          "points": [
+            "'Figure out what something is worth and pay a lot less' — the fundamental secret is one sentence.",
+            "Greenblatt's own family: a simple global 80/20 fund, held for years.",
+            "Bogle: 'You don't have to be great.'",
+            "Complexity is usually sold, not chosen."
+          ]
+        },
+        {
+          "label": "6. Nick & Zak's Excellent Adventure",
+          "tldr": "Nomad Investment Partnership: Nick Sleep and Qais Zakaria ran the discipline of destination analysis — Amazon as the 'scale economics shared' marvel — and let patience do the compounding.",
+          "points": [
+            "Their three-question framework: Is it scale-driven? Does management share the economics? Is the price sane?",
+            "Held Amazon through 90%+ drawdowns because the destination analysis hadn't changed.",
+            "Kabbalah via Rav Berg: the line of most resistance — deferral as a source of joy, not deprivation.",
+            "Reward yourself short-term for overriding instant gratification; wire deferral to pleasure."
+          ]
+        },
+        {
+          "label": "7. High-Performance Habits",
+          "tldr": "Tom Gayner's Markel: 'God, family, fund — in that order.' One pound a year, sustained — habits compound like money, and most people add complexity where they should subtract.",
+          "points": [
+            "Gayner's pound-a-year: absurdly unambitious — and it beats the average American's trajectory.",
+            "Peter Lynch to Bill Miller: 'The only way you can beat them is to outwork them.'",
+            "The alignment discipline: say no to anything that throws off the priority stack.",
+            "Sustained excellence = subtraction and depth, not skimming."
+          ]
+        },
+        {
+          "label": "8. Don't Be a Fool",
+          "tldr": "The Munger doctrine: invert. Reducing standard stupidities beats adding intelligence — envy, resentment, self-pity, and overconfidence are the four horses.",
+          "points": [
+            "'It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid.'",
+            "Inversion via Garrett Hardin: solve backward from what ruins you, then avoid that.",
+            "Thorp declined LTCM: 'the probability of their ruin appeared substantial' — he missed a fee and dodged history's most famous blowup.",
+            "Trivers: 'we lie to ourselves the better to lie to others' — assume your own mind is adversarial."
+          ],
+          "action": "Write your top five standard stupidities — then design one guardrail for each."
+        }
+      ],
+      "pages": 280
+    },
+    {
+      "id": "sam-walton-made-in-america",
+      "title": "Sam Walton: Made in America",
+      "author": "Sam Walton with John Huey",
+      "source": "lib/Walton.epub",
+      "tldr": "The founder's own story, told weeks before his death: how a $25K Newport five-and-dime became the largest retailer on Earth by obsessing over the customer, staying cheaper than everyone, and thinking small while growing enormous.",
+      "takeaways": [
+        "The secret of retailing: give customers what they want — assortment, low prices, satisfaction — and treat them as the boss.",
+        "Swim upstream: Sam was conservative in everything except business, where he was a maverick.",
+        "Saturate small towns nobody else wanted, then fill in — distribution density was the moat.",
+        "The partnership with associates — profit-sharing and respect — is the real engine, not merchandising genius.",
+        "Stay lean: 2% general-office expense from five stores to two thousand; fight bureaucracy like a religion."
+      ],
+      "chapters": [
+        {
+          "label": "1–2. Value a Dollar / Starting on a Dime",
+          "tldr": "Depression paper routes, milk cows, a $25K Ben Franklin in Newport — and the lesson of the lost lease: read your contracts, then get back up.",
+          "points": [
+            "Newport's landlord refused to renew the lease and gave the store to his son — Sam's $50K buyout funded the restart.",
+            "'You can make a positive out of most any negative if you work at it hard enough.'",
+            "Eight to a motel room on buying trips: cheapness as competitive weapon, not personality quirk."
+          ]
+        },
+        {
+          "label": "3–4. Bouncing Back / Swimming Upstream",
+          "tldr": "Bentonville 1950: a town of 3,000 with three variety stores — Sam picked it to prove he could do it again. Wal-Mart born 1962 in Rogers, against everyone's advice.",
+          "points": [
+            "Conservative in church, family, civic life; a maverick in the marketplace — 'creating a little anarchy.'",
+            "Discount everything, not just loss leaders: 25¢ items at 21¢.",
+            "Bud and everyone else thought small-town discounting was crazy — Sam's Eveleth, Minnesota epiphany said otherwise."
+          ]
+        },
+        {
+          "label": "5–6. Family / Recruiting the Team",
+          "tldr": "Helen's non-negotiables: small towns only, four kids by thirty. Meanwhile Sam hired people who could run things — then argued with them about every new system before writing the checks.",
+          "points": [
+            "Alice's childhood worry: 'my daddy owes so much money and he won't quit opening stores.'",
+            "Willard Walker ran the first Wal-Mart for a cut of profits — skin in the game from store #1.",
+            "Fought the computer guys for years, then invested more than anyone — skepticism as capital discipline."
+          ]
+        },
+        {
+          "label": "7. Taking the Company Public",
+          "tldr": "Debt to every bank in Arkansas forced the 1970 IPO — which paid off everything and funded the rollout. Sam hated the dilution, loved the freedom.",
+          "points": [
+            "Borrow from one bank to pay another — until Dallas's Jimmy Jones taught him institutional finance.",
+            "'We couldn't care less what the market says we ought to do' — 15%, 20%, or 25%, consistency beats hype.",
+            "The IPO's real product: growth without groveling."
+          ]
+        },
+        {
+          "label": "8–9. Rolling Out / Building the Partnership",
+          "tldr": "The formula: big discount stores in towns under 5,000 that Kmart (50K floor) and Gibson's (10–12K) ignored. Saturate a region, then fill in — distribution first, stores second.",
+          "points": [
+            "Saturation strategy: stores clustered around distribution centers — the competition never matched the logistics.",
+            "We shut the door on variety-store thinking: 45% markups died, 30% and volume won.",
+            "Profit-sharing for associates from 1971 — the partnership, in Sam's telling, is the whole secret."
+          ]
+        },
+        {
+          "label": "10–11. Stepping Back / Creating a Culture",
+          "tldr": "Sam handed the presidency to Ron Mayer, stayed chairman — then returned to culture full-time: Saturday morning meetings, the Wal-Mart cheer, whistle-while-you-work.",
+          "points": [
+            "Saturday 7:30 AM meetings with several hundred executives — bring problems into the open, solve them together.",
+            "'Who's number one? THE CUSTOMER!' — the Hog call as philosophy.",
+            "Fun with a purpose: spirit, communication, and nobody too puffed up to be the butt of a joke."
+          ]
+        },
+        {
+          "label": "12. Making the Customer Number One",
+          "tldr": "The one guiding principle, repeated to death: give customers what they want. Exceed expectations and they return; inconvenience them and they don't.",
+          "points": [
+            "Everything: assortment, lowest prices, guaranteed satisfaction, friendly service, convenient hours, free parking.",
+            "David Glass: 'If the customers are the bosses, all you have to do is please them.'",
+            "'Retail is detail' — think like a customer, then sweat the details."
+          ]
+        },
+        {
+          "label": "13–14. Meeting the Competition / Expanding the Circles",
+          "tldr": "Meet competitors head-on — Sol Price's wholesale clubs inspired Sam's Club. And invest in distribution and technology as the competitive weapon, not overhead.",
+          "points": [
+            "'We wouldn't be nearly as good as we are today without Kmart' — competition hones.",
+            "Satellite network, laser-guided distribution: Sam resisted, signed anyway, then checked weekly printouts at 3 AM Saturday.",
+            "Managers and associates make the technology worth anything — never the reverse."
+          ]
+        },
+        {
+          "label": "15. Thinking Small",
+          "tldr": "Six principles to grow big by staying small: one store at a time, communicate, keep your ear to the ground, push responsibility down, force ideas up, stay lean.",
+          "points": [
+            "Panama City vs Panama City Beach: five miles apart, entirely different stores — merchants on the scene decide.",
+            "'Eat What You Cook': buyers manage their own departments quarterly — no more beach towels for Kansas.",
+            "VPI contests and 'Yes We Can, Sam!': $8M/year saved from associates' ideas; people-greeters came from a store associate, and Sam was relentless about it.",
+            "2% general-office expense — pulled from the air at five stores, still holding at two thousand."
+          ]
+        },
+        {
+          "label": "16–17. Giving Back / Ten Rules",
+          "tldr": "The closing: sharing the wealth with associates and communities, and Sam's ten rules for building a business — ending with 'swim upstream.' Honestly told, flaws included.",
+          "points": [
+            "Rules include: commit to the business, share profits, motivate, communicate everything, appreciate everyone, exceed expectations, control expenses, swim upstream.",
+            "The book's candor: Sam admits his flaws as a husband and father as plainly as his wins.",
+            "'All of them can be found in any number of books on management — we just applied them a little differently.'"
+          ],
+          "action": "Pick one competitor you avoid studying — spend an afternoon in their store with a yellow legal pad."
+        }
+      ],
+      "pages": 211
+    },
+    {
+      "id": "clear-thinking",
+      "title": "Clear Thinking",
+      "author": "Shane Parrish",
+      "source": "lib/ClearThinking.epub",
+      "tldr": "Ordinary moments — a curt email, a rushed meeting — quietly decide careers and portfolios because biology thinks for us. The fix: know your defaults, build strengths against them, and install systems that make good thinking automatic.",
+      "takeaways": [
+        "Rationality is wasted if you don't know when to use it — the moment slips by unannounced.",
+        "Four defaults hijack you: emotion, ego, social, inertial. Strength answers each: accountability, knowledge, control, confidence.",
+        "The formula for failure is a few small errors consistently repeated — and vice versa.",
+        "Define the problem yourself: the first plausible framing in the room usually defines the wrong problem.",
+        "Real wisdom isn't chasing success, it's building character — the scoreboard you use decides the life you get."
+      ],
+      "chapters": [
+        {
+          "label": "Part I — Thinking Badly (Or Not At All)",
+          "tldr": "The fired CEO took one angry phone call — his last — because his ego wouldn't let him hear bad news. We expect an inner voice to shout 'THINK NOW'; it never does.",
+          "points": [
+            "In the space between stimulus and response, you either reason or run a default.",
+            "Defaults: lashing out at slights, assuming malice, escalating, hoarding information, conforming.",
+            "The angry CEO wasn't fired for anger — he was fired for acting on the information his anger buried."
+          ]
+        },
+        {
+          "label": "Part II — The Four Strengths",
+          "tldr": "Self-accountability ('it's all your fault' — the empowering version), self-knowledge, self-control, self-confidence: the muscles that keep defaults in check.",
+          "points": [
+            "Accountability: there is always something you can do today to better your position tomorrow.",
+            "People who lack it run on autopilot, measuring themselves against other people's scoreboards.",
+            "Rewrite what you can; contain what you can't — biology included."
+          ]
+        },
+        {
+          "label": "Part III — Managing Weakness",
+          "tldr": "You're Hungry, Angry, Lonely, and Tired more often than you think. Habits with delayed consequences are the acquired weaknesses — and they compound.",
+          "points": [
+            "Bad habits are easy to acquire when action and consequence are separated in time.",
+            "'Good choices repeated make time your friend; bad ones make it your enemy.'",
+            "Program subroutines: decision hygiene (sleep, food, no big calls while emotional), not heroic willpower."
+          ]
+        },
+        {
+          "label": "Part IV — Decision-Making",
+          "tldr": "Define the problem before solving it — the first plausible framing in a room becomes the problem, and it's rarely the real one. Separate fact from opinion before generating options.",
+          "points": [
+            "Only the person responsible for the outcome gets to define the problem.",
+            "The room goes silent for a microsecond, then starts solving — the wrong problem, efficiently.",
+            "Judgment: separate the decision (process) from the outcome (luck); grade yourself on process."
+          ],
+          "action": "In your next problem meeting, spend the first ten minutes only agreeing what the problem is — no solutions allowed."
+        },
+        {
+          "label": "Part V — What Actually Matters",
+          "tldr": "Dickens's Scrooge sees his own funeral and learns the long-game lesson: the hedonic treadmill never pays. Don't live by another person's scoreboard.",
+          "points": [
+            "The car at sixteen, the promotion at thirty — satisfaction adapts; the treadmill speeds up.",
+            "Scrooge's fix wasn't fear of death — it was seeing who showed up, and who didn't.",
+            "'Real wisdom doesn't come from chasing success but from building character.' — with Jim Collins: no effectiveness without discipline, no discipline without character."
+          ]
+        }
+      ],
+      "pages": 175
+    },
+    {
+      "id": "incerto-bundle",
+      "title": "The Incerto (4-Book Bundle)",
+      "author": "Nassim Nicholas Taleb",
+      "source": "lib/Incerto.epub",
+      "tldr": "Taleb's lifelong argument in four works: the world is driven by rare, unpredictable events (Black Swans) that experts systematically ignore; the cure is not better prediction but antifragility — structures that gain from disorder. Note: this bundle's extractable text covers Antifragile, Fooled by Randomness, and The Bed of Procrustes; The Black Swan's full text wasn't extractable from this epub.",
+      "takeaways": [
+        "Fragile breaks under stress, robust resists, antifragile gains — the triad nobody names because there's no word for the third.",
+        "Via negativa: subtract harm before adding help; most improvement is removal.",
+        "The grandmother and the average temperature: in nonlinear systems, the average of outcomes ≠ the outcome of the average.",
+        "Never rid anyone of an illusion unless you can replace it with another illusion — knowledge is narrative all the way down.",
+        "Barbell strategy: extreme safety on one side, aggressive optionality on the other; the middle is where fragility lives."
+      ],
+      "chapters": [
+        {
+          "label": "Antifragile I–II — The Triad and Modernity's Denial",
+          "tldr": "Damocles (fragile), Phoenix (robust), Hydra (antifragile): cut one head, two grow. Modernity's mistake is touristification — sucking volatility out of systems until they explode.",
+          "points": [
+            "The whole often gains from the fragility of parts: restaurants fail, the food scene improves; entrepreneurs go broke, the economy compounds.",
+            "Mediocristan vs Extremistan: two randomness regimes — don't apply one's math to the other.",
+            "Naive interventionism (iatrogenics): the most neglected product of modernity — harm done by helpers."
+          ]
+        },
+        {
+          "label": "Antifragile III–IV — Nonprediction and Optionality",
+          "tldr": "Fat Tony smells fragility; you don't need to forecast to know what breaks. Optionality is the legal cheat code: capped downside, open upside — you don't need to know where you're going.",
+          "points": [
+            "Aquinas and teleology: 'an agent does not move except out of intention for an end' — Taleb dissolves this; trial and error beats grand plans.",
+            "Thales' olive presses: the first recorded option — asymmetry, not foresight.",
+            "The barbell: 90% ultra-safe, 10% speculative; the middle is where banks and careers die."
+          ]
+        },
+        {
+          "label": "Antifragile V–VII — Nonlinearity, Via Negativa, Lindy",
+          "tldr": "The grandmother at 0° and 140°: both dead, though the average is perfect. Nonlinearity means the properties of x and f(x) divorce — and the cure for almost everything is subtraction.",
+          "points": [
+            "Via negativa from theology: say what God is not — define systems by removal, not addition.",
+            "Lindy effect: the longer something has lived, the longer it's likely to live; time is the only honest reviewer.",
+            "Ethics: skin in the game — never trust advice from anyone who doesn't bear its consequences (the Robert Rubin trade)."
+          ]
+        },
+        {
+          "label": "Fooled by Randomness",
+          "tldr": "The first Incerto work: luck masquerading as skill, and skill as luck — the asymmetry that ruins both the lucky fool and the unlucky genius.",
+          "points": [
+            "'The tragedy is that much of what you think is random is in your control and, what's worse, the opposite.'",
+            "The hotshot: someone temporarily perceived to be important, rather than important to be temporary.",
+            "'The sucker's trap is when you focus on what you know and what others don't know, rather than the reverse.'",
+            "Never rid anyone of an illusion unless you can replace it in his mind with another illusion."
+          ]
+        },
+        {
+          "label": "The Bed of Procrustes",
+          "tldr": "Aphorisms on the Procrustean bed: we chop and stretch reality to fit neat categories, vocabularies, and narratives — and occasionally detonate things doing it.",
+          "points": [
+            "'The fool generalizes the particular; the nerd particularizes the general; the wise does neither.'",
+            "'You want to be yourself, idiosyncratic; the collective wants you generic to the point of castration.'",
+            "'To be permanently in a state of certainty is to be permanently dead.' — the bundle's whole critique in miniature.",
+            "Procrustes met Theseus and lay in his own bed — poetic justice as epistemology."
+          ]
+        },
+        {
+          "label": "A Note on This Bundle",
+          "tldr": "This epub's extractable text contains Antifragile's chapter summaries and glossary, Fooled by Randomness's aphorisms, and Bed of Procrustes in full — but The Black Swan appears only as a referenced title, not as text. Honest gap, declared rather than faked.",
+          "points": [
+            "The Black Swan's core argument is summarized in this bundle's other three works — Mediocristan/Extremistan and the scandal of prediction.",
+            "Lindy in action: the Incerto has survived twenty years of hostile review — that survival is its own evidence.",
+            "Read the notes as a map; the full works reward the territory."
+          ]
+        }
+      ],
+      "pages": 1178
+    },
+    {
+      "id": "the-snowball",
+      "title": "The Snowball",
+      "author": "Alice Schroeder",
+      "source": "lib/TheSnowball.epub",
+      "tldr": "The authorized biography with unprecedented access: Buffett's life as a case study in the inner scorecard — the obsessive collecting of money since age six, the trades and blunders, and the costs a snowball that big exacts on everyone in its path.",
+      "takeaways": [
+        "The inner scorecard is the spine: would you rather be the world's best investor thought the worst, or the reverse? Buffett chose at nine.",
+        "Snowballs need wet snow and a long hill — time and reinvestment, not just rate of return.",
+        "The blunders are in the book by design: Dempster Mill, the textile mill he couldn't quit, Salomon's rot, Gen Re's derivative book.",
+        "Susie's leaving in 1977 broke the marriage contract he'd assumed was permanent — the biography's honest center.",
+        "The giving pledge logic: claim checks — money is claim checks on society's output; hoarding them past usefulness is failure."
+      ],
+      "chapters": [
+        {
+          "label": "Part 1 — The Bubble (Sun Valley 1999)",
+          "tldr": "The frame: Buffett at the peak of the dot-com bubble, telling the world stocks can't grow to the sky — booed for it, right about it. The less flattering version, as he insisted biographers tell it.",
+          "points": [
+            "He knew tech was outside his circle — 'risk comes from not knowing what you're doing.'",
+            "The Zegna jacket and the fifty-year-old office: the most ordinary-looking extraordinary man alive.",
+            "Schroeder's access condition: he would not review the manuscript."
+          ]
+        },
+        {
+          "label": "Part 2 — The Inner Scorecard (Origins)",
+          "tldr": "Omaha 1869 on: the Buffett grocery, Howard's failed depression-era politics, the paper routes and pinball machines — the childhood that built the machine.",
+          "points": [
+            "Howard, 'a hundred percent Inner Scorecard guy' — the source of the whole philosophy.",
+            "Cherry Coke, racetrack odds, the arithmetic of everything — traits visible by age ten.",
+            "Dale Carnegie course certificate, January 1952: he invested in himself to conquer stage fright — the one diploma on the wall."
+          ]
+        },
+        {
+          "label": "Part 3 — The Racetrack (Graham-Newman)",
+          "tldr": "Columbia, Graham, the GEICO discovery-by-cab, then back to Omaha and the partnership: seven partnerships merged into one, compounding ~30% for thirteen years.",
+          "points": [
+            "The Saturday GEICO visit as a nobody — pattern recognition plus the nerve to knock on doors.",
+            "Graham's rule: buy below working capital — and Buffett's amendment: buy wonderful businesses above it.",
+            "The windmill war and Dempster Mill: the activist chapter he preferred not to repeat."
+          ]
+        },
+        {
+          "label": "Part 4 — Susie Sings (The Partnership Winds Down)",
+          "tldr": "1969: he closes the partnership at the top, distributes Berkshire, Diversified Retailing, and Blue Chip Stamps — the raw material of everything after. Susie's singing career begins; the marriage's fault line shows.",
+          "points": [
+            "The dissolution letter: Berkshire worth ~$45/share, $16 of it textiles he wouldn't kill — 'I like the textile people.'",
+            "See's Candies' lesson lands in this era: pay up for franchises; never again buy cigar butts by reflex.",
+            "Susie: 'I don't want to be married to somebody who's going to spend his whole life sitting in front of a television eating hamburgers.' Both were right."
+          ]
+        },
+        {
+          "label": "Part 5 — The King of Wall Street (Salomon)",
+          "tldr": "The '87 crash he sailed through, the Coke stake ('a Mercedes for the price of a Chevrolet'), then Salomon Brothers 1991 — Mozer's false bids, and Buffett stepping in as chairman to save the firm.",
+          "points": [
+            "Congress, TV cameras, and the line that saved Salomon: 'Lose money for the firm, and I will be understanding. Lose a shred of reputation for the firm, and I will be ruthless.'",
+            "He ran Salomon from Omaha by fax — proof the culture mattered more than the presence.",
+            "Flight 11 into the tower of his friend's world ended the era; 9/11 opened the last act."
+          ]
+        },
+        {
+          "label": "Part 6 — Claim Checks (The Giving)",
+          "tldr": "Susie's death in 2004, the 2006 pledge to give it all away via the Gates Foundation, and the Genie: 'You only get one mind and one body — it's got to last a lifetime.'",
+          "points": [
+            "The car-genie speech to students: if it's the last car you'll ever get, you read the manual five times and fix every dent.",
+            "Claim checks: he came to see his fortune as society's spending vouchers, held in trust — hence giving it back rather than dynastying it.",
+            "The millennium New Year's Eve with the family: the snowball at rest, briefly, and what it rolled over to get there."
+          ],
+          "action": "Take the scorecard test: one decision this week where you chose appearance over reality — re-run it inner-scorecard and note the difference."
+        }
+      ],
+      "pages": 997
     }
   ]
 }
