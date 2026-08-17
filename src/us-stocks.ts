@@ -290,11 +290,11 @@ export function renderStockAccordions(stocks: StockIdea[], nodeId: string): stri
                   <span data-field="price" style="font-weight:bold; color:var(--text);">${stockPrice}</span>
                 </div>
                 <div>
-                  <span style="display:block; font-size:0.75rem; color:var(--meta);">P/E Ratio</span>
+                  <span style="display:block; font-size:0.75rem; color:var(--meta);">P/E Ratio<span class="gl" data-glossary="pe" role="button" tabindex="0" aria-label="What is P/E Ratio?">?</span></span>
                   <span data-field="pe" style="font-weight:bold; color:var(--text);">${peRatio}</span>
                 </div>
                 <div>
-                  <span style="display:block; font-size:0.75rem; color:var(--meta);">Market Cap</span>
+                  <span style="display:block; font-size:0.75rem; color:var(--meta);">Market Cap<span class="gl" data-glossary="marketcap" role="button" tabindex="0" aria-label="What is Market Cap?">?</span></span>
                   <span data-field="cap" style="font-weight:bold; color:var(--text);">${marketCap}</span>
                 </div>
               </div>

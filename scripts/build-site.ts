@@ -64,12 +64,14 @@ try {
     const html = renderPage(allNodes, METADATA);
     const withHydration = html.replace(
         "</body>",
-        '    <script src="/hydrate.js" defer></script>\n</body>'
+        '    <script src="/hydrate.js" defer></script>\n    <script src="/glossary.js" defer></script>\n</body>'
     );
 
     const outputPath = join(PUBLIC_DIR, "index.html");
     writeFileSync(outputPath, withHydration);
     copyFileSync(join(BASE_PATH, "src", "hydrate.js"), join(PUBLIC_DIR, "hydrate.js"));
+    copyFileSync(join(BASE_PATH, "src", "glossary.js"), join(PUBLIC_DIR, "glossary.js"));
+    copyFileSync(join(BASE_PATH, "data", "glossary.json"), join(PUBLIC_DIR, "glossary.json"));
 
     // 4. Compile NSE terminal
     buildNsePage(PUBLIC_DIR);

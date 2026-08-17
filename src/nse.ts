@@ -795,7 +795,7 @@ export function buildNsePage(publicDir: string) {
                     <!-- Metric Cards -->
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-label">Revenue (LTM)</div>
+                            <div class="stat-label">Revenue (LTM)<span class="gl" data-glossary="revenue" role="button" tabindex="0" aria-label="What is Revenue?">?</span></div>
                             <div class="stat-value" id="stat-revenue">KES —</div>
                         </div>
                         <div class="stat-card">
@@ -803,11 +803,11 @@ export function buildNsePage(publicDir: string) {
                             <div class="stat-value" id="stat-netincome">KES —</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">ROIC</div>
+                            <div class="stat-label">ROIC<span class="gl" data-glossary="roic" role="button" tabindex="0" aria-label="What is ROIC?">?</span></div>
                             <div class="stat-value highlight" id="stat-roic">—</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">ROE</div>
+                            <div class="stat-label">ROE<span class="gl" data-glossary="roe" role="button" tabindex="0" aria-label="What is ROE?">?</span></div>
                             <div class="stat-value highlight" id="stat-roe">—</div>
                             <div class="roe-context" id="stat-roe-context" style="font-size: 0.65rem; color: var(--meta);"></div>
                         </div>
@@ -1308,6 +1308,10 @@ export function buildNsePage(publicDir: string) {
             }
         }
 
+        // Glossary badges shared by tables
+        const glMap = {"EPS":"eps","DPS":"dps","EBITDA":"ebitda","Revenue":"revenue","ROE (%)":"roe","ROIC (%)":"roic","Net Margin (%)":"margin"};
+        const glBadge = (n) => glMap[n] ? \` <span class="gl" data-glossary="\${glMap[n]}" role="button" tabindex="0" aria-label="What is \${n}?">?</span>\` : '';
+
         // Render high-performance financial metrics table
         function renderFinancialsTable(metrics, periods, unitHint) {
             if (!periods || periods.length === 0) return;
@@ -1336,7 +1340,7 @@ export function buildNsePage(publicDir: string) {
             let rowHtml = '';
             const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS"]);
             sortedMetricKeys.forEach(m => {
-                rowHtml += \`<tr><td class="metric-name">\${m}</td>\`;
+                rowHtml += \`<tr><td class="metric-name">\${m}\${glBadge(m)}</td>\`;
                 periods.forEach(p => {
                     const val = metrics[p]?.[m];
                     const valNum = typeof val === 'number' ? val : parseFloat(val);
@@ -1382,7 +1386,7 @@ export function buildNsePage(publicDir: string) {
 
             let rowHtml = '';
             ratioLabels.forEach(label => {
-                rowHtml += \`<tr><td class="metric-name">\${label}</td>\`;
+                rowHtml += \`<tr><td class="metric-name">\${label}\${glBadge(label)}</td>\`;
                 periods.forEach(p => {
                     let val = null;
                     const pRatios = staticRatios[p] || {};
@@ -1471,6 +1475,7 @@ export function buildNsePage(publicDir: string) {
             listContainer.innerHTML = listHtml;
         }
     </script>
+    <script src="/glossary.js" defer></script>
 </body>
 </html>`;
 
