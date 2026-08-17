@@ -1,0 +1,26 @@
+name: Daily price history
+# 1Y daily closes for all manifest tickers → worker KV `history` key.
+# Runs after US market close; charts.js reads it via /history.
+on:
+  schedule:
+    - cron: "20 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - name: Fetch 1Y closes for all tickers
+        run: bun scripts/fetch-history.ts /tmp/history.json
+      - name: Upload to worker KV
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bunx wrangler kv key put history --namespace-id=7eff4838aa6d49b9a82d1b175d4d0c06 --path /tmp/history.json --remote

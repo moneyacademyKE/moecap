@@ -179,6 +179,14 @@ export default {
       });
     }
 
+    if (path === "/history") {
+      const history = await env.PRICES.get("history");
+      if (!history) return new Response('{"error":"not seeded"}', { status: 503, headers });
+      return new Response(history, {
+        headers: { ...headers, "cache-control": "public, max-age=21600, s-maxage=21600" },
+      });
+    }
+
     return new Response('{"error":"not found"}', { status: 404, headers });
   },
 };
