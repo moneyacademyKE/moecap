@@ -1,4 +1,5 @@
 import { writeFileSync, existsSync, mkdirSync, copyFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export interface Company {
@@ -41,6 +42,7 @@ export function buildNsePage(publicDir: string) {
   // Load and parse NSE database
   const rawData = require(nseDataPath) as NSEData;
   const companies = [...rawData.companies].sort((a, b) => a.ticker.localeCompare(b.ticker));
+  const metricHelpers = readFileSync(join(baseDir, "src", "nse-metrics.client.js"), "utf8");
   
   // Ensure nse output dir exists
   const nseOutputDir = join(publicDir, "nse");
@@ -879,6 +881,8 @@ export function buildNsePage(publicDir: string) {
         let activeTicker = null;
         let activeTab = 'financials';
 
+        ${metricHelpers}
+
         // Worker-backed price sync: one KV-cached source (moecap-prices worker),
         // refreshed hourly server-side. No third-party CORS proxy, no per-visitor
         // external scraping. Falls back to the static snapshot on any failure.
@@ -1071,11 +1075,11 @@ export function buildNsePage(publicDir: string) {
             if (!fin || !fin.metrics) return null;
             const periods = Object.keys(fin.metrics).sort().reverse();
             const yr = fin.canonicalYear || periods[0];
-            const canonicalNI = (fin.metrics[yr] || {})["Net Income"];
-            if (typeof canonicalNI === 'number') return { value: canonicalNI, year: yr };
+            const canonical = nseNetIncomeFor(fin.metrics[yr] || {});
+            if (canonical) return { value: canonical.value, year: yr };
             for (const p of periods) {
-                const v = (fin.metrics[p] || {})["Net Income"];
-                if (typeof v === 'number') return { value: v, year: p };
+                const income = nseNetIncomeFor(fin.metrics[p] || {});
+                if (income) return { value: income.value, year: p };
             }
             return null;
         }
@@ -1113,48 +1117,12 @@ export function buildNsePage(publicDir: string) {
                 : \`For every KES 100 of owners' money, \${company.name} LOST KES \${kes} that year.\`;
         }
 
-        // Robust dynamic ROIC computation
         function calculateROIC(metrics) {
-            const ebit = metrics["Operating Income"] !== undefined ? metrics["Operating Income"] : (metrics["EBITDA"] !== undefined ? metrics["EBITDA"] : null);
-            const netIncome = metrics["Net Income"] !== undefined ? metrics["Net Income"] : null;
-            
-            const equity = metrics["Total Equity"] !== undefined ? metrics["Total Equity"] : 
-                         (metrics["Share Capital"] !== undefined && metrics["Retained Earnings"] !== undefined ? metrics["Share Capital"] + metrics["Retained Earnings"] : null);
-            
-            const debt = metrics["Total Debt"] !== undefined ? metrics["Total Debt"] : 0;
-            const cash = metrics["Cash & Bank"] !== undefined ? metrics["Cash & Bank"] : 0;
-
-            if (ebit === null && netIncome === null) return null;
-            
-            const eqVal = equity !== null ? equity : (metrics["Total Assets"] !== undefined ? metrics["Total Assets"] - (metrics["Total Liabilities"] || 0) : null);
-            if (eqVal === null || eqVal <= 0) return null;
-
-            const investedCapital = eqVal + debt - cash;
-            if (investedCapital <= 0) return null;
-
-            const taxExpense = metrics["Income Tax Expense"] !== undefined ? metrics["Income Tax Expense"] : 0;
-            let taxRate = 0.30; // standard corporate tax rate in Kenya is 30%
-            if (ebit && taxExpense < 0) {
-                taxRate = Math.min(0.5, Math.max(0, -taxExpense / ebit));
-            }
-
-            const nopat = ebit !== null ? ebit * (1 - taxRate) : netIncome;
-            return (nopat / investedCapital) * 100;
+            return nseCalculateRoic(metrics);
         }
 
-        // Robust dynamic ROE computation
         function calculateROE(metrics, ratios) {
-            if (ratios && ratios["ROE (%)"] !== undefined) {
-                const val = ratios["ROE (%)"];
-                return Math.abs(val) < 1.0 ? val * 100 : val;
-            }
-            const netIncome = metrics["Net Income"];
-            const equity = metrics["Total Equity"] !== undefined ? metrics["Total Equity"] : 
-                         (metrics["Share Capital"] !== undefined && metrics["Retained Earnings"] !== undefined ? metrics["Share Capital"] + metrics["Retained Earnings"] : null);
-            if (netIncome !== undefined && equity && equity > 0) {
-                return (netIncome / equity) * 100;
-            }
-            return null;
+            return nseCalculateRoe(metrics, ratios);
         }
 
         // Select and render stock details in workspace
@@ -1241,25 +1209,20 @@ export function buildNsePage(publicDir: string) {
                         return b >= 1 ? \`KES \${b.toFixed(1)}B\` : \`KES \${Math.round(b * 1000)}M\`;
                     };
 
-                    // Revenue LTM
-                    const rev = latestMetrics["Revenue"];
-                    const revNum = typeof rev === 'number' ? rev : parseFloat(rev);
-                    document.getElementById('stat-revenue').innerText = (!isNaN(revNum) && rev !== null && rev !== undefined) ? displayKES(revNum) : '—';
+                    // Headline values use verified aliases; bank revenue is derived only from the same-period income lines.
+                    const rev = nseRevenueFor(latestMetrics);
+                    document.getElementById('stat-revenue').innerText = rev ? displayKES(rev.value) : '—';
 
-                    // Net Income LTM
-                    const net = latestMetrics["Net Income"];
-                    const netNum = typeof net === 'number' ? net : parseFloat(net);
-                    document.getElementById('stat-netincome').innerText = (!isNaN(netNum) && net !== null && net !== undefined) ? displayKES(netNum) : '—';
+                    const net = nseNetIncomeFor(latestMetrics);
+                    document.getElementById('stat-netincome').innerText = net ? displayKES(net.value) : '—';
 
-                    // Compute dynamic ROIC
                     const roic = calculateROIC(latestMetrics);
-                    const roicNum = typeof roic === 'number' ? roic : parseFloat(roic);
-                    document.getElementById('stat-roic').innerText = (!isNaN(roicNum) && roic !== null) ? \`\${roicNum.toFixed(1)}%\` : '—';
+                    document.getElementById('stat-roic').innerText = roic !== null ? \`\${roic.toFixed(1)}%\` : '—';
 
-                    // Compute dynamic ROE
                     const roe = calculateROE(latestMetrics, latestRatios);
-                    const roeNum = typeof roe === 'number' ? roe : parseFloat(roe);
-                    document.getElementById('stat-roe').innerText = (!isNaN(roeNum) && roe !== null) ? \`\${roeNum.toFixed(1)}%\` : '—';
+                    document.getElementById('stat-roe').innerText = roe !== null ? \`\${roe.toFixed(1)}%\` : '—';
+
+                    const roeNum = roe;
 
                     // ROE in sector context (median of the sector's computable ROEs)
                     const roeCtx = document.getElementById('stat-roe-context');
@@ -1405,14 +1368,15 @@ export function buildNsePage(publicDir: string) {
                     const pMetrics = metrics[p] || {};
 
                     if (label === "ROIC (%)") {
-                        val = calculateROIC(pMetrics);
+                        val = nseCalculateRoic(pMetrics);
                     } else if (label === "ROE (%)") {
-                        val = calculateROE(pMetrics, pRatios);
-                    } else if (pRatios[label] !== undefined) {
-                        val = pRatios[label];
-                        if (label.includes("%") && Math.abs(val) < 1.0) {
-                            val = val * 100;
-                        }
+                        val = nseCalculateRoe(pMetrics, pRatios);
+                    } else if (label === "ROA (%)") {
+                        val = nseCalculateRoa(pMetrics, pRatios);
+                    } else if (label === "Net Margin (%)") {
+                        val = nseCalculateNetMargin(pMetrics, pRatios);
+                    } else if (label === "Asset Turnover (x)") {
+                        val = nseCalculateAssetTurnover(pMetrics, pRatios);
                     }
 
                     const valNum = typeof val === 'number' ? val : parseFloat(val);

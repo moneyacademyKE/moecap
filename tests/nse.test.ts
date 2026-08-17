@@ -76,7 +76,10 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toContain("function switchTab(tabId)");
     expect(htmlContent).toContain("function filterDirectory()");
     expect(htmlContent).toContain("function calculateROIC(metrics)");
-    expect(htmlContent).toContain("function calculateROE(metrics, ratios)");
+    expect(htmlContent).toContain("function nseRevenueFor(row)");
+    expect(htmlContent).toContain("function nseCalculateNetMargin(row, ratios = {})");
+    expect(htmlContent).toContain("function nseCalculateAssetTurnover(row, ratios = {})");
+    expect(htmlContent).toContain('const rev = nseRevenueFor(latestMetrics);');
 
     // Real-Time Price Updater elements and functions
     expect(htmlContent).toContain('id="detail-price-live-badge"');
