@@ -99,6 +99,8 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toContain('id="plain-roe"');
     expect(htmlContent).toContain("function renderVerdictChips");
     expect(htmlContent).toContain("function renderPlainRoe");
+    expect(htmlContent).toContain("function renderPlainPerformance");
+    expect(htmlContent).toContain('id="plain-performance"');
     expect(htmlContent).toContain("function findNetIncome");
 
     // Simple/Expert toggle defaults Simple

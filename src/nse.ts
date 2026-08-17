@@ -797,11 +797,11 @@ export function buildNsePage(publicDir: string) {
                     <!-- Metric Cards -->
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-label">Revenue (LTM)<span class="gl" data-glossary="revenue" role="button" tabindex="0" aria-label="What is Revenue?">?</span></div>
+                            <div class="stat-label">Revenue / income<span class="gl" data-glossary="revenue" role="button" tabindex="0" aria-label="What is Revenue?">?</span></div>
                             <div class="stat-value" id="stat-revenue">KES —</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">Net Income (LTM)</div>
+                            <div class="stat-label">Profit after tax</div>
                             <div class="stat-value" id="stat-netincome">KES —</div>
                         </div>
                         <div class="stat-card">
@@ -818,7 +818,8 @@ export function buildNsePage(publicDir: string) {
                     <!-- Plain-English summary (Simple mode core; stays visible in Expert) -->
                     <div class="plain-summary plain-only" id="plain-summary">
                         <div class="verdict-chips" id="verdict-chips"></div>
-                        <p class="plain-roe" id="plain-roe" style="margin: 0.6rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);"></p>
+                        <p class="plain-performance" id="plain-performance" style="margin: 0.6rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);"></p>
+                        <p class="plain-roe" id="plain-roe" style="margin: 0.4rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);"></p>
                         <p class="plain-note" style="margin: 0.4rem 0 0 0; font-size: 0.72rem; color: var(--meta);">Switch to EXPERT (top right) for the full tables.</p>
                     </div>
 
@@ -1103,6 +1104,29 @@ export function buildNsePage(publicDir: string) {
             box.innerHTML = chips.join('');
         }
 
+        // Plain-English performance sentence from one reported period only.
+        function renderPlainPerformance(company, metrics, unitHint, period) {
+            const el = document.getElementById('plain-performance');
+            if (!el) return;
+            const income = nseNetIncomeFor(metrics || {});
+            const revenue = nseRevenueFor(metrics || {});
+            const dps = nseNamedNumber(metrics || {}, ['DPS', 'Dividend Per Share']);
+            const formatKES = (value) => {
+                const billions = unitHint === 'K' ? value / 1e6 : value >= 1000 ? value / 1000 : value;
+                return billions >= 1 ? 'KES ' + billions.toFixed(1) + 'B' : 'KES ' + Math.round(billions * 1000) + 'M';
+            };
+            const facts = [];
+            if (income) facts.push((income.value >= 0 ? 'Made ' : 'Lost ') + formatKES(Math.abs(income.value)) + ' after tax');
+            if (revenue) facts.push('brought in ' + formatKES(revenue.value) + ' in revenue / income');
+            if (facts.length > 0) {
+                el.innerText = company.name + ' ' + facts.join(' and ') + ' in ' + period + '.' + (dps ? ' The recorded dividend was KES ' + dps.value.toFixed(2) + ' per share.' : '');
+            } else if (dps) {
+                el.innerText = company.name + ' recorded a dividend of KES ' + dps.value.toFixed(2) + ' per share in ' + period + '; profit and income were not archived for that period.';
+            } else {
+                el.innerText = 'This record has no same-period profit, income, or dividend figure to summarise.';
+            }
+        }
+
         // Plain-English ROE sentence
         function renderPlainRoe(company, roe) {
             const el = document.getElementById('plain-roe');
@@ -1232,7 +1256,8 @@ export function buildNsePage(publicDir: string) {
                             ? \`sector median \${med.toFixed(1)}%\` : '';
                     }
 
-                    // Plain-English layer: chips + ROE sentence
+                    // Plain-English layer: same-period performance, chips, and ROE sentence
+                    renderPlainPerformance(company, latestMetrics, unitHint, latestPeriod);
                     renderVerdictChips(financials);
                     renderPlainRoe(company, (!isNaN(roeNum) && roe !== null) ? roeNum : null);
 
@@ -1267,6 +1292,7 @@ export function buildNsePage(publicDir: string) {
                     document.getElementById('stat-roe').innerText = '—';
                     const roeCtx0 = document.getElementById('stat-roe-context');
                     if (roeCtx0) roeCtx0.innerText = '';
+                    renderPlainPerformance(company, null, 'M', 'the archived period');
                     renderVerdictChips(undefined);
                     renderPlainRoe(company, null);
                     
