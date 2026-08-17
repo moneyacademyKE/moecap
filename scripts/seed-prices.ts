@@ -62,9 +62,14 @@ const tickers: Record<string, ManifestRow> = {};
 let noVenue = 0;
 let noPrice = 0;
 
+function parseAuthoredPrice(p?: string): number | null {
+  if (!p) return null;
+  const n = Number(p.replace(/[$,]/g, ""));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 for (const s of stocks) {
   const venues = extractVenues(s.body);
-  if (venues.length === 0) { noVenue++; continue; }
 
   const row: ManifestRow = {
     ticker: s.ticker,
@@ -74,8 +79,22 @@ for (const s of stocks) {
     basis: 0,
   };
 
-  const live = pickLivePrice(row, bulk);
-  if (live == null) { noPrice++; console.warn(`  ⚠ no live price: ${s.ticker} (${venues.map((v) => v.venue).join("/")})`); continue; }
+  // Basis: the live venue price when venues exist; otherwise the authored
+  // price — the price the authored P/E was struck at, which is the anchor
+  // the ratio math actually wants. No-venue tickers stay hydrated (venue
+  // symbols are only needed for venue-side fetching, not for Yahoo refresh).
+  const live = venues.length > 0 ? pickLivePrice(row, bulk) : null;
+  const authored = parseAuthoredPrice(s.meta.stock_price);
+  if (live != null) {
+    row.basis = live;
+  } else if (authored != null) {
+    row.basis = authored;
+    noVenue++;
+  } else {
+    noPrice++;
+    console.warn(`  ⚠ no basis price: ${s.ticker} (${venues.map((v) => v.venue).join("/") || "no venue"})`);
+    continue;
+  }
 
   row.basis = live;
   tickers[s.ticker.toUpperCase()] = row;
