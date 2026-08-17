@@ -317,6 +317,30 @@
             gap: 0.5rem;
         }
 
+        .book-notes-block { margin-bottom: 2.5rem; }
+        .book-notes-header { margin-top: 0; }
+        .book-note { margin-bottom: 1rem; }
+        .book-note > summary { font-weight: 600; }
+        .book-body { padding: 0.5rem 1.2rem 1.2rem 1.2rem; }
+        .book-tldr { color: var(--text); margin-top: 0.75rem; }
+        .book-takeaways { margin-bottom: 1rem; }
+        .book-meta { font-size: 0.75rem; color: var(--meta); border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+        .chapter-note { background: var(--bg-code); margin: 0.5rem 0; border-radius: 4px; box-shadow: none; }
+        .chapter-note > summary { padding: 0.7rem 1rem; font-size: 0.85rem; }
+        .chapter-body { padding: 0.25rem 1.2rem 1rem 1.2rem; font-size: 0.85rem; }
+        .chapter-tldr { color: var(--text); margin-top: 0.25rem; }
+        .chapter-body ul { margin: 0.5rem 0; }
+        .chapter-quote {
+            border-left: 3px solid var(--accent);
+            margin: 0.75rem 0;
+            padding: 0.5rem 1rem;
+            background: var(--surface);
+            border-radius: 0 4px 4px 0;
+            color: var(--meta);
+            font-style: italic;
+        }
+        .chapter-action { color: var(--accent); }
+
         footer {
             margin-top: 6rem;
             padding-bottom: 4rem;
@@ -438,7 +462,300 @@
     <details id="lib">
       <summary>Lib</summary>
       <section class="content-body">
-        <div class="asset-grid">
+        
+    <div class="book-notes-block">
+        <h3 class="book-notes-header">📚 Book Notes — chapter-by-chapter, plain English</h3>
+        
+    <details class="book-note" id="book-optimal-thinking">
+        <summary>📓 Optimal Thinking: How to Be Your Best Self — Rosalene Glickman</summary>
+        <div class="book-body">
+            <p class="book-tldr">Positive thinking tells you the glass is half full. Optimal Thinking asks what's the best possible thing to put in the glass. The discipline of superlatives — best, most, wisest, highest — changes the question, which changes the answer, which changes the behavior.</p>
+            <ul class="book-takeaways">
+                <li>There's a ladder of thinking — negative → mediocre → positive → extraordinary → optimal — and even extraordinary is suboptimal, because 'great' still isn't 'the best I can do with what I actually control.'</li>
+                <li>Language is the lever: swapping 'good/better/great' for 'best/greatest/most' changes everything downstream.</li>
+                <li>Decisions have arithmetic — Betty's housing call scored +39 vs +8 vs −11. Feelings become numbers; numbers end arguments.</li>
+                <li>Consistency is a process, not a trait — the same four-stage ladder as learning to drive.</li>
+                <li>Self-esteem is the accumulated ledger of what your internal voices said — and you can re-audit it.</li>
+            </ul>
+            <p class="book-meta">251 pages · <a href="/lib/OptimalThinking.pdf" target="_blank">read the source PDF</a> · notes in Morgan Housel's voice</p>
+            
+        <details class="chapter-note">
+            <summary>Ch 1 — The Next Step Beyond Positive Thinking</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Edison's ten thousand attempts, Bannister's four-minute mile: what separates them isn't positivity — it's refusing to negotiate with 'good enough.'</p>
+                <ul>
+                    <li>The superlative table is the whole book in miniature: good→best, smart→smartest, improve→maximize.</li>
+                    <li>Optimal questions are the tool: What is most important to me? What is the most constructive action I can take right now?</li>
+                    <li>Sam bought the right house with one question — 'Which is the best home in my price range?' — then put the issue to rest. Deciding well includes deciding finished.</li>
+                    <li>The laid-off bank kept a plaque: 'What's the best thing I can do under the circumstances?' The circumstances didn't change; the question did.</li>
+                    <li>Accept what's out of your control (weather, interest rates, other people's choices) and maximize what's in it.</li>
+                </ul>
+                <blockquote class="chapter-quote">&ldquo;We accept what we can't control... and maximize what we can control.&rdquo;</blockquote>
+                <p class="chapter-action"><strong>Action:</strong> When you catch negative thinking, don't shame it — ask what's causing it and what the best response is.</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 2 — What Does 'Optimal' Mean to You?</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Left brain reasons, right brain synthesizes; you need both, and the world pays the left brain to talk over the right at every meeting.</p>
+                <ul>
+                    <li>Simple decisions, 7 steps: define the problem, set a deadline, list options, kill the unrealistic, write pros/cons, weight 1–10, pick. Betty's math: Mom's place +39, Jane's +8, hotel −11.</li>
+                    <li>The 15/85 rule: spend 15% of decision time defining the problem, 85% exploring options. Most people invert it.</li>
+                    <li>Complex decisions, 9 steps: the weighted criteria come first, then you rate each option against them.</li>
+                    <li>Five Optimal Questions to Start Your Day — answer them before the day answers for you.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> Write your five morning questions tonight; answer them before opening anything else.</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 3 — How to Use Optimal Thinking Consistently</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Nobody thinks optimally all the time. Lorraine went from 'Not bad' to 'First class, thank you!' — awkward at first, automatic within months. That's the entire mechanism of habit change.</p>
+                <ul>
+                    <li>Four stages: unaware-incompetent → aware-incompetent → aware-competent → unaware-competent (the driving-a-car analogy).</li>
+                    <li>Monitoring question: Am I the right person, in the best place, at the best time, involved in the most important activity, in the best way?</li>
+                    <li>The five fears: losing yourself, rejection, failure, success, pain.</li>
+                    <li>Harry's story: his controlling mother left him only attracted to unavailable women — getting even with her mattered more to his nervous system than being happy. Resistance IS control, run from the inside.</li>
+                </ul>
+                <blockquote class="chapter-quote">&ldquo;Getting even with his mother had become more important to him than being happy.&rdquo;</blockquote>
+                <p class="chapter-action"><strong>Action:</strong> Ask: 'Am I resisting what's in my best interest because someone else wants this for me?'</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 4 — Achieve Optimal Self-Esteem</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Self-esteem is the ledger of signals you received about yourself before you could audit them. Marilyn Monroe was adored by millions and felt bad about herself anyway — outside signals don't balance the internal books.</p>
+                <ul>
+                    <li>Branden's definition: 'the disposition to experience oneself as competent to cope with the challenges of life and as deserving of happiness.'</li>
+                    <li>The Newsweek poll gem: only 1 in 10 Americans thinks they suffer low self-esteem, but 50% diagnose it in family. Everyone's the exception in their own story.</li>
+                    <li>Four internal voices — negative attacks, mediocre averages, positive assures, extraordinary impresses — and all four are suboptimal. Only the Optimal voice asks what's best.</li>
+                    <li>'OptiSelf' — your highest self as inner mentor — acknowledges every negative voice, then asks the best question.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> Carry a notebook; write each suboptimal thought and OptiSelf's response until the dialogue runs itself.</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 5 — Discover Your Ultimate Direction</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Stephen drinks to avoid ending a loveless relationship; Rhonda fills her calendar to avoid the empty nest; John can't get out of bed. Different symptoms, one disease: no direction.</p>
+                <ul>
+                    <li>Purpose is the yardstick you evaluate everything against. It doesn't need to be specific — that's what goals are for. 'To be honest in all my dealings' is a complete purpose.</li>
+                    <li>Jack lied to win video business and hated it; the purpose-discovery questions surfaced honesty as his top value — the business had to change to match the man.</li>
+                    <li>Ellis refused large sums to compromise his principles; Cynthia married him because of it, not despite it.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> Answer on paper: What do I care about most deeply? What do I love? What am I committed to? What do I stand for? — then pick the answer that repeats.</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 6 — Plan Your Best Life</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">SUPREME goals: Specific, Uplifting, Paramount, Reachable, Exciting, Measurable, Enjoyable. Vague goals produce vague outcomes or none at all.</p>
+                <ul>
+                    <li>'Grossing $100,000 a year' beats 'a large income'; 'two nights a week alone with my partner' beats 'a caring relationship.'</li>
+                    <li>The distracted doctor story is everyone's to-do list: sprinklers → play ad → dishes → his wife delivered the baby without him. Lack of direction dressed up as lack of time.</li>
+                    <li>What you enjoy doing is generally what you're best at — the Enjoyable criterion isn't indulgence, it's information.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> Write three SUPREME goals for one area of life this week: e-card today, roses Friday, monthly dinner.</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 7 — Optimize Your Feelings</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Emotions aren't noise in the machine — they're the instrument panel. They whisper first and scream later; pain is the volume knob turning up until you listen.</p>
+                <ul>
+                    <li>Cheryl the film producer: twenty years of mediocre status until a script about a mother's love put her 'on top of the world.' Passion is a compass pointing at what matters.</li>
+                    <li>The stronger the emotion, the more it overpowers reason: too angry to be reasonable, too excited to be rational, too depressed to think in terms of my best interest.</li>
+                    <li>Cathy's unresolved anger wrecked her relationship at Howard's moment of crisis. Unprocessed feelings don't disappear; they wait for the worst possible timing.</li>
+                    <li>Denial is an invention of an inauthentic life — protection now, compound interest on pain later.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> When a strong feeling hits: What's the truth here? What do I need? What's the best way of handling this?</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 8 — Maximize Your Communications</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">The gap between your reaction and your response is where relationships live. Everyone has an inner judge, victim, tyrant, coward — relating to others reveals them; that's not failure, that's the material.</p>
+                <ul>
+                    <li>Optimal communication = a safe environment for all messages; dignity, rights, vulnerability, and best interests of all parties respected.</li>
+                    <li>Mary &amp; Annette, eighteen years of friendship: 'No matter what I share, she is always on my side. She always accepts me.'</li>
+                    <li>Brian &amp; Lynn's book-leave dialogue: Lynn wants a year off to write; guilt nearly kills it. Brian doesn't cheerlead — he asks Optimal questions until Lynn dismantles her own objections. Support that matters is structured, not shouted.</li>
+                    <li>Four Optimal questions — carry them on a 3×5 card; the point is to have them, not memorize them.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> In your next important conversation, ask before advising.</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Ch 9 — Optimal Thinking at Work</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">At AnyBiz the motto is 'Think positive!' and negative observations get suppressed with 'That's negative!' — which is how flaws in products and systems escape scrutiny.</p>
+                <ul>
+                    <li>Harvey's $50,000 lesson: an employee flagged bookkeeper Gloria's signature on the back of a vendor check. Harvey, avoiding confrontation, did nothing. Three years of skimming later, a full audit found it. Positivity without scrutiny is an open vault.</li>
+                    <li>Elizabeth the interior designer: one friend's modest fee in 1983 → millions. 'It comes naturally. I only wish I had done it twenty years earlier.' The cost of not starting is invisible until you count it.</li>
+                    <li>At OptiBiz, negative thinking is 'a legitimate prelude to optimization' — embrace it, then ask the best question. That's the whole culture in one sentence.</li>
+                </ul>
+                
+                <p class="chapter-action"><strong>Action:</strong> Replace 'that's negative' with 'what's the best thing we can do about what you just noticed?'</p>
+            </div>
+        </details>
+        </div>
+    </details>
+
+    <details class="book-note" id="book-market-makers-method">
+        <summary>📓 How the Market Makers Extract Millions a Day &amp; How to Grab Your Share — Martin Cole</summary>
+        <div class="book-body">
+            <p class="book-tldr">Markets are not a voting machine of millions of independent minds — they're a business run by market makers who manufacture sentiment, harvest stops, and release price when it profits them. Accumulation, manipulation, profit release. Whether or not you buy the conspiracy, the psychological core stands: beliefs move prices, the press packages manipulation as information, and the amateur's timeline is the raw material of everyone else's profit.</p>
+            <ul class="book-takeaways">
+                <li>The three-phase cycle — accumulation (covert inventory in 'the box') → manipulation (wrong-footing traders) → profit release (the move) — repeats in order, and the order is the edge.</li>
+                <li>Beliefs are the product being traded: one cannot believe the market will go up and at the same time believe it will go down. Movers don't move price first — they move belief.</li>
+                <li>Congestion on a chart isn't congestion — it's inventory. The orchardist picks only what he can sell.</li>
+                <li>The press is the market maker's right hand: 'packaging manipulation as information, and leading the masses to exactly where he wants them.'</li>
+                <li>'You cannot sell that which you do not have' — a move ends when accumulated inventory is released; no new move starts until accumulation restarts.</li>
+            </ul>
+            <p class="book-meta">298 pages · <a href="/lib/howthemarkerts.pdf.pdf" target="_blank">read the source PDF</a> · notes in Morgan Housel's voice</p>
+            
+        <details class="chapter-note">
+            <summary>Arc 1 — The Story (§§1–4)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">A failed builder overheard two professionals planning an afternoon's market manipulation in a café — 'you step in at about 46 and pick up the stragglers' — then spent years decoding what he heard into a repeatable model.</p>
+                <ul>
+                    <li>1990's bankruptcy wave took Cole's building business, house, everything. Pizza restaurant with babies asleep upstairs at 1am. Then trading.</li>
+                    <li>First six weeks: £6,500 profit — 'I thought I'd found Utopia!' Then 32 consecutive losing trades. 'The odds are so much against this sequence that it would be hard to achieve such a run of bad luck on purpose.'</li>
+                    <li>The turn: 'My subconscious was trying to remove me from a stressful occupation by bankrupting me.' He believed he would lose, and belief became ledger entry.</li>
+                    <li>The market stopped being 'a free-standing entity' and became 'a sea of people; rather than prices, a sea of indecision and fear.'</li>
+                    <li>Why the book exists: Occupy Wall Street. 'The common man is suspicious, he senses that something is wrong with the system.'</li>
+                </ul>
+                <blockquote class="chapter-quote">&ldquo;Do it. If you don't, you might regret it. — Denise Cole&rdquo;</blockquote>
+                <p class="chapter-action"><strong>Action:</strong> Audit your own losing loops: what belief about losing are you currently making self-fulfilling?</p>
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 2 — How Markets Work (§§5–13)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">The basics without romance: cash markets exchange real goods; futures sell goods that don't exist yet; forex trades pairs. Margin is leverage — profit and loss gearing in the same instrument.</p>
+                <ul>
+                    <li>The book's job per Cole: find lower-risk spots for that higher gearing and cap the losses 'so that you may return to trade again.'</li>
+                    <li>Cash-market mechanics through the MM's eyes: holding 1,000 XYZ, demand arrives, mark it up, sell 100 — the remaining 900 are now worth more than the original 1,000. Repeat.</li>
+                    <li>'A failure to understand or a partial understanding of what they do is behind many, if not most, trading failures.'</li>
+                    <li>Futures' origin: receipts for seasonal perishables — merchants inventing time-travel for grain.</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 3 — The Makers' World (§§14–18)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Definition with teeth: 'When I am talking about market makers, I am referring to the very highest level of market manipulators.'</p>
+                <ul>
+                    <li>The informational asymmetry is the moat: he knows in advance when large blocks of buying or selling are coming, and reads supply and demand like a shopkeeper reads foot traffic.</li>
+                    <li>The Press chapter is the sharpest: financial news is 'packaging manipulation as information.' Journalists consult the same city representatives they cover. 'The financial news reported in all major newspapers never reflects the whole truth of underlying market activity.'</li>
+                    <li>Amateur traders: moods swinging 'from excitement to despair during astonishingly brief periods,' overextended, in a hurry — 'psychologically controlled by the market makers.' They win sometimes, briefly, and represent the majority.</li>
+                    <li>The Greek chorus: the crowd narrating the market into meaning, unaware the narration is the product.</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 4 — Becoming a Trader (§§19–29)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">The business-plan chapter: trading is a business nobody forces you to plan, because 'there is nobody to answer to' but your own ego.</p>
+                <ul>
+                    <li>The control trap: in every orthodox business you can influence outcomes; in trading you can influence nothing external — so the need for control turns inward and becomes self-flagellation.</li>
+                    <li>The 32-loss streak returns as curriculum: 'my weakness was my strength... the crucible that will forge you into a mature, successful trader.'</li>
+                    <li>Order types with teeth: limit orders 'effectively prevent unscrupulous market makers filling your order at a price that suits them, not you.'</li>
+                    <li>Stop-running demystified: take out all the offers up to where the buy stops cluster, trigger them, then price returns — 'leaving the person who traded at the higher price stopped in with a huge loss.' Cole watched the E-mini spike 1348→1380 in five seconds, back to 1355 in ten.</li>
+                    <li>Funding, work area, family circumstances: the plumbing other businesses give you for free, you must build.</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 5 — Trader Psychology (§§30–38)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Fear comes from three places: underfunding, an untested strategy, and 'stepping outside the strategy' — trading a setup that merely resembles your tested one because you're frustrated.</p>
+                <ul>
+                    <li>'If you are already trading and you are in a losing loop, discard it and create a new one.' Loops compound in both directions.</li>
+                    <li>Cherry-picking: delaying because 'the trade just out of reach seems more attractive' — the next trade always looks cleaner than the current one.</li>
+                    <li>'The psychological make-up of the individual trader is at least as important as his level of understanding of the markets.'</li>
+                    <li>Ask someone who knows you well what your trading weaknesses would be: 'One is not always entirely honest with oneself!'</li>
+                    <li>Trust comes from connecting your strategy to a danger-free zone — understanding WHY it works, not just that it did.</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 6 — Beliefs, Stops &amp; Charts (§§39–57)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Accumulation explained by orchard: pick only what you can sell, time governed by ease of picking. The market maker accumulates according to anticipated demand.</p>
+                <ul>
+                    <li>'The box' — the accumulation area. The crowd reads it as 'congestion,' a word that 'looks as if it ought to be true.' Reality: 'a covert operation of either the accumulation of buy orders or accumulation of sell orders.'</li>
+                    <li>Why covert: if the masses saw the accumulation, they'd buy WITH the maker — 'this would have the effect of almost instantly increasing prices. Any accumulation planned by the market makers will have failed.'</li>
+                    <li>Market truisms 'are accepted as true because they look as if they ought to be true. They exist and are perpetuated because they serve a purpose for the market makers.'</li>
+                    <li>Where stops live: recent price reactions and PUBLISHED support/resistance — the levels in every newspaper. The published level is the trap; the maker buys the sell stops beneath 'obvious' support.</li>
+                    <li>The plank at 50 feet: 'It is your belief in the possibility that you will fall that creates the conflict.' Same plank, ground level, no fear.</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 7 — The Market Makers Model (§§58–72)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">Charts as shop window: 'When traders are looking at chart patterns they are looking at the glass, not through it.' Form is the pattern; content is whose orders are behind it.</p>
+                <ul>
+                    <li>The two skills: understand what's behind the charts, and self-observation — catching yourself 'drawn to chart analysis and not content analysis.'</li>
+                    <li>Warning signs of the drift: fixating on individual bars, comparing bar to predecessor, staring at the live ticker.</li>
+                    <li>Phase One — accumulate BUY orders (market later rises) or SELL orders (later falls): 'inescapable facts... a default market move.'</li>
+                    <li>Phase Two — manipulation to wrong-foot traders: breakouts that fail, news that points the wrong way.</li>
+                    <li>Phase Three — profit release: the trend the crowd finally joins, late, at the maker's exit.</li>
+                    <li>'The markets are akin to a shop window that is dressed for traders to shop in... manipulated over time with different displays as chart patterns.'</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+
+        <details class="chapter-note">
+            <summary>Arc 8 — Execution &amp; The Trader's Mind (§§73–89)</summary>
+            <div class="chapter-body">
+                <p class="chapter-tldr">The exit rule that anchors everything: 'You cannot sell that which you do not have... any move will come to an end when all that has been accumulated has been released for profit.'</p>
+                <ul>
+                    <li>Cole's live trade while writing: entered 1.3827, 25-pip stop; a trailing stop would have banked 13 pips, his predetermined level banked 90. Exits belong to the model, not to fear.</li>
+                    <li>'The market makers business model is a never ending cycle of accumulation, manipulation and profit release.'</li>
+                    <li>Paper → live: the environment changes the psychology even when the method doesn't.</li>
+                    <li>The wrap-up is a warning, not a promise: bypass his 32-loss curriculum if you can, but expect the crucible anyway.</li>
+                </ul>
+                
+                
+            </div>
+        </details>
+        </div>
+    </details>
+    </div>
+<div class="asset-grid">
     <article class="asset-item">
       <span><a href="/lib/Walton.epub" target="_blank">Walton</a></span>
       <span class="meta">EPUB (517.3 KB)</span>
@@ -510,7 +827,8 @@
     <details id="fx">
       <summary>Fx</summary>
       <section class="content-body">
-        <div class="asset-grid">
+        
+<div class="asset-grid">
     <article class="asset-item">
       <span><a href="/fx/Day_Trading_QuickStart_Guide_The_Simplified_Beginners_Guide_to_Winning.pdf" target="_blank">Day Trading QuickStart Guide The Simplified Beginners Guide to Winning</a></span>
       <span class="meta">PDF (10991.1 KB)</span>

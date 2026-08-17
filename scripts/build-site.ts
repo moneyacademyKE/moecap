@@ -3,6 +3,7 @@ import { getManifest } from "../src/assets";
 import { CONTENT, METADATA } from "../src/content";
 import { getUsStocksNode } from "../src/us-stocks";
 import { buildNsePage } from "../src/nse";
+import { renderBooksAccordion } from "../src/books";
 import { writeFileSync, existsSync, mkdirSync, rmSync, cpSync, copyFileSync } from "node:fs";
 import * as fs from "node:fs";
 import { join } from "node:path";
@@ -50,6 +51,14 @@ try {
     });
 
     const allNodes = [...resolvedContent, ...assetNodes];
+
+    // 2b. Attach book-notes accordion to the lib node
+    const libNode = allNodes.find(n => n.id === "lib");
+    if (libNode) {
+        const bookNotesPath = join(BASE_PATH, "data", "book-notes.json");
+        libNode.extraHtml = renderBooksAccordion(bookNotesPath);
+        console.log(`📚 Book notes accordion attached to lib node`);
+    }
 
     // 3. Render and Write
     const html = renderPage(allNodes, METADATA);

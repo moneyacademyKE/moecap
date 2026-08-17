@@ -18,6 +18,7 @@ export interface ContentNode {
   links?: ContentLink[];
   metrics?: Record<string, string>;
   assets?: AssetMetadata[];
+  extraHtml?: string; // pre-rendered HTML injected before the node's own body
 }
 
 export interface SocialLink {

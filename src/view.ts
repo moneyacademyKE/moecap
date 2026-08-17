@@ -45,7 +45,7 @@ export function renderNode(node: ContentNode): string {
 			innerHtml = node.metrics ? renderMetricCard(node.title, node.metrics) : '';
 			break;
 		case 'ASSET_LIST':
-			innerHtml = node.assets ? `<div class="asset-grid">${node.assets.map(renderAssetLink).join('\n')}</div>` : '';
+			innerHtml = `${node.extraHtml ?? ''}\n<div class="asset-grid">${node.assets ? node.assets.map(renderAssetLink).join('\n') : ''}</div>`;
 			break;
 	}
 
@@ -470,6 +470,30 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
             display: grid;
             gap: 0.5rem;
         }
+
+        .book-notes-block { margin-bottom: 2.5rem; }
+        .book-notes-header { margin-top: 0; }
+        .book-note { margin-bottom: 1rem; }
+        .book-note > summary { font-weight: 600; }
+        .book-body { padding: 0.5rem 1.2rem 1.2rem 1.2rem; }
+        .book-tldr { color: var(--text); margin-top: 0.75rem; }
+        .book-takeaways { margin-bottom: 1rem; }
+        .book-meta { font-size: 0.75rem; color: var(--meta); border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+        .chapter-note { background: var(--bg-code); margin: 0.5rem 0; border-radius: 4px; box-shadow: none; }
+        .chapter-note > summary { padding: 0.7rem 1rem; font-size: 0.85rem; }
+        .chapter-body { padding: 0.25rem 1.2rem 1rem 1.2rem; font-size: 0.85rem; }
+        .chapter-tldr { color: var(--text); margin-top: 0.25rem; }
+        .chapter-body ul { margin: 0.5rem 0; }
+        .chapter-quote {
+            border-left: 3px solid var(--accent);
+            margin: 0.75rem 0;
+            padding: 0.5rem 1rem;
+            background: var(--surface);
+            border-radius: 0 4px 4px 0;
+            color: var(--meta);
+            font-style: italic;
+        }
+        .chapter-action { color: var(--accent); }
 
         footer {
             margin-top: 6rem;

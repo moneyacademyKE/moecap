@@ -1,0 +1,225 @@
+{
+  "books": [
+    {
+      "id": "optimal-thinking",
+      "title": "Optimal Thinking: How to Be Your Best Self",
+      "author": "Rosalene Glickman",
+      "pages": 251,
+      "source": "/lib/OptimalThinking.pdf",
+      "tldr": "Positive thinking tells you the glass is half full. Optimal Thinking asks what's the best possible thing to put in the glass. The discipline of superlatives — best, most, wisest, highest — changes the question, which changes the answer, which changes the behavior.",
+      "takeaways": [
+        "There's a ladder of thinking — negative → mediocre → positive → extraordinary → optimal — and even extraordinary is suboptimal, because 'great' still isn't 'the best I can do with what I actually control.'",
+        "Language is the lever: swapping 'good/better/great' for 'best/greatest/most' changes everything downstream.",
+        "Decisions have arithmetic — Betty's housing call scored +39 vs +8 vs −11. Feelings become numbers; numbers end arguments.",
+        "Consistency is a process, not a trait — the same four-stage ladder as learning to drive.",
+        "Self-esteem is the accumulated ledger of what your internal voices said — and you can re-audit it."
+      ],
+      "chapters": [
+        {
+          "label": "Ch 1 — The Next Step Beyond Positive Thinking",
+          "tldr": "Edison's ten thousand attempts, Bannister's four-minute mile: what separates them isn't positivity — it's refusing to negotiate with 'good enough.'",
+          "points": [
+            "The superlative table is the whole book in miniature: good→best, smart→smartest, improve→maximize.",
+            "Optimal questions are the tool: What is most important to me? What is the most constructive action I can take right now?",
+            "Sam bought the right house with one question — 'Which is the best home in my price range?' — then put the issue to rest. Deciding well includes deciding finished.",
+            "The laid-off bank kept a plaque: 'What's the best thing I can do under the circumstances?' The circumstances didn't change; the question did.",
+            "Accept what's out of your control (weather, interest rates, other people's choices) and maximize what's in it."
+          ],
+          "quote": "We accept what we can't control... and maximize what we can control.",
+          "action": "When you catch negative thinking, don't shame it — ask what's causing it and what the best response is."
+        },
+        {
+          "label": "Ch 2 — What Does 'Optimal' Mean to You?",
+          "tldr": "Left brain reasons, right brain synthesizes; you need both, and the world pays the left brain to talk over the right at every meeting.",
+          "points": [
+            "Simple decisions, 7 steps: define the problem, set a deadline, list options, kill the unrealistic, write pros/cons, weight 1–10, pick. Betty's math: Mom's place +39, Jane's +8, hotel −11.",
+            "The 15/85 rule: spend 15% of decision time defining the problem, 85% exploring options. Most people invert it.",
+            "Complex decisions, 9 steps: the weighted criteria come first, then you rate each option against them.",
+            "Five Optimal Questions to Start Your Day — answer them before the day answers for you."
+          ],
+          "action": "Write your five morning questions tonight; answer them before opening anything else."
+        },
+        {
+          "label": "Ch 3 — How to Use Optimal Thinking Consistently",
+          "tldr": "Nobody thinks optimally all the time. Lorraine went from 'Not bad' to 'First class, thank you!' — awkward at first, automatic within months. That's the entire mechanism of habit change.",
+          "points": [
+            "Four stages: unaware-incompetent → aware-incompetent → aware-competent → unaware-competent (the driving-a-car analogy).",
+            "Monitoring question: Am I the right person, in the best place, at the best time, involved in the most important activity, in the best way?",
+            "The five fears: losing yourself, rejection, failure, success, pain.",
+            "Harry's story: his controlling mother left him only attracted to unavailable women — getting even with her mattered more to his nervous system than being happy. Resistance IS control, run from the inside."
+          ],
+          "quote": "Getting even with his mother had become more important to him than being happy.",
+          "action": "Ask: 'Am I resisting what's in my best interest because someone else wants this for me?'"
+        },
+        {
+          "label": "Ch 4 — Achieve Optimal Self-Esteem",
+          "tldr": "Self-esteem is the ledger of signals you received about yourself before you could audit them. Marilyn Monroe was adored by millions and felt bad about herself anyway — outside signals don't balance the internal books.",
+          "points": [
+            "Branden's definition: 'the disposition to experience oneself as competent to cope with the challenges of life and as deserving of happiness.'",
+            "The Newsweek poll gem: only 1 in 10 Americans thinks they suffer low self-esteem, but 50% diagnose it in family. Everyone's the exception in their own story.",
+            "Four internal voices — negative attacks, mediocre averages, positive assures, extraordinary impresses — and all four are suboptimal. Only the Optimal voice asks what's best.",
+            "'OptiSelf' — your highest self as inner mentor — acknowledges every negative voice, then asks the best question."
+          ],
+          "action": "Carry a notebook; write each suboptimal thought and OptiSelf's response until the dialogue runs itself."
+        },
+        {
+          "label": "Ch 5 — Discover Your Ultimate Direction",
+          "tldr": "Stephen drinks to avoid ending a loveless relationship; Rhonda fills her calendar to avoid the empty nest; John can't get out of bed. Different symptoms, one disease: no direction.",
+          "points": [
+            "Purpose is the yardstick you evaluate everything against. It doesn't need to be specific — that's what goals are for. 'To be honest in all my dealings' is a complete purpose.",
+            "Jack lied to win video business and hated it; the purpose-discovery questions surfaced honesty as his top value — the business had to change to match the man.",
+            "Ellis refused large sums to compromise his principles; Cynthia married him because of it, not despite it."
+          ],
+          "action": "Answer on paper: What do I care about most deeply? What do I love? What am I committed to? What do I stand for? — then pick the answer that repeats."
+        },
+        {
+          "label": "Ch 6 — Plan Your Best Life",
+          "tldr": "SUPREME goals: Specific, Uplifting, Paramount, Reachable, Exciting, Measurable, Enjoyable. Vague goals produce vague outcomes or none at all.",
+          "points": [
+            "'Grossing $100,000 a year' beats 'a large income'; 'two nights a week alone with my partner' beats 'a caring relationship.'",
+            "The distracted doctor story is everyone's to-do list: sprinklers → play ad → dishes → his wife delivered the baby without him. Lack of direction dressed up as lack of time.",
+            "What you enjoy doing is generally what you're best at — the Enjoyable criterion isn't indulgence, it's information."
+          ],
+          "action": "Write three SUPREME goals for one area of life this week: e-card today, roses Friday, monthly dinner."
+        },
+        {
+          "label": "Ch 7 — Optimize Your Feelings",
+          "tldr": "Emotions aren't noise in the machine — they're the instrument panel. They whisper first and scream later; pain is the volume knob turning up until you listen.",
+          "points": [
+            "Cheryl the film producer: twenty years of mediocre status until a script about a mother's love put her 'on top of the world.' Passion is a compass pointing at what matters.",
+            "The stronger the emotion, the more it overpowers reason: too angry to be reasonable, too excited to be rational, too depressed to think in terms of my best interest.",
+            "Cathy's unresolved anger wrecked her relationship at Howard's moment of crisis. Unprocessed feelings don't disappear; they wait for the worst possible timing.",
+            "Denial is an invention of an inauthentic life — protection now, compound interest on pain later."
+          ],
+          "action": "When a strong feeling hits: What's the truth here? What do I need? What's the best way of handling this?"
+        },
+        {
+          "label": "Ch 8 — Maximize Your Communications",
+          "tldr": "The gap between your reaction and your response is where relationships live. Everyone has an inner judge, victim, tyrant, coward — relating to others reveals them; that's not failure, that's the material.",
+          "points": [
+            "Optimal communication = a safe environment for all messages; dignity, rights, vulnerability, and best interests of all parties respected.",
+            "Mary & Annette, eighteen years of friendship: 'No matter what I share, she is always on my side. She always accepts me.'",
+            "Brian & Lynn's book-leave dialogue: Lynn wants a year off to write; guilt nearly kills it. Brian doesn't cheerlead — he asks Optimal questions until Lynn dismantles her own objections. Support that matters is structured, not shouted.",
+            "Four Optimal questions — carry them on a 3×5 card; the point is to have them, not memorize them."
+          ],
+          "action": "In your next important conversation, ask before advising."
+        },
+        {
+          "label": "Ch 9 — Optimal Thinking at Work",
+          "tldr": "At AnyBiz the motto is 'Think positive!' and negative observations get suppressed with 'That's negative!' — which is how flaws in products and systems escape scrutiny.",
+          "points": [
+            "Harvey's $50,000 lesson: an employee flagged bookkeeper Gloria's signature on the back of a vendor check. Harvey, avoiding confrontation, did nothing. Three years of skimming later, a full audit found it. Positivity without scrutiny is an open vault.",
+            "Elizabeth the interior designer: one friend's modest fee in 1983 → millions. 'It comes naturally. I only wish I had done it twenty years earlier.' The cost of not starting is invisible until you count it.",
+            "At OptiBiz, negative thinking is 'a legitimate prelude to optimization' — embrace it, then ask the best question. That's the whole culture in one sentence."
+          ],
+          "action": "Replace 'that's negative' with 'what's the best thing we can do about what you just noticed?'"
+        }
+      ]
+    },
+    {
+      "id": "market-makers-method",
+      "title": "How the Market Makers Extract Millions a Day & How to Grab Your Share",
+      "author": "Martin Cole",
+      "pages": 298,
+      "source": "/lib/howthemarkerts.pdf.pdf",
+      "tldr": "Markets are not a voting machine of millions of independent minds — they're a business run by market makers who manufacture sentiment, harvest stops, and release price when it profits them. Accumulation, manipulation, profit release. Whether or not you buy the conspiracy, the psychological core stands: beliefs move prices, the press packages manipulation as information, and the amateur's timeline is the raw material of everyone else's profit.",
+      "takeaways": [
+        "The three-phase cycle — accumulation (covert inventory in 'the box') → manipulation (wrong-footing traders) → profit release (the move) — repeats in order, and the order is the edge.",
+        "Beliefs are the product being traded: one cannot believe the market will go up and at the same time believe it will go down. Movers don't move price first — they move belief.",
+        "Congestion on a chart isn't congestion — it's inventory. The orchardist picks only what he can sell.",
+        "The press is the market maker's right hand: 'packaging manipulation as information, and leading the masses to exactly where he wants them.'",
+        "'You cannot sell that which you do not have' — a move ends when accumulated inventory is released; no new move starts until accumulation restarts."
+      ],
+      "chapters": [
+        {
+          "label": "Arc 1 — The Story (§§1–4)",
+          "tldr": "A failed builder overheard two professionals planning an afternoon's market manipulation in a café — 'you step in at about 46 and pick up the stragglers' — then spent years decoding what he heard into a repeatable model.",
+          "points": [
+            "1990's bankruptcy wave took Cole's building business, house, everything. Pizza restaurant with babies asleep upstairs at 1am. Then trading.",
+            "First six weeks: £6,500 profit — 'I thought I'd found Utopia!' Then 32 consecutive losing trades. 'The odds are so much against this sequence that it would be hard to achieve such a run of bad luck on purpose.'",
+            "The turn: 'My subconscious was trying to remove me from a stressful occupation by bankrupting me.' He believed he would lose, and belief became ledger entry.",
+            "The market stopped being 'a free-standing entity' and became 'a sea of people; rather than prices, a sea of indecision and fear.'",
+            "Why the book exists: Occupy Wall Street. 'The common man is suspicious, he senses that something is wrong with the system.'"
+          ],
+          "quote": "Do it. If you don't, you might regret it. — Denise Cole",
+          "action": "Audit your own losing loops: what belief about losing are you currently making self-fulfilling?"
+        },
+        {
+          "label": "Arc 2 — How Markets Work (§§5–13)",
+          "tldr": "The basics without romance: cash markets exchange real goods; futures sell goods that don't exist yet; forex trades pairs. Margin is leverage — profit and loss gearing in the same instrument.",
+          "points": [
+            "The book's job per Cole: find lower-risk spots for that higher gearing and cap the losses 'so that you may return to trade again.'",
+            "Cash-market mechanics through the MM's eyes: holding 1,000 XYZ, demand arrives, mark it up, sell 100 — the remaining 900 are now worth more than the original 1,000. Repeat.",
+            "'A failure to understand or a partial understanding of what they do is behind many, if not most, trading failures.'",
+            "Futures' origin: receipts for seasonal perishables — merchants inventing time-travel for grain."
+          ]
+        },
+        {
+          "label": "Arc 3 — The Makers' World (§§14–18)",
+          "tldr": "Definition with teeth: 'When I am talking about market makers, I am referring to the very highest level of market manipulators.'",
+          "points": [
+            "The informational asymmetry is the moat: he knows in advance when large blocks of buying or selling are coming, and reads supply and demand like a shopkeeper reads foot traffic.",
+            "The Press chapter is the sharpest: financial news is 'packaging manipulation as information.' Journalists consult the same city representatives they cover. 'The financial news reported in all major newspapers never reflects the whole truth of underlying market activity.'",
+            "Amateur traders: moods swinging 'from excitement to despair during astonishingly brief periods,' overextended, in a hurry — 'psychologically controlled by the market makers.' They win sometimes, briefly, and represent the majority.",
+            "The Greek chorus: the crowd narrating the market into meaning, unaware the narration is the product."
+          ]
+        },
+        {
+          "label": "Arc 4 — Becoming a Trader (§§19–29)",
+          "tldr": "The business-plan chapter: trading is a business nobody forces you to plan, because 'there is nobody to answer to' but your own ego.",
+          "points": [
+            "The control trap: in every orthodox business you can influence outcomes; in trading you can influence nothing external — so the need for control turns inward and becomes self-flagellation.",
+            "The 32-loss streak returns as curriculum: 'my weakness was my strength... the crucible that will forge you into a mature, successful trader.'",
+            "Order types with teeth: limit orders 'effectively prevent unscrupulous market makers filling your order at a price that suits them, not you.'",
+            "Stop-running demystified: take out all the offers up to where the buy stops cluster, trigger them, then price returns — 'leaving the person who traded at the higher price stopped in with a huge loss.' Cole watched the E-mini spike 1348→1380 in five seconds, back to 1355 in ten.",
+            "Funding, work area, family circumstances: the plumbing other businesses give you for free, you must build."
+          ]
+        },
+        {
+          "label": "Arc 5 — Trader Psychology (§§30–38)",
+          "tldr": "Fear comes from three places: underfunding, an untested strategy, and 'stepping outside the strategy' — trading a setup that merely resembles your tested one because you're frustrated.",
+          "points": [
+            "'If you are already trading and you are in a losing loop, discard it and create a new one.' Loops compound in both directions.",
+            "Cherry-picking: delaying because 'the trade just out of reach seems more attractive' — the next trade always looks cleaner than the current one.",
+            "'The psychological make-up of the individual trader is at least as important as his level of understanding of the markets.'",
+            "Ask someone who knows you well what your trading weaknesses would be: 'One is not always entirely honest with oneself!'",
+            "Trust comes from connecting your strategy to a danger-free zone — understanding WHY it works, not just that it did."
+          ]
+        },
+        {
+          "label": "Arc 6 — Beliefs, Stops & Charts (§§39–57)",
+          "tldr": "Accumulation explained by orchard: pick only what you can sell, time governed by ease of picking. The market maker accumulates according to anticipated demand.",
+          "points": [
+            "'The box' — the accumulation area. The crowd reads it as 'congestion,' a word that 'looks as if it ought to be true.' Reality: 'a covert operation of either the accumulation of buy orders or accumulation of sell orders.'",
+            "Why covert: if the masses saw the accumulation, they'd buy WITH the maker — 'this would have the effect of almost instantly increasing prices. Any accumulation planned by the market makers will have failed.'",
+            "Market truisms 'are accepted as true because they look as if they ought to be true. They exist and are perpetuated because they serve a purpose for the market makers.'",
+            "Where stops live: recent price reactions and PUBLISHED support/resistance — the levels in every newspaper. The published level is the trap; the maker buys the sell stops beneath 'obvious' support.",
+            "The plank at 50 feet: 'It is your belief in the possibility that you will fall that creates the conflict.' Same plank, ground level, no fear."
+          ]
+        },
+        {
+          "label": "Arc 7 — The Market Makers Model (§§58–72)",
+          "tldr": "Charts as shop window: 'When traders are looking at chart patterns they are looking at the glass, not through it.' Form is the pattern; content is whose orders are behind it.",
+          "points": [
+            "The two skills: understand what's behind the charts, and self-observation — catching yourself 'drawn to chart analysis and not content analysis.'",
+            "Warning signs of the drift: fixating on individual bars, comparing bar to predecessor, staring at the live ticker.",
+            "Phase One — accumulate BUY orders (market later rises) or SELL orders (later falls): 'inescapable facts... a default market move.'",
+            "Phase Two — manipulation to wrong-foot traders: breakouts that fail, news that points the wrong way.",
+            "Phase Three — profit release: the trend the crowd finally joins, late, at the maker's exit.",
+            "'The markets are akin to a shop window that is dressed for traders to shop in... manipulated over time with different displays as chart patterns.'"
+          ]
+        },
+        {
+          "label": "Arc 8 — Execution & The Trader's Mind (§§73–89)",
+          "tldr": "The exit rule that anchors everything: 'You cannot sell that which you do not have... any move will come to an end when all that has been accumulated has been released for profit.'",
+          "points": [
+            "Cole's live trade while writing: entered 1.3827, 25-pip stop; a trailing stop would have banked 13 pips, his predetermined level banked 90. Exits belong to the model, not to fear.",
+            "'The market makers business model is a never ending cycle of accumulation, manipulation and profit release.'",
+            "Paper → live: the environment changes the psychology even when the method doesn't.",
+            "The wrap-up is a warning, not a promise: bypass his 32-loss curriculum if you can, but expect the crucible anyway."
+          ]
+        }
+      ]
+    }
+  ]
+}
