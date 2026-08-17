@@ -1,0 +1,31 @@
+name: Daily Telegram digest
+# Composes the daily digest (US movers, NSE board, fresh filings) and posts it
+# to Telegram — only when TELEGRAM_BOT_TOKEN + DIGEST_CHAT_ID secrets exist.
+on:
+  schedule:
+    - cron: "35 21 * * 1-5"  # after US close, both DST regimes
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print digest instead of posting"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - name: Compose digest (dry-run)
+        run: bun scripts/digest.ts --dry-run
+      - name: Post to Telegram
+        if: ${{ !inputs.dry_run && env.TELEGRAM_BOT_TOKEN != '' && env.DIGEST_CHAT_ID != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          DIGEST_CHAT_ID: ${{ secrets.DIGEST_CHAT_ID }}
+        run: bun scripts/digest.ts --post
