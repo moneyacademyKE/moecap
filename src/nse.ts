@@ -1476,6 +1476,8 @@ export function buildNsePage(publicDir: string) {
         }
     </script>
     <script src="/glossary.js" defer></script>
+    <script src="/search.js" defer></script>
+    <script src="/watchlist.js" defer></script>
 </body>
 </html>`;
 

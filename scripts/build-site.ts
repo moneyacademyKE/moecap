@@ -64,7 +64,7 @@ try {
     const html = renderPage(allNodes, METADATA);
     const withHydration = html.replace(
         "</body>",
-        '    <script src="/hydrate.js" defer></script>\n    <script src="/glossary.js" defer></script>\n</body>'
+        '    <script src="/hydrate.js" defer></script>\n    <script src="/glossary.js" defer></script>\n    <script src="/search.js" defer></script>\n    <script src="/watchlist.js" defer></script>\n</body>'
     );
 
     const outputPath = join(PUBLIC_DIR, "index.html");
@@ -72,6 +72,11 @@ try {
     copyFileSync(join(BASE_PATH, "src", "hydrate.js"), join(PUBLIC_DIR, "hydrate.js"));
     copyFileSync(join(BASE_PATH, "src", "glossary.js"), join(PUBLIC_DIR, "glossary.js"));
     copyFileSync(join(BASE_PATH, "data", "glossary.json"), join(PUBLIC_DIR, "glossary.json"));
+    copyFileSync(join(BASE_PATH, "src", "search.js"), join(PUBLIC_DIR, "search.js"));
+    copyFileSync(join(BASE_PATH, "src", "watchlist.js"), join(PUBLIC_DIR, "watchlist.js"));
+    const { writeIndex } = await import("../src/search-index");
+    const nRows = writeIndex(BASE_PATH, PUBLIC_DIR);
+    console.log(`🔎 Search index: ${nRows} rows`);
 
     // 4. Compile NSE terminal
     buildNsePage(PUBLIC_DIR);
