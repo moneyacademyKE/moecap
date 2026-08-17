@@ -12,6 +12,7 @@ import {
   parseCap,
   parseOkxBulk,
   parsePe,
+  parseYahooChart,
   pickLivePrice,
   venueFromHref,
   type Manifest,
@@ -223,5 +224,51 @@ describe("pickLivePrice priority", () => {
     expect(pickLivePrice(row, { ...bulk, binance: {} })).toBe(12);
     expect(pickLivePrice(row, { binance: {}, bitget: {}, okx: bulk.okx })).toBe(13);
     expect(pickLivePrice(row, { binance: {}, bitget: {}, okx: {} })).toBeNull();
+  });
+});
+
+describe("yahoo fallback", () => {
+  test("parseYahooChart reads meta price", () => {
+    const j = { chart: { result: [{ meta: { regularMarketPrice: 305.93 } }] } };
+    expect(parseYahooChart(j)).toBe(305.93);
+  });
+  test("parseYahooChart rejects missing/zero/negative", () => {
+    expect(parseYahooChart({ chart: { result: [] } })).toBeNull();
+    expect(parseYahooChart({ chart: { result: [{ meta: {} }] } })).toBeNull();
+    expect(parseYahooChart({ chart: { error: "Not Found" } })).toBeNull();
+  });
+  test("pickLivePrice falls back to yahoo when venues are empty", () => {
+    const row: ManifestRow = {
+      ticker: "AAPL",
+      venues: [{ venue: "binance", symbol: "AAPLUSDT" }],
+      peAuthored: 30,
+      capAuthored: 3e12,
+      basis: 300,
+    };
+    const deadBulk: VenueBulk = { binance: {}, bitget: {}, okx: {}, yahoo: { AAPL: 305.93 } };
+    expect(pickLivePrice(row, deadBulk)).toBe(305.93);
+    // and venue price still wins over yahoo
+    const liveBulk: VenueBulk = { binance: { AAPLUSDT: 301.0 }, bitget: {}, okx: {}, yahoo: { AAPL: 999 } };
+    expect(pickLivePrice(row, liveBulk)).toBe(301.0);
+  });
+  test("computeAll hydrates via yahoo when every venue is dark", () => {
+    const manifest: Manifest = {
+      seededAt: "2026-08-17T00:00:00Z",
+      tickers: {
+        AAPL: {
+          ticker: "AAPL",
+          venues: [{ venue: "okx", symbol: "AAPL-USDT-SWAP" }],
+          peAuthored: 30,
+          capAuthored: 3e12,
+          basis: 300,
+        },
+      },
+    };
+    const bulk: VenueBulk = { binance: {}, bitget: {}, okx: {}, yahoo: { AAPL: 330 } };
+    const payload = computeAll(manifest, bulk, null);
+    expect(payload.entries.AAPL).toBeDefined();
+    expect(payload.entries.AAPL.raw).toBe(330);
+    expect(payload.entries.AAPL.pe).toBe("33.0"); // 30 * 330/300
+    expect(payload.flagged).toEqual([]); // +10% move, under the 35% guard
   });
 });

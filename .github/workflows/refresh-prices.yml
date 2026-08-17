@@ -1,0 +1,33 @@
+name: Refresh prices
+
+# US stock price refresh. The Worker cannot fetch these itself: all three venue
+# APIs block Cloudflare egress IPs (403/429) and Yahoo edge-blocks CF with a
+# 50-subrequest free-plan cap on top. GitHub runners reach Yahoo fine, so this
+# job prices all manifest tickers with the same pure math (worker/src/ratio.ts)
+# and writes the payload straight into the Worker's KV namespace.
+
+on:
+  schedule:
+    - cron: "0 * * * *" # hourly
+  workflow_dispatch: {} # manual trigger
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - name: Fetch prices and compute payload
+        run: bun scripts/refresh-prices.ts /tmp/prices.json
+      - name: Upload to worker KV
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          bunx wrangler kv key put prices \
+            --namespace-id 7eff4838aa6d49b9a82d1b175d4d0c06 \
+            --path /tmp/prices.json --remote

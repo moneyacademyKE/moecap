@@ -5,3 +5,4 @@ bun.lock
 prices.json
 worker/.wrangler/
 scripts/out/
+.wrangler/

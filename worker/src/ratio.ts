@@ -147,6 +147,7 @@ export interface VenueBulk {
   binance: Record<string, number>; // fapi /ticker/price: [{symbol, price}]
   bitget: Record<string, number>; // v2 mix tickers: data:[{symbol, lastPr}]
   okx: Record<string, number>; // v5 tickers SWAP: data:[{instId, last}]
+  yahoo?: Record<string, number>; // v8 chart fallback: ticker -> price (last resort)
 }
 
 export function parseBinanceBulk(json: any): Record<string, number> {
@@ -181,7 +182,14 @@ export function parseOkxBulk(json: any): Record<string, number> {
   return out;
 }
 
-/** Stable venue priority: binance → bitget → okx; first symbol with a price wins. */
+/** Yahoo v8 chart: json.chart.result[0].meta.regularMarketPrice. */
+export function parseYahooChart(json: any): number | null {
+  const meta = json?.chart?.result?.[0]?.meta;
+  const p = Number(meta?.regularMarketPrice ?? meta?.regularPrice);
+  return Number.isFinite(p) && p > 0 ? p : null;
+}
+
+/** Stable venue priority: binance → bitget → okx → yahoo fallback; first price wins. */
 const VENUE_ORDER: Venue[] = ["binance", "bitget", "okx"];
 
 export function pickLivePrice(row: ManifestRow, bulk: VenueBulk): number | null {
@@ -192,7 +200,8 @@ export function pickLivePrice(row: ManifestRow, bulk: VenueBulk): number | null 
       if (p != null && Number.isFinite(p) && p > 0) return p;
     }
   }
-  return null;
+  const y = bulk.yahoo?.[row.ticker];
+  return y != null && Number.isFinite(y) && y > 0 ? y : null;
 }
 
 // --- venue refs from authored link lines (for the seed script) ---------------
