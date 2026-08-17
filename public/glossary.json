@@ -1,0 +1,52 @@
+{
+  "pe": {
+    "term": "P/E Ratio",
+    "plain": "What you pay for KES 1 of yearly profit. A P/E of 20 means you pay 20 shillings for every shilling the company earns in a year. Cheap isn't always good — a low P/E can mean the market smells trouble ahead; a high one can mean everyone expects growth.",
+    "example": "Two shops each earn KES 10 a year. Shop A sells for KES 100 (P/E 10), Shop B for KES 400 (P/E 40). Shop B needs to grow a lot to justify its price."
+  },
+  "marketcap": {
+    "term": "Market Cap",
+    "plain": "The price of the whole company — share price times all shares. It tells you the size of the business, not whether it's cheap or expensive.",
+    "example": "Safaricom at ~KES 1.4 trillion is a giant; a KES 2 billion company is a minnow. Big doesn't mean better — it just means bigger waves move slower."
+  },
+  "roe": {
+    "term": "ROE — Return on Equity",
+    "plain": "For every KES 100 of the owners' money sitting in the business, how much profit does it make in a year? ROE of 24% means KES 100 of owners' capital produced KES 24 of profit. Consistently high ROE is the quiet engine of long-term compounding.",
+    "example": "Bank A turns KES 100 of equity into KES 24 profit; Bank B manages KES 8. Same deposits, very different machines."
+  },
+  "roic": {
+    "term": "ROIC — Return on Invested Capital",
+    "plain": "The same question as ROE but for ALL money in the business — owners' money plus borrowed. It asks: does this company earn more from its machines and shops than they cost? Above the cost of borrowing, every new shillin invested creates value; below it, growth just burns money.",
+    "example": "A matatu that earns 18% on its KES 3m price while loans cost 12% is a value machine. One earning 8% grows poorer with every mile."
+  },
+  "eps": {
+    "term": "EPS — Earnings Per Share",
+    "plain": "The year's profit divided by the number of shares — the company's profit expressed as your slice. It becomes yours either as dividends or as growth kept inside the business.",
+    "example": "KES 10bn profit across 40bn shares = EPS 0.25. Own 1,000 shares and 250 shillings of profit passed through your hands."
+  },
+  "dps": {
+    "term": "DPS — Dividend Per Share",
+    "plain": "The cash the company actually pays out per share each year — the part of profit that reaches your pocket instead of staying in the business.",
+    "example": "EPS 2.39 with DPS 2.00 means the company pays out most of its profit; the rest funds growth."
+  },
+  "divyield": {
+    "term": "Dividend Yield",
+    "plain": "Next year's dividend as a percentage of today's share price — the cash return you get just for holding, before any growth. Like rent on land, but the land is a business.",
+    "example": "A KES 40 share paying KES 2.40 yields 6%. Compare with a bank deposit — then remember dividends can be cut, deposits rarely are."
+  },
+  "ebitda": {
+    "term": "EBITDA",
+    "plain": "Profit before interest, tax, depreciation and amortization — roughly, the cash the core business generates before paying lenders, the taxman, and accounting for aging equipment. Good for comparing operating machines; useless alone, because equipment DOES age and taxes ARE paid.",
+    "example": "Two airlines: same EBITDA, but one flies new planes and one flies rust buckets. EBITDA loves them equally; the replacement bill won't."
+  },
+  "margin": {
+    "term": "Net Margin",
+    "plain": "Out of every KES 100 of sales, how much survives as profit after every cost? Thin margins mean small shocks hurt; fat margins are a moat competitors struggle to cross.",
+    "example": "A supermarket keeping KES 2 of every 100 lives one price war from tears. A software firm keeping 30 is harder to kill."
+  },
+  "revenue": {
+    "term": "Revenue",
+    "plain": "Total sales before any costs — the top line. It tells you the size of the flow, never the quality: revenue with no profit is a bucket with a hole.",
+    "example": "KES 40bn revenue with KES 0.1bn profit is a lot of activity and very little accumulation."
+  }
+}
