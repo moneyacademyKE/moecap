@@ -142,3 +142,26 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toMatch(/ratioFields = new Set\(\[[^\]]*"EPS", "DPS"\]/);
   });
 });
+
+// --- Data provenance tags (audited vs archived) ---
+describe("NSE data provenance", () => {
+    test("every financials entry carries a source tag", async () => {
+        const data = JSON.parse(await Bun.file(join(import.meta.dir, "..", "data", "nse-data.json")).text());
+        const entries = Object.entries<any>(data.financials);
+        expect(entries.length).toBeGreaterThan(50);
+        const audited: string[] = [];
+        for (const [t, f] of entries) {
+            expect(["audited", "archived"]).toContain(f.source);
+            if (f.source === "audited") audited.push(t);
+        }
+        expect(audited).toContain("SCOM"); // fact-checked round
+        expect(audited.length).toBe(6);
+    });
+
+    test("renderer emits the provenance line", () => {
+        const html = readFileSync(join(import.meta.dir, "..", "public", "nse", "index.html"), "utf8");
+        expect(html).toContain('id="data-source-line"');
+        expect(html).toContain("archived extract");
+        expect(html).toContain("audited results, NSE filing");
+    });
+});

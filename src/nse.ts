@@ -833,6 +833,7 @@ export function buildNsePage(publicDir: string) {
                         <!-- Financials Tab -->
                         <div class="tab-section active" id="tab-financials">
                             <h3 class="section-title">Key Figures — FY (KES, as reported)</h3>
+                            <div id="data-source-line" style="font-size:0.68rem;color:var(--meta);margin:-0.8rem 0 1rem;"></div>
                             <div class="table-container expert-only" id="financials-table-box">
                                 <!-- Pre-rendered dynamically by JS -->
                             </div>
@@ -1271,6 +1272,17 @@ export function buildNsePage(publicDir: string) {
                     // Plain-English layer: chips + ROE sentence
                     renderVerdictChips(financials);
                     renderPlainRoe(company, (!isNaN(roeNum) && roe !== null) ? roeNum : null);
+
+                    // Data provenance tag: audited NSE filing vs archived extract
+                    const srcLine = document.getElementById('data-source-line');
+                    if (srcLine) {
+                        const periodLabel = String(latestPeriod || '').replace(/[^0-9A-Za-z \/:-]/g, '');
+                        if (financials.source === 'audited') {
+                            srcLine.innerHTML = '📋 <b>Data:</b> audited results, NSE filing (' + periodLabel + ')';
+                        } else {
+                            srcLine.innerHTML = '📦 <b>Data:</b> archived extract — year labels may be off; fundamentals pending re-sourcing';
+                        }
+                    }
 
                     // 1. Render Financial Table (canonical year only — other years
                     //    carry unreconciled native units by design)
