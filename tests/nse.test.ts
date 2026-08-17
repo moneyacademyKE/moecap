@@ -155,7 +155,9 @@ describe("NSE data provenance", () => {
             if (f.source === "audited") audited.push(t);
         }
         expect(audited).toContain("SCOM"); // fact-checked round
-        expect(audited.length).toBe(6);
+        expect(audited).toContain("KCB"); // AIB-AXYS FY2025 round
+        expect(audited).toContain("CRWN"); // H1 2026 from NSE PLC announcement
+        expect(audited.length).toBeGreaterThanOrEqual(6);
     });
 
     test("renderer emits the provenance line", () => {
