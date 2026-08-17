@@ -73,6 +73,8 @@ try {
 
     // 4. Compile NSE terminal
     buildNsePage(PUBLIC_DIR);
+    const annSrc = join(BASE_PATH, "data", "nse-announcements");
+    if (existsSync(annSrc)) cpSync(annSrc, join(PUBLIC_DIR, "nse", "announcements"), { recursive: true });
 
     // 5. Mirror assets to public
     for (const dir of ASSET_DIRECTORIES) {

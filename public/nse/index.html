@@ -2659,10 +2659,11 @@
 
             let listHtml = '<p style="color: var(--meta); font-size: 0.7rem; margin: 0.4rem 0 0.8rem;">Official PDFs link to nse.co.ke listed-company announcements.</p>';
             announcements.forEach(ann => {
-                // Live http(s) links open the official PDF on nse.co.ke;
-                // legacy entries (dead repository filenames) stay as local rows.
+                // Anchors open the self-hosted PDF copy (or an external one);
+                // entries without a file stay as plain local rows.
                 const esc = (s) => String(s || '').replace(/[<>&]/g, ch => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[ch] || ch));
-                const isLive = String(ann.file || "").startsWith("http");
+                const f = String(ann.file || "");
+                const isLive = f.startsWith("http") || f.startsWith("/nse/announcements/");
                 const label = isLive
                     ? `<a class="announcement-link" href="${esc(ann.file)}" target="_blank" rel="noopener">📄 ${esc(ann.title)}</a>`
                     : `<span class="announcement-link" style="cursor: default;">📄 ${esc(ann.title)}</span>`;

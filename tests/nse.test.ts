@@ -135,8 +135,8 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
   test("Announcements: live nse.co.ke PDF links, legacy rows stay local", () => {
     const htmlContent = readFileSync(join(PUBLIC_DIR, "nse/index.html"), "utf-8");
     expect(htmlContent).not.toContain("criticalinsight");
-    // live-link renderer contract: http files become anchors to the official PDF
-    expect(htmlContent).toContain('startsWith("http")');
+    // live-link renderer contract: self-hosted /nse/announcements/ paths become anchors
+    expect(htmlContent).toContain('f.startsWith("http") || f.startsWith("/nse/announcements/")');
     expect(htmlContent).toContain("nse.co.ke listed-company announcements");
     // per-share metrics must never be KES-formatted
     expect(htmlContent).toMatch(/ratioFields = new Set\(\[[^\]]*"EPS", "DPS"\]/);
