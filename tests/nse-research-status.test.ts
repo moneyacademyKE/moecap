@@ -74,7 +74,7 @@ describe("NSE research promotion gate", () => {
 
     expect(status.companies).toBeGreaterThan(50);
     expect(status.sourceCounts.primary).toBeGreaterThanOrEqual(36);
-    expect(status.emptyFinancials).toEqual(["UCHM", "UMME", "XPRS"]);
+    expect(status.emptyFinancials).toEqual(["UCHM", "UMME"]);
     expect(status.missingLocalPdfs).toEqual([]);
 
     expect(status.needsPrimaryEvidence).toEqual([]);
