@@ -69,6 +69,50 @@ function fmtMove(m: Move, extra: string = ""): string {
     return `${esc(m.t)} $${m.last.toFixed(2)} <b>${pct(m.day)}</b> (1w ${pct(m.week)} · 1m ${pct(m.month)})${tag52(m)}${extra}`;
 }
 
+// --- 13F: holdings amount + shareholding change, nothing else ----------------
+function fmtUsd(n: number): string {
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(1)}B`;
+    if (n >= 1e6) return `$${Math.round(n / 1e6)}M`;
+    if (n >= 1e3) return `$${Math.round(n / 1e3)}K`;
+    return `$${Math.round(n)}`;
+}
+
+interface FundEntry {
+    fund: string; valueUsd: number; shares?: number; prevShares?: number;
+    prevValueUsd?: number; sharesDeltaPct?: number; prevStatus?: string;
+}
+
+// Aggregate the (≤5) top-conviction funds per ticker into what the digest
+// needs: total $ held, aggregate share change QoQ (funds with both quarters),
+// and any fund stakes that are new this quarter.
+function aggregate13f(entries: Record<string, FundEntry[]>): Map<string, {
+    totalUsd: number; now: number; prev: number; deltaPct: number | null;
+    newFunds: Array<{ fund: string; valueUsd: number }>;
+}> {
+    const out = new Map<string, any>();
+    for (const [t, es] of Object.entries(entries || {})) {
+        let totalUsd = 0, now = 0, prev = 0;
+        const newFunds: Array<{ fund: string; valueUsd: number }> = [];
+        for (const e of es) {
+            totalUsd += e.valueUsd || 0;
+            if (typeof e.shares === "number") now += e.shares;
+            if (e.prevStatus === "held" && typeof e.prevShares === "number") prev += e.prevShares;
+            if (e.prevStatus === "new") newFunds.push({ fund: e.fund, valueUsd: e.valueUsd || 0 });
+        }
+        const deltaPct = prev > 0 && now > 0 ? +(((now / prev) - 1) * 100).toFixed(1) : null;
+        out.set(t, { totalUsd, now, prev, deltaPct, newFunds });
+    }
+    return out;
+}
+
+// +18% QoQ for normal moves; ×6.8 QoQ once a stake more than tripled —
+// honest about magnitude without printing +68,324%.
+function fmtShareDelta(now: number, prev: number, pct: number | null): string {
+    if (pct === null) return "";
+    if (pct >= 200) return `shares ×${(now / prev).toFixed(1)} QoQ`;
+    return `shares ${pct >= 0 ? "+" : "-"}${Math.abs(pct).toFixed(0)}% QoQ`;
+}
+
 interface Ann { ticker: string; title: string; date: string; file?: string }
 
 function freshAnnouncements(): Ann[] {
@@ -86,11 +130,12 @@ function freshAnnouncements(): Ann[] {
 }
 
 type AnnKind = "audited" | "interim" | "dividend" | "other";
-const classify = (a: Ann): AnnKind =>
-    /dividend/i.test(a.title) ? "dividend"
-    : /audited/i.test(a.title) ? "audited"
-    : /unaudited|half|interim|six months|six-month/i.test(a.title) ? "interim"
-    : /results|financial|statements/i.test(a.title) ? "audited" : "other";
+function classify(a: Ann): AnnKind {
+    if (/\bdividend\b/i.test(a.title)) return "dividend";
+    if (/\bunaudited\b|\bhalf[- ]year\b|\binterim\b|\bsix[- ]months?\b/i.test(a.title)) return "interim";
+    if (/\baudited\b/i.test(a.title)) return "audited";
+    return "other";
+}
 
 // Pull a book-closure/payment date out of a dividend notice title, if stated.
 function parseBookDate(title: string): string | null {
@@ -112,14 +157,63 @@ function fmtBreadth(rows: Move[], session: string): string {
     return `${session} ${word} — ${up}/${rows.length} up, median ${pct(med)}`;
 }
 
-// Label the quote session from prices.asOf (ET = UTC−4, DST-agnostic enough for a label).
+// Label the quote session in the market's real timezone, including DST.
 function sessionOf(asOfIso: string | undefined): string {
     if (!asOfIso) return "";
     const d = new Date(asOfIso);
-    const hh = d.getUTCHours() + d.getUTCMinutes() / 60 - 4;
+    if (Number.isNaN(d.getTime())) return "";
+    const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/New_York",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+    }).formatToParts(d);
+    const value = (type: string) => Number(parts.find((part) => part.type === type)?.value ?? 0);
+    const hour = value("hour") % 24;
+    const hh = hour + value("minute") / 60;
     if (hh < 9.5) return "premarket:";
     if (hh < 16) return "intraday:";
     return "post-close:";
+}
+
+// Telegram rejects oversized messages. Drop complete, low-priority lines rather
+// than slicing HTML mid-tag; keep the pulse, action heading, and footer intact.
+function fitTelegramHtml(lines: string[], limit = 4096): string {
+    const render = (items: Array<{ line: string; index: number }>, omitted = false) => {
+        const output = items.map((item) => item.line);
+        if (omitted) {
+            const footerAt = Math.max(1, output.length - 2);
+            output.splice(footerAt, 0, "… <i>lower-priority rows omitted</i>");
+        }
+        return output.join("\n");
+    };
+    let kept = lines.map((line, index) => ({ line, index }));
+    if (render(kept).length <= limit) return render(kept);
+
+    const footerStart = Math.max(1, lines.length - 2);
+    const actionAt = lines.findIndex((line) => line.includes("<b>Action list</b>"));
+    const removable = kept
+        .filter(({ line, index }) => index !== 0
+            && index < footerStart
+            && !line.includes("<b>Pulse:</b>")
+            && !line.includes("<b>Action list</b>"))
+        .sort((a, b) => {
+            const rank = ({ line, index }: { line: string; index: number }) => {
+                const detail = /^(• |📈 |📉 |📊 Interims|📎 Other)/.test(line);
+                if (detail && (actionAt < 0 || index < actionAt)) return 0;
+                if (line === "") return 1;
+                if (actionAt < 0 || index < actionAt) return 2;
+                return 3;
+            };
+            return rank(a) - rank(b) || b.line.length - a.line.length;
+        });
+
+    for (const candidate of removable) {
+        kept = kept.filter((item) => item.index !== candidate.index);
+        const html = render(kept, true);
+        if (html.length <= limit) return html;
+    }
+    throw new Error("digest essential lines exceed Telegram limit");
 }
 
 async function build(): Promise<string> {
@@ -148,14 +242,17 @@ async function build(): Promise<string> {
     }
 
     // Tracked board: the names with 13F coverage — the ones you actually follow.
+    // 13F contributes exactly two things: how much is held, and (below) where
+    // the shareholding increased. Price context stays from the market feed.
+    const agg = aggregate13f(holders?.entries || {});
     const tracked = new Set(Object.keys(holders?.entries || {}));
     const board = allRows.filter((r) => tracked.has(r.t)).sort((a, b) => Math.abs(b.day) - Math.abs(a.day) || Math.abs(b.month) - Math.abs(a.month));
     const rest = allRows.filter((r) => !tracked.has(r.t));
     if (board.length > 0) {
         lines.push(`🇺🇸 <b>Your board</b> (${board.length} tracked, by |move|)`);
         for (const m of board.slice(0, 8)) {
-            const pe = prices?.entries?.[m.t]?.pe;
-            lines.push("• " + fmtMove(m, pe ? ` · P/E ${esc(pe)}` : ""));
+            const held = agg.get(m.t)?.totalUsd;
+            lines.push("• " + fmtMove(m, held ? ` · ${fmtUsd(held)} held` : ""));
         }
         lines.push("");
     }
@@ -204,8 +301,26 @@ async function build(): Promise<string> {
     if (holders?.dataQuarter) {
         const asOf = String(holders.generatedAt || holders.asOf || "").slice(0, 10);
         const ageDays = asOf ? Math.floor((Date.now() - Date.parse(asOf)) / 86400_000) : 999;
-        const covered = Object.keys(holders.entries || {}).length;
-        lines.push(`🏛 <b>13F</b> ${esc(String(holders.dataQuarter))} — ${covered} names · ${ageDays}d old${ageDays > 100 ? " ⚠️ refresh due" : ""}`);
+        lines.push(`🏛 <b>13F ${esc(String(holders.dataQuarter))}</b> — holdings & share increases${ageDays > 100 ? ` · ⚠️ ${ageDays}d old` : ""}`);
+        const newUsd = (r: { newFunds: Array<{ valueUsd: number }> }) => r.newFunds.reduce((s, f) => s + f.valueUsd, 0);
+        const ranked = [...agg.entries()]
+            .map(([t, a]) => ({ t, ...a }))
+            .sort((x, y) =>
+                newUsd(y) - newUsd(x) ||
+                (y.deltaPct ?? -Infinity) - (x.deltaPct ?? -Infinity) ||
+                y.totalUsd - x.totalUsd);
+        const withDeltas = ranked.some((r) => r.deltaPct !== null || r.newFunds.length > 0);
+        if (!withDeltas) {
+            const grand = ranked.reduce((s, r) => s + r.totalUsd, 0);
+            lines.push(`• top funds hold ${fmtUsd(grand)} across ${ranked.length} names · QoQ deltas pending next build`);
+        } else {
+            for (const r of ranked.slice(0, 5)) {
+                const delta = fmtShareDelta(r.now, r.prev, r.deltaPct);
+                const fresh = r.newFunds[0];
+                const fund = fresh ? ` · 🆕 ${esc(fresh.fund.split(/[,;]/)[0].trim().slice(0, 22).trimEnd())} in (${fmtUsd(fresh.valueUsd)})` : "";
+                lines.push(`• <b>${esc(r.t)}</b> — ${fmtUsd(r.totalUsd)} held${delta ? ` · ${delta}` : ""}${fund}`);
+            }
+        }
         lines.push("");
     }
 
@@ -214,10 +329,10 @@ async function build(): Promise<string> {
     const ann = nse?.prices ? freshAnnouncements() : [];
     for (const a of ann.filter((x) => classify(x) === "dividend").slice(0, 1)) {
         const bd = parseBookDate(a.title);
-        actions.push(`💰 <b>${a.ticker}</b> dividend — ${bd ? `own before ${bd} to qualify` : "check book-closure date"} · ${card(a.ticker)}`);
+        actions.push(`💰 <b>${a.ticker}</b> dividend — ${bd ? `own before ${bd} to qualify` : "check book-closure date"} · <a href="${card(a.ticker)}">open</a>`);
     }
     const firstAudited = ann.find((x) => classify(x) === "audited");
-    if (firstAudited) actions.push(`🧾 Read <b>${firstAudited.ticker}</b> results — ${card(firstAudited.ticker)}`);
+    if (firstAudited) actions.push(`🧾 Read <b>${firstAudited.ticker}</b> results — <a href="${card(firstAudited.ticker)}">review</a>`);
     for (const m of board.filter((r) => r.loGap <= 5).slice(0, 1))
         actions.push(`🕳 <b>${m.t}</b> near 52w low (${m.loGap.toFixed(0)}% above) — review thesis before catching knife`);
     for (const m of [...board].sort((a, b) => b.hiGap - a.hiGap).slice(0, 1))
@@ -227,9 +342,9 @@ async function build(): Promise<string> {
     for (const a of actions.slice(0, 4)) lines.push("• " + a);
     lines.push("");
 
-    lines.push(`🔗 ${SITE} · /search — press <code>/</code> anywhere on the site`);
+    lines.push(`🔗 <a href="${SITE}">Moe Capital</a> · search: press <code>/</code> anywhere on the site`);
     lines.push(`<i>Not investment advice. Numbers as fetched; verify before acting.</i>`);
-    return lines.join("\n");
+    return fitTelegramHtml(lines);
 }
 
 async function post(html: string): Promise<void> {
