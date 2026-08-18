@@ -65,6 +65,25 @@ jobs:
             --out scripts/out/holders.json
           bun -e 'const d=require("./scripts/out/holders.json");console.log("covered:",Object.keys(d.entries).length,"filings:",d.filingsScanned)'
 
+      - name: Download previous-quarter EDGAR index (for QoQ share deltas)
+        run: |
+          YEAR=$(date -u +%Y)
+          QTR=$(( ($(date -u +%m) - 1) / 3 + 1 ))
+          PREV_IDX_QTR=$(( QTR == 1 ? 4 : QTR - 1 ))
+          PREV_IDX_YEAR=$(( QTR == 1 ? YEAR - 1 : YEAR ))
+          curl -sSf -A "Moecap Research admin@moecapital.com" \
+            -o /tmp/master-prev.idx.gz \
+            "https://www.sec.gov/Archives/edgar/full-index/${PREV_IDX_YEAR}/QTR${PREV_IDX_QTR}/master.gz"
+          gunzip -f /tmp/master-prev.idx.gz
+          echo "prev index: ${PREV_IDX_YEAR} QTR${PREV_IDX_QTR}"
+
+      - name: Enrich with quarter-over-quarter share deltas
+        run: |
+          bun scripts/build-13f-deltas.ts \
+            --holders scripts/out/holders.json \
+            --cur-index /tmp/master.idx \
+            --prev-index /tmp/master-prev.idx
+
       - name: Upload to Worker KV
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: |
