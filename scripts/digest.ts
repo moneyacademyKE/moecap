@@ -1,6 +1,8 @@
-// Daily Telegram digest: US movers (from /history), NSE board + fresh
-// announcements (repo data), 13F freshness. --dry-run prints; --post sends
-// via Bot API using TELEGRAM_BOT_TOKEN + DIGEST_CHAT_ID (never in the repo).
+// Daily Telegram digest — designed to be ACTED ON, not scrolled past:
+//   pulse (market conditions) → tracked 13F board (with 52w positioning)
+//   → movers (cap/P/E context) → NSE filings classified by required action
+//   → explicit action list. --dry-run prints; --post sends via Bot API
+//   using TELEGRAM_BOT_TOKEN + DIGEST_CHAT_ID (never in the repo).
 //
 // Usage: bun scripts/digest.ts --dry-run | --post
 
@@ -18,7 +20,11 @@ async function fetchJson(url: string): Promise<any> {
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const pct = (p: number) => (p >= 0 ? "+" : "") + p.toFixed(1) + "%";
 
-interface Move { t: string; day: number; week: number; month: number; last: number }
+interface Move {
+    t: string; last: number; day: number; week: number; month: number;
+    hiGap: number; // % below 52w high (≤0)
+    loGap: number; // % above 52w low (≥0)
+}
 
 function computeMovers(history: any, prices: any): { up: Move[]; down: Move[] } {
     const rows: Move[] = [];
@@ -26,33 +32,94 @@ function computeMovers(history: any, prices: any): { up: Move[]; down: Move[] } 
     for (const [t, e] of Object.entries<any>(history.entries || {})) {
         const c: number[] = e.closes || [];
         if (c.length < 25) continue;
-        const last = typeof live[t]?.price === "number" ? live[t].price : c[c.length - 1];
-        const prev = c[c.length - 2];
-        const wk = c.length > 22 ? c[c.length - 6] : c[0];
-        const mo = c[c.length - 22] ?? c[0];
+        // Live prices refresh hourly; closes lag one session (22:20 UTC fetch).
+        // Against the LAST close a live price is today's move; only when no
+        // live quote exists do we diff the two most recent closes.
+        const usedLive = typeof live[t]?.raw === "number";
+        const last = usedLive ? live[t].raw : c[c.length - 1];
+        const prev = usedLive ? c[c.length - 1] : c[c.length - 2];
+        const wk = c[c.length - 6];
+        const mo = c[c.length - 22];
         if (!prev || !wk || !mo) continue;
-        rows.push({ t, last, day: (last / prev - 1) * 100, week: (last / wk - 1) * 100, month: (last / mo - 1) * 100 });
+        const hi = Math.max(...c, last), lo = Math.min(...c, last);
+        rows.push({
+            t, last,
+            day: (last / prev - 1) * 100,
+            week: (last / wk - 1) * 100,
+            month: (last / mo - 1) * 100,
+            hiGap: (last / hi - 1) * 100,
+            loGap: (last / lo - 1) * 100,
+        });
     }
-    rows.sort((a, b) => b.day - a.day);
-    return { up: rows.slice(0, 5), down: rows.slice(-5).reverse() };
+    const sorted = rows.sort((a, b) => b.day - a.day);
+    return { up: sorted, down: sorted.slice().reverse() };
 }
 
-function fmtMove(m: Move): string {
-    return `${esc(m.t)} $${m.last.toFixed(2)} <b>${pct(m.day)}</b> (1w ${pct(m.week)} · 1m ${pct(m.month)})`;
+// Positioning tag: what the price says about where you'd be buying.
+function tag52(m: Move): string {
+    if (m.hiGap === 0) return " ❗<b>new 52w high</b>";
+    if (m.loGap === 0) return " ❗<b>new 52w low</b>";
+    if (m.hiGap >= -1) return " ⛰ <b>at 52w-high</b>";
+    if (m.hiGap >= -5) return ` ⛰ ${Math.abs(m.hiGap).toFixed(0)}% off 52w-high`;
+    if (m.loGap <= 5) return ` 🕳 ${m.loGap.toFixed(0)}% above 52w-low`;
+    return "";
 }
 
-function freshAnnouncements(): { ticker: string; title: string; date: string }[] {
+function fmtMove(m: Move, extra: string = ""): string {
+    return `${esc(m.t)} $${m.last.toFixed(2)} <b>${pct(m.day)}</b> (1w ${pct(m.week)} · 1m ${pct(m.month)})${tag52(m)}${extra}`;
+}
+
+interface Ann { ticker: string; title: string; date: string; file?: string }
+
+function freshAnnouncements(): Ann[] {
     const data = JSON.parse(readFileSync(join(process.cwd(), "data", "nse-data.json"), "utf8"));
     const cutoff = new Date(Date.now() - 9 * 86400_000).toISOString().slice(0, 10);
-    const out: { ticker: string; title: string; date: string }[] = [];
+    const out: Ann[] = [];
     for (const [ticker, f] of Object.entries<any>(data.financials || {})) {
         for (const a of f.announcements || []) {
             if (!a.date || a.date < cutoff) continue;
             if (/events calendar/i.test(a.title || "")) continue; // calendars ≠ news
-            out.push({ ticker, title: a.title, date: a.date });
+            out.push({ ticker, title: a.title, date: a.date, file: a.file });
         }
     }
     return out.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+type AnnKind = "audited" | "interim" | "dividend" | "other";
+const classify = (a: Ann): AnnKind =>
+    /dividend/i.test(a.title) ? "dividend"
+    : /audited/i.test(a.title) ? "audited"
+    : /unaudited|half|interim|six months|six-month/i.test(a.title) ? "interim"
+    : /results|financial|statements/i.test(a.title) ? "audited" : "other";
+
+// Pull a book-closure/payment date out of a dividend notice title, if stated.
+function parseBookDate(title: string): string | null {
+    const m = title.match(/(\d{1,2})\s*(?:st|nd|rd|th)?\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{2,4})/i);
+    return m ? `${m[1]} ${m[2]} ${m[3].length === 2 ? "20" + m[3] : m[3]}` : null;
+}
+
+const card = (t: string) => `${SITE}/nse/#${t}`;
+const pdf = (a: Ann) => a.file ? ` <a href="${SITE}${esc(a.file)}">PDF</a>` : "";
+
+function fmtBreadth(rows: Move[], session: string): string {
+    if (rows.length === 0) return "no data";
+    const days = rows.map((r) => r.day).sort((a, b) => a - b);
+    const med = days[Math.floor(days.length / 2)];
+    const up = rows.filter((r) => r.day > 0).length;
+    const frac = up / rows.length;
+    // Median decides "flat": one -22% outlier must not read as risk-off.
+    const word = med >= 0.2 && frac >= 0.5 ? "risk-on 🟢" : med <= -0.2 && frac <= 0.5 ? "risk-off 🔴" : Math.abs(med) < 0.2 ? "flat ⚪" : "mixed 🟡";
+    return `${session} ${word} — ${up}/${rows.length} up, median ${pct(med)}`;
+}
+
+// Label the quote session from prices.asOf (ET = UTC−4, DST-agnostic enough for a label).
+function sessionOf(asOfIso: string | undefined): string {
+    if (!asOfIso) return "";
+    const d = new Date(asOfIso);
+    const hh = d.getUTCHours() + d.getUTCMinutes() / 60 - 4;
+    if (hh < 9.5) return "premarket:";
+    if (hh < 16) return "intraday:";
+    return "post-close:";
 }
 
 async function build(): Promise<string> {
@@ -63,46 +130,102 @@ async function build(): Promise<string> {
         fetchJson(`${WORKER}/holders`).catch(() => null),
     ]);
 
-    const day = new Date().toISOString().slice(0, 10);
+    const now = new Date();
+    const day = now.toISOString().slice(0, 10);
     const lines: string[] = [];
-    lines.push(`📊 <b>Moe Capital Daily</b> — ${day}`);
+    lines.push(`📊 <b>Moe Capital Daily</b> — ${day} ${["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][now.getUTCDay()]}`);
     lines.push("");
 
+    let allRows: Move[] = [];
     if (history?.entries) {
-        const { up, down } = computeMovers(history, prices);
-        lines.push("🇺🇸 <b>US board — top movers</b>");
-        lines.push("📈 Gainers:");
-        for (const m of up) lines.push("• " + fmtMove(m));
-        lines.push("📉 Losers:");
-        for (const m of down) lines.push("• " + fmtMove(m));
+        allRows = computeMovers(history, prices).up;
+        const asOf = String(history.asOf || "").slice(0, 10);
+        lines.push(`🫀 <b>Pulse:</b> ${fmtBreadth(allRows, sessionOf(prices?.asOf))} · closes through ${asOf}`);
         lines.push("");
     } else {
-        lines.push("🇺🇸 US history unavailable today.");
+        lines.push("🫀 US history unavailable today.");
+        lines.push("");
+    }
+
+    // Tracked board: the names with 13F coverage — the ones you actually follow.
+    const tracked = new Set(Object.keys(holders?.entries || {}));
+    const board = allRows.filter((r) => tracked.has(r.t)).sort((a, b) => Math.abs(b.day) - Math.abs(a.day) || Math.abs(b.month) - Math.abs(a.month));
+    const rest = allRows.filter((r) => !tracked.has(r.t));
+    if (board.length > 0) {
+        lines.push(`🇺🇸 <b>Your board</b> (${board.length} tracked, by |move|)`);
+        for (const m of board.slice(0, 8)) {
+            const pe = prices?.entries?.[m.t]?.pe;
+            lines.push("• " + fmtMove(m, pe ? ` · P/E ${esc(pe)}` : ""));
+        }
+        lines.push("");
+    }
+    if (rest.length > 0) {
+        const movers = rest.filter((m) => Math.abs(m.day) >= 0.5).sort((a, b) => b.day - a.day);
+        lines.push("🚀 <b>Rest of universe</b>");
+        if (movers.length === 0) {
+            lines.push("⚪ nothing moving ≥0.5% today");
+        } else {
+            const gainers = movers.filter((m) => m.day > 0).slice(0, 2);
+            if (gainers.length > 0) lines.push("📈 " + gainers.map((m) => fmtMove(m)).join("\n📈 "));
+            const losers = movers.filter((m) => m.day < 0).slice(-2).reverse();
+            if (losers.length > 0) lines.push("📉 " + losers.map((m) => fmtMove(m)).join("\n📉 "));
+        }
         lines.push("");
     }
 
     if (nse?.prices) {
         const n = Object.keys(nse.prices).length;
-        lines.push(`🇰🇪 <b>NSE board</b> — ${n} tickers priced (as of ${String(nse.asOf).slice(0, 16).replace("T", " ")} UTC)`);
-        const ann = freshAnnouncements(process.cwd());
-        if (ann.length > 0) {
-            lines.push("📰 Fresh NSE filings (last 9 days):");
-            for (const a of ann.slice(0, 6)) lines.push(`• <b>${esc(a.ticker)}</b> — ${esc(a.title)} (${a.date})`);
-        } else {
-            lines.push("📰 No new NSE filings in the last 9 days.");
+        const ageH = Math.floor((Date.now() - Date.parse(nse.asOf)) / 3600_000);
+        const feed = !nse.live || ageH > 36 ? `⚠️ feed stale (${ageH}h old)` : `feed live`;
+        lines.push(`🇰🇪 <b>NSE</b> — ${n} priced · ${feed}`);
+        const ann = freshAnnouncements();
+        const by = (k: AnnKind) => ann.filter((a) => classify(a) === k);
+        const audited = by("audited"), interim = by("interim"), divs = by("dividend");
+        if (divs.length > 0) {
+            lines.push("💰 <b>Dividend notices (act on dates):</b>");
+            for (const a of divs.slice(0, 3)) {
+                const bd = parseBookDate(a.title);
+                lines.push(`• <b>${a.ticker}</b> — ${esc(a.title)}${pdf(a)}${bd ? ` → book closure <b>${bd}</b> (own before to qualify)` : " → check notice for book-closure date"}`);
+            }
         }
+        if (audited.length > 0) {
+            lines.push("🧾 <b>Audited results in — review:</b>");
+            for (const a of audited.slice(0, 4)) lines.push(`• <a href="${card(a.ticker)}"><b>${a.ticker}</b></a> ${esc(a.title)}${pdf(a)}`);
+        }
+        if (interim.length > 0) {
+            lines.push(`📊 Interims in (skim): ${interim.slice(0, 6).map((a) => `<a href="${card(a.ticker)}">${a.ticker}</a>`).join(" · ")}`);
+        }
+        const other = by("other");
+        if (other.length > 0) lines.push(`📎 Other: ${other.slice(0, 4).map((a) => `<a href="${card(a.ticker)}">${a.ticker}</a>`).join(" · ")}`);
+        if (ann.length === 0) lines.push("📰 No new NSE filings in the last 9 days.");
         lines.push("");
     }
 
     if (holders?.dataQuarter) {
-        const asOf = String(holders.asOf || "").slice(0, 10);
+        const asOf = String(holders.generatedAt || holders.asOf || "").slice(0, 10);
         const ageDays = asOf ? Math.floor((Date.now() - Date.parse(asOf)) / 86400_000) : 999;
         const covered = Object.keys(holders.entries || {}).length;
-        if (ageDays <= 14) {
-            lines.push(`🏛 <b>13F holders updated</b> — ${esc(String(holders.dataQuarter))}: coverage on ${covered} tickers.`);
-            lines.push("");
-        }
+        lines.push(`🏛 <b>13F</b> ${esc(String(holders.dataQuarter))} — ${covered} names · ${ageDays}d old${ageDays > 100 ? " ⚠️ refresh due" : ""}`);
+        lines.push("");
     }
+
+    // Action list: only cross-cutting triggers, never filler.
+    const actions: string[] = [];
+    const ann = nse?.prices ? freshAnnouncements() : [];
+    for (const a of ann.filter((x) => classify(x) === "dividend").slice(0, 1)) {
+        const bd = parseBookDate(a.title);
+        actions.push(`💰 <b>${a.ticker}</b> dividend — ${bd ? `own before ${bd} to qualify` : "check book-closure date"} · ${card(a.ticker)}`);
+    }
+    const firstAudited = ann.find((x) => classify(x) === "audited");
+    if (firstAudited) actions.push(`🧾 Read <b>${firstAudited.ticker}</b> results — ${card(firstAudited.ticker)}`);
+    for (const m of board.filter((r) => r.loGap <= 5).slice(0, 1))
+        actions.push(`🕳 <b>${m.t}</b> near 52w low (${m.loGap.toFixed(0)}% above) — review thesis before catching knife`);
+    for (const m of [...board].sort((a, b) => b.hiGap - a.hiGap).slice(0, 1))
+        if (m.hiGap >= -3) actions.push(`⛰ <b>${m.t}</b> ${m.hiGap >= -1 ? "at 52w high" : Math.abs(m.hiGap).toFixed(0) + "% off 52w high"} — momentum intact, watch for extension`);
+    lines.push("👀 <b>Action list</b>");
+    if (actions.length === 0) lines.push("• Quiet day — nothing triggered.");
+    for (const a of actions.slice(0, 4)) lines.push("• " + a);
+    lines.push("");
 
     lines.push(`🔗 ${SITE} · /search — press <code>/</code> anywhere on the site`);
     lines.push(`<i>Not investment advice. Numbers as fetched; verify before acting.</i>`);
@@ -141,4 +264,3 @@ build()
         console.error(e.message);
         process.exit(1);
     });
-;
