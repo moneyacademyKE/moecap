@@ -40,7 +40,7 @@ jobs:
       - name: Compute quarters and download EDGAR index
         run: |
           YEAR=$(date -u +%Y)
-          QTR=$(( ($(date -u +%m) - 1) / 3 + 1 ))
+          QTR=$(( ($(date -u +%-m) - 1) / 3 + 1 ))
           PREV_QTR=$(( QTR == 1 ? 4 : QTR - 1 ))
           PREV_YEAR=$(( QTR == 1 ? YEAR - 1 : YEAR ))
           if [ -n "${{ github.event.inputs.data-quarter }}" ]; then
@@ -68,7 +68,7 @@ jobs:
       - name: Download previous-quarter EDGAR index (for QoQ share deltas)
         run: |
           YEAR=$(date -u +%Y)
-          QTR=$(( ($(date -u +%m) - 1) / 3 + 1 ))
+          QTR=$(( ($(date -u +%-m) - 1) / 3 + 1 ))
           PREV_IDX_QTR=$(( QTR == 1 ? 4 : QTR - 1 ))
           PREV_IDX_YEAR=$(( QTR == 1 ? YEAR - 1 : YEAR ))
           curl -sSf -A "Moecap Research admin@moecapital.com" \
