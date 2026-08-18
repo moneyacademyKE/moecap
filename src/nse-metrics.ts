@@ -14,8 +14,12 @@ export function revenueFor(row: MetricRow): NamedNumber | null {
   const direct = namedNumber(row, [
     "Revenue",
     "Turnover",
+    "Total Revenue",
     "Service Revenue",
     "Gross Earned Premiums",
+    "Insurance Revenue",
+    "Total Operating Income",
+    "Total Income",
     "Interest Income",
   ]);
   if (direct) return direct;
@@ -35,11 +39,17 @@ export function netIncomeFor(row: MetricRow): NamedNumber | null {
     "Profit After Tax",
     "Net Profit",
     "Profit for the Year",
+    "Profit for the year",
   ]);
 }
 
 export function equityFor(row: MetricRow): NamedNumber | null {
-  return namedNumber(row, ["Total Equity", "Shareholders Funds", "Shareholders Equity"]);
+  return namedNumber(row, [
+    "Total Equity",
+    "Shareholders Funds",
+    "Shareholders Equity",
+    "Total Shareholders Equity",
+  ]);
 }
 
 export function assetsFor(row: MetricRow): NamedNumber | null {

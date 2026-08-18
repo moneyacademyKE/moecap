@@ -16,6 +16,12 @@ export interface CompanyFinancials {
   ratios: Record<string, Record<string, number>>;
   announcements?: Array<{ date: string; title: string; file: string }>;
   insights?: Array<{ category: string; content: string; source: string; date: string }>;
+  canonicalYear?: string;
+  source?: "audited" | "archived";
+  sourceKind?: "audited" | "unaudited";
+  primaryFile?: string;
+  unitHint?: "M" | "K";
+  currency?: "USD";
 }
 
 export interface MarketData {
@@ -1105,23 +1111,24 @@ export function buildNsePage(publicDir: string) {
         }
 
         // Plain-English performance sentence from one reported period only.
-        function renderPlainPerformance(company, metrics, unitHint, period) {
+        function renderPlainPerformance(company, metrics, unitHint, period, currency) {
             const el = document.getElementById('plain-performance');
             if (!el) return;
             const income = nseNetIncomeFor(metrics || {});
             const revenue = nseRevenueFor(metrics || {});
             const dps = nseNamedNumber(metrics || {}, ['DPS', 'Dividend Per Share']);
-            const formatKES = (value) => {
+            const symbol = currency === 'USD' ? 'USD' : 'KES';
+            const formatMoney = (value) => {
                 const billions = unitHint === 'K' ? value / 1e6 : value >= 1000 ? value / 1000 : value;
-                return billions >= 1 ? 'KES ' + billions.toFixed(1) + 'B' : 'KES ' + Math.round(billions * 1000) + 'M';
+                return billions >= 1 ? symbol + ' ' + billions.toFixed(1) + 'B' : symbol + ' ' + Math.round(billions * 1000) + 'M';
             };
             const facts = [];
-            if (income) facts.push((income.value >= 0 ? 'Made ' : 'Lost ') + formatKES(Math.abs(income.value)) + ' after tax');
-            if (revenue) facts.push('brought in ' + formatKES(revenue.value) + ' in revenue / income');
+            if (income) facts.push((income.value >= 0 ? 'Made ' : 'Lost ') + formatMoney(Math.abs(income.value)) + ' after tax');
+            if (revenue) facts.push('brought in ' + formatMoney(revenue.value) + ' in revenue / income');
             if (facts.length > 0) {
-                el.innerText = company.name + ' ' + facts.join(' and ') + ' in ' + period + '.' + (dps ? ' The recorded dividend was KES ' + dps.value.toFixed(2) + ' per share.' : '');
+                el.innerText = company.name + ' ' + facts.join(' and ') + ' in ' + period + '.' + (dps ? ' The recorded dividend was ' + symbol + ' ' + dps.value.toFixed(2) + ' per share.' : '');
             } else if (dps) {
-                el.innerText = company.name + ' recorded a dividend of KES ' + dps.value.toFixed(2) + ' per share in ' + period + '; profit and income were not archived for that period.';
+                el.innerText = company.name + ' recorded a dividend of ' + symbol + ' ' + dps.value.toFixed(2) + ' per share in ' + period + '; profit and income were not reported for that period.';
             } else {
                 el.innerText = 'This record has no same-period profit, income, or dividend figure to summarise.';
             }
@@ -1222,23 +1229,24 @@ export function buildNsePage(publicDir: string) {
                     const latestMetrics = latestPeriod ? financials.metrics[latestPeriod] : {};
                     const latestRatios = (financials.ratios && latestPeriod) ? financials.ratios[latestPeriod] : {};
                     const unitHint = financials.unitHint || 'M';
+                    const currency = financials.currency === 'USD' ? 'USD' : 'KES';
 
-                    // KES display: hint K = thousands-native; >=1000 = millions-native; else billions-native
+                    // Source figures are KES millions or thousands. USD REIT figures stay USD.
                     const toBillions = (v) => {
                         if (unitHint === 'K') return v / 1e6;
                         return v >= 1000 ? v / 1000 : v;
                     };
-                    const displayKES = (v) => {
+                    const displayMoney = (v) => {
                         const b = toBillions(v);
-                        return b >= 1 ? \`KES \${b.toFixed(1)}B\` : \`KES \${Math.round(b * 1000)}M\`;
+                        return b >= 1 ? \`\${currency} \${b.toFixed(1)}B\` : \`\${currency} \${Math.round(b * 1000)}M\`;
                     };
 
                     // Headline values use verified aliases; bank revenue is derived only from the same-period income lines.
                     const rev = nseRevenueFor(latestMetrics);
-                    document.getElementById('stat-revenue').innerText = rev ? displayKES(rev.value) : '—';
+                    document.getElementById('stat-revenue').innerText = rev ? displayMoney(rev.value) : '—';
 
                     const net = nseNetIncomeFor(latestMetrics);
-                    document.getElementById('stat-netincome').innerText = net ? displayKES(net.value) : '—';
+                    document.getElementById('stat-netincome').innerText = net ? displayMoney(net.value) : '—';
 
                     const roic = calculateROIC(latestMetrics);
                     document.getElementById('stat-roic').innerText = roic !== null ? \`\${roic.toFixed(1)}%\` : '—';
@@ -1257,7 +1265,7 @@ export function buildNsePage(publicDir: string) {
                     }
 
                     // Plain-English layer: same-period performance, chips, and ROE sentence
-                    renderPlainPerformance(company, latestMetrics, unitHint, latestPeriod);
+                    renderPlainPerformance(company, latestMetrics, unitHint, latestPeriod, financials.currency);
                     renderVerdictChips(financials);
                     renderPlainRoe(company, (!isNaN(roeNum) && roe !== null) ? roeNum : null);
 
@@ -1265,8 +1273,11 @@ export function buildNsePage(publicDir: string) {
                     const srcLine = document.getElementById('data-source-line');
                     if (srcLine) {
                         const periodLabel = String(latestPeriod || '').replace(/[^0-9A-Za-z \/:-]/g, '');
+                        const reported = financials.sourceKind === 'unaudited' ? 'unaudited primary filing' : 'audited primary filing';
+                        const currency = financials.currency === 'USD' ? ' · USD figures' : '';
+                        const primaryFile = financials.primaryFile ? ' · <a href="' + financials.primaryFile + '" target="_blank" rel="noopener">source PDF</a>' : '';
                         if (financials.source === 'audited') {
-                            srcLine.innerHTML = '📋 <b>Data:</b> audited results, NSE filing (' + periodLabel + ')';
+                            srcLine.innerHTML = '📋 <b>Data:</b> ' + reported + ' (' + periodLabel + ')' + currency + primaryFile;
                         } else {
                             srcLine.innerHTML = '📦 <b>Data:</b> archived extract — year labels may be off; fundamentals pending re-sourcing';
                         }
@@ -1274,7 +1285,7 @@ export function buildNsePage(publicDir: string) {
 
                     // 1. Render Financial Table (canonical year only — other years
                     //    carry unreconciled native units by design)
-                    renderFinancialsTable(financials.metrics, [latestPeriod], financials.unitHint);
+                    renderFinancialsTable(financials.metrics, [latestPeriod], financials.unitHint, financials.currency);
 
                     // 2. Render Key Ratios Table
                     renderRatiosTable(financials.ratios || {}, periods, financials.metrics);
@@ -1314,7 +1325,7 @@ export function buildNsePage(publicDir: string) {
         const glBadge = (n) => glMap[n] ? \` <span class="gl" data-glossary="\${glMap[n]}" role="button" tabindex="0" aria-label="What is \${n}?">?</span>\` : '';
 
         // Render high-performance financial metrics table
-        function renderFinancialsTable(metrics, periods, unitHint) {
+        function renderFinancialsTable(metrics, periods, unitHint, currency) {
             if (!periods || periods.length === 0) return;
 
             // Collect all unique metrics keys across periods
@@ -1324,13 +1335,14 @@ export function buildNsePage(publicDir: string) {
             });
             const sortedMetricKeys = Array.from(allKeys).sort();
             const hint = unitHint || 'M';
+            const symbol = currency === 'USD' ? 'USD ' : '';
             const toBillions = (v) => {
                 if (hint === 'K') return v / 1e6;
                 return v >= 1000 ? v / 1000 : v;
             };
-            const displayKES = (v) => {
+            const displayMoney = (v) => {
                 const b = toBillions(v);
-                return b >= 1 ? \`\${b.toFixed(1)}B\` : \`\${Math.round(b * 1000)}M\`;
+                return b >= 1 ? \`\${symbol}\${b.toFixed(1)}B\` : \`\${symbol}\${Math.round(b * 1000)}M\`;
             };
 
             let headerCols = '<th>Financial Metric</th>';
@@ -1339,7 +1351,7 @@ export function buildNsePage(publicDir: string) {
             });
 
             let rowHtml = '';
-            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS"]);
+            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS", "NAV Per Unit"]);
             sortedMetricKeys.forEach(m => {
                 rowHtml += \`<tr><td class="metric-name">\${m}\${glBadge(m)}</td>\`;
                 periods.forEach(p => {
@@ -1347,7 +1359,7 @@ export function buildNsePage(publicDir: string) {
                     const valNum = typeof val === 'number' ? val : parseFloat(val);
                     let valStr = '—';
                     if (!isNaN(valNum) && val !== null && val !== undefined) {
-                        valStr = ratioFields.has(m) ? \`\${valNum.toFixed(1)}\` : displayKES(valNum);
+                        valStr = ratioFields.has(m) ? \`\${valNum.toFixed(1)}\` : displayMoney(valNum);
                     }
                     rowHtml += \`<td class="period-val">\${valStr}</td>\`;
                 });

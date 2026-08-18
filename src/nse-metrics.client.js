@@ -8,7 +8,7 @@ function nseNamedNumber(row, keys) {
 
 function nseRevenueFor(row) {
   const direct = nseNamedNumber(row, [
-    "Revenue", "Turnover", "Service Revenue", "Gross Earned Premiums", "Interest Income",
+    "Revenue", "Turnover", "Total Revenue", "Service Revenue", "Gross Earned Premiums", "Insurance Revenue", "Total Operating Income", "Total Income", "Interest Income",
   ]);
   if (direct) return direct;
   const netInterest = nseNamedNumber(row, ["Net Interest Income"]);
@@ -20,12 +20,12 @@ function nseRevenueFor(row) {
 
 function nseNetIncomeFor(row) {
   return nseNamedNumber(row, [
-    "Net Income", "Profit after Tax", "Profit After Tax", "Net Profit", "Profit for the Year",
+    "Net Income", "Profit after Tax", "Profit After Tax", "Net Profit", "Profit for the Year", "Profit for the year",
   ]);
 }
 
 function nseEquityFor(row) {
-  return nseNamedNumber(row, ["Total Equity", "Shareholders Funds", "Shareholders Equity"]);
+  return nseNamedNumber(row, ["Total Equity", "Shareholders Funds", "Shareholders Equity", "Total Shareholders Equity"]);
 }
 
 function nseAssetsFor(row) {

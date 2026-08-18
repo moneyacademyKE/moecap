@@ -22,6 +22,8 @@ interface Financials {
   canonicalYear?: string;
   metrics?: Record<string, Record<string, unknown>>;
   source?: ResearchSource;
+  sourceKind?: "audited" | "unaudited";
+  primaryFile?: string;
   announcements?: Announcement[];
 }
 
@@ -32,6 +34,7 @@ interface NseData {
 export interface NseResearchStatus {
   companies: number;
   sourceCounts: Record<string, number>;
+  sourceKindCounts: Record<string, number>;
   primaryBacked: string[];
   needsPrimaryEvidence: string[];
   emptyFinancials: string[];
@@ -41,6 +44,10 @@ export interface NseResearchStatus {
 const LOCAL_PDF_PREFIX = "/nse/announcements/";
 
 function hasLocalPrimaryPdf(financials: Financials, pdfDirectory: string): boolean {
+  const primaryFile = financials.primaryFile ?? "";
+  if (primaryFile.startsWith(LOCAL_PDF_PREFIX) && existsSync(join(pdfDirectory, basename(primaryFile)))) {
+    return true;
+  }
   return (financials.announcements ?? []).some((announcement) => {
     const file = announcement.file ?? "";
     return file.startsWith(LOCAL_PDF_PREFIX) && existsSync(join(pdfDirectory, basename(file)));
@@ -52,6 +59,7 @@ export function collectNseResearchStatus(root: string): NseResearchStatus {
   const pdfDirectory = join(root, "data", "nse-announcements");
   const data = JSON.parse(readFileSync(dataPath, "utf8")) as NseData;
   const sourceCounts: Record<string, number> = {};
+  const sourceKindCounts: Record<string, number> = {};
   const primaryBacked: string[] = [];
   const needsPrimaryEvidence: string[] = [];
   const emptyFinancials: string[] = [];
@@ -60,6 +68,9 @@ export function collectNseResearchStatus(root: string): NseResearchStatus {
   for (const [ticker, financials] of Object.entries(data.financials)) {
     const source = financials.source ?? "missing";
     sourceCounts[source] = (sourceCounts[source] ?? 0) + 1;
+    if (financials.sourceKind) {
+      sourceKindCounts[financials.sourceKind] = (sourceKindCounts[financials.sourceKind] ?? 0) + 1;
+    }
 
     const canonicalYear = financials.canonicalYear;
     const hasMetrics = Object.keys(financials.metrics ?? {}).length > 0;
@@ -84,6 +95,7 @@ export function collectNseResearchStatus(root: string): NseResearchStatus {
   return {
     companies: Object.keys(data.financials).length,
     sourceCounts,
+    sourceKindCounts,
     primaryBacked: primaryBacked.sort(),
     needsPrimaryEvidence: needsPrimaryEvidence.sort(),
     emptyFinancials: emptyFinancials.sort(),
@@ -98,6 +110,7 @@ if (import.meta.main) {
   } else {
     console.log(`companies: ${status.companies}`);
     console.log(`sources: ${JSON.stringify(status.sourceCounts)}`);
+    console.log(`primary report kinds: ${JSON.stringify(status.sourceKindCounts)}`);
     console.log(`primary-backed: ${status.primaryBacked.length}`);
     console.log(`needs-primary-evidence: ${status.needsPrimaryEvidence.join(", ") || "none"}`);
     console.log(`empty-financials: ${status.emptyFinancials.join(", ") || "none"}`);

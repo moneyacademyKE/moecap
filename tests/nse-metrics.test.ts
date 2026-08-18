@@ -28,6 +28,42 @@ describe("NSE computed metrics", () => {
     expect(calculateRoa(metrics)).toBeCloseTo(3.83, 2);
     expect(calculateNetMargin(metrics)).toBeCloseTo(34.70, 2);
     expect(calculateAssetTurnover(metrics)).toBeCloseTo(0.11, 2);
+    expect(revenueFor({ "Insurance Revenue": 29_920_887 })).toEqual({
+      key: "Insurance Revenue",
+      value: 29_920_887,
+    });
+    expect(revenueFor({ "Total Operating Income": 43_447_257 })).toEqual({
+      key: "Total Operating Income",
+      value: 43_447_257,
+    });
+  });
+
+  test("recognises primary-filing aliases without deriving bank income from mismatched periods", () => {
+    const bankMetrics = {
+      "Net Interest Income": 57_711_522,
+      "Non-Interest Income": 14_120_431,
+      "Profit for the Year": 23_393_518,
+      "Total Assets": 716_047_157,
+      "Shareholders Equity": 127_425_566,
+    };
+
+    expect(revenueFor(bankMetrics)).toEqual({
+      key: "Net Interest Income + Non-Interest Income",
+      value: 71_831_953,
+    });
+    expect(netIncomeFor(bankMetrics)).toEqual({ key: "Profit for the Year", value: 23_393_518 });
+    expect(calculateRoe(bankMetrics)).toBeCloseTo(18.36, 2);
+    expect(calculateRoa(bankMetrics)).toBeCloseTo(3.27, 2);
+    expect(calculateNetMargin(bankMetrics)).toBeCloseTo(32.57, 2);
+
+    expect(revenueFor({ "Total Revenue": 427_559.1 })).toEqual({
+      key: "Total Revenue",
+      value: 427_559.1,
+    });
+    expect(netIncomeFor({ "Profit for the Year": 73_676 })).toEqual({
+      key: "Profit for the Year",
+      value: 73_676,
+    });
   });
 
   test("prefers reported ratios, normalising decimal percentages", () => {

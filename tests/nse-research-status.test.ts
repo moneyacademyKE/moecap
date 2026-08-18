@@ -10,11 +10,12 @@ describe("NSE research promotion gate", () => {
     expect(status.emptyFinancials).toEqual(["UCHM", "UMME", "XPRS"]);
     expect(status.missingLocalPdfs).toEqual([]);
 
-    // These are broker-led FY2025/H1 2026 leads until a matching issuer/NSE PDF
-    // is vendored. They must remain visible to the daily playbook rather than
-    // silently being mistaken for primary-backed canonical facts.
-    expect(status.needsPrimaryEvidence).toEqual(["COOP", "CRWN", "DTK", "IMH"]);
-    expect(status.primaryBacked).toContain("SCOM");
-    expect(status.primaryBacked).toContain("KCB");
+    expect(status.needsPrimaryEvidence).toEqual([]);
+    expect(status.primaryBacked).toContain("COOP");
+    expect(status.primaryBacked).toContain("CRWN");
+    expect(status.primaryBacked).toContain("DTK");
+    expect(status.primaryBacked).toContain("IMH");
+    expect(status.sourceKindCounts.audited).toBeGreaterThan(10);
+    expect(status.sourceKindCounts.unaudited).toBeGreaterThan(10);
   });
 });

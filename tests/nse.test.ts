@@ -77,6 +77,10 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toContain("function filterDirectory()");
     expect(htmlContent).toContain("function calculateROIC(metrics)");
     expect(htmlContent).toContain("function nseRevenueFor(row)");
+    // Client-side metric helper aliases are emitted from the source module.
+    expect(htmlContent).toContain("Total Revenue");
+    expect(htmlContent).toContain("Profit for the Year");
+    expect(htmlContent).toContain("Total Shareholders Equity");
     expect(htmlContent).toContain("function nseCalculateNetMargin(row, ratios = {})");
     expect(htmlContent).toContain("function nseCalculateAssetTurnover(row, ratios = {})");
     expect(htmlContent).toContain('const rev = nseRevenueFor(latestMetrics);');
@@ -144,7 +148,7 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toContain('f.startsWith("http") || f.startsWith("/nse/announcements/")');
     expect(htmlContent).toContain("nse.co.ke listed-company announcements");
     // per-share metrics must never be KES-formatted
-    expect(htmlContent).toMatch(/ratioFields = new Set\(\[[^\]]*"EPS", "DPS"\]/);
+    expect(htmlContent).toMatch(/ratioFields = new Set\(\[[^\]]*"EPS", "DPS"/);
   });
 });
 
@@ -165,10 +169,31 @@ describe("NSE data provenance", () => {
         expect(audited.length).toBeGreaterThanOrEqual(6);
     });
 
+    test("canonical audited records point to their vendored primary PDF", async () => {
+        const data = JSON.parse(await Bun.file(join(import.meta.dir, "..", "data", "nse-data.json")).text());
+        const required = ["ABSA", "BAT", "EQTY", "HAFR", "LIMT", "NCBA", "SCOM", "SKL"];
+
+        for (const ticker of required) {
+            const financials = data.financials[ticker];
+            expect(financials.source).toBe("audited");
+            expect(financials.sourceKind).toBe("audited");
+            expect(financials.primaryFile).toStartWith("/nse/announcements/");
+            expect(existsSync(join(
+                BASE_PATH,
+                "data",
+                "nse-announcements",
+                financials.primaryFile.replace("/nse/announcements/", ""),
+            ))).toBe(true);
+            expect(financials.metrics[financials.canonicalYear]).toBeDefined();
+        }
+    });
+
     test("renderer emits the provenance line", () => {
         const html = readFileSync(join(import.meta.dir, "..", "public", "nse", "index.html"), "utf8");
         expect(html).toContain('id="data-source-line"');
         expect(html).toContain("archived extract");
-        expect(html).toContain("audited results, NSE filing");
+        expect(html).toContain("audited primary filing");
+        expect(html).toContain("unaudited primary filing");
+        expect(html).toContain("USD figures");
     });
 });
