@@ -2,7 +2,12 @@
 //   pulse (market conditions) → tracked 13F board (with 52w positioning)
 //   → movers (cap/P/E context) → NSE filings classified by required action
 //   → explicit action list. --dry-run prints; --post sends via Bot API
-//   using TELEGRAM_BOT_TOKEN + DIGEST_CHAT_ID (never in the repo).
+//   using TELEGRAM_BOT_TOKEN (never in the repo).
+//
+// Two editions, two destinations:
+//   DIGEST_CHAT_ID  — full personal digest (US board + 13F + NSE)
+//   NSE_CHANNEL_ID  — NSE-only edition for the public NSE channel:
+//                     filings + NSE actions ONLY, no personal 13F/US data.
 //
 // Usage: bun scripts/digest.ts --dry-run | --post
 
@@ -216,6 +221,69 @@ function fitTelegramHtml(lines: string[], limit = 4096): string {
     throw new Error("digest essential lines exceed Telegram limit");
 }
 
+// --- NSE section, shared by both editions -----------------------------------
+// Renders feed status + filings classified by required action. Pure given
+// (nse, ann) so the DM digest and the channel edition can never drift.
+function nseSectionLines(nse: any, ann: Ann[]): string[] {
+    if (!nse?.prices) return ["🇰🇪 NSE feed unavailable today.", ""];
+    const out: string[] = [];
+    const n = Object.keys(nse.prices).length;
+    const ageH = Math.floor((Date.now() - Date.parse(nse.asOf)) / 3600_000);
+    const feed = !nse.live || ageH > 36 ? `⚠️ feed stale (${ageH}h old)` : `feed live`;
+    out.push(`🇰🇪 <b>NSE</b> — ${n} priced · ${feed}`);
+    const by = (k: AnnKind) => ann.filter((a) => classify(a) === k);
+    const audited = by("audited"), interim = by("interim"), divs = by("dividend");
+    if (divs.length > 0) {
+        out.push("💰 <b>Dividend notices (act on dates):</b>");
+        for (const a of divs.slice(0, 3)) {
+            const bd = parseBookDate(a.title);
+            out.push(`• <b>${a.ticker}</b> — ${esc(a.title)}${pdf(a)}${bd ? ` → book closure <b>${bd}</b> (own before to qualify)` : " → check notice for book-closure date"}`);
+        }
+    }
+    if (audited.length > 0) {
+        out.push("🧾 <b>Audited results in — review:</b>");
+        for (const a of audited.slice(0, 4)) out.push(`• <a href="${card(a.ticker)}"><b>${a.ticker}</b></a> ${esc(a.title)}${pdf(a)}`);
+    }
+    if (interim.length > 0) {
+        out.push(`📊 Interims in (skim): ${interim.slice(0, 6).map((a) => `<a href="${card(a.ticker)}">${a.ticker}</a>`).join(" · ")}`);
+    }
+    const other = by("other");
+    if (other.length > 0) out.push(`📎 Other: ${other.slice(0, 4).map((a) => `<a href="${card(a.ticker)}">${a.ticker}</a>`).join(" · ")}`);
+    if (ann.length === 0) out.push("📰 No new NSE filings in the last 9 days.");
+    out.push("");
+    return out;
+}
+
+// NSE-only action triggers (dividend deadlines, audited results to read).
+function nseActionLines(ann: Ann[]): string[] {
+    const actions: string[] = [];
+    for (const a of ann.filter((x) => classify(x) === "dividend").slice(0, 1)) {
+        const bd = parseBookDate(a.title);
+        actions.push(`💰 <b>${a.ticker}</b> dividend — ${bd ? `own before ${bd} to qualify` : "check book-closure date"} · <a href="${card(a.ticker)}">open</a>`);
+    }
+    const firstAudited = ann.find((x) => classify(x) === "audited");
+    if (firstAudited) actions.push(`🧾 Read <b>${firstAudited.ticker}</b> results — <a href="${card(firstAudited.ticker)}">review</a>`);
+    return actions;
+}
+
+// The public NSE-channel edition: NSE feed + filings + NSE actions + footer.
+// Deliberately excludes the 13F board and US sections — personal data stays
+// in the DM edition.
+function nseEditionLines(day: string, dow: string, nse: any, ann: Ann[]): string[] {
+    const lines: string[] = [];
+    lines.push(`📰 <b>NSE Daily</b> — ${day} ${dow}`);
+    lines.push("");
+    lines.push(...nseSectionLines(nse, ann));
+    const actions = nseActionLines(ann);
+    lines.push("👀 <b>Action list</b>");
+    if (actions.length === 0) lines.push("• Quiet day — nothing triggered.");
+    for (const a of actions) lines.push("• " + a);
+    lines.push("");
+    lines.push(`🔗 <a href="${SITE}/nse">Moe Capital — NSE board</a>`);
+    lines.push(`<i>Not investment advice. Numbers as fetched; verify before acting.</i>`);
+    return lines;
+}
+
 async function build(): Promise<string> {
     const [history, prices, nse, holders] = await Promise.all([
         fetchJson(`${WORKER}/history`).catch(() => null),
@@ -270,33 +338,7 @@ async function build(): Promise<string> {
         lines.push("");
     }
 
-    if (nse?.prices) {
-        const n = Object.keys(nse.prices).length;
-        const ageH = Math.floor((Date.now() - Date.parse(nse.asOf)) / 3600_000);
-        const feed = !nse.live || ageH > 36 ? `⚠️ feed stale (${ageH}h old)` : `feed live`;
-        lines.push(`🇰🇪 <b>NSE</b> — ${n} priced · ${feed}`);
-        const ann = freshAnnouncements();
-        const by = (k: AnnKind) => ann.filter((a) => classify(a) === k);
-        const audited = by("audited"), interim = by("interim"), divs = by("dividend");
-        if (divs.length > 0) {
-            lines.push("💰 <b>Dividend notices (act on dates):</b>");
-            for (const a of divs.slice(0, 3)) {
-                const bd = parseBookDate(a.title);
-                lines.push(`• <b>${a.ticker}</b> — ${esc(a.title)}${pdf(a)}${bd ? ` → book closure <b>${bd}</b> (own before to qualify)` : " → check notice for book-closure date"}`);
-            }
-        }
-        if (audited.length > 0) {
-            lines.push("🧾 <b>Audited results in — review:</b>");
-            for (const a of audited.slice(0, 4)) lines.push(`• <a href="${card(a.ticker)}"><b>${a.ticker}</b></a> ${esc(a.title)}${pdf(a)}`);
-        }
-        if (interim.length > 0) {
-            lines.push(`📊 Interims in (skim): ${interim.slice(0, 6).map((a) => `<a href="${card(a.ticker)}">${a.ticker}</a>`).join(" · ")}`);
-        }
-        const other = by("other");
-        if (other.length > 0) lines.push(`📎 Other: ${other.slice(0, 4).map((a) => `<a href="${card(a.ticker)}">${a.ticker}</a>`).join(" · ")}`);
-        if (ann.length === 0) lines.push("📰 No new NSE filings in the last 9 days.");
-        lines.push("");
-    }
+    lines.push(...nseSectionLines(nse, nse?.prices ? freshAnnouncements() : []));
 
     if (holders?.dataQuarter) {
         const asOf = String(holders.generatedAt || holders.asOf || "").slice(0, 10);
@@ -325,14 +367,7 @@ async function build(): Promise<string> {
     }
 
     // Action list: only cross-cutting triggers, never filler.
-    const actions: string[] = [];
-    const ann = nse?.prices ? freshAnnouncements() : [];
-    for (const a of ann.filter((x) => classify(x) === "dividend").slice(0, 1)) {
-        const bd = parseBookDate(a.title);
-        actions.push(`💰 <b>${a.ticker}</b> dividend — ${bd ? `own before ${bd} to qualify` : "check book-closure date"} · <a href="${card(a.ticker)}">open</a>`);
-    }
-    const firstAudited = ann.find((x) => classify(x) === "audited");
-    if (firstAudited) actions.push(`🧾 Read <b>${firstAudited.ticker}</b> results — <a href="${card(firstAudited.ticker)}">review</a>`);
+    const actions: string[] = [...nseActionLines(nse?.prices ? freshAnnouncements() : [])];
     for (const m of board.filter((r) => r.loGap <= 5).slice(0, 1))
         actions.push(`🕳 <b>${m.t}</b> near 52w low (${m.loGap.toFixed(0)}% above) — review thesis before catching knife`);
     for (const m of [...board].sort((a, b) => b.hiGap - a.hiGap).slice(0, 1))
@@ -347,18 +382,28 @@ async function build(): Promise<string> {
     return fitTelegramHtml(lines);
 }
 
-async function post(html: string): Promise<void> {
+async function buildNseEdition(): Promise<string> {
+    const nse = await fetchJson(`${WORKER}/nse`).catch(() => null);
+    const now = new Date();
+    return fitTelegramHtml(nseEditionLines(
+        now.toISOString().slice(0, 10),
+        ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][now.getUTCDay()],
+        nse,
+        nse?.prices ? freshAnnouncements() : [],
+    ));
+}
+
+async function post(html: string, chatId: string, label: string): Promise<void> {
     const token = process.env.TELEGRAM_BOT_TOKEN;
-    const chat = process.env.DIGEST_CHAT_ID;
-    if (!token || !chat) throw new Error("TELEGRAM_BOT_TOKEN / DIGEST_CHAT_ID not set");
+    if (!token) throw new Error("TELEGRAM_BOT_TOKEN not set");
     const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ chat_id: chat, text: html, parse_mode: "HTML", disable_web_page_preview: true }),
+        body: JSON.stringify({ chat_id: chatId, text: html, parse_mode: "HTML", disable_web_page_preview: true }),
     });
     const j: any = await res.json();
     if (!j.ok) throw new Error(`telegram: ${j.description}`);
-    console.log(`posted: message_id ${j.result.message_id}`);
+    console.log(`posted ${label}: message_id ${j.result.message_id}`);
 }
 
 const mode = process.argv[2] || "--dry-run";
@@ -366,16 +411,34 @@ if (mode !== "--post" && mode !== "--dry-run") {
     console.error("usage: bun scripts/digest.ts --dry-run|--post");
     process.exit(1);
 }
-build()
-    .then(async (html) => {
-        if (mode === "--dry-run") {
-            console.log(html);
-            console.log(`\n[length: ${html.length} chars — Telegram limit 4096]`);
-        } else {
-            await post(html);
+(async () => {
+    if (mode === "--dry-run") {
+        const full = await build();
+        console.log(full);
+        console.log(`\n[full edition: ${full.length} chars — Telegram limit 4096]`);
+        console.log("\n=== NSE channel edition ===");
+        const nseEd = await buildNseEdition();
+        console.log(nseEd);
+        console.log(`\n[channel edition: ${nseEd.length} chars]`);
+        return;
+    }
+    // --post: every configured destination gets its edition; one failing
+    // must not silence the others — collect failures, throw at the end.
+    const dests: Array<{ label: string; chat: string | undefined; make: () => Promise<string> }> = [
+        { label: "DM digest", chat: process.env.DIGEST_CHAT_ID, make: build },
+        { label: "NSE channel", chat: process.env.NSE_CHANNEL_ID, make: buildNseEdition },
+    ].filter((d) => d.chat);
+    if (dests.length === 0) throw new Error("no destinations set (DIGEST_CHAT_ID / NSE_CHANNEL_ID)");
+    const failures: string[] = [];
+    for (const d of dests) {
+        try {
+            await post(await d.make(), d.chat!, d.label);
+        } catch (e: any) {
+            failures.push(`${d.label}: ${e.message}`);
         }
-    })
-    .catch((e) => {
-        console.error(e.message);
-        process.exit(1);
-    });
+    }
+    if (failures.length > 0) throw new Error(failures.join(" | "));
+})().catch((e) => {
+    console.error(e.message);
+    process.exit(1);
+});

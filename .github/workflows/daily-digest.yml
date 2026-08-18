@@ -1,6 +1,7 @@
 name: Daily Telegram digest
-# Composes the daily digest (US movers, NSE board, fresh filings) and posts it
-# to Telegram — only when TELEGRAM_BOT_TOKEN + DIGEST_CHAT_ID secrets exist.
+# Composes the daily digest (US movers, NSE board, fresh filings) and posts
+# to Telegram — full edition to DIGEST_CHAT_ID, NSE-only edition to the
+# NSE_CHANNEL_ID channel. Runs when the token + at least one destination exist.
 on:
   schedule:
     - cron: "35 21 * * 1-5"  # after US close, both DST regimes
@@ -24,8 +25,9 @@ jobs:
       - name: Compose digest (dry-run)
         run: bun scripts/digest.ts --dry-run
       - name: Post to Telegram
-        if: ${{ !inputs.dry_run && env.TELEGRAM_BOT_TOKEN != '' && env.DIGEST_CHAT_ID != '' }}
+        if: ${{ !inputs.dry_run && env.TELEGRAM_BOT_TOKEN != '' && (env.DIGEST_CHAT_ID != '' || env.NSE_CHANNEL_ID != '') }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           DIGEST_CHAT_ID: ${{ secrets.DIGEST_CHAT_ID }}
+          NSE_CHANNEL_ID: ${{ secrets.NSE_CHANNEL_ID }}
         run: bun scripts/digest.ts --post

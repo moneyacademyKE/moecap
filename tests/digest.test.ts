@@ -135,6 +135,20 @@ describe("digest 13F holdings & shareholding change", () => {
     });
 });
 
+describe("digest NSE dividend dates", () => {
+    test("extracts book-closure dates from dividend notice titles", () => {
+        const parseBookDate = extractFunction(
+            "parseBookDate",
+            ["title"],
+            "parseBookDate(title)",
+        ) as (title: string) => string | null;
+
+        expect(parseBookDate("Dividend notice — book closure 26th Aug 2026")).toBe("26 Aug 2026");
+        expect(parseBookDate("Final dividend, closure 3 September 26")).toBe("3 Sep 2026");
+        expect(parseBookDate("Interim dividend notice (no date stated)")).toBe(null);
+    });
+});
+
 describe("digest Telegram safety bound", () => {
     test("drops detail lines without splitting HTML when over the limit", () => {
         const fitTelegramHtml = extractFunction(
