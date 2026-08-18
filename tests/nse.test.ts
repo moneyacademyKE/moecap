@@ -152,21 +152,25 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
   });
 });
 
-// --- Data provenance tags (audited vs archived) ---
+// --- Data provenance tags (primary vs archived) ---
 describe("NSE data provenance", () => {
     test("every financials entry carries a source tag", async () => {
         const data = JSON.parse(await Bun.file(join(import.meta.dir, "..", "data", "nse-data.json")).text());
         const entries = Object.entries<any>(data.financials);
         expect(entries.length).toBeGreaterThan(50);
-        const audited: string[] = [];
+        const primaryBacked: string[] = [];
         for (const [t, f] of entries) {
-            expect(["audited", "archived"]).toContain(f.source);
-            if (f.source === "audited") audited.push(t);
+            expect(["primary", "archived"]).toContain(f.source);
+            // a primary record must always declare its assurance state explicitly
+            if (f.source === "primary") {
+                expect(["audited", "unaudited"]).toContain(f.sourceKind);
+                primaryBacked.push(t);
+            }
         }
-        expect(audited).toContain("SCOM"); // fact-checked round
-        expect(audited).toContain("KCB"); // AIB-AXYS FY2025 round
-        expect(audited).toContain("CRWN"); // H1 2026 from NSE PLC announcement
-        expect(audited.length).toBeGreaterThanOrEqual(6);
+        expect(primaryBacked).toContain("SCOM"); // fact-checked round
+        expect(primaryBacked).toContain("KCB"); // AIB-AXYS FY2025 round
+        expect(primaryBacked).toContain("CRWN"); // H1 2026 from NSE PLC announcement
+        expect(primaryBacked.length).toBeGreaterThanOrEqual(6);
     });
 
     test("canonical audited records point to their vendored primary PDF", async () => {
@@ -175,7 +179,7 @@ describe("NSE data provenance", () => {
 
         for (const ticker of required) {
             const financials = data.financials[ticker];
-            expect(financials.source).toBe("audited");
+            expect(financials.source).toBe("primary");
             expect(financials.sourceKind).toBe("audited");
             expect(financials.primaryFile).toStartWith("/nse/announcements/");
             expect(existsSync(join(

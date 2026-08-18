@@ -10,7 +10,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
 
-export type ResearchSource = "audited" | "archived" | "broker-research";
+export type ResearchSource = "primary" | "archived" | "broker-research";
 
 interface Announcement {
   date?: string;
@@ -43,15 +43,26 @@ export interface NseResearchStatus {
 
 const LOCAL_PDF_PREFIX = "/nse/announcements/";
 
-function hasLocalPrimaryPdf(financials: Financials, pdfDirectory: string): boolean {
+function hasLocalPrimaryPdf(financials: Financials, pdfDirectory: string, exists = existsSync): boolean {
   const primaryFile = financials.primaryFile ?? "";
-  if (primaryFile.startsWith(LOCAL_PDF_PREFIX) && existsSync(join(pdfDirectory, basename(primaryFile)))) {
+  if (primaryFile.startsWith(LOCAL_PDF_PREFIX) && exists(join(pdfDirectory, basename(primaryFile)))) {
     return true;
   }
   return (financials.announcements ?? []).some((announcement) => {
     const file = announcement.file ?? "";
-    return file.startsWith(LOCAL_PDF_PREFIX) && existsSync(join(pdfDirectory, basename(file)));
+    return file.startsWith(LOCAL_PDF_PREFIX) && exists(join(pdfDirectory, basename(file)));
   });
+}
+
+export function isCanonicalPrimarySource(
+  financials: Financials,
+  pdfDirectory: string,
+  exists = existsSync,
+): boolean {
+  return Boolean(financials.canonicalYear)
+    && financials.source === "primary"
+    && (financials.sourceKind === "audited" || financials.sourceKind === "unaudited")
+    && hasLocalPrimaryPdf(financials, pdfDirectory, exists);
 }
 
 export function collectNseResearchStatus(root: string): NseResearchStatus {
@@ -86,8 +97,8 @@ export function collectNseResearchStatus(root: string): NseResearchStatus {
       }
     }
 
-    if (source === "audited") {
-      if (hasLocalPrimaryPdf(financials, pdfDirectory)) primaryBacked.push(ticker);
+    if (financials.source === "primary") {
+      if (isCanonicalPrimarySource(financials, pdfDirectory)) primaryBacked.push(ticker);
       else needsPrimaryEvidence.push(ticker);
     }
   }

@@ -1,5 +1,7 @@
 # NSE Research Update Playbook
 
+> **Canonical source semantics:** `source: "primary"` means the canonical period is supported by a locally vendored NSE or issuer PDF. `sourceKind` separately records whether that filing is `"audited"` or `"unaudited"`; these must never be conflated in the terminal or research reports.
+
 ## Purpose
 
 Keep the NSE terminal current without turning broker commentary, stale web snippets, or model inference into financial fact. The terminal publishes **reported figures**, not recommendations. Every promoted figure must be traceable to an issuer or NSE document and to a clearly stated reporting period.
@@ -22,7 +24,8 @@ Each promoted company record must carry:
 - A correct ticker and company identity.
 - A reporting period that is stated by the source document, such as `FY2025`, `H1 2026`, or `Q1 2026`.
 - Facts stored in **KES millions** except per-share values (`EPS`, `DPS`) and ratios (percent or ratio field as the renderer expects).
-- `source: "audited"` only when backed by a Tier 1 or Tier 2 primary document. Archived legacy rows stay `source: "archived"`.
+- `source: "primary"` only when the canonical period is backed by a Tier 1 or Tier 2 primary document that is locally vendored; archived legacy rows stay `source: "archived"`.
+- `sourceKind: "audited" | "unaudited"` to describe the actual assurance state. An unaudited primary filing is valid canonical evidence for its stated period when no audited filing for that same period exists; it must remain labelled unaudited.
 - An announcement row whose `file` points to the locally vendored PDF at `/nse/announcements/<filename>.pdf` whenever a source PDF is used.
 
 ## Promotion gates
@@ -59,6 +62,7 @@ Run once daily at 18:15 Africa/Nairobi, after the NSE trading day and normal iss
    - Compare broker-led candidates against the primary PDF line by line. Prefer total revenue over a narrower service-revenue field when both are reported.
 5. **Promote conservatively**
    - Update only the matching company period and `canonicalYear`; retain older periods for history.
+   - Prefer an audited Tier 1/2 filing when one exists for that same canonical period. Otherwise an unaudited Tier 1/2 filing is valid primary evidence for its stated period; keep `sourceKind: "unaudited"` and its source-PDF link.
    - Add/refresh the local announcement entry. Keep source attribution accurate.
    - If there are no primary-backed changes, make no repository change.
    - An audited record without a local primary PDF is a **remediation queue**, not proof: do not replace it from broker research; seek and vendor the filing first.

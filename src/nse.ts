@@ -17,7 +17,7 @@ export interface CompanyFinancials {
   announcements?: Array<{ date: string; title: string; file: string }>;
   insights?: Array<{ category: string; content: string; source: string; date: string }>;
   canonicalYear?: string;
-  source?: "audited" | "archived";
+  source?: "primary" | "archived";
   sourceKind?: "audited" | "unaudited";
   primaryFile?: string;
   unitHint?: "M" | "K";
@@ -1269,14 +1269,14 @@ export function buildNsePage(publicDir: string) {
                     renderVerdictChips(financials);
                     renderPlainRoe(company, (!isNaN(roeNum) && roe !== null) ? roeNum : null);
 
-                    // Data provenance tag: audited NSE filing vs archived extract
+                    // Data provenance tag: primary filing with explicit audit status, or archived extract
                     const srcLine = document.getElementById('data-source-line');
                     if (srcLine) {
                         const periodLabel = String(latestPeriod || '').replace(/[^0-9A-Za-z \/:-]/g, '');
                         const reported = financials.sourceKind === 'unaudited' ? 'unaudited primary filing' : 'audited primary filing';
                         const currency = financials.currency === 'USD' ? ' · USD figures' : '';
                         const primaryFile = financials.primaryFile ? ' · <a href="' + financials.primaryFile + '" target="_blank" rel="noopener">source PDF</a>' : '';
-                        if (financials.source === 'audited') {
+                        if (financials.source === 'primary') {
                             srcLine.innerHTML = '📋 <b>Data:</b> ' + reported + ' (' + periodLabel + ')' + currency + primaryFile;
                         } else {
                             srcLine.innerHTML = '📦 <b>Data:</b> archived extract — year labels may be off; fundamentals pending re-sourcing';
