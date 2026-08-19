@@ -61,9 +61,13 @@ describe("NSE research promotion gate", () => {
     expect(kcb.metrics["FY2025"]).toBeDefined();
     // audited canonical periods keep the audited label (SCOM: an audited FY2026
     // filing exists, so the period stays audited — unlike KCB's H1 2026)
-    for (const ticker of ["ABSA", "EQTY"]) {
-      expect(data.financials[ticker].sourceKind).toBe("audited");
-      expect(data.financials[ticker].canonicalYear).toBe("FY2025");
+    // ABSA/EQTY/FMLY/SCBK joined KCB in H1 2026: unaudited primary is canonical
+    // for that period while their audited FY2025 history is retained below.
+    for (const ticker of ["ABSA", "EQTY", "FMLY", "SCBK"]) {
+      expect(data.financials[ticker].source).toBe("primary");
+      expect(data.financials[ticker].sourceKind).toBe("unaudited");
+      expect(data.financials[ticker].canonicalYear).toBe("H1 2026");
+      expect(data.financials[ticker].metrics["FY2025"] ?? data.financials[ticker].metrics["Q1 2026"]).toBeDefined();
     }
     expect(data.financials.SCOM.sourceKind).toBe("audited");
     expect(data.financials.SCOM.canonicalYear).toBe("FY2026");

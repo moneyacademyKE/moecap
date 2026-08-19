@@ -175,7 +175,7 @@ describe("NSE data provenance", () => {
 
     test("canonical audited records point to their vendored primary PDF", async () => {
         const data = JSON.parse(await Bun.file(join(import.meta.dir, "..", "data", "nse-data.json")).text());
-        const required = ["ABSA", "BAT", "EQTY", "HAFR", "LIMT", "NCBA", "SCOM", "SKL"];
+        const required = ["BAT", "HAFR", "LIMT", "NCBA", "SCOM", "SKL", "TOTL", "XPRS"];
 
         for (const ticker of required) {
             const financials = data.financials[ticker];
