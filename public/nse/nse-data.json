@@ -13882,6 +13882,17 @@
           "Shareholders Funds": 105624496,
           "EPS": 11.39,
           "DPS": 9
+        },
+        "H1 2026": {
+          "Net Interest Income": 20000000,
+          "Total Non-Interest Income": 6500000,
+          "Gross Operating Income": 26500000,
+          "Profit Before Tax": 9800000,
+          "Profit after Tax": 7300000,
+          "Profit after tax less non-controlling interests": 6400000,
+          "Annualised EPS": 45.72,
+          "Total Assets": 675100000,
+          "Customer Deposits": 534200000
         }
       },
       "ratios": {
@@ -13898,9 +13909,18 @@
           "ROE (%)": 19.217785664259136,
           "ROA (%)": 2.250115914286356
         },
-        "2024": {}
+        "2024": {},
+        "H1 2026": {
+          "ROA (%)": 2.2,
+          "ROE (%)": 12.6
+        }
       },
       "announcements": [
+        {
+          "date": "2026-08-19",
+          "title": "DTB Kenya – H1 2026 Investor Presentation (Unaudited Half-Year Results)",
+          "file": "/nse/announcements/DTB-H1-2026-Investor-Presentation.pdf"
+        },
         {
           "date": "2026-05-01",
           "title": "Diamond Trust Bank – Unaudited Results for the Period Ended 31 March 2026",
@@ -14221,11 +14241,11 @@
           "date": "2016-12-31"
         }
       ],
-      "canonicalYear": "Q1 2026",
+      "canonicalYear": "H1 2026",
       "unitHint": "K",
       "source": "primary",
       "sourceKind": "unaudited",
-      "primaryFile": "/nse/announcements/Diamond-Trust-Bank-Q1-2026-Unaudited-Results.pdf"
+      "primaryFile": "/nse/announcements/DTB-H1-2026-Investor-Presentation.pdf"
     },
     "HAFR": {
       "metrics": {
