@@ -175,7 +175,9 @@ describe("NSE data provenance", () => {
 
     test("canonical audited records point to their vendored primary PDF", async () => {
         const data = JSON.parse(await Bun.file(join(import.meta.dir, "..", "data", "nse-data.json")).text());
-        const required = ["BAT", "HAFR", "LIMT", "NCBA", "SCOM", "SKL", "TOTL", "XPRS"];
+        // NCBA promoted to H1 2026 unaudited interim (playbook: newest primary
+        // period is canonical); asserted separately below.
+        const required = ["BAT", "HAFR", "LIMT", "SCOM", "SKL", "TOTL", "XPRS"];
 
         for (const ticker of required) {
             const financials = data.financials[ticker];
@@ -190,6 +192,21 @@ describe("NSE data provenance", () => {
             ))).toBe(true);
             expect(financials.metrics[financials.canonicalYear]).toBeDefined();
         }
+
+        // NCBA: canonical H1 2026 unaudited interim, audited FY2025 history retained.
+        const ncba = data.financials.NCBA;
+        expect(ncba.source).toBe("primary");
+        expect(ncba.sourceKind).toBe("unaudited");
+        expect(ncba.canonicalYear).toBe("H1 2026");
+        expect(ncba.primaryFile).toStartWith("/nse/announcements/");
+        expect(existsSync(join(
+            BASE_PATH,
+            "data",
+            "nse-announcements",
+            ncba.primaryFile.replace("/nse/announcements/", ""),
+        ))).toBe(true);
+        expect(ncba.metrics["H1 2026"]).toBeDefined();
+        expect(ncba.metrics["FY2025"]).toBeDefined();
     });
 
     test("renderer emits the provenance line", () => {
