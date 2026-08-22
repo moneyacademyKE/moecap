@@ -11331,15 +11331,42 @@
           "Cash & Bank": 0.054935,
           "Accounts Payable": 0.321798,
           "Retained Earnings": 0.46415799999999996
+        },
+        "FY2025": {
+          "Revenue": 0.67989,
+          "Loss Before Tax": -0.373149,
+          "Net Income": -0.261444,
+          "Total Assets": 2.230832,
+          "Total Equity": 0.018108
+        },
+        "H1 2026": {
+          "Revenue": 0.524178,
+          "Loss Before Tax": -0.010995,
+          "Net Income": -0.010995,
+          "Total Assets": 2.343732,
+          "Total Equity": 0.003015,
+          "EPS": -0.04
         }
       },
       "ratios": {
         "2019": {},
         "2020": {},
         "2021": {},
-        "2022": {}
+        "2022": {},
+        "FY2025": {},
+        "H1 2026": {}
       },
       "announcements": [
+        {
+          "date": "2026-02-25",
+          "title": "Longhorn Publishers – Unaudited Condensed Group Results for the Six-Month Period Ended 31 December 2025",
+          "file": "/nse/announcements/Longhorn-H1-2026-Unaudited-Results.pdf"
+        },
+        {
+          "date": "2025-10-23",
+          "title": "Longhorn Publishers – Audited Financial Results for the Year Ended 30 June 2025",
+          "file": "/nse/announcements/Longhorn-FY2025-Audited-Results.pdf"
+        },
         {
           "date": "2026-08-17",
           "title": "2026 Corporate Events Calendar (NSE)",
@@ -11406,9 +11433,11 @@
           "date": "2019-12-31"
         }
       ],
-      "canonicalYear": "2021",
+      "canonicalYear": "H1 2026",
       "unitHint": "B",
-      "source": "archived"
+      "source": "primary",
+      "sourceKind": "unaudited",
+      "primaryFile": "/nse/announcements/Longhorn-H1-2026-Unaudited-Results.pdf"
     },
     "GLD": {
       "metrics": {
@@ -16011,6 +16040,23 @@
           "Cash & Bank": 18299,
           "Income Tax Expense": -2515,
           "Retained Earnings": 124193
+        },
+        "FY2025": {
+          "Revenue": 56098,
+          "Profit Before Tax": 15473,
+          "Net Income": 10481,
+          "Total Assets": 505573,
+          "Total Equity": 284544,
+          "EPS": 1.59,
+          "DPS": 0.9
+        },
+        "H1 2026": {
+          "Revenue": 30085,
+          "Profit Before Tax": 7593,
+          "Net Income": 4224,
+          "Total Assets": 505296,
+          "Total Equity": 282848,
+          "EPS": 0.64
         }
       },
       "ratios": {
@@ -16040,9 +16086,21 @@
         },
         "2024": {
           "Asset Turnover (x)": 1875.4333333333334
-        }
+        },
+        "FY2025": {},
+        "H1 2026": {}
       },
       "announcements": [
+        {
+          "date": "2026-02-10",
+          "title": "KenGen – Unaudited Results for the Six Months Ended 31 December 2025",
+          "file": "/nse/announcements/KenGen-H1-2026-Unaudited-Results.pdf"
+        },
+        {
+          "date": "2025-11-28",
+          "title": "KenGen – Integrated Annual Report & Audited Financial Statements, Year Ended 30 June 2025",
+          "file": "/nse/announcements/KenGen-FY2025-Audited-Results.pdf"
+        },
         {
           "date": "2026-08-17",
           "title": "2026 Corporate Events Calendar (NSE)",
@@ -16173,9 +16231,11 @@
           "date": "2020-06-30"
         }
       ],
-      "canonicalYear": "2023",
+      "canonicalYear": "H1 2026",
       "unitHint": "M",
-      "source": "archived"
+      "source": "primary",
+      "sourceKind": "unaudited",
+      "primaryFile": "/nse/announcements/KenGen-H1-2026-Unaudited-Results.pdf"
     },
     "SBIC": {
       "metrics": {
