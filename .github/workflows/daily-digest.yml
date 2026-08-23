@@ -23,6 +23,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install
       - name: Compose digest (dry-run)
+        env:
+          # read-only: lets the dry-run preview the real channel-dedup decision
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: bun scripts/digest.ts --dry-run
       - name: Post to Telegram
         if: ${{ !inputs.dry_run && env.TELEGRAM_BOT_TOKEN != '' && (env.DIGEST_CHAT_ID != '' || env.NSE_CHANNEL_ID != '') }}
