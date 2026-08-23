@@ -30,4 +30,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           DIGEST_CHAT_ID: ${{ secrets.DIGEST_CHAT_ID }}
           NSE_CHANNEL_ID: ${{ secrets.NSE_CHANNEL_ID }}
+          # Channel dedup seen-state lives in Worker KV (same namespace as prices)
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: bun scripts/digest.ts --post

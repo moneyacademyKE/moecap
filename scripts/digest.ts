@@ -13,6 +13,7 @@
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { channelDelta, feedStatus, readChannelState, writeChannelState, type ChannelState } from "./digest-channel-state";
 
 const WORKER = "https://moecap-prices.iamkingori.workers.dev";
 const SITE = "https://moecap.pages.dev";
@@ -229,7 +230,7 @@ function nseSectionLines(nse: any, ann: Ann[]): string[] {
     const out: string[] = [];
     const n = Object.keys(nse.prices).length;
     const ageH = Math.floor((Date.now() - Date.parse(nse.asOf)) / 3600_000);
-    const feed = !nse.live || ageH > 36 ? `⚠️ feed stale (${ageH}h old)` : `feed live`;
+    const feed = feedStatus(nse) === "stale" ? `⚠️ feed stale (${ageH}h old)` : `feed live`;
     out.push(`🇰🇪 <b>NSE</b> — ${n} priced · ${feed}`);
     const by = (k: AnnKind) => ann.filter((a) => classify(a) === k);
     const audited = by("audited"), interim = by("interim"), divs = by("dividend");
@@ -382,14 +383,14 @@ async function build(): Promise<string> {
     return fitTelegramHtml(lines);
 }
 
-async function buildNseEdition(): Promise<string> {
+async function buildNseEdition(ann?: Ann[]): Promise<string> {
     const nse = await fetchJson(`${WORKER}/nse`).catch(() => null);
     const now = new Date();
     return fitTelegramHtml(nseEditionLines(
         now.toISOString().slice(0, 10),
         ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][now.getUTCDay()],
         nse,
-        nse?.prices ? freshAnnouncements() : [],
+        ann ?? (nse?.prices ? freshAnnouncements() : []),
     ));
 }
 
@@ -420,19 +421,45 @@ if (mode !== "--post" && mode !== "--dry-run") {
         const nseEd = await buildNseEdition();
         console.log(nseEd);
         console.log(`\n[channel edition: ${nseEd.length} chars]`);
+        // Dedup preview (read-only): what the next real channel post would carry.
+        try {
+            const nse = await fetchJson(`${WORKER}/nse`).catch(() => null);
+            const state = await readChannelState();
+            const delta = channelDelta(state, nse?.prices ? freshAnnouncements() : [], feedStatus(nse));
+            console.log(`[channel dedup: ${delta.skip
+                ? `WOULD SKIP — nothing new since ${state ? state.updatedAt : "bootstrap"}`
+                : `would post ${delta.fresh.length} new filing(s)${delta.feedChanged ? " + feed status change" : ""}`}]`);
+        } catch {
+            console.log("[channel dedup: state unreadable without CF creds — post run will bootstrap it]");
+        }
         return;
     }
     // --post: every configured destination gets its edition; one failing
     // must not silence the others — collect failures, throw at the end.
-    const dests: Array<{ label: string; chat: string | undefined; make: () => Promise<string> }> = [
-        { label: "DM digest", chat: process.env.DIGEST_CHAT_ID, make: build },
-        { label: "NSE channel", chat: process.env.NSE_CHANNEL_ID, make: buildNseEdition },
+    // The NSE channel is dedup'd against KV seen-state (digest-channel-state):
+    // it posts ONLY facts never posted there before — nothing new, no message.
+    const postChannel = async (chat: string) => {
+        const nse = await fetchJson(`${WORKER}/nse`).catch(() => null);
+        const ann = nse?.prices ? freshAnnouncements() : [];
+        const state: ChannelState | null = await readChannelState();
+        const delta = channelDelta(state, ann, feedStatus(nse));
+        if (delta.skip) {
+            console.log(`NSE channel: nothing new since ${state ? state.updatedAt : "bootstrap"} — not posting`);
+            if (state === null) await writeChannelState(delta.state); // record the baseline once
+            return;
+        }
+        await post(await buildNseEdition(delta.fresh), chat, "NSE channel");
+        await writeChannelState(delta.state); // only after a successful post — failures retry next run
+    };
+    const dests: Array<{ label: string; chat: string | undefined; run: (chat: string) => Promise<void> }> = [
+        { label: "DM digest", chat: process.env.DIGEST_CHAT_ID, run: async (chat) => { await post(await build(), chat, "DM digest"); } },
+        { label: "NSE channel", chat: process.env.NSE_CHANNEL_ID, run: postChannel },
     ].filter((d) => d.chat);
     if (dests.length === 0) throw new Error("no destinations set (DIGEST_CHAT_ID / NSE_CHANNEL_ID)");
     const failures: string[] = [];
     for (const d of dests) {
         try {
-            await post(await d.make(), d.chat!, d.label);
+            await d.run(d.chat!);
         } catch (e: any) {
             failures.push(`${d.label}: ${e.message}`);
         }

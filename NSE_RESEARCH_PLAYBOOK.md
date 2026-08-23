@@ -71,15 +71,19 @@ Run once daily at 18:15 Africa/Nairobi, after the NSE trading day and normal iss
    - Inspect the generated `public/nse/nse-data.json` and announcement PDF paths for each changed ticker.
    - Run `gitleaks` through the repository workflow or locally if available. Never commit credentials, downloaded broker research, or third-party report text.
    - Commit only changed source data/scripts/PDFs/build output with an atomic message, then push `master`. The existing GitHub Pages workflow deploys only after tests pass.
-7. **Report**
-   - Deliver a concise report: sources checked; promoted facts with source/period; held/rejected leads and why; test/build/deploy result; and any blocked source.
+7. **Report (delta-only — never repeat a fact the topic has already seen)**
+   - Before reporting, read the ledger at `~/.opencrabs/projects/moecap-nse/report-ledger.json` — it records what the Telegram topic has already been told.
+   - Report ONLY deltas since the ledger: newly promoted facts (full detail: issuer, period, figures, PDF), corrections, newly held/rejected leads, blockers that are new or changed status, and test/build/push lines only for runs that committed.
+   - Never re-list unchanged state: previously reported source-check lists, standing blockers (unless status changed), stable counts (primary-backed total, tests-pass counts on no-commit days).
+   - No deltas at all → reply with exactly one line: `NSE daily — no changes (<date>).`
+   - After reporting (or the no-change line), update the ledger: reported fact keys, current blocker set with status, date. The ledger is the dedup boundary, not a work log.
 
 ## Cadence
 
 | Job | Frequency | Owner | Output |
 |---|---|---|---|
 | Price refresh | Hourly | Existing GitHub Action / Worker | Worker KV payloads |
-| NSE research discovery and fact promotion | Daily, 18:15 Africa/Nairobi | OpenCrabs cron | Primary-backed terminal update or explicit no-change report |
+| NSE research discovery and fact promotion | Daily, 18:15 Africa/Nairobi | OpenCrabs cron | Primary-backed terminal update or one-line no-change reply |
 | 13F holders | Quarterly | Existing GitHub Action | Worker KV holders index |
 | Broker-source audit | First daily run of each month | Daily cron, report-only if no primary filings | Source availability and coverage gaps |
 
