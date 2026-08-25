@@ -1351,7 +1351,7 @@ export function buildNsePage(publicDir: string) {
             });
 
             let rowHtml = '';
-            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS", "NAV Per Unit"]);
+            const ratioFields = new Set(["Core Capital", "Total Risk Weighted Assets", "Liquidity Ratio %", "EPS", "DPS", "NAV Per Unit", "NAV Per Share"]);
             sortedMetricKeys.forEach(m => {
                 rowHtml += \`<tr><td class="metric-name">\${m}\${glBadge(m)}</td>\`;
                 periods.forEach(p => {
