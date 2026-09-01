@@ -175,11 +175,17 @@ describe("NSE data provenance", () => {
 
     test("canonical audited records point to their vendored primary PDF", async () => {
         const data = JSON.parse(await Bun.file(join(import.meta.dir, "..", "data", "nse-data.json")).text());
-        // NCBA and BAT promoted to H1 2026 unaudited interims (playbook: newest
-        // primary period is canonical); asserted separately below.
-        const required = ["HAFR", "LIMT", "SCOM", "SKL", "TOTL", "XPRS"];
+        // Newest primary period is canonical per playbook; audited canonical
+        // records still exist and must point at a vendored PDF.
+        const auditedCanonical = Object.entries<any>(data.financials)
+            .filter(([, f]) => f.source === "primary" && f.sourceKind === "audited")
+            .map(([t]) => t);
+        expect(auditedCanonical.length).toBeGreaterThan(10);
+        expect(auditedCanonical).toContain("SCOM");
+        expect(auditedCanonical).toContain("SKL");
+        expect(auditedCanonical).toContain("XPRS");
 
-        for (const ticker of required) {
+        for (const ticker of auditedCanonical) {
             const financials = data.financials[ticker];
             expect(financials.source).toBe("primary");
             expect(financials.sourceKind).toBe("audited");
@@ -191,6 +197,19 @@ describe("NSE data provenance", () => {
                 financials.primaryFile.replace("/nse/announcements/", ""),
             ))).toBe(true);
             expect(financials.metrics[financials.canonicalYear]).toBeDefined();
+        }
+        // H1 2026 interim promotions stay canonical-unaudited with vendored PDFs.
+        for (const ticker of ["HAFR", "LIMT", "TOTL"]) {
+            const financials = data.financials[ticker];
+            expect(financials.source).toBe("primary");
+            expect(financials.sourceKind).toBe("unaudited");
+            expect(financials.canonicalYear).toBe("H1 2026");
+            expect(existsSync(join(
+                BASE_PATH,
+                "data",
+                "nse-announcements",
+                financials.primaryFile.replace("/nse/announcements/", ""),
+            ))).toBe(true);
         }
 
         // NCBA: canonical H1 2026 unaudited interim, audited FY2025 history retained.
