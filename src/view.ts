@@ -141,7 +141,7 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
                     <div class="card-tag">[ CAMPAIGNS ]</div>
                     <h3>Collaborations</h3>
                     <p class="card-desc" style="margin-bottom: 1.5rem;">We participate in select key opinion leader campaigns and investment research distributions.</p>
-                    <a class="action-btn" href="${metadata.kolCampaign.url}" target="_blank">→ View Campaign PDF</a>
+                    <a class="action-btn" href="${metadata.kolCampaign.url}" download>→ View Campaign PDF</a>
                 </div>
             </div>
         `;

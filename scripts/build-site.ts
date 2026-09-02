@@ -84,6 +84,10 @@ try {
     const annSrc = join(BASE_PATH, "data", "nse-announcements");
     if (existsSync(annSrc)) cpSync(annSrc, join(PUBLIC_DIR, "nse", "announcements"), { recursive: true });
 
+    // 4b. Mirror rate card into public/downloads (source of /r + campaign button)
+    const ratecardDir = join(BASE_PATH, "data", "ratecard");
+    if (existsSync(ratecardDir)) cpSync(ratecardDir, join(PUBLIC_DIR, "downloads"), { recursive: true });
+
     // 5. Mirror assets to public
     for (const dir of ASSET_DIRECTORIES) {
         const src = join(BASE_PATH, dir);
