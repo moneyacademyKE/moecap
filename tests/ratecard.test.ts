@@ -8,9 +8,9 @@ test("rate card PDF is vendored at source and non-trivial", () => {
     expect(statSync(PDF).size).toBeGreaterThan(100_000);
 });
 
-test("campaign button points at the vendored rate card, not the stale GitHub raw", () => {
+test("campaign button points at /r, never the stale GitHub raw", () => {
     const content = readFileSync("src/content.ts", "utf8");
-    expect(content).toContain("/downloads/moneyacademyke-rate-card-2026.pdf");
+    expect(content).toContain("url: '/r'");
     expect(content).not.toContain("raw/master/%40MoneyAcademyKE.pdf");
 });
 

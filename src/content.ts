@@ -31,7 +31,7 @@ export const METADATA: SiteMetadata = {
     description: 'We manage private investing accounts at a Zero percent management fee, a six percent hurdle rate, and twenty five percent of any return over hurdle (similar to the Buffett early partnerships).'
   },
   kolCampaign: {
-    url: '/downloads/moneyacademyke-rate-card-2026.pdf',
+    url: '/r',
     label: 'KOL campaigns'
   }
 };
