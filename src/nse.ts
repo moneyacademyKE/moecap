@@ -21,7 +21,7 @@ export interface CompanyFinancials {
   sourceKind?: "audited" | "unaudited";
   primaryFile?: string;
   unitHint?: "M" | "K";
-  currency?: "USD";
+  currency?: "USD" | "UGX";
 }
 
 export interface MarketData {
@@ -1117,7 +1117,7 @@ export function buildNsePage(publicDir: string) {
             const income = nseNetIncomeFor(metrics || {});
             const revenue = nseRevenueFor(metrics || {});
             const dps = nseNamedNumber(metrics || {}, ['DPS', 'Dividend Per Share']);
-            const symbol = currency === 'USD' ? 'USD' : 'KES';
+            const symbol = currency === 'USD' ? 'USD' : currency === 'UGX' ? 'UGX' : 'KES';
             const formatMoney = (value) => {
                 const billions = unitHint === 'K' ? value / 1e6 : value >= 1000 ? value / 1000 : value;
                 return billions >= 1 ? symbol + ' ' + billions.toFixed(1) + 'B' : symbol + ' ' + Math.round(billions * 1000) + 'M';
@@ -1229,9 +1229,9 @@ export function buildNsePage(publicDir: string) {
                     const latestMetrics = latestPeriod ? financials.metrics[latestPeriod] : {};
                     const latestRatios = (financials.ratios && latestPeriod) ? financials.ratios[latestPeriod] : {};
                     const unitHint = financials.unitHint || 'M';
-                    const currency = financials.currency === 'USD' ? 'USD' : 'KES';
+                    const currency = financials.currency === 'USD' ? 'USD' : financials.currency === 'UGX' ? 'UGX' : 'KES';
 
-                    // Source figures are KES millions or thousands. USD REIT figures stay USD.
+                    // Source figures are KES millions or thousands. USD REIT figures stay USD; Umeme files in UGX.
                     const toBillions = (v) => {
                         if (unitHint === 'K') return v / 1e6;
                         return v >= 1000 ? v / 1000 : v;
@@ -1274,7 +1274,7 @@ export function buildNsePage(publicDir: string) {
                     if (srcLine) {
                         const periodLabel = String(latestPeriod || '').replace(/[^0-9A-Za-z \/:-]/g, '');
                         const reported = financials.sourceKind === 'unaudited' ? 'unaudited primary filing' : 'audited primary filing';
-                        const currency = financials.currency === 'USD' ? ' · USD figures' : '';
+                        const currency = financials.currency === 'USD' ? ' · USD figures' : financials.currency === 'UGX' ? ' · UGX figures' : '';
                         const primaryFile = financials.primaryFile ? ' · <a href="' + financials.primaryFile + '" target="_blank" rel="noopener">source PDF</a>' : '';
                         if (financials.source === 'primary') {
                             srcLine.innerHTML = '📋 <b>Data:</b> ' + reported + ' (' + periodLabel + ')' + currency + primaryFile;
@@ -1335,7 +1335,7 @@ export function buildNsePage(publicDir: string) {
             });
             const sortedMetricKeys = Array.from(allKeys).sort();
             const hint = unitHint || 'M';
-            const symbol = currency === 'USD' ? 'USD ' : '';
+            const symbol = currency === 'USD' ? 'USD ' : currency === 'UGX' ? 'UGX ' : '';
             const toBillions = (v) => {
                 if (hint === 'K') return v / 1e6;
                 return v >= 1000 ? v / 1000 : v;

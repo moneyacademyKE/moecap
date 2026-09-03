@@ -244,6 +244,32 @@ describe("NSE data provenance", () => {
         expect(bat.metrics["FY2025"]).toBeDefined();
     });
 
+    test("2026-09-03 primary promotions validate (UMME, BOC, UNGA, CABL, OCH)", () => {
+        const rawData = JSON.parse(readFileSync(join(BASE_PATH, "data/nse-data.json"), "utf-8")) as NSEData;
+        const cases: Array<[string, string, "audited" | "unaudited", string]> = [
+            ["UMME", "FY2025", "audited", "Umeme-FY2025-Audited-Results.pdf"],
+            ["BOC", "FY2025", "audited", "BOC-Kenya-FY2025-Audited-Results.pdf"],
+            ["UNGA", "H1 2026", "unaudited", "Unga-Group-H1-2026-Unaudited-Results.pdf"],
+            ["CABL", "H1 2025", "unaudited", "East-African-Cables-H1-2025-Unaudited-Results.pdf"],
+            ["OCH", "H1 2026", "unaudited", "Olympia-Capital-H1-2026-Unaudited-Results.pdf"],
+        ];
+        for (const [ticker, period, sourceKind, file] of cases) {
+            const f = rawData.financials[ticker];
+            expect(f).toBeDefined();
+            expect(f.source).toBe("primary");
+            expect(f.sourceKind).toBe(sourceKind);
+            expect(f.canonicalYear).toBe(period);
+            expect(f.metrics![period]).toBeDefined();
+            expect(f.primaryFile).toBe(`/nse/announcements/${file}`);
+            expect(existsSync(join(BASE_PATH, "data", "nse-announcements", file))).toBe(true);
+        }
+        // Umeme reports in UGX — the terminal must label it, never silently as KES.
+        expect(rawData.financials.UMME.currency).toBe("UGX");
+        // Negative-equity fill: Umeme FY2025 and EACables H1 2025 as filed.
+        expect(rawData.financials.UMME.metrics!["FY2025"]["Total Equity"]).toBeLessThan(0);
+        expect(rawData.financials.CABL.metrics!["H1 2025"]["Total Equity"]).toBeLessThan(0);
+    });
+
     test("renderer emits the provenance line", () => {
         const html = readFileSync(join(import.meta.dir, "..", "public", "nse", "index.html"), "utf8");
         expect(html).toContain('id="data-source-line"');
@@ -251,5 +277,6 @@ describe("NSE data provenance", () => {
         expect(html).toContain("audited primary filing");
         expect(html).toContain("unaudited primary filing");
         expect(html).toContain("USD figures");
+        expect(html).toContain("UGX figures");
     });
 });
