@@ -7,10 +7,11 @@ name: Refresh prices
 # and writes the payload straight into the Worker's KV namespace.
 #
 # NSE prices ride along for the same reason: afx.kwayisi.org started blocking
-# Cloudflare egress around 2026-08-20, so the worker cron's hourly scrape threw
-# for weeks while KV served the last good snapshot. The parse stays in
-# worker/src/nse.ts; scripts/refresh-nse.ts is just the transport. The worker
-# still attempts its own fetch hourly — self-heals if CF is ever unblocked.
+# Cloudflare egress around 2026-08-20, and also drops GitHub/Azure traffic
+# (connection timeout — verified 2026-09-10). TradingView's scanner API covers
+# the NSE (exchange NSEKE) and cross-validates 1:1 against kwayisi, so
+# scripts/refresh-nse.ts prices the KV ticker universe from there. The worker
+# still attempts its own kwayisi fetch hourly — self-heals if ever unblocked.
 
 on:
   schedule:
@@ -37,7 +38,7 @@ jobs:
           bunx wrangler kv key put prices \
             --namespace-id 7eff4838aa6d49b9a82d1b175d4d0c06 \
             --path /tmp/prices.json --remote
-      - name: Fetch NSE prices (kwayisi blocks CF egress)
+      - name: Fetch NSE prices (TradingView — kwayisi blocks datacenter egress)
         run: bun scripts/refresh-nse.ts /tmp/nse.json
       - name: Upload NSE snapshot to worker KV
         env:
