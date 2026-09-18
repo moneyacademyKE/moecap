@@ -15,9 +15,9 @@ export const METADATA: SiteMetadata = {
     label: 'substack idea feed'
   },
   watchlist: {
-    date: '3rd November 2025',
-    stocks: ['Google', 'Cloudflare', 'Novo Nordisk'],
-    description: 'As of 3rd November 2025 we have cashed out all our investment positions. We are focused on researching new opportunities for the new year. Stocks on our current watchlist include Google, Cloudflare and Novo Nordisk.'
+    date: '17th September 2026',
+    stocks: ['Google', 'Cloudflare', 'Cerebras', 'Eli Lilly'],
+    description: 'As of 3rd November 2025 we have cashed out all our investment positions. We are focused on researching new opportunities for the new year. Stocks on our current watchlist include Google, Cloudflare, Cerebras and Eli Lilly.'
   },
   historicalPicks: {
     date: '3rd June 2024',
