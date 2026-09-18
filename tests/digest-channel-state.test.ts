@@ -4,9 +4,14 @@ import { annKey, channelDelta, feedStatus } from "../scripts/digest-channel-stat
 // The channel contract: every fact posts exactly once. Only new announcements
 // or real feed-health transitions produce a message at all.
 
+// Fixture dates must sit INSIDE the 30-day seen-state window no matter when
+// this suite runs — hardcoded dates rot as the calendar advances (the Aug
+// fixtures left the window on ~2026-09-13 and failed the whole file).
+const daysAgo = (n: number) => new Date(Date.now() - n * 86400_000).toISOString().slice(0, 10);
+
 const anns = [
-    { ticker: "TOTL", date: "2026-08-14", title: "Audited results FY2025" },
-    { ticker: "SCBK", date: "2026-08-16", title: "Unaudited half-year results" },
+    { ticker: "TOTL", date: daysAgo(5), title: "Audited results FY2025" },
+    { ticker: "SCBK", date: daysAgo(4), title: "Unaudited half-year results" },
 ];
 
 describe("channel seen-state delta", () => {
@@ -28,7 +33,7 @@ describe("channel seen-state delta", () => {
 
     test("a genuinely new announcement posts, seen ones do not repeat", () => {
         const base = channelDelta(null, anns, "live").state;
-        const bat = { ticker: "BAT", date: "2026-08-24", title: "Unaudited half-year results" };
+        const bat = { ticker: "BAT", date: daysAgo(1), title: "Unaudited half-year results" };
         const d = channelDelta(base, [...anns, bat], "live");
         expect(d.skip).toBe(false);
         expect(d.fresh).toEqual([bat]);
