@@ -183,7 +183,6 @@ describe("NSE data provenance", () => {
         expect(auditedCanonical.length).toBeGreaterThan(10);
         expect(auditedCanonical).toContain("SCOM");
         expect(auditedCanonical).toContain("SKL");
-        expect(auditedCanonical).toContain("XPRS");
 
         for (const ticker of auditedCanonical) {
             const financials = data.financials[ticker];
@@ -199,7 +198,7 @@ describe("NSE data provenance", () => {
             expect(financials.metrics[financials.canonicalYear]).toBeDefined();
         }
         // H1 2026 interim promotions stay canonical-unaudited with vendored PDFs.
-        for (const ticker of ["HAFR", "LIMT", "TOTL"]) {
+        for (const ticker of ["HAFR", "LIMT", "TOTL", "XPRS"]) {
             const financials = data.financials[ticker];
             expect(financials.source).toBe("primary");
             expect(financials.sourceKind).toBe("unaudited");
