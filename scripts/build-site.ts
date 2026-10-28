@@ -4,6 +4,8 @@ import { CONTENT, METADATA } from "../src/content";
 import { getUsStocksNode } from "../src/us-stocks";
 import { buildNsePage } from "../src/nse";
 import { renderBooksAccordion } from "../src/books";
+import { writeSeoFiles } from "./build-seo";
+import { writeTrustPages } from "./build-trust-pages";
 import { writeFileSync, existsSync, mkdirSync, rmSync, cpSync, copyFileSync } from "node:fs";
 import * as fs from "node:fs";
 import { join } from "node:path";
@@ -87,6 +89,14 @@ try {
     // 4b. Mirror rate card into public/downloads (source of /r + campaign button)
     const ratecardDir = join(BASE_PATH, "data", "ratecard");
     if (existsSync(ratecardDir)) cpSync(ratecardDir, join(PUBLIC_DIR, "downloads"), { recursive: true });
+
+    // 4c. SEO + trust artifacts: robots, sitemap, favicon, 404, social card
+    const seoFiles = writeSeoFiles(PUBLIC_DIR, BASE_PATH);
+    console.log(`🔎 SEO artifacts: ${seoFiles.join(", ")}`);
+
+    // 4d. Trust pages: /about, /contact, /privacy, /terms
+    const trustFiles = writeTrustPages(PUBLIC_DIR);
+    console.log(`🤝 Trust pages: ${trustFiles.join(", ")}`);
 
     // 5. Mirror assets to public
     for (const dir of ASSET_DIRECTORIES) {

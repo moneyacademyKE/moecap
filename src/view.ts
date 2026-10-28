@@ -158,6 +158,23 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Moe Capital | Premium Financial Intelligence</title>
+    <meta name="description" content="Moe Capital publishes independent equity research, the NSE ROIC Terminal covering 69 Kenyan listed companies, and long-form investing analysis.">
+    <link rel="canonical" href="https://moecapital.com/">
+    <meta name="theme-color" content="#0b1216">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Moe Capital">
+    <meta property="og:title" content="Moe Capital | Premium Financial Intelligence">
+    <meta property="og:description" content="Independent equity research, the NSE ROIC Terminal covering 69 Kenyan listed companies, and long-form investing analysis.">
+    <meta property="og:url" content="https://moecapital.com/">
+    <meta property="og:image" content="https://moecapital.com/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@MoneyAcademyKE">
+    <meta name="twitter:title" content="Moe Capital | Premium Financial Intelligence">
+    <meta name="twitter:description" content="Independent equity research, the NSE ROIC Terminal covering 69 Kenyan listed companies, and long-form investing analysis.">
+    <meta name="twitter:image" content="https://moecapital.com/og.png">
     <style>
         :root {
             --bg: hsl(205, 45%, 8%);
@@ -545,6 +562,14 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
 
         <footer>
             <hr>
+            <p class="footer-nav" style="font-size: 0.8rem; text-align: center; margin-bottom: 0.75rem;">
+                <a href="/nse">NSE Terminal</a> ·
+                <a href="/about">About</a> ·
+                <a href="/contact">Contact</a> ·
+                <a href="/r">Rate card</a> ·
+                <a href="/privacy">Privacy</a> ·
+                <a href="/terms">Terms</a>
+            </p>
             <p style="font-size: 0.75rem; color: var(--meta); text-align: center; opacity: 0.6;">
                 Built for financial clarity. Simple. Monospace. De-complexed.
             </p>

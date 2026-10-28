@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1216"/>
+      <stop offset="60%" stop-color="#0f1b22"/>
+      <stop offset="100%" stop-color="#12262f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="150" width="8" height="200" fill="#ffc93c"/>
+  <text x="120" y="230" font-family="Helvetica, Arial, sans-serif" font-size="86" font-weight="700" fill="#ffffff">Moe Capital</text>
+  <text x="120" y="296" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#7ee0b8">Premium Financial Intelligence</text>
+  <text x="120" y="360" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#9fb0bd">Independent equity research · NSE ROIC Terminal · 69 Kenyan listed companies</text>
+  <text x="120" y="520" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#6f8391">moecapital.com</text>
+  <text x="1080" y="520" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#ffc93c" text-anchor="end">@MoneyAcademyKE</text>
+  <rect x="80" y="470" width="1040" height="1" fill="#22343e"/>
+</svg>
