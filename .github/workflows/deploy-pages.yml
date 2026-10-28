@@ -16,6 +16,11 @@ jobs:
       - name: Install
         run: bun install
 
+      # The SEO/artifact assertions read generated files (robots.txt, sitemap.xml,
+      # 404.html, og.png, trust pages), so the build has to run before the tests.
+      - name: Build
+        run: bun run build
+
       - name: Test
         run: bun test
 
