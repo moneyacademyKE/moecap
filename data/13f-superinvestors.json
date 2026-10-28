@@ -1,0 +1,8473 @@
+{
+ "generatedAt": "2026-10-28T22:51:40.494Z",
+ "source": "SEC EDGAR 13F-HR filings (public domain)",
+ "note": "Each manager's most recent 13F-HR as of the build date. 13F data is quarterly and filed up to 45 days after quarter end, so periods differ by manager — early filers show a newer quarter than late ones. Figures are the reportable long positions in the filing, not total firm AUM.",
+ "method": "Curated set of the 13F filers analysts most often read, in prominence order (tier 1 = quoted weekly, 2 = widely tracked, 3 = value-blog canon). Every CIK verified against a real 13F-HR in a recent filing quarter; pins used where EDGAR name matching picks a same-named shell, RIA or foreign affiliate.",
+ "periods": {
+  "Q2 2026": 93,
+  "Q1 2026": 2,
+  "Q3 2026": 5
+ },
+ "managers": [
+  {
+   "name": "Berkshire Hathaway",
+   "role": "Warren Buffett",
+   "tier": 1,
+   "cik": 1067983,
+   "edgarName": "BERKSHIRE HATHAWAY INC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 299253556246,
+   "positions": 29,
+   "holdings": [
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 65950296923,
+     "weightPct": 22,
+     "shares": 227917808
+    },
+    {
+     "issuer": "AMERICAN EXPRESS CO",
+     "ticker": "",
+     "valueUsd": 51282319275,
+     "weightPct": 17.1,
+     "shares": 151610700
+    },
+    {
+     "issuer": "COCA COLA CO",
+     "ticker": "KO",
+     "valueUsd": 32508000000,
+     "weightPct": 10.9,
+     "shares": 400000000
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 28157599351,
+     "weightPct": 9.4,
+     "shares": 78791167
+    },
+    {
+     "issuer": "BANK OF AMER CORP",
+     "ticker": "",
+     "valueUsd": 27543790975,
+     "weightPct": 9.2,
+     "shares": 483394015
+    },
+    {
+     "issuer": "CHEVRON CORPORATION",
+     "ticker": "",
+     "valueUsd": 13986141890,
+     "weightPct": 4.7,
+     "shares": 84375856
+    },
+    {
+     "issuer": "OCCIDENTAL PETE CORP",
+     "ticker": "",
+     "valueUsd": 12868205304,
+     "weightPct": 4.3,
+     "shares": 264941431
+    },
+    {
+     "issuer": "CHUBB LIMITED",
+     "ticker": "",
+     "valueUsd": 11670066615,
+     "weightPct": 3.9,
+     "shares": 34249183
+    },
+    {
+     "issuer": "MOODYS CORP",
+     "ticker": "",
+     "valueUsd": 11173435852,
+     "weightPct": 3.7,
+     "shares": 24669778
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 9606489032,
+     "weightPct": 3.2,
+     "shares": 27188433
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/0001193125-26-352200-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Pershing Square",
+   "role": "Bill Ackman",
+   "tier": 1,
+   "cik": 2026053,
+   "edgarName": "PERSHING SQUARE INC.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 19465692772,
+   "positions": 14,
+   "holdings": [
+    {
+     "issuer": "UBER TECHNOLOGIES INC",
+     "ticker": "UBER",
+     "valueUsd": 2476978592,
+     "weightPct": 12.7,
+     "shares": 34326200
+    },
+    {
+     "issuer": "BROOKFIELD CORP",
+     "ticker": "",
+     "valueUsd": 2448117792,
+     "weightPct": 12.6,
+     "shares": 57481047
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 2315234425,
+     "weightPct": 11.9,
+     "shares": 6206730
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 2041109677,
+     "weightPct": 10.5,
+     "shares": 8563857
+    },
+    {
+     "issuer": "HOWARD HUGHES HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 1991144055,
+     "weightPct": 10.2,
+     "shares": 27852064
+    },
+    {
+     "issuer": "RESTAURANT BRANDS INTL INC",
+     "ticker": "",
+     "valueUsd": 1872301303,
+     "weightPct": 9.6,
+     "shares": 25821284
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 1800309764,
+     "weightPct": 9.2,
+     "shares": 3196062
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 1122065552,
+     "weightPct": 5.8,
+     "shares": 3270470
+    },
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 1091218186,
+     "weightPct": 5.6,
+     "shares": 2124646
+    },
+    {
+     "issuer": "S&P GLOBAL INC",
+     "ticker": "",
+     "valueUsd": 1056088305,
+     "weightPct": 5.4,
+     "shares": 2593155
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/2026053/000117266126003790/0001172661-26-003790-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Appaloosa",
+   "role": "David Tepper",
+   "tier": 1,
+   "cik": 1656456,
+   "edgarName": "Appaloosa LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 7725383349,
+   "positions": 27,
+   "holdings": [
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1191700000,
+     "weightPct": 15.4,
+     "shares": 5000000
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 1125432750,
+     "weightPct": 14.6,
+     "shares": 975000
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 787990500,
+     "weightPct": 10.2,
+     "shares": 1650000
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 653660500,
+     "weightPct": 8.5,
+     "shares": 1850000
+    },
+    {
+     "issuer": "UBER TECHNOLOGIES INC",
+     "ticker": "UBER",
+     "valueUsd": 555204163,
+     "weightPct": 7.2,
+     "shares": 7694071
+    },
+    {
+     "issuer": "ISHARES INC",
+     "ticker": "",
+     "valueUsd": 489607500,
+     "weightPct": 6.3,
+     "shares": 2425000
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 380220750,
+     "weightPct": 4.9,
+     "shares": 675000
+    },
+    {
+     "issuer": "VISTRA CORP",
+     "ticker": "VST",
+     "valueUsd": 351408597,
+     "weightPct": 4.5,
+     "shares": 2215272
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 305137250,
+     "weightPct": 3.9,
+     "shares": 1525000
+    },
+    {
+     "issuer": "NRG ENERGY INC",
+     "ticker": "",
+     "valueUsd": 257065600,
+     "weightPct": 3.3,
+     "shares": 1760000
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000003/0001656456-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Duquesne Family Office",
+   "role": "Stanley Druckenmiller",
+   "tier": 1,
+   "cik": 1536411,
+   "edgarName": "Duquesne Family Office LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 5210856000,
+   "positions": 90,
+   "holdings": [
+    {
+     "issuer": "Natera Inc",
+     "ticker": "",
+     "valueUsd": 864923000,
+     "weightPct": 16.6,
+     "shares": 3186306
+    },
+    {
+     "issuer": "Insmed Inc",
+     "ticker": "",
+     "valueUsd": 295837000,
+     "weightPct": 5.7,
+     "shares": 2774690
+    },
+    {
+     "issuer": "Taiwan Semiconductor Manufac",
+     "ticker": "",
+     "valueUsd": 281613000,
+     "weightPct": 5.4,
+     "shares": 589680
+    },
+    {
+     "issuer": "Ishares Inc",
+     "ticker": "",
+     "valueUsd": 264414000,
+     "weightPct": 5.1,
+     "shares": 7664170
+    },
+    {
+     "issuer": "Amazon Com Inc",
+     "ticker": "AMZN",
+     "valueUsd": 238555000,
+     "weightPct": 4.6,
+     "shares": 1000900
+    },
+    {
+     "issuer": "Stmicroelectronics N V",
+     "ticker": "",
+     "valueUsd": 232375000,
+     "weightPct": 4.5,
+     "shares": 3102880
+    },
+    {
+     "issuer": "Invesco Exchange Traded Fd T",
+     "ticker": "",
+     "valueUsd": 190514000,
+     "weightPct": 3.7,
+     "shares": 895400
+    },
+    {
+     "issuer": "Ypf Sociedad Anonima",
+     "ticker": "",
+     "valueUsd": 142726000,
+     "weightPct": 2.7,
+     "shares": 3138897
+    },
+    {
+     "issuer": "Cdw Corp",
+     "ticker": "",
+     "valueUsd": 139789000,
+     "weightPct": 2.7,
+     "shares": 993950
+    },
+    {
+     "issuer": "Bbb Foods Inc",
+     "ticker": "",
+     "valueUsd": 120915000,
+     "weightPct": 2.3,
+     "shares": 2901733
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000006/0001536411-26-000006-index.htm",
+   "unitsScaled": true
+  },
+  {
+   "name": "Baupost Group",
+   "role": "Seth Klarman",
+   "tier": 1,
+   "cik": 1061768,
+   "edgarName": "BAUPOST GROUP LLC/MA",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 5415853000,
+   "positions": 23,
+   "holdings": [
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 892310000,
+     "weightPct": 16.5,
+     "shares": 3743854
+    },
+    {
+     "issuer": "ELEVANCE HEALTH INC FORMERLY",
+     "ticker": "",
+     "valueUsd": 493140000,
+     "weightPct": 9.1,
+     "shares": 1275154
+    },
+    {
+     "issuer": "RESTAURANT BRANDS INTL INC",
+     "ticker": "",
+     "valueUsd": 489612000,
+     "weightPct": 9,
+     "shares": 6753112
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 484744000,
+     "weightPct": 9,
+     "shares": 1371931
+    },
+    {
+     "issuer": "FERGUSON ENTERPRISES INC",
+     "ticker": "",
+     "valueUsd": 344269000,
+     "weightPct": 6.4,
+     "shares": 1450594
+    },
+    {
+     "issuer": "GENUINE PARTS CO",
+     "ticker": "",
+     "valueUsd": 332253000,
+     "weightPct": 6.1,
+     "shares": 2816178
+    },
+    {
+     "issuer": "UNION PAC CORP",
+     "ticker": "",
+     "valueUsd": 322427000,
+     "weightPct": 6,
+     "shares": 1185395
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 240628000,
+     "weightPct": 4.4,
+     "shares": 701355
+    },
+    {
+     "issuer": "WESCO INTL INC",
+     "ticker": "",
+     "valueUsd": 228979000,
+     "weightPct": 4.2,
+     "shares": 662881
+    },
+    {
+     "issuer": "AON PLC",
+     "ticker": "",
+     "valueUsd": 227871000,
+     "weightPct": 4.2,
+     "shares": 687000
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1061768/000106176826000010/0001061768-26-000010-index.htm",
+   "unitsScaled": true
+  },
+  {
+   "name": "ARK Investment Management",
+   "role": "Cathie Wood",
+   "tier": 1,
+   "cik": 1697748,
+   "edgarName": "ARK Investment Management LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 15402788184,
+   "positions": 190,
+   "holdings": [
+    {
+     "issuer": "Tesla Inc",
+     "ticker": "TSLA",
+     "valueUsd": 1160772073,
+     "weightPct": 7.5,
+     "shares": 2759800
+    },
+    {
+     "issuer": "Advanced Micro Devices Inc",
+     "ticker": "AMD",
+     "valueUsd": 822826048,
+     "weightPct": 5.3,
+     "shares": 1416443
+    },
+    {
+     "issuer": "Space Exploration Technologies Corp",
+     "ticker": "",
+     "valueUsd": 765113281,
+     "weightPct": 5,
+     "shares": 4478013
+    },
+    {
+     "issuer": "Tempus AI Inc",
+     "ticker": "",
+     "valueUsd": 580611200,
+     "weightPct": 3.8,
+     "shares": 10022634
+    },
+    {
+     "issuer": "Robinhood Markets Inc",
+     "ticker": "",
+     "valueUsd": 525069168,
+     "weightPct": 3.4,
+     "shares": 5236031
+    },
+    {
+     "issuer": "CRISPR Therapeutics AG",
+     "ticker": "",
+     "valueUsd": 515999631,
+     "weightPct": 3.4,
+     "shares": 9460939
+    },
+    {
+     "issuer": "Shopify Inc",
+     "ticker": "SHOP",
+     "valueUsd": 474523465,
+     "weightPct": 3.1,
+     "shares": 4155925
+    },
+    {
+     "issuer": "Twist Bioscience Corp",
+     "ticker": "",
+     "valueUsd": 468083756,
+     "weightPct": 3,
+     "shares": 4549803
+    },
+    {
+     "issuer": "10X Genomics Inc",
+     "ticker": "",
+     "valueUsd": 383517223,
+     "weightPct": 2.5,
+     "shares": 10003057
+    },
+    {
+     "issuer": "Amazon.com Inc",
+     "ticker": "AMZN",
+     "valueUsd": 379241133,
+     "weightPct": 2.5,
+     "shares": 1591177
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1697748/000110465926096910/0001104659-26-096910-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Himalaya Capital Management",
+   "role": "Li Lu",
+   "tier": 1,
+   "cik": 1709323,
+   "edgarName": "Himalaya Capital Management LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 3702921099,
+   "positions": 8,
+   "holdings": [
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 908899121,
+     "weightPct": 24.5,
+     "shares": 2543300
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 866117829,
+     "weightPct": 23.4,
+     "shares": 2451300
+    },
+    {
+     "issuer": "PDD HOLDINGS INC",
+     "ticker": "PDD",
+     "valueUsd": 820858157,
+     "weightPct": 22.2,
+     "shares": 10761119
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 554591244,
+     "weightPct": 15,
+     "shares": 1108318
+    },
+    {
+     "issuer": "EAST WEST BANCORP INC",
+     "ticker": "",
+     "valueUsd": 358399151,
+     "weightPct": 9.7,
+     "shares": 2776351
+    },
+    {
+     "issuer": "CROCS INC",
+     "ticker": "",
+     "valueUsd": 107018900,
+     "weightPct": 2.9,
+     "shares": 887093
+    },
+    {
+     "issuer": "TENCENT MUSIC ENTERTAINM",
+     "ticker": "",
+     "valueUsd": 55033481,
+     "weightPct": 1.5,
+     "shares": 6590836
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 32003216,
+     "weightPct": 0.9,
+     "shares": 110600
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1709323/000204358526000022/0002043585-26-000022-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Bridgewater Associates",
+   "role": "Ray Dalio",
+   "tier": 1,
+   "cik": 1350694,
+   "edgarName": "Bridgewater Associates, LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 24376086530,
+   "positions": 997,
+   "holdings": [
+    {
+     "issuer": "STATE STR SPDR S&P 500 ETF T",
+     "ticker": "",
+     "valueUsd": 3973046405,
+     "weightPct": 16.3,
+     "shares": 5320308
+    },
+    {
+     "issuer": "ISHARES TR",
+     "ticker": "",
+     "valueUsd": 2248381963,
+     "weightPct": 9.2,
+     "shares": 3002286
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 773586958,
+     "weightPct": 3.2,
+     "shares": 3866195
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 497845413,
+     "weightPct": 2,
+     "shares": 1317923
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 482753142,
+     "weightPct": 2,
+     "shares": 2025481
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 472506037,
+     "weightPct": 1.9,
+     "shares": 1322176
+    },
+    {
+     "issuer": "LAM RESEARCH CORP",
+     "ticker": "LRCX",
+     "valueUsd": 406560606,
+     "weightPct": 1.7,
+     "shares": 938224
+    },
+    {
+     "issuer": "VANGUARD INDEX FDS",
+     "ticker": "",
+     "valueUsd": 314820655,
+     "weightPct": 1.3,
+     "shares": 458381
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 312896715,
+     "weightPct": 1.3,
+     "shares": 538632
+    },
+    {
+     "issuer": "ISHARES INC",
+     "ticker": "",
+     "valueUsd": 279585467,
+     "weightPct": 1.1,
+     "shares": 1384772
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000003/0001350694-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Renaissance Technologies",
+   "role": "Jim Simons",
+   "tier": 1,
+   "cik": 1037389,
+   "edgarName": "RENAISSANCE TECHNOLOGIES LLC",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 72617871974,
+   "positions": 3140,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 1418869170,
+     "weightPct": 2,
+     "shares": 7091256
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 1139611745,
+     "weightPct": 1.6,
+     "shares": 2023153
+    },
+    {
+     "issuer": "INTEL CORP",
+     "ticker": "INTC",
+     "valueUsd": 1022356867,
+     "weightPct": 1.4,
+     "shares": 7321928
+    },
+    {
+     "issuer": "UNITED THERAPEUTICS CORP DEL",
+     "ticker": "",
+     "valueUsd": 925846052,
+     "weightPct": 1.3,
+     "shares": 1708739
+    },
+    {
+     "issuer": "PALANTIR TECHNOLOGIES INC",
+     "ticker": "PLTR",
+     "valueUsd": 883001728,
+     "weightPct": 1.2,
+     "shares": 7568370
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 828174623,
+     "weightPct": 1.1,
+     "shares": 2317438
+    },
+    {
+     "issuer": "EXELIXIS INC",
+     "ticker": "",
+     "valueUsd": 730617099,
+     "weightPct": 1,
+     "shares": 13427993
+    },
+    {
+     "issuer": "VERISIGN INC",
+     "ticker": "",
+     "valueUsd": 616264393,
+     "weightPct": 0.8,
+     "shares": 2449771
+    },
+    {
+     "issuer": "KINROSS GOLD CORP",
+     "ticker": "",
+     "valueUsd": 584529171,
+     "weightPct": 0.8,
+     "shares": 24747213
+    },
+    {
+     "issuer": "CROWDSTRIKE HLDGS INC",
+     "ticker": "",
+     "valueUsd": 571561334,
+     "weightPct": 0.8,
+     "shares": 748960
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738926000059/0001037389-26-000059-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Citadel Advisors",
+   "role": "Ken Griffin",
+   "tier": 1,
+   "cik": 1423053,
+   "edgarName": "CITADEL ADVISORS LLC",
+   "filed": "2026-09-02",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 875011794337,
+   "positions": 7164,
+   "holdings": [
+    {
+     "issuer": "STATE STR SPDR S&P 500 ETF T",
+     "ticker": "",
+     "valueUsd": 59248649655,
+     "weightPct": 6.8,
+     "shares": 79339890
+    },
+    {
+     "issuer": "INVESCO QQQ TR",
+     "ticker": "",
+     "valueUsd": 50079342986,
+     "weightPct": 5.7,
+     "shares": 68005626
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 39282246684,
+     "weightPct": 4.5,
+     "shares": 34031523
+    },
+    {
+     "issuer": "TESLA INC",
+     "ticker": "TSLA",
+     "valueUsd": 23800550243,
+     "weightPct": 2.7,
+     "shares": 56587138
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 23733448648,
+     "weightPct": 2.7,
+     "shares": 118613867
+    },
+    {
+     "issuer": "SANDISK CORP",
+     "ticker": "SNDK",
+     "valueUsd": 22214071526,
+     "weightPct": 2.5,
+     "shares": 9769881
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 19309059190,
+     "weightPct": 2.2,
+     "shares": 33239330
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 17428354212,
+     "weightPct": 2,
+     "shares": 46722305
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 17391541815,
+     "weightPct": 2,
+     "shares": 60103476
+    },
+    {
+     "issuer": "VANECK ETF TRUST",
+     "ticker": "",
+     "valueUsd": 16506924646,
+     "weightPct": 1.9,
+     "shares": 25167215
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1423053/000110465926104387/0001104659-26-104387-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Point72 Asset Management",
+   "role": "Steve Cohen",
+   "tier": 1,
+   "cik": 1603466,
+   "edgarName": "Point72 Asset Management, L.P.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 90675333456,
+   "positions": 2452,
+   "holdings": [
+    {
+     "issuer": "STATE STR SPDR S&P 500 ETF T",
+     "ticker": "",
+     "valueUsd": 2231722145,
+     "weightPct": 2.5,
+     "shares": 2988500
+    },
+    {
+     "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+     "ticker": "",
+     "valueUsd": 1737742007,
+     "weightPct": 1.9,
+     "shares": 6389932
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1238918967,
+     "weightPct": 1.4,
+     "shares": 5198116
+    },
+    {
+     "issuer": "ASML HLDG NV",
+     "ticker": "",
+     "valueUsd": 1195177964,
+     "weightPct": 1.3,
+     "shares": 600761
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 1000870752,
+     "weightPct": 1.1,
+     "shares": 1722936
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 997171508,
+     "weightPct": 1.1,
+     "shares": 863883
+    },
+    {
+     "issuer": "PROCTER & GAMBLE CO",
+     "ticker": "",
+     "valueUsd": 964245397,
+     "weightPct": 1.1,
+     "shares": 6575596
+    },
+    {
+     "issuer": "ARISTA NETWORKS INC",
+     "ticker": "ANET",
+     "valueUsd": 915540570,
+     "weightPct": 1,
+     "shares": 5389337
+    },
+    {
+     "issuer": "MKS INC.",
+     "ticker": "",
+     "valueUsd": 890197366,
+     "weightPct": 1,
+     "shares": 2001343
+    },
+    {
+     "issuer": "SEAGATE TECHNOLOGY HLDNGS PL",
+     "ticker": "",
+     "valueUsd": 854617510,
+     "weightPct": 0.9,
+     "shares": 885614
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1603466/000091957426005520/0000919574-26-005520-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Third Point",
+   "role": "Dan Loeb",
+   "tier": 1,
+   "cik": 1040273,
+   "edgarName": "Third Point LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 4679571988,
+   "positions": 43,
+   "holdings": [
+    {
+     "issuer": "WARNER BROS DISCOVERY INC",
+     "ticker": "",
+     "valueUsd": 533200000,
+     "weightPct": 11.4,
+     "shares": 20000000
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 417095000,
+     "weightPct": 8.9,
+     "shares": 1750000
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 366304250,
+     "weightPct": 7.8,
+     "shares": 1025000
+    },
+    {
+     "issuer": "CRH PLC",
+     "ticker": "",
+     "valueUsd": 234865000,
+     "weightPct": 5,
+     "shares": 2195000
+    },
+    {
+     "issuer": "TELEPHONE & DATA SYS INC",
+     "ticker": "",
+     "valueUsd": 232237750,
+     "weightPct": 5,
+     "shares": 6275000
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 219682200,
+     "weightPct": 4.7,
+     "shares": 460000
+    },
+    {
+     "issuer": "LIVE NATION ENTERTAINMENT IN",
+     "ticker": "",
+     "valueUsd": 207829850,
+     "weightPct": 4.4,
+     "shares": 1135000
+    },
+    {
+     "issuer": "KEYSIGHT TECHNOLOGIES INC",
+     "ticker": "",
+     "valueUsd": 204790950,
+     "weightPct": 4.4,
+     "shares": 585000
+    },
+    {
+     "issuer": "SOMNIGROUP INTERNATIONAL INC",
+     "ticker": "",
+     "valueUsd": 201548290,
+     "weightPct": 4.3,
+     "shares": 2570769
+    },
+    {
+     "issuer": "BLOCK INC",
+     "ticker": "",
+     "valueUsd": 194479668,
+     "weightPct": 4.2,
+     "shares": 2558943
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1040273/000104027326000003/0001040273-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Icahn Capital",
+   "role": "Carl Icahn",
+   "tier": 1,
+   "cik": 921669,
+   "edgarName": "ICAHN CARL C",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 8264090525,
+   "positions": 12,
+   "holdings": [
+    {
+     "issuer": "Icahn Enterprises LP",
+     "ticker": "",
+     "valueUsd": 4458616003,
+     "weightPct": 54,
+     "shares": 618393343
+    },
+    {
+     "issuer": "CVR Energy Inc",
+     "ticker": "",
+     "valueUsd": 1960899637,
+     "weightPct": 23.7,
+     "shares": 71201875
+    },
+    {
+     "issuer": "CVR Partners, LP",
+     "ticker": "",
+     "valueUsd": 464233266,
+     "weightPct": 5.6,
+     "shares": 4164274
+    },
+    {
+     "issuer": "Centuri Holdings, Inc.",
+     "ticker": "",
+     "valueUsd": 433521971,
+     "weightPct": 5.2,
+     "shares": 14336044
+    },
+    {
+     "issuer": "International Flavors and Fragrances Inc.",
+     "ticker": "",
+     "valueUsd": 338665500,
+     "weightPct": 4.1,
+     "shares": 4275000
+    },
+    {
+     "issuer": "EchoStar Corporation",
+     "ticker": "",
+     "valueUsd": 142561013,
+     "weightPct": 1.7,
+     "shares": 1404542
+    },
+    {
+     "issuer": "JetBlue Airways Corp.",
+     "ticker": "",
+     "valueUsd": 118371366,
+     "weightPct": 1.4,
+     "shares": 20658179
+    },
+    {
+     "issuer": "Monro, Inc.",
+     "ticker": "",
+     "valueUsd": 86894384,
+     "weightPct": 1.1,
+     "shares": 5078573
+    },
+    {
+     "issuer": "Caesars Entertainment, Inc.",
+     "ticker": "",
+     "valueUsd": 73642490,
+     "weightPct": 0.9,
+     "shares": 2440109
+    },
+    {
+     "issuer": "SandRidge Energy, Inc.",
+     "ticker": "",
+     "valueUsd": 69252220,
+     "weightPct": 0.8,
+     "shares": 5054907
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/921669/000153949726002243/0001539497-26-002243-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Viking Global Investors",
+   "role": "Andreas Halvorsen",
+   "tier": 1,
+   "cik": 1103804,
+   "edgarName": "VIKING GLOBAL INVESTORS LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 35079228595,
+   "positions": 90,
+   "holdings": [
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 2193581596,
+     "weightPct": 6.3,
+     "shares": 6393604
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 1512988084,
+     "weightPct": 4.3,
+     "shares": 3168097
+    },
+    {
+     "issuer": "AIR PRODUCTS AND CHEMICALS I",
+     "ticker": "",
+     "valueUsd": 1389776106,
+     "weightPct": 4,
+     "shares": 4740351
+    },
+    {
+     "issuer": "SHERWIN WILLIAMS CO",
+     "ticker": "",
+     "valueUsd": 1334542657,
+     "weightPct": 3.8,
+     "shares": 3875879
+    },
+    {
+     "issuer": "FORTIVE CORP",
+     "ticker": "",
+     "valueUsd": 1217814611,
+     "weightPct": 3.5,
+     "shares": 19934762
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 1052011107,
+     "weightPct": 3,
+     "shares": 1867619
+    },
+    {
+     "issuer": "SCHWAB CHARLES CORP",
+     "ticker": "",
+     "valueUsd": 981648443,
+     "weightPct": 2.8,
+     "shares": 10638869
+    },
+    {
+     "issuer": "THERMO FISHER SCIENTIFIC INC",
+     "ticker": "",
+     "valueUsd": 971342384,
+     "weightPct": 2.8,
+     "shares": 1937415
+    },
+    {
+     "issuer": "JPMORGAN CHASE & CO",
+     "ticker": "",
+     "valueUsd": 949056019,
+     "weightPct": 2.7,
+     "shares": 2899386
+    },
+    {
+     "issuer": "LENNOX INTL INC",
+     "ticker": "",
+     "valueUsd": 911539959,
+     "weightPct": 2.6,
+     "shares": 1590959
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1103804/000110380426000006/0001103804-26-000006-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Tiger Global Management",
+   "role": "Chase Coleman",
+   "tier": 1,
+   "cik": 1167483,
+   "edgarName": "TIGER GLOBAL MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 23981506027,
+   "positions": 46,
+   "holdings": [
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 2331022991,
+     "weightPct": 9.7,
+     "shares": 4881008
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 2307979214,
+     "weightPct": 9.6,
+     "shares": 9683558
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 2240762490,
+     "weightPct": 9.3,
+     "shares": 11198773
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 2074778363,
+     "weightPct": 8.7,
+     "shares": 5805687
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 1590269062,
+     "weightPct": 6.6,
+     "shares": 2823180
+    },
+    {
+     "issuer": "LAM RESEARCH CORP",
+     "ticker": "LRCX",
+     "valueUsd": 1370837288,
+     "weightPct": 5.7,
+     "shares": 3163495
+    },
+    {
+     "issuer": "SEA LTD",
+     "ticker": "",
+     "valueUsd": 1203543536,
+     "weightPct": 5,
+     "shares": 12559152
+    },
+    {
+     "issuer": "APPLIED MATLS INC",
+     "ticker": "",
+     "valueUsd": 1180087830,
+     "weightPct": 4.9,
+     "shares": 1632210
+    },
+    {
+     "issuer": "GE VERNOVA INC",
+     "ticker": "GEV",
+     "valueUsd": 936963773,
+     "weightPct": 3.9,
+     "shares": 797511
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 845603887,
+     "weightPct": 3.5,
+     "shares": 2266913
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1167483/000091957426005427/0000919574-26-005427-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Coatue Management",
+   "role": "Philippe Laffont",
+   "tier": 1,
+   "cik": 1135730,
+   "edgarName": "COATUE MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 48629053706,
+   "positions": 66,
+   "holdings": [
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 4257534162,
+     "weightPct": 8.8,
+     "shares": 8914995
+    },
+    {
+     "issuer": "LAM RESEARCH CORP",
+     "ticker": "LRCX",
+     "valueUsd": 4091329827,
+     "weightPct": 8.4,
+     "shares": 9441603
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 3627089685,
+     "weightPct": 7.5,
+     "shares": 3142269
+    },
+    {
+     "issuer": "SPACE EXPLORATION TECHN CORP",
+     "ticker": "",
+     "valueUsd": 3171465731,
+     "weightPct": 6.5,
+     "shares": 18561780
+    },
+    {
+     "issuer": "APPLIED MATLS INC",
+     "ticker": "",
+     "valueUsd": 3046348209,
+     "weightPct": 6.3,
+     "shares": 4213483
+    },
+    {
+     "issuer": "GE VERNOVA INC",
+     "ticker": "GEV",
+     "valueUsd": 3005484557,
+     "weightPct": 6.2,
+     "shares": 2558164
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 2820705995,
+     "weightPct": 5.8,
+     "shares": 11834799
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 2208640410,
+     "weightPct": 4.5,
+     "shares": 5846831
+    },
+    {
+     "issuer": "EATON CORP PLC",
+     "ticker": "ETN",
+     "valueUsd": 2117140999,
+     "weightPct": 4.4,
+     "shares": 4968415
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 1735478421,
+     "weightPct": 3.6,
+     "shares": 4856251
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1135730/000091957426005478/0000919574-26-005478-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Lone Pine Capital",
+   "role": "Stephen Mandel",
+   "tier": 1,
+   "cik": 1061165,
+   "edgarName": "LONE PINE CAPITAL LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 16357760275,
+   "positions": 34,
+   "holdings": [
+    {
+     "issuer": "NEBIUS GROUP N.V.",
+     "ticker": "",
+     "valueUsd": 1175934069,
+     "weightPct": 7.2,
+     "shares": 4258008
+    },
+    {
+     "issuer": "ASML HLDG NV",
+     "ticker": "",
+     "valueUsd": 1132337523,
+     "weightPct": 6.9,
+     "shares": 569174
+    },
+    {
+     "issuer": "SEAGATE TECHNOLOGY HLDNGS PL",
+     "ticker": "",
+     "valueUsd": 965105185,
+     "weightPct": 5.9,
+     "shares": 1000109
+    },
+    {
+     "issuer": "HOME DEPOT INC",
+     "ticker": "HD",
+     "valueUsd": 918092697,
+     "weightPct": 5.6,
+     "shares": 2603189
+    },
+    {
+     "issuer": "APPLIED MATLS INC",
+     "ticker": "",
+     "valueUsd": 873193851,
+     "weightPct": 5.3,
+     "shares": 1207737
+    },
+    {
+     "issuer": "MEDLINE INC",
+     "ticker": "",
+     "valueUsd": 826992394,
+     "weightPct": 5.1,
+     "shares": 20968367
+    },
+    {
+     "issuer": "LINDE PLC",
+     "ticker": "LIN",
+     "valueUsd": 808550554,
+     "weightPct": 4.9,
+     "shares": 1558081
+    },
+    {
+     "issuer": "TERADYNE INC",
+     "ticker": "TER",
+     "valueUsd": 722411827,
+     "weightPct": 4.4,
+     "shares": 1493080
+    },
+    {
+     "issuer": "CORNING INC",
+     "ticker": "",
+     "valueUsd": 696827855,
+     "weightPct": 4.3,
+     "shares": 2728058
+    },
+    {
+     "issuer": "CARVANA CO",
+     "ticker": "",
+     "valueUsd": 692470236,
+     "weightPct": 4.2,
+     "shares": 10520666
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1061165/000091957426005485/0000919574-26-005485-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Maverick Capital",
+   "role": "Lee Ainslie",
+   "tier": 1,
+   "cik": 934639,
+   "edgarName": "MAVERICK CAPITAL LTD",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 11320923736,
+   "positions": 177,
+   "holdings": [
+    {
+     "issuer": "NU HLDGS LTD",
+     "ticker": "",
+     "valueUsd": 662652005,
+     "weightPct": 5.9,
+     "shares": 49599701
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 611631911,
+     "weightPct": 5.4,
+     "shares": 3056784
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 567157537,
+     "weightPct": 5,
+     "shares": 976326
+    },
+    {
+     "issuer": "ASTERA LABS INC",
+     "ticker": "ALAB",
+     "valueUsd": 515486189,
+     "weightPct": 4.6,
+     "shares": 1067215
+    },
+    {
+     "issuer": "INTEL CORP",
+     "ticker": "INTC",
+     "valueUsd": 512282224,
+     "weightPct": 4.5,
+     "shares": 3668855
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 509543553,
+     "weightPct": 4.5,
+     "shares": 1442118
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 481659876,
+     "weightPct": 4.3,
+     "shares": 2020894
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 430376655,
+     "weightPct": 3.8,
+     "shares": 764041
+    },
+    {
+     "issuer": "GFL ENVIRONMENTAL INC",
+     "ticker": "",
+     "valueUsd": 375279348,
+     "weightPct": 3.3,
+     "shares": 10202931
+    },
+    {
+     "issuer": "NATERA INC",
+     "ticker": "",
+     "valueUsd": 368266171,
+     "weightPct": 3.3,
+     "shares": 1356663
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/934639/000094787126000793/0000947871-26-000793-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Oaktree Capital Management",
+   "role": "Howard Marks",
+   "tier": 1,
+   "cik": 949509,
+   "edgarName": "OAKTREE CAPITAL MANAGEMENT LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 7206070520,
+   "positions": 143,
+   "holdings": [
+    {
+     "issuer": "STATE STREET CORP",
+     "ticker": "",
+     "valueUsd": 1011873350,
+     "weightPct": 14,
+     "shares": 1355000
+    },
+    {
+     "issuer": "INVESCO QQQ TRUST SERIES 1",
+     "ticker": "",
+     "valueUsd": 651714000,
+     "weightPct": 9,
+     "shares": 885000
+    },
+    {
+     "issuer": "TORM PLC",
+     "ticker": "",
+     "valueUsd": 524260745,
+     "weightPct": 7.3,
+     "shares": 20329874
+    },
+    {
+     "issuer": "EXPAND ENERGY CORP",
+     "ticker": "",
+     "valueUsd": 477605527,
+     "weightPct": 6.6,
+     "shares": 5237477
+    },
+    {
+     "issuer": "GARRETT MOTION INC",
+     "ticker": "",
+     "valueUsd": 275160183,
+     "weightPct": 3.8,
+     "shares": 7594816
+    },
+    {
+     "issuer": "ANGLOGOLD ASHANTI PLC",
+     "ticker": "",
+     "valueUsd": 257156751,
+     "weightPct": 3.6,
+     "shares": 3179092
+    },
+    {
+     "issuer": "CORE SCIENTIFIC INC",
+     "ticker": "",
+     "valueUsd": 255738987,
+     "weightPct": 3.5,
+     "shares": 9993708
+    },
+    {
+     "issuer": "INDIVIOR PHARMACEUTICALS INC",
+     "ticker": "",
+     "valueUsd": 251399508,
+     "weightPct": 3.5,
+     "shares": 6127212
+    },
+    {
+     "issuer": "TELEPHONE AND DATA SYSTEMS INC",
+     "ticker": "",
+     "valueUsd": 195520314,
+     "weightPct": 2.7,
+     "shares": 5282905
+    },
+    {
+     "issuer": "VIPER ENERGY INC",
+     "ticker": "",
+     "valueUsd": 160756716,
+     "weightPct": 2.2,
+     "shares": 3791432
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/949509/000094950926000005/0000949509-26-000005-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Trian Fund Management",
+   "role": "Nelson Peltz",
+   "tier": 1,
+   "cik": 1345471,
+   "edgarName": "TRIAN FUND MANAGEMENT, L.P.",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 4230905202,
+   "positions": 8,
+   "holdings": [
+    {
+     "issuer": "GE Aerospace",
+     "ticker": "",
+     "valueUsd": 1506417803,
+     "weightPct": 35.6,
+     "shares": 4030765
+    },
+    {
+     "issuer": "Janus Henderson Group plc",
+     "ticker": "",
+     "valueUsd": 1334027864,
+     "weightPct": 31.5,
+     "shares": 25654382
+    },
+    {
+     "issuer": "Solventum Corporation",
+     "ticker": "",
+     "valueUsd": 635465494,
+     "weightPct": 15,
+     "shares": 8236753
+    },
+    {
+     "issuer": "Ferguson Plc New",
+     "ticker": "",
+     "valueUsd": 257825107,
+     "weightPct": 6.1,
+     "shares": 1086357
+    },
+    {
+     "issuer": "Wendys Co.",
+     "ticker": "",
+     "valueUsd": 252583318,
+     "weightPct": 6,
+     "shares": 30468434
+    },
+    {
+     "issuer": "GE HealthCare Technologies Inc.",
+     "ticker": "",
+     "valueUsd": 197492869,
+     "weightPct": 4.7,
+     "shares": 3085344
+    },
+    {
+     "issuer": "Invesco Ltd.",
+     "ticker": "",
+     "valueUsd": 42896206,
+     "weightPct": 1,
+     "shares": 1625472
+    },
+    {
+     "issuer": "Magnum Ice Cream Co NV",
+     "ticker": "",
+     "valueUsd": 4196541,
+     "weightPct": 0.1,
+     "shares": 241042
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1345471/000134547126000035/0001345471-26-000035-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Elliott Investment Management",
+   "role": "Paul Singer",
+   "tier": 1,
+   "cik": 1791786,
+   "edgarName": "Elliott Investment Management L.P.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 22669814953,
+   "positions": 28,
+   "holdings": [
+    {
+     "issuer": "TRIPLE FLAG PRECIOUS METAL",
+     "ticker": "",
+     "valueUsd": 3993248804,
+     "weightPct": 17.6,
+     "shares": 133241535
+    },
+    {
+     "issuer": "PHILLIPS 66",
+     "ticker": "",
+     "valueUsd": 3254381550,
+     "weightPct": 14.4,
+     "shares": 19251000
+    },
+    {
+     "issuer": "INVESCO QQQ TR",
+     "ticker": "",
+     "valueUsd": 2562672000,
+     "weightPct": 11.3,
+     "shares": 3480000
+    },
+    {
+     "issuer": "SUNCOR ENERGY INC NEW",
+     "ticker": "",
+     "valueUsd": 1581090720,
+     "weightPct": 7,
+     "shares": 29454000
+    },
+    {
+     "issuer": "HEWLETT PACKARD ENTERPRISE C",
+     "ticker": "",
+     "valueUsd": 1455789243,
+     "weightPct": 6.4,
+     "shares": 32271985
+    },
+    {
+     "issuer": "ISHARES TR",
+     "ticker": "",
+     "valueUsd": 1426950000,
+     "weightPct": 6.3,
+     "shares": 15750000
+    },
+    {
+     "issuer": "SOUTHWEST AIRLS CO",
+     "ticker": "",
+     "valueUsd": 1249917360,
+     "weightPct": 5.5,
+     "shares": 24308000
+    },
+    {
+     "issuer": "SELECT SECTOR SPDR TR",
+     "ticker": "",
+     "valueUsd": 958565250,
+     "weightPct": 4.2,
+     "shares": 5175000
+    },
+    {
+     "issuer": "SELECT SECTOR SPDR TR",
+     "ticker": "",
+     "valueUsd": 832688000,
+     "weightPct": 3.7,
+     "shares": 7100000
+    },
+    {
+     "issuer": "SELECT SECTOR SPDR TR",
+     "ticker": "",
+     "valueUsd": 799548750,
+     "weightPct": 3.5,
+     "shares": 9625000
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1791786/000101359426000915/0001013594-26-000915-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Gotham Asset Management",
+   "role": "Joel Greenblatt",
+   "tier": 1,
+   "cik": 1510387,
+   "edgarName": "Gotham Asset Management, LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 42963515885,
+   "positions": 1791,
+   "holdings": [
+    {
+     "issuer": "STATE STR SPDR S&P 500 ETF T",
+     "ticker": "",
+     "valueUsd": 8508238863,
+     "weightPct": 19.8,
+     "shares": 11393386
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 827714280,
+     "weightPct": 1.9,
+     "shares": 2860500
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 804155107,
+     "weightPct": 1.9,
+     "shares": 4018967
+    },
+    {
+     "issuer": "TIDAL TRUST I",
+     "ticker": "",
+     "valueUsd": 688864803,
+     "weightPct": 1.6,
+     "shares": 16966988
+    },
+    {
+     "issuer": "ISHARES TR",
+     "ticker": "",
+     "valueUsd": 333423801,
+     "weightPct": 0.8,
+     "shares": 445224
+    },
+    {
+     "issuer": "SNOWFLAKE INC",
+     "ticker": "SNOW",
+     "valueUsd": 262625167,
+     "weightPct": 0.6,
+     "shares": 1031926
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 200089290,
+     "weightPct": 0.5,
+     "shares": 839512
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 198184537,
+     "weightPct": 0.5,
+     "shares": 554564
+    },
+    {
+     "issuer": "VANGUARD INDEX FDS",
+     "ticker": "",
+     "valueUsd": 196462687,
+     "weightPct": 0.5,
+     "shares": 286051
+    },
+    {
+     "issuer": "VANGUARD INDEX FDS",
+     "ticker": "",
+     "valueUsd": 190788344,
+     "weightPct": 0.4,
+     "shares": 875457
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1510387/000139834426014644/0001398344-26-014644-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Pabrai Investment Funds",
+   "role": "Mohnish Pabrai",
+   "tier": 1,
+   "cik": 1549575,
+   "edgarName": "Dalal Street, LLC",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 326749980,
+   "positions": 4,
+   "holdings": [
+    {
+     "issuer": "WARRIOR MET COAL INC",
+     "ticker": "",
+     "valueUsd": 141547098,
+     "weightPct": 43.3,
+     "shares": 1744050
+    },
+    {
+     "issuer": "TRANSOCEAN LTD",
+     "ticker": "",
+     "valueUsd": 99749443,
+     "weightPct": 30.5,
+     "shares": 20398659
+    },
+    {
+     "issuer": "ALPHA METALLURGICAL RESOUR I",
+     "ticker": "",
+     "valueUsd": 85305978,
+     "weightPct": 26.1,
+     "shares": 517194
+    },
+    {
+     "issuer": "KASPI KZ JSC",
+     "ticker": "",
+     "valueUsd": 147461,
+     "weightPct": 0,
+     "shares": 1702
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1549575/000154957526000015/0001549575-26-000015-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Daily Journal Corporation",
+   "role": "Charlie Munger's seat",
+   "tier": 1,
+   "cik": 783412,
+   "edgarName": "DAILY JOURNAL CORP",
+   "filed": "2026-07-16",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 256664220,
+   "positions": 4,
+   "holdings": [
+    {
+     "issuer": "Wells Fargo & Co",
+     "ticker": "",
+     "valueUsd": 116770320,
+     "weightPct": 45.5,
+     "shares": 1413000
+    },
+    {
+     "issuer": "Bank of America Corp",
+     "ticker": "",
+     "valueUsd": 113960000,
+     "weightPct": 44.4,
+     "shares": 2000000
+    },
+    {
+     "issuer": "Alibaba Group Holding Ltd",
+     "ticker": "",
+     "valueUsd": 18716100,
+     "weightPct": 7.3,
+     "shares": 195000
+    },
+    {
+     "issuer": "US Bancorp",
+     "ticker": "",
+     "valueUsd": 7217800,
+     "weightPct": 2.8,
+     "shares": 119500
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/783412/000143774926023711/0001437749-26-023711-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Markel",
+   "role": "Tom Gayner",
+   "tier": 1,
+   "cik": 1096343,
+   "edgarName": "MARKEL GROUP INC.",
+   "filed": "2026-07-31",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 13130490727,
+   "positions": 130,
+   "holdings": [
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 971608033,
+     "weightPct": 7.4,
+     "shares": 2749860
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 834218900,
+     "weightPct": 6.4,
+     "shares": 1114
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 766582969,
+     "weightPct": 5.8,
+     "shares": 1531971
+    },
+    {
+     "issuer": "DEERE & CO",
+     "ticker": "",
+     "valueUsd": 556878306,
+     "weightPct": 4.2,
+     "shares": 877900
+    },
+    {
+     "issuer": "BROOKFIELD CORP",
+     "ticker": "",
+     "valueUsd": 556805009,
+     "weightPct": 4.2,
+     "shares": 13073609
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 484011339,
+     "weightPct": 3.7,
+     "shares": 2030760
+    },
+    {
+     "issuer": "ANALOG DEVICES INC",
+     "ticker": "ADI",
+     "valueUsd": 397039330,
+     "weightPct": 3,
+     "shares": 999671
+    },
+    {
+     "issuer": "GOLDMAN SACHS GROUP INC",
+     "ticker": "GS",
+     "valueUsd": 363445924,
+     "weightPct": 2.8,
+     "shares": 359360
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 355128634,
+     "weightPct": 2.7,
+     "shares": 1227290
+    },
+    {
+     "issuer": "CATERPILLAR INC",
+     "ticker": "CAT",
+     "valueUsd": 349979385,
+     "weightPct": 2.7,
+     "shares": 328650
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1096343/000109634326000065/0001096343-26-000065-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Fairfax Financial",
+   "role": "Prem Watsa",
+   "tier": 1,
+   "cik": 915191,
+   "edgarName": "FAIRFAX FINANCIAL HOLDINGS LTD/ CAN",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 2638451995,
+   "positions": 32,
+   "holdings": [
+    {
+     "issuer": "ORLA MINING LTD",
+     "ticker": "",
+     "valueUsd": 568456141,
+     "weightPct": 21.5,
+     "shares": 58399504
+    },
+    {
+     "issuer": "ELDORADO GOLD CORP",
+     "ticker": "",
+     "valueUsd": 427001600,
+     "weightPct": 16.2,
+     "shares": 13746506
+    },
+    {
+     "issuer": "KRAFT HEINZ CO",
+     "ticker": "",
+     "valueUsd": 337633400,
+     "weightPct": 12.8,
+     "shares": 14306500
+    },
+    {
+     "issuer": "UNDER ARMOUR INC",
+     "ticker": "",
+     "valueUsd": 289831006,
+     "weightPct": 11,
+     "shares": 45356965
+    },
+    {
+     "issuer": "CVS HEALTH CORP",
+     "ticker": "",
+     "valueUsd": 280502160,
+     "weightPct": 10.6,
+     "shares": 2712000
+    },
+    {
+     "issuer": "CLEVELAND-CLIFFS INC",
+     "ticker": "",
+     "valueUsd": 139904173,
+     "weightPct": 5.3,
+     "shares": 14899273
+    },
+    {
+     "issuer": "UNDER ARMOUR INC",
+     "ticker": "",
+     "valueUsd": 136614585,
+     "weightPct": 5.2,
+     "shares": 21999128
+    },
+    {
+     "issuer": "MOLSON COORS BEVERAGE CO",
+     "ticker": "",
+     "valueUsd": 77665830,
+     "weightPct": 2.9,
+     "shares": 1994500
+    },
+    {
+     "issuer": "ATS CORP",
+     "ticker": "",
+     "valueUsd": 70487018,
+     "weightPct": 2.7,
+     "shares": 2486400
+    },
+    {
+     "issuer": "WENDYS CO",
+     "ticker": "",
+     "valueUsd": 66286592,
+     "weightPct": 2.5,
+     "shares": 8005627
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926096276/0001104659-26-096276-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Akre Capital Management",
+   "role": "Chuck Akre",
+   "tier": 1,
+   "cik": 1112520,
+   "edgarName": "AKRE CAPITAL MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 5122536308,
+   "positions": 19,
+   "holdings": [
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 1022015722,
+     "weightPct": 20,
+     "shares": 1989906
+    },
+    {
+     "issuer": "MOODYS CORP",
+     "ticker": "",
+     "valueUsd": 523979978,
+     "weightPct": 10.2,
+     "shares": 1156893
+    },
+    {
+     "issuer": "BROOKFIELD CORP",
+     "ticker": "",
+     "valueUsd": 516187709,
+     "weightPct": 10.1,
+     "shares": 12119927
+    },
+    {
+     "issuer": "KKR & CO L P DEL",
+     "ticker": "",
+     "valueUsd": 457200745,
+     "weightPct": 8.9,
+     "shares": 4981486
+    },
+    {
+     "issuer": "FAIR ISAAC CORP",
+     "ticker": "",
+     "valueUsd": 432302468,
+     "weightPct": 8.4,
+     "shares": 361826
+    },
+    {
+     "issuer": "ROPER TECHNOLOGIES INC",
+     "ticker": "",
+     "valueUsd": 398136815,
+     "weightPct": 7.8,
+     "shares": 1176562
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 381132162,
+     "weightPct": 7.4,
+     "shares": 1110881
+    },
+    {
+     "issuer": "COSTAR GROUP INC",
+     "ticker": "",
+     "valueUsd": 331326895,
+     "weightPct": 6.5,
+     "shares": 11699396
+    },
+    {
+     "issuer": "COPART INC",
+     "ticker": "",
+     "valueUsd": 225119928,
+     "weightPct": 4.4,
+     "shares": 7985808
+    },
+    {
+     "issuer": "OREILLY AUTOMOTIVE INC",
+     "ticker": "",
+     "valueUsd": 199081820,
+     "weightPct": 3.9,
+     "shares": 2161818
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1112520/000111252026000014/0001112520-26-000014-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Fundsmith",
+   "role": "Terry Smith",
+   "tier": 1,
+   "cik": 1569205,
+   "edgarName": "Fundsmith LLP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 13648923682,
+   "positions": 41,
+   "holdings": [
+    {
+     "issuer": "MARRIOTT INTL INC NEW",
+     "ticker": "",
+     "valueUsd": 958255687,
+     "weightPct": 7,
+     "shares": 2585757
+    },
+    {
+     "issuer": "STRYKER CORPORATION",
+     "ticker": "",
+     "valueUsd": 917391182,
+     "weightPct": 6.7,
+     "shares": 2913833
+    },
+    {
+     "issuer": "WATERS CORP",
+     "ticker": "",
+     "valueUsd": 852702945,
+     "weightPct": 6.2,
+     "shares": 2273632
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 692976613,
+     "weightPct": 5.1,
+     "shares": 2019810
+    },
+    {
+     "issuer": "UBER TECHNOLOGIES INC",
+     "ticker": "UBER",
+     "valueUsd": 645337776,
+     "weightPct": 4.7,
+     "shares": 8943151
+    },
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 639458194,
+     "weightPct": 4.7,
+     "shares": 1245051
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 633743519,
+     "weightPct": 4.6,
+     "shares": 1773354
+    },
+    {
+     "issuer": "CHURCH & DWIGHT CO INC",
+     "ticker": "",
+     "valueUsd": 625518702,
+     "weightPct": 4.6,
+     "shares": 6456634
+    },
+    {
+     "issuer": "PROCTER & GAMBLE CO",
+     "ticker": "",
+     "valueUsd": 598052323,
+     "weightPct": 4.4,
+     "shares": 4078371
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 595614836,
+     "weightPct": 4.4,
+     "shares": 1596737
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1569205/000156920526000012/0001569205-26-000012-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Sequoia Fund",
+   "role": "Ruane Cunniff",
+   "tier": 1,
+   "cik": 1720792,
+   "edgarName": "Ruane, Cunniff & Goldfarb L.P.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 6427481573,
+   "positions": 54,
+   "holdings": [
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 712693699,
+     "weightPct": 11.1,
+     "shares": 1994274
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 560058278,
+     "weightPct": 8.7,
+     "shares": 1172725
+    },
+    {
+     "issuer": "LIBERTY MEDIA CORP DEL",
+     "ticker": "",
+     "valueUsd": 496959318,
+     "weightPct": 7.7,
+     "shares": 5223453
+    },
+    {
+     "issuer": "SCHWAB CHARLES CORP",
+     "ticker": "",
+     "valueUsd": 421798926,
+     "weightPct": 6.6,
+     "shares": 4571355
+    },
+    {
+     "issuer": "CAPITAL ONE FINL CORP",
+     "ticker": "",
+     "valueUsd": 392429572,
+     "weightPct": 6.1,
+     "shares": 1956084
+    },
+    {
+     "issuer": "ELEVANCE HEALTH INC FORMERLY",
+     "ticker": "",
+     "valueUsd": 378839935,
+     "weightPct": 5.9,
+     "shares": 979598
+    },
+    {
+     "issuer": "ICON PUB LTD CO",
+     "ticker": "",
+     "valueUsd": 355773193,
+     "weightPct": 5.5,
+     "shares": 2048087
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 326782926,
+     "weightPct": 5.1,
+     "shares": 924866
+    },
+    {
+     "issuer": "SUNBELT RENTALS HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 318777604,
+     "weightPct": 5,
+     "shares": 4261163
+    },
+    {
+     "issuer": "INTERCONTINENTAL EXCHANGE IN",
+     "ticker": "",
+     "valueUsd": 315253563,
+     "weightPct": 4.9,
+     "shares": 2560747
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1720792/000091957426005176/0000919574-26-005176-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Southeastern Asset Management",
+   "role": "Mason Hawkins",
+   "tier": 1,
+   "cik": 807985,
+   "edgarName": "SOUTHEASTERN ASSET MANAGEMENT INC/TN/",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 1917151885,
+   "positions": 47,
+   "holdings": [
+    {
+     "issuer": "RAYONIER INC",
+     "ticker": "",
+     "valueUsd": 201975858,
+     "weightPct": 10.5,
+     "shares": 9491347
+    },
+    {
+     "issuer": "MATTEL INC",
+     "ticker": "",
+     "valueUsd": 171037063,
+     "weightPct": 8.9,
+     "shares": 12322555
+    },
+    {
+     "issuer": "CNX RES CORP",
+     "ticker": "",
+     "valueUsd": 158217389,
+     "weightPct": 8.3,
+     "shares": 4663053
+    },
+    {
+     "issuer": "PEOPLE INC",
+     "ticker": "",
+     "valueUsd": 144565503,
+     "weightPct": 7.5,
+     "shares": 3131835
+    },
+    {
+     "issuer": "ALBERTSONS COMPANIES INC",
+     "ticker": "",
+     "valueUsd": 116848625,
+     "weightPct": 6.1,
+     "shares": 8636262
+    },
+    {
+     "issuer": "REGENERON PHARMACEUTICALS",
+     "ticker": "",
+     "valueUsd": 94978860,
+     "weightPct": 5,
+     "shares": 152322
+    },
+    {
+     "issuer": "FORTUNE BRANDS INNOVATIONS I",
+     "ticker": "",
+     "valueUsd": 92622285,
+     "weightPct": 4.8,
+     "shares": 1687109
+    },
+    {
+     "issuer": "KRAFT HEINZ CO",
+     "ticker": "",
+     "valueUsd": 85219685,
+     "weightPct": 4.4,
+     "shares": 3607946
+    },
+    {
+     "issuer": "ABBOTT LABORATORIES",
+     "ticker": "",
+     "valueUsd": 76289383,
+     "weightPct": 4,
+     "shares": 840747
+    },
+    {
+     "issuer": "FEDEX CORP",
+     "ticker": "",
+     "valueUsd": 61006492,
+     "weightPct": 3.2,
+     "shares": 194828
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/807985/000139834426014641/0001398344-26-014641-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Harris Oakmark",
+   "role": "Bill Nygren",
+   "tier": 1,
+   "cik": 813917,
+   "edgarName": "HARRIS ASSOCIATES L P",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 75422839842,
+   "positions": 161,
+   "holdings": [
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 3039121138,
+     "weightPct": 4,
+     "shares": 92854297
+    },
+    {
+     "issuer": "",
+     "ticker": "ABNB",
+     "valueUsd": 2699087891,
+     "weightPct": 3.6,
+     "shares": 18861551
+    },
+    {
+     "issuer": "",
+     "ticker": "CRM",
+     "valueUsd": 2530257772,
+     "weightPct": 3.4,
+     "shares": 16151269
+    },
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 2354159681,
+     "weightPct": 3.1,
+     "shares": 12183830
+    },
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 2305527119,
+     "weightPct": 3.1,
+     "shares": 11492010
+    },
+    {
+     "issuer": "",
+     "ticker": "GOOGL",
+     "valueUsd": 2238922832,
+     "weightPct": 3,
+     "shares": 6264999
+    },
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 2233069698,
+     "weightPct": 3,
+     "shares": 24201471
+    },
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 2222221684,
+     "weightPct": 2.9,
+     "shares": 18050700
+    },
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 2128369224,
+     "weightPct": 2.8,
+     "shares": 7937530
+    },
+    {
+     "issuer": "",
+     "ticker": "",
+     "valueUsd": 1912967732,
+     "weightPct": 2.5,
+     "shares": 919347
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/813917/000081391726000042/0000813917-26-000042-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Davis Advisors",
+   "role": "Chris Davis",
+   "tier": 1,
+   "cik": 1036325,
+   "edgarName": "DAVIS SELECTED ADVISERS",
+   "filed": "2026-08-11",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 23289545492,
+   "positions": 112,
+   "holdings": [
+    {
+     "issuer": "Capital One Financial Corp.",
+     "ticker": "",
+     "valueUsd": 1659420488,
+     "weightPct": 7.1,
+     "shares": 8270946
+    },
+    {
+     "issuer": "U.S. Bancorp",
+     "ticker": "",
+     "valueUsd": 1295909823,
+     "weightPct": 5.6,
+     "shares": 21453510
+    },
+    {
+     "issuer": "CVS Health Corporation",
+     "ticker": "",
+     "valueUsd": 1227594458,
+     "weightPct": 5.3,
+     "shares": 11865916
+    },
+    {
+     "issuer": "Viatris Inc.",
+     "ticker": "",
+     "valueUsd": 1194789797,
+     "weightPct": 5.1,
+     "shares": 75232254
+    },
+    {
+     "issuer": "MGM Resorts International",
+     "ticker": "",
+     "valueUsd": 1142790561,
+     "weightPct": 4.9,
+     "shares": 23903317
+    },
+    {
+     "issuer": "Alphabet Inc., Class A",
+     "ticker": "GOOGL",
+     "valueUsd": 1049690448,
+     "weightPct": 4.5,
+     "shares": 2937160
+    },
+    {
+     "issuer": "Devon Energy Corp.",
+     "ticker": "",
+     "valueUsd": 1045194009,
+     "weightPct": 4.5,
+     "shares": 25297991
+    },
+    {
+     "issuer": "Amazon.com, Inc.",
+     "ticker": "AMZN",
+     "valueUsd": 1019230487,
+     "weightPct": 4.4,
+     "shares": 4276176
+    },
+    {
+     "issuer": "Meta Platforms, Inc., Class A",
+     "ticker": "META",
+     "valueUsd": 928729727,
+     "weightPct": 4,
+     "shares": 1648172
+    },
+    {
+     "issuer": "Markel Group, Inc",
+     "ticker": "",
+     "valueUsd": 794400127,
+     "weightPct": 3.4,
+     "shares": 406759
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1036325/000103632526000020/0001036325-26-000020-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Yacktman Asset Management",
+   "role": "Don Yacktman",
+   "tier": 1,
+   "cik": 905567,
+   "edgarName": "YACKTMAN ASSET MANAGEMENT LP",
+   "filed": "2026-08-11",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 8089240584,
+   "positions": 74,
+   "holdings": [
+    {
+     "issuer": "Canadian Natural Resources Limited",
+     "ticker": "",
+     "valueUsd": 650269066,
+     "weightPct": 8,
+     "shares": 16462508
+    },
+    {
+     "issuer": "Berkshire Hathaway Inc.",
+     "ticker": "",
+     "valueUsd": 581217997,
+     "weightPct": 7.2,
+     "shares": 1161530
+    },
+    {
+     "issuer": "Alphabet Inc.",
+     "ticker": "",
+     "valueUsd": 398955150,
+     "weightPct": 4.9,
+     "shares": 1129129
+    },
+    {
+     "issuer": "Charles Schwab Corp",
+     "ticker": "",
+     "valueUsd": 378450203,
+     "weightPct": 4.7,
+     "shares": 4101552
+    },
+    {
+     "issuer": "Microsoft Corporation",
+     "ticker": "MSFT",
+     "valueUsd": 376483118,
+     "weightPct": 4.7,
+     "shares": 1009284
+    },
+    {
+     "issuer": "U-Haul Holding Company",
+     "ticker": "",
+     "valueUsd": 357579017,
+     "weightPct": 4.4,
+     "shares": 6197210
+    },
+    {
+     "issuer": "Johnson & Johnson",
+     "ticker": "",
+     "valueUsd": 319996359,
+     "weightPct": 4,
+     "shares": 1259977
+    },
+    {
+     "issuer": "Procter & Gamble Company",
+     "ticker": "",
+     "valueUsd": 287925880,
+     "weightPct": 3.6,
+     "shares": 1963488
+    },
+    {
+     "issuer": "PepsiCo, Inc.",
+     "ticker": "",
+     "valueUsd": 280662942,
+     "weightPct": 3.5,
+     "shares": 2072843
+    },
+    {
+     "issuer": "Fox Corporation",
+     "ticker": "",
+     "valueUsd": 264637944,
+     "weightPct": 3.3,
+     "shares": 5649828
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/905567/000090556726000003/0000905567-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Tweedy Browne",
+   "role": "Tweedy Browne",
+   "tier": 1,
+   "cik": 732905,
+   "edgarName": "Tweedy, Browne Co LLC",
+   "filed": "2026-08-07",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 1319974933,
+   "positions": 91,
+   "holdings": [
+    {
+     "issuer": "CNH INDUSTRIAL NV",
+     "ticker": "",
+     "valueUsd": 225901366,
+     "weightPct": 17.1,
+     "shares": 20115883
+    },
+    {
+     "issuer": "IONIS PHARMACEUTICALS INC.",
+     "ticker": "",
+     "valueUsd": 180805859,
+     "weightPct": 13.7,
+     "shares": 2280311
+    },
+    {
+     "issuer": "COCA COLA FEMSA",
+     "ticker": "",
+     "valueUsd": 123310563,
+     "weightPct": 9.3,
+     "shares": 1160570
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC",
+     "ticker": "",
+     "valueUsd": 107834400,
+     "weightPct": 8.2,
+     "shares": 144
+    },
+    {
+     "issuer": "JOHNSON & JOHNSON",
+     "ticker": "",
+     "valueUsd": 51211527,
+     "weightPct": 3.9,
+     "shares": 201644
+    },
+    {
+     "issuer": "ALPHABET INC-CL A",
+     "ticker": "GOOGL",
+     "valueUsd": 50489948,
+     "weightPct": 3.8,
+     "shares": 141282
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL CL B",
+     "ticker": "",
+     "valueUsd": 48850574,
+     "weightPct": 3.7,
+     "shares": 97625
+    },
+    {
+     "issuer": "AUTOLIV INC.",
+     "ticker": "",
+     "valueUsd": 44529587,
+     "weightPct": 3.4,
+     "shares": 383314
+    },
+    {
+     "issuer": "WELLS FARGO & CO",
+     "ticker": "",
+     "valueUsd": 41072989,
+     "weightPct": 3.1,
+     "shares": 497011
+    },
+    {
+     "issuer": "ZOETIS, INC.",
+     "ticker": "",
+     "valueUsd": 39958184,
+     "weightPct": 3,
+     "shares": 556056
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/732905/000119312526340443/0001193125-26-340443-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Chou Associates",
+   "role": "Francis Chou",
+   "tier": 1,
+   "cik": 1389403,
+   "edgarName": "Chou Associates Management Inc.",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 216591903,
+   "positions": 31,
+   "holdings": [
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 64401080,
+     "weightPct": 29.7,
+     "shares": 86
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 25577559,
+     "weightPct": 11.8,
+     "shares": 72390
+    },
+    {
+     "issuer": "SYNCHRONY FINANCIAL",
+     "ticker": "",
+     "valueUsd": 16974508,
+     "weightPct": 7.8,
+     "shares": 223202
+    },
+    {
+     "issuer": "OCCIDENTAL PETE CORP",
+     "ticker": "",
+     "valueUsd": 15202408,
+     "weightPct": 7,
+     "shares": 313000
+    },
+    {
+     "issuer": "SIRIUSXM HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 12099255,
+     "weightPct": 5.6,
+     "shares": 409589
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 11574400,
+     "weightPct": 5.3,
+     "shares": 40000
+    },
+    {
+     "issuer": "ALLY FINL INC",
+     "ticker": "",
+     "valueUsd": 10362871,
+     "weightPct": 4.8,
+     "shares": 225525
+    },
+    {
+     "issuer": "STELLANTIS N.V",
+     "ticker": "",
+     "valueUsd": 8002672,
+     "weightPct": 3.7,
+     "shares": 1394194
+    },
+    {
+     "issuer": "JEFFERIES FINL GROUP INC",
+     "ticker": "",
+     "valueUsd": 7458863,
+     "weightPct": 3.4,
+     "shares": 149237
+    },
+    {
+     "issuer": "PAYPAL HLDGS INC",
+     "ticker": "",
+     "valueUsd": 7228330,
+     "weightPct": 3.3,
+     "shares": 167400
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1389403/000110465926094668/0001104659-26-094668-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Brave Warrior Advisors",
+   "role": "Glenn Greenberg",
+   "tier": 1,
+   "cik": 1553733,
+   "edgarName": "Brave Warrior Advisors, LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 4588428223,
+   "positions": 40,
+   "holdings": [
+    {
+     "issuer": "ICON PUB LTD CO",
+     "ticker": "",
+     "valueUsd": 547761133,
+     "weightPct": 11.9,
+     "shares": 3153308
+    },
+    {
+     "issuer": "ONEMAIN HLDGS INC",
+     "ticker": "",
+     "valueUsd": 462466717,
+     "weightPct": 10.1,
+     "shares": 7585152
+    },
+    {
+     "issuer": "TD SYNNEX CORPORATION",
+     "ticker": "",
+     "valueUsd": 385405364,
+     "weightPct": 8.4,
+     "shares": 1441630
+    },
+    {
+     "issuer": "ELEVANCE HEALTH INC FORMERLY",
+     "ticker": "",
+     "valueUsd": 377790736,
+     "weightPct": 8.2,
+     "shares": 976885
+    },
+    {
+     "issuer": "SLM CORP",
+     "ticker": "",
+     "valueUsd": 347106901,
+     "weightPct": 7.6,
+     "shares": 13381145
+    },
+    {
+     "issuer": "GALLAGHER ARTHUR J & CO",
+     "ticker": "",
+     "valueUsd": 295002501,
+     "weightPct": 6.4,
+     "shares": 1285022
+    },
+    {
+     "issuer": "AUTONATION INC",
+     "ticker": "",
+     "valueUsd": 283166998,
+     "weightPct": 6.2,
+     "shares": 1524124
+    },
+    {
+     "issuer": "RYANAIR HOLDINGS PLC",
+     "ticker": "",
+     "valueUsd": 256324789,
+     "weightPct": 5.6,
+     "shares": 3958684
+    },
+    {
+     "issuer": "PRIMERICA INC",
+     "ticker": "",
+     "valueUsd": 246078265,
+     "weightPct": 5.4,
+     "shares": 865863
+    },
+    {
+     "issuer": "LENNAR CORP",
+     "ticker": "",
+     "valueUsd": 214748787,
+     "weightPct": 4.7,
+     "shares": 2373177
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1553733/000117266126003728/0001172661-26-003728-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Miller Value Partners",
+   "role": "Bill Miller",
+   "tier": 1,
+   "cik": 1135778,
+   "edgarName": "MILLER VALUE PARTNERS, LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 423070057,
+   "positions": 56,
+   "holdings": [
+    {
+     "issuer": "NABORS INDUSTRIES LTD",
+     "ticker": "",
+     "valueUsd": 37423095,
+     "weightPct": 8.8,
+     "shares": 445460
+    },
+    {
+     "issuer": "GRAY MEDIA INC",
+     "ticker": "",
+     "valueUsd": 28756258,
+     "weightPct": 6.8,
+     "shares": 7243390
+    },
+    {
+     "issuer": "DIREXION SHARES ETF TRUST",
+     "ticker": "",
+     "valueUsd": 24596449,
+     "weightPct": 5.8,
+     "shares": 114078
+    },
+    {
+     "issuer": "BLOOMIN BRANDS INC",
+     "ticker": "",
+     "valueUsd": 23635208,
+     "weightPct": 5.6,
+     "shares": 2585909
+    },
+    {
+     "issuer": "QUAD / GRAPHICS INC",
+     "ticker": "",
+     "valueUsd": 21397861,
+     "weightPct": 5.1,
+     "shares": 2538299
+    },
+    {
+     "issuer": "LINCOLN NATL CORP IND",
+     "ticker": "",
+     "valueUsd": 21321706,
+     "weightPct": 5,
+     "shares": 603160
+    },
+    {
+     "issuer": "CRESCENT ENERGY COMPANY",
+     "ticker": "",
+     "valueUsd": 20550108,
+     "weightPct": 4.9,
+     "shares": 2092679
+    },
+    {
+     "issuer": "CONDUENT INC",
+     "ticker": "",
+     "valueUsd": 18959706,
+     "weightPct": 4.5,
+     "shares": 12986100
+    },
+    {
+     "issuer": "BREAD FINANCIAL HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 14388663,
+     "weightPct": 3.4,
+     "shares": 132798
+    },
+    {
+     "issuer": "UNITED PARCEL SVCS INC",
+     "ticker": "",
+     "valueUsd": 12470322,
+     "weightPct": 2.9,
+     "shares": 116003
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1135778/000113577826000016/0001135778-26-000016-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Wedgewood Partners",
+   "role": "David Rolfe",
+   "tier": 1,
+   "cik": 859804,
+   "edgarName": "WEDGEWOOD PARTNERS INC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 484433173,
+   "positions": 18,
+   "holdings": [
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 50383055,
+     "weightPct": 10.4,
+     "shares": 105499
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 45470575,
+     "weightPct": 9.4,
+     "shares": 127237
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 43075494,
+     "weightPct": 8.9,
+     "shares": 76471
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 37814225,
+     "weightPct": 7.8,
+     "shares": 130682
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 33391897,
+     "weightPct": 6.9,
+     "shares": 89518
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 32280770,
+     "weightPct": 6.7,
+     "shares": 135440
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 30599344,
+     "weightPct": 6.3,
+     "shares": 89188
+    },
+    {
+     "issuer": "MOTOROLA SOLUTIONS INC",
+     "ticker": "",
+     "valueUsd": 27261012,
+     "weightPct": 5.6,
+     "shares": 65643
+    },
+    {
+     "issuer": "OLD DOMINION FREIGHT LINE IN",
+     "ticker": "",
+     "valueUsd": 23888327,
+     "weightPct": 4.9,
+     "shares": 110288
+    },
+    {
+     "issuer": "BOOKING HOLDINGS INC",
+     "ticker": "BKNG",
+     "valueUsd": 23768405,
+     "weightPct": 4.9,
+     "shares": 133351
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/859804/000085980426000006/0000859804-26-000006-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Altimeter Capital Management",
+   "role": "Brad Gerstner",
+   "tier": 1,
+   "cik": 1541617,
+   "edgarName": "Altimeter Capital Management, LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 9829676383,
+   "positions": 20,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 1883565023,
+     "weightPct": 19.2,
+     "shares": 9413589
+    },
+    {
+     "issuer": "CEREBRAS SYSTEMS INC",
+     "ticker": "",
+     "valueUsd": 1596733177,
+     "weightPct": 16.2,
+     "shares": 7225037
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 763252318,
+     "weightPct": 7.8,
+     "shares": 1354990
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MFG LTD",
+     "ticker": "",
+     "valueUsd": 682617068,
+     "weightPct": 6.9,
+     "shares": 1429355
+    },
+    {
+     "issuer": "COREWEAVE INC",
+     "ticker": "",
+     "valueUsd": 604575601,
+     "weightPct": 6.2,
+     "shares": 6073695
+    },
+    {
+     "issuer": "ARM HOLDINGS PLC",
+     "ticker": "",
+     "valueUsd": 582194012,
+     "weightPct": 5.9,
+     "shares": 1641972
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 578058158,
+     "weightPct": 5.9,
+     "shares": 2425351
+    },
+    {
+     "issuer": "UBER TECHNOLOGIES INC",
+     "ticker": "UBER",
+     "valueUsd": 531995271,
+     "weightPct": 5.4,
+     "shares": 7372440
+    },
+    {
+     "issuer": "SNOWFLAKE INC",
+     "ticker": "SNOW",
+     "valueUsd": 490230625,
+     "weightPct": 5,
+     "shares": 1926250
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 473019948,
+     "weightPct": 4.8,
+     "shares": 1268082
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1541617/000154161726000008/0001541617-26-000008-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Millennium Management",
+   "role": "Izzy Englander",
+   "tier": 2,
+   "cik": 1273087,
+   "edgarName": "MILLENNIUM MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 276293649404,
+   "positions": 4182,
+   "holdings": [
+    {
+     "issuer": "ISHARES  TR",
+     "ticker": "",
+     "valueUsd": 14508393996,
+     "weightPct": 5.3,
+     "shares": 48288880
+    },
+    {
+     "issuer": "ISHARES  TR",
+     "ticker": "",
+     "valueUsd": 10861849635,
+     "weightPct": 3.9,
+     "shares": 14503932
+    },
+    {
+     "issuer": "STATE  STR    SPDR  S&P  500  ETF   T",
+     "ticker": "",
+     "valueUsd": 10389668377,
+     "weightPct": 3.8,
+     "shares": 13912809
+    },
+    {
+     "issuer": "NVIDIA  CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 9037988065,
+     "weightPct": 3.3,
+     "shares": 45169614
+    },
+    {
+     "issuer": "INVESCO  QQQ  TR",
+     "ticker": "",
+     "valueUsd": 7681060702,
+     "weightPct": 2.8,
+     "shares": 10430555
+    },
+    {
+     "issuer": "MICRON   TECHNOLOGY   INC",
+     "ticker": "MU",
+     "valueUsd": 5001682856,
+     "weightPct": 1.8,
+     "shares": 4333125
+    },
+    {
+     "issuer": "MICROSOFT      CORP",
+     "ticker": "MSFT",
+     "valueUsd": 4949864986,
+     "weightPct": 1.8,
+     "shares": 13269704
+    },
+    {
+     "issuer": "AMAZON   COM   INC",
+     "ticker": "AMZN",
+     "valueUsd": 4445719077,
+     "weightPct": 1.6,
+     "shares": 18652845
+    },
+    {
+     "issuer": "ADVANCED   MICRO     DEVICES     INC",
+     "ticker": "AMD",
+     "valueUsd": 4356467159,
+     "weightPct": 1.6,
+     "shares": 7499384
+    },
+    {
+     "issuer": "APPLE   INC",
+     "ticker": "AAPL",
+     "valueUsd": 4254286175,
+     "weightPct": 1.5,
+     "shares": 14702399
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1273087/000127308726000007/0001273087-26-000007-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Two Sigma Investments",
+   "role": "Two Sigma",
+   "tier": 2,
+   "cik": 1179392,
+   "edgarName": "TWO SIGMA INVESTMENTS, LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 138117670065,
+   "positions": 3963,
+   "holdings": [
+    {
+     "issuer": "WESTERN DIGITAL CORP",
+     "ticker": "",
+     "valueUsd": 1497883248,
+     "weightPct": 1.1,
+     "shares": 88951000
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1393880724,
+     "weightPct": 1,
+     "shares": 5848287
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 1381015978,
+     "weightPct": 1,
+     "shares": 6901974
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 1274952858,
+     "weightPct": 0.9,
+     "shares": 4406113
+    },
+    {
+     "issuer": "TESLA INC",
+     "ticker": "TSLA",
+     "valueUsd": 1261924498,
+     "weightPct": 0.9,
+     "shares": 3000296
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 1180767781,
+     "weightPct": 0.9,
+     "shares": 2359695
+    },
+    {
+     "issuer": "JPMORGAN CHASE & CO",
+     "ticker": "",
+     "valueUsd": 982388033,
+     "weightPct": 0.7,
+     "shares": 3001216
+    },
+    {
+     "issuer": "ASML HLDG NV",
+     "ticker": "",
+     "valueUsd": 978416539,
+     "weightPct": 0.7,
+     "shares": 491805
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 964960638,
+     "weightPct": 0.7,
+     "shares": 1661119
+    },
+    {
+     "issuer": "COSTCO WHOLESALE CORPORATION",
+     "ticker": "",
+     "valueUsd": 948595580,
+     "weightPct": 0.7,
+     "shares": 1014031
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1179392/000089914026000855/0000899140-26-000855-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "AQR Capital Management",
+   "role": "Cliff Asness",
+   "tier": 2,
+   "cik": 1167557,
+   "edgarName": "AQR CAPITAL MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 286847511937,
+   "positions": 3900,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 7482980223,
+     "weightPct": 2.6,
+     "shares": 37823393
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 5010144622,
+     "weightPct": 1.7,
+     "shares": 17560970
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 4425233125,
+     "weightPct": 1.5,
+     "shares": 3833728
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 4262699279,
+     "weightPct": 1.5,
+     "shares": 11473057
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 2842052055,
+     "weightPct": 1,
+     "shares": 11924360
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 2516811522,
+     "weightPct": 0.9,
+     "shares": 6683693
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 2242857213,
+     "weightPct": 0.8,
+     "shares": 6347769
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 2107414039,
+     "weightPct": 0.7,
+     "shares": 5991568
+    },
+    {
+     "issuer": "COMFORT SYS USA INC",
+     "ticker": "",
+     "valueUsd": 2084632305,
+     "weightPct": 0.7,
+     "shares": 1059017
+    },
+    {
+     "issuer": "WESTERN DIGITAL CORP",
+     "ticker": "WDC",
+     "valueUsd": 1878442049,
+     "weightPct": 0.7,
+     "shares": 2940948
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1167557/000116755726000226/0001167557-26-000226-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "D. E. Shaw",
+   "role": "D. E. Shaw",
+   "tier": 2,
+   "cik": 1009207,
+   "edgarName": "D. E. Shaw & Co., Inc.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 210202510998,
+   "positions": 3564,
+   "holdings": [
+    {
+     "issuer": "STATE STR SPDR S&P 500 ETF T",
+     "ticker": "",
+     "valueUsd": 10475861318,
+     "weightPct": 5,
+     "shares": 14028230
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 5279158153,
+     "weightPct": 2.5,
+     "shares": 26383918
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 3583357567,
+     "weightPct": 1.7,
+     "shares": 10027024
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 3432642501,
+     "weightPct": 1.6,
+     "shares": 5909078
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 3349507138,
+     "weightPct": 1.6,
+     "shares": 14053483
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 3077305975,
+     "weightPct": 1.5,
+     "shares": 2665973
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 2950240840,
+     "weightPct": 1.4,
+     "shares": 8349817
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 2761974788,
+     "weightPct": 1.3,
+     "shares": 4903291
+    },
+    {
+     "issuer": "TESLA INC",
+     "ticker": "TSLA",
+     "valueUsd": 2607211915,
+     "weightPct": 1.2,
+     "shares": 6198792
+    },
+    {
+     "issuer": "INVESCO QQQ TR",
+     "ticker": "",
+     "valueUsd": 2357969001,
+     "weightPct": 1.1,
+     "shares": 3202022
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465926097217/0001104659-26-097217-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "ValueAct Capital",
+   "role": "Mason Morfit",
+   "tier": 2,
+   "cik": 1418814,
+   "edgarName": "ValueAct Holdings, L.P.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 5634931372,
+   "positions": 18,
+   "holdings": [
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 794682213,
+     "weightPct": 14.1,
+     "shares": 2316250
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 701124778,
+     "weightPct": 12.4,
+     "shares": 2941700
+    },
+    {
+     "issuer": "ROCKET COS INC",
+     "ticker": "",
+     "valueUsd": 656283191,
+     "weightPct": 11.6,
+     "shares": 41668774
+    },
+    {
+     "issuer": "BLACKROCK INC",
+     "ticker": "",
+     "valueUsd": 559339452,
+     "weightPct": 9.9,
+     "shares": 581700
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 515790007,
+     "weightPct": 9.2,
+     "shares": 915674
+    },
+    {
+     "issuer": "SALESFORCE INC",
+     "ticker": "CRM",
+     "valueUsd": 469119780,
+     "weightPct": 8.3,
+     "shares": 2994509
+    },
+    {
+     "issuer": "TOAST INC",
+     "ticker": "",
+     "valueUsd": 393208937,
+     "weightPct": 7,
+     "shares": 14134038
+    },
+    {
+     "issuer": "KKR & CO INC",
+     "ticker": "",
+     "valueUsd": 326571596,
+     "weightPct": 5.8,
+     "shares": 3558200
+    },
+    {
+     "issuer": "SPOTIFY TECHNOLOGY S A",
+     "ticker": "",
+     "valueUsd": 241869684,
+     "weightPct": 4.3,
+     "shares": 526800
+    },
+    {
+     "issuer": "LIBERTY LIVE HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 229491068,
+     "weightPct": 4.1,
+     "shares": 2172388
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1418814/000141881426000003/0001418814-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "JANA Partners",
+   "role": "Barry Rosenstein",
+   "tier": 2,
+   "cik": 1998597,
+   "edgarName": "JANA Partners Management, LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 1902301416,
+   "positions": 10,
+   "holdings": [
+    {
+     "issuer": "MERCURY SYS INC",
+     "ticker": "",
+     "valueUsd": 484285998,
+     "weightPct": 25.5,
+     "shares": 3958849
+    },
+    {
+     "issuer": "COOPER COS INC",
+     "ticker": "",
+     "valueUsd": 256899641,
+     "weightPct": 13.5,
+     "shares": 3582480
+    },
+    {
+     "issuer": "STATE STR SPDR S&P 500 ETF T",
+     "ticker": "",
+     "valueUsd": 256115973,
+     "weightPct": 13.5,
+     "shares": 342965
+    },
+    {
+     "issuer": "LAMB WESTON HLDGS INC",
+     "ticker": "",
+     "valueUsd": 232940339,
+     "weightPct": 12.2,
+     "shares": 5394635
+    },
+    {
+     "issuer": "FISERV INC",
+     "ticker": "",
+     "valueUsd": 179625024,
+     "weightPct": 9.4,
+     "shares": 3662080
+    },
+    {
+     "issuer": "MARKEL GROUP INC",
+     "ticker": "",
+     "valueUsd": 149879846,
+     "weightPct": 7.9,
+     "shares": 76743
+    },
+    {
+     "issuer": "ALKAMI TECHNOLOGY INC",
+     "ticker": "",
+     "valueUsd": 122268451,
+     "weightPct": 6.4,
+     "shares": 6747707
+    },
+    {
+     "issuer": "SIX FLAGS ENTERTAINMENT CORP",
+     "ticker": "",
+     "valueUsd": 87672909,
+     "weightPct": 4.6,
+     "shares": 4116099
+    },
+    {
+     "issuer": "EVERPURE INC",
+     "ticker": "",
+     "valueUsd": 77938753,
+     "weightPct": 4.1,
+     "shares": 989196
+    },
+    {
+     "issuer": "RAPID7 INC",
+     "ticker": "",
+     "valueUsd": 54674482,
+     "weightPct": 2.9,
+     "shares": 6749936
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1998597/000090266426003486/0000902664-26-003486-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Starboard Value",
+   "role": "Jeff Smith",
+   "tier": 2,
+   "cik": 1517137,
+   "edgarName": "Starboard Value LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 4523797468,
+   "positions": 21,
+   "holdings": [
+    {
+     "issuer": "ISHARES TR",
+     "ticker": "",
+     "valueUsd": 684565693,
+     "weightPct": 15.1,
+     "shares": 8877781
+    },
+    {
+     "issuer": "QORVO INC",
+     "ticker": "",
+     "valueUsd": 523387030,
+     "weightPct": 11.6,
+     "shares": 5611526
+    },
+    {
+     "issuer": "KENVUE INC",
+     "ticker": "",
+     "valueUsd": 521848848,
+     "weightPct": 11.5,
+     "shares": 27307632
+    },
+    {
+     "issuer": "DYNATRACE INC",
+     "ticker": "",
+     "valueUsd": 389336446,
+     "weightPct": 8.6,
+     "shares": 8866692
+    },
+    {
+     "issuer": "ALGONQUIN POWER & UTILITIES",
+     "ticker": "",
+     "valueUsd": 335130001,
+     "weightPct": 7.4,
+     "shares": 57189420
+    },
+    {
+     "issuer": "MATCH GROUP INC NEW",
+     "ticker": "",
+     "valueUsd": 295843506,
+     "weightPct": 6.5,
+     "shares": 7775125
+    },
+    {
+     "issuer": "ACACIA RESH CORP",
+     "ticker": "",
+     "valueUsd": 284835953,
+     "weightPct": 6.3,
+     "shares": 61123595
+    },
+    {
+     "issuer": "RIOT PLATFORMS INC",
+     "ticker": "RIOT",
+     "valueUsd": 278855609,
+     "weightPct": 6.2,
+     "shares": 12537976
+    },
+    {
+     "issuer": "BILL HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 254051048,
+     "weightPct": 5.6,
+     "shares": 7025748
+    },
+    {
+     "issuer": "LAMB WESTON HLDGS INC",
+     "ticker": "",
+     "valueUsd": 247593343,
+     "weightPct": 5.5,
+     "shares": 5733982
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1517137/000092189526002172/0000921895-26-002172-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Soros Fund Management",
+   "role": "Soros family office",
+   "tier": 2,
+   "cik": 1029160,
+   "edgarName": "SOROS FUND MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 8143628824,
+   "positions": 258,
+   "holdings": [
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 330553896,
+     "weightPct": 4.1,
+     "shares": 692158
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 293058817,
+     "weightPct": 3.6,
+     "shares": 1464635
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 281843962,
+     "weightPct": 3.5,
+     "shares": 1182529
+    },
+    {
+     "issuer": "GLOBAL PMTS INC",
+     "ticker": "",
+     "valueUsd": 222694485,
+     "weightPct": 2.7,
+     "shares": 247500000
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 213094728,
+     "weightPct": 2.6,
+     "shares": 596286
+    },
+    {
+     "issuer": "ELECTRONIC ARTS INC",
+     "ticker": "",
+     "valueUsd": 199091790,
+     "weightPct": 2.4,
+     "shares": 970990
+    },
+    {
+     "issuer": "BILL HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 181356254,
+     "weightPct": 2.2,
+     "shares": 209679000
+    },
+    {
+     "issuer": "PG&E CORP",
+     "ticker": "",
+     "valueUsd": 179601903,
+     "weightPct": 2.2,
+     "shares": 175000000
+    },
+    {
+     "issuer": "RIVIAN AUTOMOTIVE INC",
+     "ticker": "",
+     "valueUsd": 155838659,
+     "weightPct": 1.9,
+     "shares": 131565000
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 153227116,
+     "weightPct": 1.9,
+     "shares": 529538
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1029160/000090266426003507/0000902664-26-003507-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Tudor Investment",
+   "role": "Paul Tudor Jones",
+   "tier": 2,
+   "cik": 923093,
+   "edgarName": "TUDOR INVESTMENT CORP ET AL",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 71912518398,
+   "positions": 2192,
+   "holdings": [
+    {
+     "issuer": "Ishares Russell 2000 Etf - US ETP",
+     "ticker": "",
+     "valueUsd": 12482504413,
+     "weightPct": 17.4,
+     "shares": 41546029
+    },
+    {
+     "issuer": "Invesco Qqq Trust Series 1 - US ETP",
+     "ticker": "",
+     "valueUsd": 7061617223,
+     "weightPct": 9.8,
+     "shares": 9589377
+    },
+    {
+     "issuer": "Taiwan Semiconductor Manufacturing Co Ltd - US ADR",
+     "ticker": "",
+     "valueUsd": 1837643513,
+     "weightPct": 2.6,
+     "shares": 3847904
+    },
+    {
+     "issuer": "Spdr Gold Shares - US ETP",
+     "ticker": "",
+     "valueUsd": 1746221768,
+     "weightPct": 2.4,
+     "shares": 4740273
+    },
+    {
+     "issuer": "Nvidia Corp - US",
+     "ticker": "NVDA",
+     "valueUsd": 1449047578,
+     "weightPct": 2,
+     "shares": 7241979
+    },
+    {
+     "issuer": "Micron Technology Inc - US",
+     "ticker": "MU",
+     "valueUsd": 1350739769,
+     "weightPct": 1.9,
+     "shares": 1170191
+    },
+    {
+     "issuer": "Microsoft Corp - US",
+     "ticker": "MSFT",
+     "valueUsd": 1318566390,
+     "weightPct": 1.8,
+     "shares": 3534841
+    },
+    {
+     "issuer": "Ishares Core S&P 500 Etf - US ETP",
+     "ticker": "",
+     "valueUsd": 1235334495,
+     "weightPct": 1.7,
+     "shares": 1649554
+    },
+    {
+     "issuer": "Tesla Inc - US",
+     "ticker": "TSLA",
+     "valueUsd": 859252993,
+     "weightPct": 1.2,
+     "shares": 2042922
+    },
+    {
+     "issuer": "Ishares Iboxx High Yield Corporate Bond Etf - US E",
+     "ticker": "",
+     "valueUsd": 799700000,
+     "weightPct": 1.1,
+     "shares": 10000000
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/923093/000090266426003485/0000902664-26-003485-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Paulson & Co.",
+   "role": "John Paulson",
+   "tier": 2,
+   "cik": 1035674,
+   "edgarName": "PAULSON & CO. INC.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 2575691752,
+   "positions": 8,
+   "holdings": [
+    {
+     "issuer": "MADRIGAL PHARMACEUTICALS INC",
+     "ticker": "",
+     "valueUsd": 719523739,
+     "weightPct": 27.9,
+     "shares": 1340020
+    },
+    {
+     "issuer": "PERPETUA RESOURCES CORP",
+     "ticker": "",
+     "valueUsd": 671529927,
+     "weightPct": 26.1,
+     "shares": 32347299
+    },
+    {
+     "issuer": "ACADIAN ASSET MANAGEMENT INC",
+     "ticker": "",
+     "valueUsd": 417911529,
+     "weightPct": 16.2,
+     "shares": 5843282
+    },
+    {
+     "issuer": "BAUSCH HEALTH COS INC",
+     "ticker": "",
+     "valueUsd": 361151434,
+     "weightPct": 14,
+     "shares": 73255869
+    },
+    {
+     "issuer": "INTERNATIONAL TOWER HILL MIN",
+     "ticker": "",
+     "valueUsd": 207928539,
+     "weightPct": 8.1,
+     "shares": 104486703
+    },
+    {
+     "issuer": "NOVAGOLD RESOURCES INC",
+     "ticker": "",
+     "valueUsd": 162611224,
+     "weightPct": 6.3,
+     "shares": 27238061
+    },
+    {
+     "issuer": "THRYV HLDGS INC",
+     "ticker": "",
+     "valueUsd": 33268710,
+     "weightPct": 1.3,
+     "shares": 8443835
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 1766650,
+     "weightPct": 0.1,
+     "shares": 5000
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1035674/000101359426000913/0001013594-26-000913-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Caxton Associates",
+   "role": "Caxton",
+   "tier": 2,
+   "cik": 2051323,
+   "edgarName": "CAXTON ASSOCIATES LLP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 5332225414,
+   "positions": 729,
+   "holdings": [
+    {
+     "issuer": "WARNER BROS DISCOVERY INC",
+     "ticker": "",
+     "valueUsd": 517818993,
+     "weightPct": 9.7,
+     "shares": 19423068
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 388876691,
+     "weightPct": 7.3,
+     "shares": 1343920
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 377038917,
+     "weightPct": 7.1,
+     "shares": 1010774
+    },
+    {
+     "issuer": "NORFOLK SOUTHN CORP",
+     "ticker": "",
+     "valueUsd": 328235341,
+     "weightPct": 6.2,
+     "shares": 1043375
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 321327366,
+     "weightPct": 6,
+     "shares": 1348189
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 266600512,
+     "weightPct": 5,
+     "shares": 458936
+    },
+    {
+     "issuer": "SELECT SECTOR SPDR TR",
+     "ticker": "",
+     "valueUsd": 235424043,
+     "weightPct": 4.4,
+     "shares": 4432763
+    },
+    {
+     "issuer": "BP PLC",
+     "ticker": "",
+     "valueUsd": 215821218,
+     "weightPct": 4,
+     "shares": 5840899
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 204260276,
+     "weightPct": 3.8,
+     "shares": 1020842
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 134142046,
+     "weightPct": 2.5,
+     "shares": 375359
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/2051323/000205132326000013/0002051323-26-000013-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Eminence Capital",
+   "role": "Ricky Sandler",
+   "tier": 2,
+   "cik": 1107310,
+   "edgarName": "EMINENCE CAPITAL, LP",
+   "filed": "2026-05-15",
+   "period": "Q1 2026",
+   "periodEnd": "2026-03-31",
+   "portfolioUsd": 4361339054,
+   "positions": 33,
+   "holdings": [
+    {
+     "issuer": "SEA LTD",
+     "ticker": "",
+     "valueUsd": 336677719,
+     "weightPct": 7.7,
+     "shares": 4065665
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 321518687,
+     "weightPct": 7.4,
+     "shares": 1543759
+    },
+    {
+     "issuer": "PERFORMANCE FOOD GROUP CO",
+     "ticker": "",
+     "valueUsd": 318604746,
+     "weightPct": 7.3,
+     "shares": 3719411
+    },
+    {
+     "issuer": "COUPANG INC",
+     "ticker": "CPNG",
+     "valueUsd": 292843602,
+     "weightPct": 6.7,
+     "shares": 15510784
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 239429583,
+     "weightPct": 5.5,
+     "shares": 1176963
+    },
+    {
+     "issuer": "DYNATRACE INC",
+     "ticker": "",
+     "valueUsd": 196167547,
+     "weightPct": 4.5,
+     "shares": 5304693
+    },
+    {
+     "issuer": "ASBURY AUTOMOTIVE GROUP INC",
+     "ticker": "",
+     "valueUsd": 186827397,
+     "weightPct": 4.3,
+     "shares": 956079
+    },
+    {
+     "issuer": "LOUISIANA PAC CORP",
+     "ticker": "",
+     "valueUsd": 184303759,
+     "weightPct": 4.2,
+     "shares": 2533385
+    },
+    {
+     "issuer": "SYNOPSYS INC",
+     "ticker": "",
+     "valueUsd": 178106746,
+     "weightPct": 4.1,
+     "shares": 449220
+    },
+    {
+     "issuer": "LIBERTY MEDIA CORP",
+     "ticker": "",
+     "valueUsd": 168566858,
+     "weightPct": 3.9,
+     "shares": 1982673
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1107310/000110731026000002/000110731026000002-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "D1 Capital Partners",
+   "role": "Dan Sundheim",
+   "tier": 2,
+   "cik": 1747057,
+   "edgarName": "D1 Capital Partners L.P.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 34783267943,
+   "positions": 55,
+   "holdings": [
+    {
+     "issuer": "SPACE EXPLORATION TECHN CORP",
+     "ticker": "",
+     "valueUsd": 21535575760,
+     "weightPct": 61.9,
+     "shares": 126042232
+    },
+    {
+     "issuer": "MAPLEBEAR INC",
+     "ticker": "",
+     "valueUsd": 1068425997,
+     "weightPct": 3.1,
+     "shares": 22564435
+    },
+    {
+     "issuer": "JAMES HARDIE INDS PLC",
+     "ticker": "",
+     "valueUsd": 721141609,
+     "weightPct": 2.1,
+     "shares": 27545516
+    },
+    {
+     "issuer": "NU HLDGS LTD",
+     "ticker": "",
+     "valueUsd": 593431734,
+     "weightPct": 1.7,
+     "shares": 44418543
+    },
+    {
+     "issuer": "JOHNSON CONTROLS INTERNATION",
+     "ticker": "",
+     "valueUsd": 548188210,
+     "weightPct": 1.6,
+     "shares": 3751887
+    },
+    {
+     "issuer": "MERCADOLIBRE INC",
+     "ticker": "MELI",
+     "valueUsd": 470983290,
+     "weightPct": 1.4,
+     "shares": 277475
+    },
+    {
+     "issuer": "US FOODS HLDG CORP",
+     "ticker": "",
+     "valueUsd": 460325819,
+     "weightPct": 1.3,
+     "shares": 4501964
+    },
+    {
+     "issuer": "DANAHER CORP DEL",
+     "ticker": "",
+     "valueUsd": 434682789,
+     "weightPct": 1.2,
+     "shares": 2282039
+    },
+    {
+     "issuer": "SHERWIN WILLIAMS CO",
+     "ticker": "",
+     "valueUsd": 431250815,
+     "weightPct": 1.2,
+     "shares": 1252471
+    },
+    {
+     "issuer": "REDDIT INC",
+     "ticker": "RDDT",
+     "valueUsd": 427772461,
+     "weightPct": 1.2,
+     "shares": 2464411
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1747057/000117266126003662/0001172661-26-003662-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Whale Rock Capital Management",
+   "role": "Alex Sacerdote",
+   "tier": 2,
+   "cik": 1387322,
+   "edgarName": "Whale Rock Capital Management LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 12456319060,
+   "positions": 35,
+   "holdings": [
+    {
+     "issuer": "SANDISK CORP",
+     "ticker": "SNDK",
+     "valueUsd": 1356382263,
+     "weightPct": 10.9,
+     "shares": 596545
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 876970782,
+     "weightPct": 7,
+     "shares": 1509650
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 856384314,
+     "weightPct": 6.9,
+     "shares": 2396352
+    },
+    {
+     "issuer": "TTM TECHNOLOGIES INC",
+     "ticker": "",
+     "valueUsd": 791202137,
+     "weightPct": 6.4,
+     "shares": 4230575
+    },
+    {
+     "issuer": "ASTERA LABS INC",
+     "ticker": "ALAB",
+     "valueUsd": 757318364,
+     "weightPct": 6.1,
+     "shares": 1567882
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 583392445,
+     "weightPct": 4.7,
+     "shares": 2447732
+    },
+    {
+     "issuer": "CORNING INC",
+     "ticker": "",
+     "valueUsd": 570630365,
+     "weightPct": 4.6,
+     "shares": 2233999
+    },
+    {
+     "issuer": "MKS INC.",
+     "ticker": "",
+     "valueUsd": 565506710,
+     "weightPct": 4.5,
+     "shares": 1271373
+    },
+    {
+     "issuer": "CELESTICA INC",
+     "ticker": "",
+     "valueUsd": 538601664,
+     "weightPct": 4.3,
+     "shares": 1476430
+    },
+    {
+     "issuer": "BLOOM ENERGY CORP",
+     "ticker": "BE",
+     "valueUsd": 486833924,
+     "weightPct": 3.9,
+     "shares": 1608305
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1387322/000117266126003733/0001172661-26-003733-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Dragoneer Investment Group",
+   "role": "Marc Stad",
+   "tier": 2,
+   "cik": 1602189,
+   "edgarName": "Dragoneer Investment Group, LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 2834424427,
+   "positions": 12,
+   "holdings": [
+    {
+     "issuer": "SPACE EXPLORATION TECHN CORP",
+     "ticker": "",
+     "valueUsd": 1366880000,
+     "weightPct": 48.2,
+     "shares": 8000000
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 548371488,
+     "weightPct": 19.3,
+     "shares": 943987
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 303049310,
+     "weightPct": 10.7,
+     "shares": 1271500
+    },
+    {
+     "issuer": "INNIO NV",
+     "ticker": "",
+     "valueUsd": 112717500,
+     "weightPct": 4,
+     "shares": 2850000
+    },
+    {
+     "issuer": "KLARNA GROUP PLC",
+     "ticker": "",
+     "valueUsd": 98277789,
+     "weightPct": 3.5,
+     "shares": 4855622
+    },
+    {
+     "issuer": "CEREBRAS SYSTEMS INC",
+     "ticker": "CBRS",
+     "valueUsd": 88400000,
+     "weightPct": 3.1,
+     "shares": 400000
+    },
+    {
+     "issuer": "CHIME FINL INC",
+     "ticker": "",
+     "valueUsd": 88248300,
+     "weightPct": 3.1,
+     "shares": 4308999
+    },
+    {
+     "issuer": "SERVICETITAN INC",
+     "ticker": "",
+     "valueUsd": 70772578,
+     "weightPct": 2.5,
+     "shares": 1000885
+    },
+    {
+     "issuer": "NU HLDGS LTD",
+     "ticker": "",
+     "valueUsd": 66189435,
+     "weightPct": 2.3,
+     "shares": 4954299
+    },
+    {
+     "issuer": "CCC INTELLIGENT SOLUTIONS HL",
+     "ticker": "",
+     "valueUsd": 47452913,
+     "weightPct": 1.7,
+     "shares": 9196301
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1602189/000119312526350447/0001193125-26-350447-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "TCI Fund Management",
+   "role": "Chris Hohn",
+   "tier": 2,
+   "cik": 1647251,
+   "edgarName": "TCI Fund Management Ltd",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 52769884406,
+   "positions": 11,
+   "holdings": [
+    {
+     "issuer": "GE AEROSPACE",
+     "ticker": "",
+     "valueUsd": 17725353519,
+     "weightPct": 33.6,
+     "shares": 47428233
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 10462232091,
+     "weightPct": 19.8,
+     "shares": 30494133
+    },
+    {
+     "issuer": "MOODYS CORP",
+     "ticker": "",
+     "valueUsd": 6492167509,
+     "weightPct": 12.3,
+     "shares": 14334027
+    },
+    {
+     "issuer": "S&P GLOBAL INC",
+     "ticker": "",
+     "valueUsd": 5735017808,
+     "weightPct": 10.9,
+     "shares": 14081957
+    },
+    {
+     "issuer": "CANADIAN PACIFIC KANSAS CITY",
+     "ticker": "",
+     "valueUsd": 3925911608,
+     "weightPct": 7.4,
+     "shares": 45325726
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 3511682917,
+     "weightPct": 6.7,
+     "shares": 9938819
+    },
+    {
+     "issuer": "FERROVIAL NV",
+     "ticker": "",
+     "valueUsd": 1434611939,
+     "weightPct": 2.7,
+     "shares": 20940441
+    },
+    {
+     "issuer": "CANADIAN NATL RY CO",
+     "ticker": "",
+     "valueUsd": 1124534915,
+     "weightPct": 2.1,
+     "shares": 9433422
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 878058090,
+     "weightPct": 1.7,
+     "shares": 2457000
+    },
+    {
+     "issuer": "MARTIN MARIETTA MATLS INC",
+     "ticker": "",
+     "valueUsd": 758423360,
+     "weightPct": 1.4,
+     "shares": 1315109
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1647251/000164725126000007/0001647251-26-000007-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Baillie Gifford",
+   "role": "Baillie Gifford",
+   "tier": 2,
+   "cik": 1088875,
+   "edgarName": "BAILLIE GIFFORD & CO",
+   "filed": "2026-08-06",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 110225053010,
+   "positions": 273,
+   "holdings": [
+    {
+     "issuer": "Space Exploration Technologies Corp",
+     "ticker": "",
+     "valueUsd": 8781829133,
+     "weightPct": 8,
+     "shares": 51397806
+    },
+    {
+     "issuer": "NVIDIA",
+     "ticker": "NVDA",
+     "valueUsd": 8381531192,
+     "weightPct": 7.6,
+     "shares": 41888806
+    },
+    {
+     "issuer": "Amazon.Com",
+     "ticker": "AMZN",
+     "valueUsd": 6415604182,
+     "weightPct": 5.8,
+     "shares": 26917866
+    },
+    {
+     "issuer": "MercadoLibre",
+     "ticker": "MELI",
+     "valueUsd": 5160761529,
+     "weightPct": 4.7,
+     "shares": 3040410
+    },
+    {
+     "issuer": "Sea Ltd ADR",
+     "ticker": "",
+     "valueUsd": 3680771365,
+     "weightPct": 3.3,
+     "shares": 38409385
+    },
+    {
+     "issuer": "Spotify Technology SA",
+     "ticker": "",
+     "valueUsd": 3640189707,
+     "weightPct": 3.3,
+     "shares": 7928451
+    },
+    {
+     "issuer": "Cloudflare Inc",
+     "ticker": "NET",
+     "valueUsd": 3580743136,
+     "weightPct": 3.2,
+     "shares": 14598594
+    },
+    {
+     "issuer": "AppLovin",
+     "ticker": "APP",
+     "valueUsd": 3334370197,
+     "weightPct": 3,
+     "shares": 6471615
+    },
+    {
+     "issuer": "Shopify 'A'",
+     "ticker": "SHOP",
+     "valueUsd": 3243123464,
+     "weightPct": 2.9,
+     "shares": 28403600
+    },
+    {
+     "issuer": "Nu Holdings Ltd.",
+     "ticker": "",
+     "valueUsd": 3071869222,
+     "weightPct": 2.8,
+     "shares": 229930331
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1088875/000108887526000057/0001088875-26-000057-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Fidelity (FMR)",
+   "role": "Fidelity active funds",
+   "tier": 2,
+   "cik": 315066,
+   "edgarName": "FMR LLC",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 2303878429723,
+   "positions": 5571,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 205302654261,
+     "weightPct": 8.9,
+     "shares": 1026051548
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 94142915411,
+     "weightPct": 4.1,
+     "shares": 325348754
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 89597664038,
+     "weightPct": 3.9,
+     "shares": 250714005
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 87151491452,
+     "weightPct": 3.8,
+     "shares": 365660364
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 69366824194,
+     "weightPct": 3,
+     "shares": 185960066
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 54531677402,
+     "weightPct": 2.4,
+     "shares": 144359173
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 54017112988,
+     "weightPct": 2.3,
+     "shares": 95895744
+    },
+    {
+     "issuer": "SPACE EXPLORATION TECHN CORP",
+     "ticker": "",
+     "valueUsd": 51655459728,
+     "weightPct": 2.2,
+     "shares": 302555831
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 43091771129,
+     "weightPct": 1.9,
+     "shares": 121958993
+    },
+    {
+     "issuer": "ELI LILLY & CO",
+     "ticker": "",
+     "valueUsd": 34138746040,
+     "weightPct": 1.5,
+     "shares": 28462475
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002260/0000315066-26-002260-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "T. Rowe Price",
+   "role": "T. Rowe Price",
+   "tier": 2,
+   "cik": 80255,
+   "edgarName": "PRICE T ROWE ASSOCIATES INC /MD/",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 999124702000,
+   "positions": 3241,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 73999242000,
+     "weightPct": 7.4,
+     "shares": 369829781
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 46243017000,
+     "weightPct": 4.6,
+     "shares": 159811362
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 36207335000,
+     "weightPct": 3.6,
+     "shares": 101316099
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 32559858000,
+     "weightPct": 3.3,
+     "shares": 87287163
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 31297332000,
+     "weightPct": 3.1,
+     "shares": 82851970
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 25957006000,
+     "weightPct": 2.6,
+     "shares": 108907465
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 20937746000,
+     "weightPct": 2.1,
+     "shares": 59258327
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 20876894000,
+     "weightPct": 2.1,
+     "shares": 35938258
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 17345589000,
+     "weightPct": 1.7,
+     "shares": 30793354
+    },
+    {
+     "issuer": "ELI LILLY & CO",
+     "ticker": "",
+     "valueUsd": 16686278000,
+     "weightPct": 1.7,
+     "shares": 13911839
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/80255/000008025526000519/0000080255-26-000519-index.htm",
+   "unitsScaled": true
+  },
+  {
+   "name": "Wellington Management",
+   "role": "Wellington",
+   "tier": 2,
+   "cik": 902219,
+   "edgarName": "WELLINGTON MANAGEMENT GROUP LLP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 580172687615,
+   "positions": 1903,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 24427867396,
+     "weightPct": 4.2,
+     "shares": 122084399
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 19484610559,
+     "weightPct": 3.4,
+     "shares": 51580703
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 17757440635,
+     "weightPct": 3.1,
+     "shares": 47605578
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 17203169017,
+     "weightPct": 3,
+     "shares": 59452829
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 15868519535,
+     "weightPct": 2.7,
+     "shares": 44403614
+    },
+    {
+     "issuer": "ELI LILLY & CO",
+     "ticker": "",
+     "valueUsd": 13192474197,
+     "weightPct": 2.3,
+     "shares": 10998953
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 13123016131,
+     "weightPct": 2.3,
+     "shares": 55060066
+    },
+    {
+     "issuer": "MERCK & CO INC",
+     "ticker": "",
+     "valueUsd": 11083032867,
+     "weightPct": 1.9,
+     "shares": 86249283
+    },
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 6522070297,
+     "weightPct": 1.1,
+     "shares": 12698735
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 6080616381,
+     "weightPct": 1,
+     "shares": 17209454
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/902219/000090221926000311/0000902219-26-000311-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Capital World Investors",
+   "role": "American Funds",
+   "tier": 2,
+   "cik": 1422849,
+   "edgarName": "Capital World Investors",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 846430378138,
+   "positions": 637,
+   "holdings": [
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 46043125039,
+     "weightPct": 5.4,
+     "shares": 121892859
+    },
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 34016371133,
+     "weightPct": 4,
+     "shares": 29469646
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 26212379779,
+     "weightPct": 3.1,
+     "shares": 73349871
+    },
+    {
+     "issuer": "PHILIP MORRIS INTL INC",
+     "ticker": "",
+     "valueUsd": 24089493986,
+     "weightPct": 2.8,
+     "shares": 133152391
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 23025477388,
+     "weightPct": 2.7,
+     "shares": 40876883
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 21834390351,
+     "weightPct": 2.6,
+     "shares": 109129403
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 20566784158,
+     "weightPct": 2.4,
+     "shares": 55139128
+    },
+    {
+     "issuer": "TESLA INC",
+     "ticker": "TSLA",
+     "valueUsd": 19235629659,
+     "weightPct": 2.3,
+     "shares": 45735669
+    },
+    {
+     "issuer": "ELI LILLY & CO",
+     "ticker": "",
+     "valueUsd": 19076022904,
+     "weightPct": 2.3,
+     "shares": 15902642
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 16410842195,
+     "weightPct": 1.9,
+     "shares": 34372274
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1422849/000142284926000113/0001422849-26-000113-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "GQG Partners",
+   "role": "Rajiv Jain",
+   "tier": 2,
+   "cik": 1697233,
+   "edgarName": "GQG Partners LLC",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 53757403317,
+   "positions": 102,
+   "holdings": [
+    {
+     "issuer": "PHILIP MORRIS INTL INC",
+     "ticker": "",
+     "valueUsd": 8220008114,
+     "weightPct": 15.3,
+     "shares": 45436985
+    },
+    {
+     "issuer": "CHUBB LIMITED",
+     "ticker": "",
+     "valueUsd": 4250112612,
+     "weightPct": 7.9,
+     "shares": 12473178
+    },
+    {
+     "issuer": "PETROLEO BRASILEIRO S A",
+     "ticker": "",
+     "valueUsd": 3122083433,
+     "weightPct": 5.8,
+     "shares": 193198230
+    },
+    {
+     "issuer": "ENBRIDGE INC",
+     "ticker": "",
+     "valueUsd": 2660876370,
+     "weightPct": 4.9,
+     "shares": 49084876
+    },
+    {
+     "issuer": "EXXON MOBIL CORP",
+     "ticker": "",
+     "valueUsd": 2307497463,
+     "weightPct": 4.3,
+     "shares": 16877523
+    },
+    {
+     "issuer": "ALTRIA GROUP INC",
+     "ticker": "",
+     "valueUsd": 1806782270,
+     "weightPct": 3.4,
+     "shares": 25111622
+    },
+    {
+     "issuer": "THE CIGNA GROUP",
+     "ticker": "",
+     "valueUsd": 1628918123,
+     "weightPct": 3,
+     "shares": 5908707
+    },
+    {
+     "issuer": "PROGRESSIVE CORP",
+     "ticker": "",
+     "valueUsd": 1538570007,
+     "weightPct": 2.9,
+     "shares": 7043101
+    },
+    {
+     "issuer": "VERIZON COMMUNICATIONS INC",
+     "ticker": "",
+     "valueUsd": 1519042936,
+     "weightPct": 2.8,
+     "shares": 35877241
+    },
+    {
+     "issuer": "BRITISH AMERN TOB PLC",
+     "ticker": "",
+     "valueUsd": 1517240175,
+     "weightPct": 2.8,
+     "shares": 24566708
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1697233/000106299326004224/0001062993-26-004224-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Fisher Asset Management",
+   "role": "Ken Fisher",
+   "tier": 2,
+   "cik": 850529,
+   "edgarName": "Fisher Asset Management, LLC",
+   "filed": "2026-08-04",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 335827609549,
+   "positions": 1037,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORP COM",
+     "ticker": "NVDA",
+     "valueUsd": 18195373846,
+     "weightPct": 5.4,
+     "shares": 90935947
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 16670059955,
+     "weightPct": 5,
+     "shares": 57610104
+    },
+    {
+     "issuer": "ISHARES TR 7 10YR TR BD ETF",
+     "ticker": "",
+     "valueUsd": 15222380109,
+     "weightPct": 4.5,
+     "shares": 160964153
+    },
+    {
+     "issuer": "ALPHABET INC CLASS A",
+     "ticker": "GOOGL",
+     "valueUsd": 14291169577,
+     "weightPct": 4.3,
+     "shares": 39989840
+    },
+    {
+     "issuer": "CATERPILLAR INC",
+     "ticker": "CAT",
+     "valueUsd": 10587791364,
+     "weightPct": 3.2,
+     "shares": 9942521
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 9926707366,
+     "weightPct": 3,
+     "shares": 26611728
+    },
+    {
+     "issuer": "ASML HLDG NV NYS",
+     "ticker": "",
+     "valueUsd": 9425199953,
+     "weightPct": 2.8,
+     "shares": 4737614
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUF ADR",
+     "ticker": "",
+     "valueUsd": 9009930721,
+     "weightPct": 2.7,
+     "shares": 18866198
+    },
+    {
+     "issuer": "AMAZON COM INC COM",
+     "ticker": "AMZN",
+     "valueUsd": 8336759712,
+     "weightPct": 2.5,
+     "shares": 34978432
+    },
+    {
+     "issuer": "VANGUARD FDS INT TERM CORP",
+     "ticker": "",
+     "valueUsd": 7909861199,
+     "weightPct": 2.4,
+     "shares": 95703099
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/850529/000085052926000006/0000850529-26-000006-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "First Eagle Investment Management",
+   "role": "First Eagle",
+   "tier": 2,
+   "cik": 1325447,
+   "edgarName": "First Eagle Investment Management, LLC",
+   "filed": "2026-08-24",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 60750982695,
+   "positions": 425,
+   "holdings": [
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 2585051365,
+     "weightPct": 4.3,
+     "shares": 7316252
+    },
+    {
+     "issuer": "BECTON DICKINSON & CO",
+     "ticker": "",
+     "valueUsd": 2090674677,
+     "weightPct": 3.4,
+     "shares": 13815335
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 1812302580,
+     "weightPct": 3,
+     "shares": 3217353
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 1788784535,
+     "weightPct": 2.9,
+     "shares": 3745597
+    },
+    {
+     "issuer": "FOMENTO ECONOMICO MEXICANO S",
+     "ticker": "",
+     "valueUsd": 1663758488,
+     "weightPct": 2.7,
+     "shares": 13008276
+    },
+    {
+     "issuer": "ELEVANCE HEALTH INC FORMERLY",
+     "ticker": "",
+     "valueUsd": 1619701186,
+     "weightPct": 2.7,
+     "shares": 4188196
+    },
+    {
+     "issuer": "WHEATON PRECIOUS METALS CORP",
+     "ticker": "",
+     "valueUsd": 1596645669,
+     "weightPct": 2.6,
+     "shares": 14215147
+    },
+    {
+     "issuer": "IMPERIAL OIL LTD",
+     "ticker": "",
+     "valueUsd": 1524485876,
+     "weightPct": 2.5,
+     "shares": 13590697
+    },
+    {
+     "issuer": "SLB LIMITED",
+     "ticker": "",
+     "valueUsd": 1344199454,
+     "weightPct": 2.2,
+     "shares": 28913733
+    },
+    {
+     "issuer": "BANK OF NY MELLON CORP",
+     "ticker": "",
+     "valueUsd": 1340088594,
+     "weightPct": 2.2,
+     "shares": 9266915
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1325447/000132544726000033/0001325447-26-000033-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Artisan Partners",
+   "role": "Artisan",
+   "tier": 2,
+   "cik": 1466153,
+   "edgarName": "Artisan Partners Limited Partnership",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 63075327393,
+   "positions": 330,
+   "holdings": [
+    {
+     "issuer": "ARCH CAP GROUP LTD",
+     "ticker": "",
+     "valueUsd": 2096097569,
+     "weightPct": 3.3,
+     "shares": 21595895
+    },
+    {
+     "issuer": "BANK OF NY MELLON CORP",
+     "ticker": "",
+     "valueUsd": 1979314379,
+     "weightPct": 3.1,
+     "shares": 13687258
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 1977728107,
+     "weightPct": 3.1,
+     "shares": 5534119
+    },
+    {
+     "issuer": "ELEVANCE HEALTH INC FORMERLY",
+     "ticker": "",
+     "valueUsd": 1771695984,
+     "weightPct": 2.8,
+     "shares": 4581222
+    },
+    {
+     "issuer": "SCHWAB CHARLES CORP",
+     "ticker": "",
+     "valueUsd": 1746737165,
+     "weightPct": 2.8,
+     "shares": 18930716
+    },
+    {
+     "issuer": "CITIGROUP INC",
+     "ticker": "",
+     "valueUsd": 1667627039,
+     "weightPct": 2.6,
+     "shares": 11915026
+    },
+    {
+     "issuer": "AMERICAN EXPRESS CO",
+     "ticker": "",
+     "valueUsd": 1529243133,
+     "weightPct": 2.4,
+     "shares": 4521044
+    },
+    {
+     "issuer": "ICON PUB LTD CO",
+     "ticker": "",
+     "valueUsd": 1500230086,
+     "weightPct": 2.4,
+     "shares": 8636406
+    },
+    {
+     "issuer": "WILLIS TOWERS WATSON PLC LTD",
+     "ticker": "",
+     "valueUsd": 1448263716,
+     "weightPct": 2.3,
+     "shares": 5541048
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 1447926002,
+     "weightPct": 2.3,
+     "shares": 2893595
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1466153/000119312526349319/0001193125-26-349319-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Polen Capital Management",
+   "role": "Polen",
+   "tier": 2,
+   "cik": 1034524,
+   "edgarName": "POLEN CAPITAL MANAGEMENT LLC",
+   "filed": "2026-08-04",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 11610786601,
+   "positions": 219,
+   "holdings": [
+    {
+     "issuer": "ELI LILLY & CO",
+     "ticker": "",
+     "valueUsd": 799914391,
+     "weightPct": 6.9,
+     "shares": 666912
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 796047269,
+     "weightPct": 6.9,
+     "shares": 3978446
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 782824321,
+     "weightPct": 6.7,
+     "shares": 2098613
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 765036342,
+     "weightPct": 6.6,
+     "shares": 2165218
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 740468936,
+     "weightPct": 6.4,
+     "shares": 1960209
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 669724194,
+     "weightPct": 5.8,
+     "shares": 2809953
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 619489263,
+     "weightPct": 5.3,
+     "shares": 1805617
+    },
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 586509275,
+     "weightPct": 5.1,
+     "shares": 1141958
+    },
+    {
+     "issuer": "SERVICENOW INC",
+     "ticker": "NOW",
+     "valueUsd": 533150641,
+     "weightPct": 4.6,
+     "shares": 5370172
+    },
+    {
+     "issuer": "ORACLE CORP",
+     "ticker": "ORCL",
+     "valueUsd": 523807723,
+     "weightPct": 4.5,
+     "shares": 3574259
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1034524/000117266126003035/0001172661-26-003035-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Brown Advisory",
+   "role": "Brown Advisory",
+   "tier": 2,
+   "cik": 1345929,
+   "edgarName": "BROWN ADVISORY INC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 64569189630,
+   "positions": 1447,
+   "holdings": [
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 3174013680,
+     "weightPct": 4.9,
+     "shares": 8508949
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 2854130427,
+     "weightPct": 4.4,
+     "shares": 5976344
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 2783812920,
+     "weightPct": 4.3,
+     "shares": 7878773
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 2436443451,
+     "weightPct": 3.8,
+     "shares": 7101455
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 2059522503,
+     "weightPct": 3.2,
+     "shares": 10292967
+    },
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 1768141287,
+     "weightPct": 2.7,
+     "shares": 3442644
+    },
+    {
+     "issuer": "ADVISORS INNER CIRCLE FD III",
+     "ticker": "",
+     "valueUsd": 1619911527,
+     "weightPct": 2.5,
+     "shares": 55553093
+    },
+    {
+     "issuer": "ISHARES TR",
+     "ticker": "",
+     "valueUsd": 1507525226,
+     "weightPct": 2.3,
+     "shares": 2013013
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1472098023,
+     "weightPct": 2.3,
+     "shares": 6176448
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 1167078952,
+     "weightPct": 1.8,
+     "shares": 4033311
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1345929/000134592926000038/0001345929-26-000038-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Diamond Hill Capital Management",
+   "role": "Diamond Hill",
+   "tier": 2,
+   "cik": 1217541,
+   "edgarName": "Diamond Hill Capital Management, LLC (Investment Advisor)",
+   "filed": "2026-08-06",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 12490705572,
+   "positions": 186,
+   "holdings": [
+    {
+     "issuer": "American International Group,",
+     "ticker": "",
+     "valueUsd": 464538782,
+     "weightPct": 3.7,
+     "shares": 6232910
+    },
+    {
+     "issuer": "Abbott Laboratories",
+     "ticker": "",
+     "valueUsd": 447962873,
+     "weightPct": 3.6,
+     "shares": 4936774
+    },
+    {
+     "issuer": "Berkshire Hathaway, Inc. (Cl B",
+     "ticker": "",
+     "valueUsd": 438706925,
+     "weightPct": 3.5,
+     "shares": 876730
+    },
+    {
+     "issuer": "Colgate-Palmolive Co.",
+     "ticker": "CL",
+     "valueUsd": 380658660,
+     "weightPct": 3,
+     "shares": 4152036
+    },
+    {
+     "issuer": "Aon PLC (Cl A)",
+     "ticker": "",
+     "valueUsd": 369554433,
+     "weightPct": 3,
+     "shares": 1114156
+    },
+    {
+     "issuer": "Microsoft Corp.",
+     "ticker": "MSFT",
+     "valueUsd": 309850555,
+     "weightPct": 2.5,
+     "shares": 830654
+    },
+    {
+     "issuer": "Capital One Financial Corp.",
+     "ticker": "",
+     "valueUsd": 290897596,
+     "weightPct": 2.3,
+     "shares": 1449993
+    },
+    {
+     "issuer": "Diamondback Energy, Inc.",
+     "ticker": "",
+     "valueUsd": 268855158,
+     "weightPct": 2.2,
+     "shares": 1529498
+    },
+    {
+     "issuer": "Waste Management, Inc.",
+     "ticker": "",
+     "valueUsd": 262143209,
+     "weightPct": 2.1,
+     "shares": 1176163
+    },
+    {
+     "issuer": "Zoetis, Inc. (Cl A)",
+     "ticker": "",
+     "valueUsd": 255637351,
+     "weightPct": 2,
+     "shares": 3557436
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1217541/000121754126000008/0001217541-26-000008-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Parnassus Investments",
+   "role": "Parnassus",
+   "tier": 2,
+   "cik": 948669,
+   "edgarName": "PARNASSUS INVESTMENTS, LLC",
+   "filed": "2026-10-22",
+   "period": "Q3 2026",
+   "periodEnd": "2026-09-30",
+   "portfolioUsd": 33795828132,
+   "positions": 123,
+   "holdings": [
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 2149953704,
+     "weightPct": 6.4,
+     "shares": 4191760
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1862960325,
+     "weightPct": 5.5,
+     "shares": 7477264
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 1750078452,
+     "weightPct": 5.2,
+     "shares": 7663011
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 1535824822,
+     "weightPct": 4.5,
+     "shares": 4463569
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 1139902484,
+     "weightPct": 3.4,
+     "shares": 3422925
+    },
+    {
+     "issuer": "DEERE & CO",
+     "ticker": "",
+     "valueUsd": 991383746,
+     "weightPct": 2.9,
+     "shares": 1476262
+    },
+    {
+     "issuer": "THERMO FISHER SCIENTIFIC INC",
+     "ticker": "",
+     "valueUsd": 987788514,
+     "weightPct": 2.9,
+     "shares": 1463282
+    },
+    {
+     "issuer": "WASTE MGMT INC DEL",
+     "ticker": "",
+     "valueUsd": 889551448,
+     "weightPct": 2.6,
+     "shares": 4362257
+    },
+    {
+     "issuer": "ADVANCED MICRO DEVICES INC",
+     "ticker": "AMD",
+     "valueUsd": 885195920,
+     "weightPct": 2.6,
+     "shares": 1446966
+    },
+    {
+     "issuer": "MASTERCARD INCORPORATED",
+     "ticker": "",
+     "valueUsd": 875802742,
+     "weightPct": 2.6,
+     "shares": 1588124
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/0001172661-26-004635-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Alger Associates",
+   "role": "Alger",
+   "tier": 2,
+   "cik": 3520,
+   "edgarName": "FRED ALGER MANAGEMENT, LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 30008624473,
+   "positions": 425,
+   "holdings": [
+    {
+     "issuer": "NVIDIA Corporation",
+     "ticker": "NVDA",
+     "valueUsd": 3546649514,
+     "weightPct": 11.8,
+     "shares": 17725271
+    },
+    {
+     "issuer": "Microsoft Corporation",
+     "ticker": "MSFT",
+     "valueUsd": 1926453994,
+     "weightPct": 6.4,
+     "shares": 5164479
+    },
+    {
+     "issuer": "Amazon.com, Inc.",
+     "ticker": "AMZN",
+     "valueUsd": 1723255878,
+     "weightPct": 5.7,
+     "shares": 7230242
+    },
+    {
+     "issuer": "Nebius Group N.V. Class A",
+     "ticker": "",
+     "valueUsd": 1581503247,
+     "weightPct": 5.3,
+     "shares": 5726557
+    },
+    {
+     "issuer": "Alphabet Inc. Class C",
+     "ticker": "",
+     "valueUsd": 1531437610,
+     "weightPct": 5.1,
+     "shares": 4334298
+    },
+    {
+     "issuer": "Apple Inc.",
+     "ticker": "AAPL",
+     "valueUsd": 1458999303,
+     "weightPct": 4.9,
+     "shares": 5042160
+    },
+    {
+     "issuer": "Western Digital Corporation",
+     "ticker": "WDC",
+     "valueUsd": 1409224543,
+     "weightPct": 4.7,
+     "shares": 2206326
+    },
+    {
+     "issuer": "Meta Platforms Inc Class A",
+     "ticker": "META",
+     "valueUsd": 1123029633,
+     "weightPct": 3.7,
+     "shares": 1993697
+    },
+    {
+     "issuer": "Broadcom Inc.",
+     "ticker": "AVGO",
+     "valueUsd": 1040803790,
+     "weightPct": 3.5,
+     "shares": 2755271
+    },
+    {
+     "issuer": "Space Exploration Technologies Corp. Class A",
+     "ticker": "",
+     "valueUsd": 987471530,
+     "weightPct": 3.3,
+     "shares": 5779419
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/3520/000119312526352250/0001193125-26-352250-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Wasatch Advisors",
+   "role": "Wasatch",
+   "tier": 2,
+   "cik": 814133,
+   "edgarName": "WASATCH ADVISORS LP",
+   "filed": "2026-10-13",
+   "period": "Q3 2026",
+   "periodEnd": "2026-09-30",
+   "portfolioUsd": 13468988721,
+   "positions": 229,
+   "holdings": [
+    {
+     "issuer": "HEALTHEQUITY INC",
+     "ticker": "",
+     "valueUsd": 620234548,
+     "weightPct": 4.6,
+     "shares": 7011469
+    },
+    {
+     "issuer": "OLLIES BARGAIN OUTLET HLDGS",
+     "ticker": "",
+     "valueUsd": 439869279,
+     "weightPct": 3.3,
+     "shares": 5135660
+    },
+    {
+     "issuer": "ENSIGN GROUP INC",
+     "ticker": "",
+     "valueUsd": 350603080,
+     "weightPct": 2.6,
+     "shares": 2038390
+    },
+    {
+     "issuer": "GLOBAL E ONLINE LTD",
+     "ticker": "",
+     "valueUsd": 341379826,
+     "weightPct": 2.5,
+     "shares": 8592495
+    },
+    {
+     "issuer": "MEDPACE HLDGS INC",
+     "ticker": "",
+     "valueUsd": 290832926,
+     "weightPct": 2.2,
+     "shares": 465944
+    },
+    {
+     "issuer": "PAYMENTUS HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 276159117,
+     "weightPct": 2.1,
+     "shares": 9013026
+    },
+    {
+     "issuer": "CASELLA WASTE SYS INC",
+     "ticker": "",
+     "valueUsd": 245556751,
+     "weightPct": 1.8,
+     "shares": 3056089
+    },
+    {
+     "issuer": "AAON INC",
+     "ticker": "",
+     "valueUsd": 244924330,
+     "weightPct": 1.8,
+     "shares": 2959453
+    },
+    {
+     "issuer": "KADANT INC",
+     "ticker": "",
+     "valueUsd": 229338918,
+     "weightPct": 1.7,
+     "shares": 876946
+    },
+    {
+     "issuer": "CAMTEK LTD",
+     "ticker": "",
+     "valueUsd": 228961303,
+     "weightPct": 1.7,
+     "shares": 1474791
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/814133/000081413326000137/0000814133-26-000137-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "GAMCO Investors",
+   "role": "Mario Gabelli",
+   "tier": 2,
+   "cik": 807249,
+   "edgarName": "GAMCO INVESTORS, INC. ET AL",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 11145091361,
+   "positions": 938,
+   "holdings": [
+    {
+     "issuer": "MADISON SQUARE GARDEN SPORTS",
+     "ticker": "",
+     "valueUsd": 236735196,
+     "weightPct": 2.1,
+     "shares": 589128
+    },
+    {
+     "issuer": "CRANE CO",
+     "ticker": "",
+     "valueUsd": 218375046,
+     "weightPct": 2,
+     "shares": 978953
+    },
+    {
+     "issuer": "MUELLER INDUSTRIES INC",
+     "ticker": "",
+     "valueUsd": 189576500,
+     "weightPct": 1.7,
+     "shares": 1542150
+    },
+    {
+     "issuer": "GATX CORP",
+     "ticker": "",
+     "valueUsd": 186928717,
+     "weightPct": 1.7,
+     "shares": 1054962
+    },
+    {
+     "issuer": "WATTS WATER TECHNOLOGIES-A",
+     "ticker": "",
+     "valueUsd": 156201076,
+     "weightPct": 1.4,
+     "shares": 399032
+    },
+    {
+     "issuer": "BANK OF NEW YORK MELLON CORP",
+     "ticker": "",
+     "valueUsd": 141263435,
+     "weightPct": 1.3,
+     "shares": 976858
+    },
+    {
+     "issuer": "HERC HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 140005768,
+     "weightPct": 1.3,
+     "shares": 976739
+    },
+    {
+     "issuer": "SPHERE ENTERTAINMENT CO",
+     "ticker": "",
+     "valueUsd": 132525926,
+     "weightPct": 1.2,
+     "shares": 765913
+    },
+    {
+     "issuer": "AMETEK INC",
+     "ticker": "",
+     "valueUsd": 131705362,
+     "weightPct": 1.2,
+     "shares": 544372
+    },
+    {
+     "issuer": "AMERICAN EXPRESS CO",
+     "ticker": "",
+     "valueUsd": 131566397,
+     "weightPct": 1.2,
+     "shares": 388962
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/807249/000114036126032508/0001140361-26-032508-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Royce & Associates",
+   "role": "Royce",
+   "tier": 2,
+   "cik": 906304,
+   "edgarName": "ROYCE & ASSOCIATES LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 12417915021,
+   "positions": 747,
+   "holdings": [
+    {
+     "issuer": "ARCOSA INC",
+     "ticker": "",
+     "valueUsd": 144376126,
+     "weightPct": 1.2,
+     "shares": 993710
+    },
+    {
+     "issuer": "QUAKER HOUGHTON",
+     "ticker": "",
+     "valueUsd": 136706682,
+     "weightPct": 1.1,
+     "shares": 860494
+    },
+    {
+     "issuer": "MKS INC.",
+     "ticker": "",
+     "valueUsd": 116345002,
+     "weightPct": 0.9,
+     "shares": 261567
+    },
+    {
+     "issuer": "JBT MAREL CORPORATION",
+     "ticker": "",
+     "valueUsd": 114284215,
+     "weightPct": 0.9,
+     "shares": 788167
+    },
+    {
+     "issuer": "DORMAN PRODS INC",
+     "ticker": "",
+     "valueUsd": 112464273,
+     "weightPct": 0.9,
+     "shares": 824216
+    },
+    {
+     "issuer": "IES HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 109485645,
+     "weightPct": 0.9,
+     "shares": 149029
+    },
+    {
+     "issuer": "ONTO INNOVATION INC",
+     "ticker": "",
+     "valueUsd": 108269625,
+     "weightPct": 0.9,
+     "shares": 286087
+    },
+    {
+     "issuer": "INTERPARFUMS INC",
+     "ticker": "",
+     "valueUsd": 96657331,
+     "weightPct": 0.8,
+     "shares": 864092
+    },
+    {
+     "issuer": "ULTRA CLEAN HLDGS INC",
+     "ticker": "",
+     "valueUsd": 95035665,
+     "weightPct": 0.8,
+     "shares": 666496
+    },
+    {
+     "issuer": "ELEMENT SOLUTIONS INC",
+     "ticker": "",
+     "valueUsd": 92234903,
+     "weightPct": 0.7,
+     "shares": 1931621
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/906304/000090630426000154/0000906304-26-000154-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Jensen Investment Management",
+   "role": "Jensen",
+   "tier": 2,
+   "cik": 1106129,
+   "edgarName": "JENSEN INVESTMENT MANAGEMENT INC",
+   "filed": "2026-08-07",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 4125081649,
+   "positions": 83,
+   "holdings": [
+    {
+     "issuer": "Alphabet Inc Cap Stk Cl A",
+     "ticker": "GOOGL",
+     "valueUsd": 284858912,
+     "weightPct": 6.9,
+     "shares": 797098
+    },
+    {
+     "issuer": "Microsoft Corp",
+     "ticker": "MSFT",
+     "valueUsd": 274969455,
+     "weightPct": 6.7,
+     "shares": 737144
+    },
+    {
+     "issuer": "Amazon.com Inc.",
+     "ticker": "AMZN",
+     "valueUsd": 251242774,
+     "weightPct": 6.1,
+     "shares": 1054136
+    },
+    {
+     "issuer": "Apple, Inc.",
+     "ticker": "AAPL",
+     "valueUsd": 249129990,
+     "weightPct": 6,
+     "shares": 860969
+    },
+    {
+     "issuer": "NVIDIA Corp",
+     "ticker": "NVDA",
+     "valueUsd": 239605174,
+     "weightPct": 5.8,
+     "shares": 1197487
+    },
+    {
+     "issuer": "KLA Corporation",
+     "ticker": "KLAC",
+     "valueUsd": 238468869,
+     "weightPct": 5.8,
+     "shares": 790391
+    },
+    {
+     "issuer": "Stryker Corp",
+     "ticker": "",
+     "valueUsd": 185651703,
+     "weightPct": 4.5,
+     "shares": 589670
+    },
+    {
+     "issuer": "Sherwin-Williams Co",
+     "ticker": "",
+     "valueUsd": 185600531,
+     "weightPct": 4.5,
+     "shares": 539035
+    },
+    {
+     "issuer": "Eli Lilly & Co.",
+     "ticker": "",
+     "valueUsd": 184394371,
+     "weightPct": 4.5,
+     "shares": 153735
+    },
+    {
+     "issuer": "Mastercard Inc",
+     "ticker": "",
+     "valueUsd": 178585910,
+     "weightPct": 4.3,
+     "shares": 347714
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1106129/000117120026000010/0001171200-26-000010-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Impax Asset Management",
+   "role": "Impax",
+   "tier": 2,
+   "cik": 1749768,
+   "edgarName": "Impax Asset Management Group plc",
+   "filed": "2026-08-11",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 15370564179,
+   "positions": 284,
+   "holdings": [
+    {
+     "issuer": "KLA Corp",
+     "ticker": "KLAC",
+     "valueUsd": 749014292,
+     "weightPct": 4.9,
+     "shares": 2482564
+    },
+    {
+     "issuer": "NVIDIA Corp",
+     "ticker": "NVDA",
+     "valueUsd": 744886125,
+     "weightPct": 4.8,
+     "shares": 3722756
+    },
+    {
+     "issuer": "Linde PLC",
+     "ticker": "LIN",
+     "valueUsd": 736553914,
+     "weightPct": 4.8,
+     "shares": 1419343
+    },
+    {
+     "issuer": "Xylem Inc/NY",
+     "ticker": "",
+     "valueUsd": 528278564,
+     "weightPct": 3.4,
+     "shares": 4468984
+    },
+    {
+     "issuer": "Microsoft Corp",
+     "ticker": "MSFT",
+     "valueUsd": 503818627,
+     "weightPct": 3.3,
+     "shares": 1350648
+    },
+    {
+     "issuer": "American Water Works Co Inc",
+     "ticker": "",
+     "valueUsd": 471529035,
+     "weightPct": 3.1,
+     "shares": 3583592
+    },
+    {
+     "issuer": "Veralto Corp",
+     "ticker": "",
+     "valueUsd": 459946666,
+     "weightPct": 3,
+     "shares": 5186589
+    },
+    {
+     "issuer": "Cintas Corp",
+     "ticker": "",
+     "valueUsd": 410456170,
+     "weightPct": 2.7,
+     "shares": 2413313
+    },
+    {
+     "issuer": "Waste Connections Inc",
+     "ticker": "",
+     "valueUsd": 329883893,
+     "weightPct": 2.1,
+     "shares": 1979027
+    },
+    {
+     "issuer": "Cia de Saneamento Basico do Es",
+     "ticker": "",
+     "valueUsd": 302435084,
+     "weightPct": 2,
+     "shares": 52324409
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1749768/000174976826000004/0001749768-26-000004-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Generation Investment Management",
+   "role": "Al Gore / David Blood",
+   "tier": 2,
+   "cik": 1375534,
+   "edgarName": "GENERATION INVESTMENT MANAGEMENT LLP",
+   "filed": "2026-08-10",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 10289660825,
+   "positions": 28,
+   "holdings": [
+    {
+     "issuer": "DANAHER CORP DEL",
+     "ticker": "",
+     "valueUsd": 1287948806,
+     "weightPct": 12.5,
+     "shares": 6761596
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1237820220,
+     "weightPct": 12,
+     "shares": 5193506
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 1161417540,
+     "weightPct": 11.3,
+     "shares": 3113553
+    },
+    {
+     "issuer": "MERCADOLIBRE INC",
+     "ticker": "MELI",
+     "valueUsd": 802383411,
+     "weightPct": 7.8,
+     "shares": 472716
+    },
+    {
+     "issuer": "WEST PHARMACEUTICAL SVSC INC",
+     "ticker": "",
+     "valueUsd": 728167598,
+     "weightPct": 7.1,
+     "shares": 2028322
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 713805477,
+     "weightPct": 6.9,
+     "shares": 1997385
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 523895685,
+     "weightPct": 5.1,
+     "shares": 1526992
+    },
+    {
+     "issuer": "STERIS PLC",
+     "ticker": "",
+     "valueUsd": 480246578,
+     "weightPct": 4.7,
+     "shares": 2280698
+    },
+    {
+     "issuer": "TRIMBLE INC",
+     "ticker": "",
+     "valueUsd": 367994282,
+     "weightPct": 3.6,
+     "shares": 7190197
+    },
+    {
+     "issuer": "COOPER COS INC",
+     "ticker": "",
+     "valueUsd": 356303541,
+     "weightPct": 3.5,
+     "shares": 4968673
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1375534/000175272426000044/0001752724-26-000044-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Arrowstreet Capital",
+   "role": "Arrowstreet",
+   "tier": 2,
+   "cik": 1164508,
+   "edgarName": "ARROWSTREET CAPITAL, LIMITED PARTNERSHIP",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 225366645888,
+   "positions": 1887,
+   "holdings": [
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 10317548607,
+     "weightPct": 4.6,
+     "shares": 27659541
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 9616275296,
+     "weightPct": 4.3,
+     "shares": 40346851
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 8648688427,
+     "weightPct": 3.8,
+     "shares": 29889028
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 6952365074,
+     "weightPct": 3.1,
+     "shares": 34746375
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 5350765298,
+     "weightPct": 2.4,
+     "shares": 14972649
+    },
+    {
+     "issuer": "LAM RESEARCH CORP",
+     "ticker": "LRCX",
+     "valueUsd": 5316611569,
+     "weightPct": 2.4,
+     "shares": 12269198
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 5063810168,
+     "weightPct": 2.2,
+     "shares": 14331673
+    },
+    {
+     "issuer": "SANDISK CORP",
+     "ticker": "SNDK",
+     "valueUsd": 4932682158,
+     "weightPct": 2.2,
+     "shares": 2169423
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 3246274708,
+     "weightPct": 1.4,
+     "shares": 8593712
+    },
+    {
+     "issuer": "ASML HLDG NV",
+     "ticker": "",
+     "valueUsd": 2912352596,
+     "weightPct": 1.3,
+     "shares": 1463906
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1164508/000116450826000035/0001164508-26-000035-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Sands Capital Management",
+   "role": "Sands Capital",
+   "tier": 2,
+   "cik": 1020066,
+   "edgarName": "SANDS CAPITAL MANAGEMENT, LLC",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 26928187141,
+   "positions": 71,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 2813156151,
+     "weightPct": 10.4,
+     "shares": 14059454
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 1874672381,
+     "weightPct": 7,
+     "shares": 3925440
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 1748753286,
+     "weightPct": 6.5,
+     "shares": 4893397
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1158623890,
+     "weightPct": 4.3,
+     "shares": 4861223
+    },
+    {
+     "issuer": "ASML HLDG NV",
+     "ticker": "",
+     "valueUsd": 1061750202,
+     "weightPct": 3.9,
+     "shares": 533693
+    },
+    {
+     "issuer": "BLOOM ENERGY CORP",
+     "ticker": "BE",
+     "valueUsd": 885869107,
+     "weightPct": 3.3,
+     "shares": 2926558
+    },
+    {
+     "issuer": "AXON ENTERPRISE INC",
+     "ticker": "AXON",
+     "valueUsd": 830160818,
+     "weightPct": 3.1,
+     "shares": 1480817
+    },
+    {
+     "issuer": "SHOPIFY INC",
+     "ticker": "SHOP",
+     "valueUsd": 826900580,
+     "weightPct": 3.1,
+     "shares": 7242079
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 815558896,
+     "weightPct": 3,
+     "shares": 2377099
+    },
+    {
+     "issuer": "SPOTIFY TECHNOLOGY S A",
+     "ticker": "",
+     "valueUsd": 808622511,
+     "weightPct": 3,
+     "shares": 1761206
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1020066/000102006626000018/0001020066-26-000018-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Loomis Sayles",
+   "role": "Loomis Sayles",
+   "tier": 2,
+   "cik": 312348,
+   "edgarName": "LOOMIS SAYLES & CO L P",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 79785245869,
+   "positions": 707,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORP",
+     "ticker": "NVDA",
+     "valueUsd": 7903937391,
+     "weightPct": 9.9,
+     "shares": 39501911
+    },
+    {
+     "issuer": "ALPHABET INC-CL A",
+     "ticker": "GOOGL",
+     "valueUsd": 6153144578,
+     "weightPct": 7.7,
+     "shares": 17217854
+    },
+    {
+     "issuer": "TESLA INC",
+     "ticker": "TSLA",
+     "valueUsd": 5332988384,
+     "weightPct": 6.7,
+     "shares": 12679478
+    },
+    {
+     "issuer": "AMAZON.COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 4359573041,
+     "weightPct": 5.5,
+     "shares": 18291403
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 4227166615,
+     "weightPct": 5.3,
+     "shares": 7504423
+    },
+    {
+     "issuer": "VISA INC-CLASS A SHRS",
+     "ticker": "V",
+     "valueUsd": 3125814966,
+     "weightPct": 3.9,
+     "shares": 9110773
+    },
+    {
+     "issuer": "BOEING CO",
+     "ticker": "BA",
+     "valueUsd": 3012236648,
+     "weightPct": 3.8,
+     "shares": 13915261
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 2901982244,
+     "weightPct": 3.6,
+     "shares": 7779696
+    },
+    {
+     "issuer": "NETFLIX.COM INC",
+     "ticker": "NFLX",
+     "valueUsd": 2857246791,
+     "weightPct": 3.6,
+     "shares": 40017462
+    },
+    {
+     "issuer": "ORACLE CORP",
+     "ticker": "ORCL",
+     "valueUsd": 2447144820,
+     "weightPct": 3.1,
+     "shares": 16698361
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/312348/000031234826000034/0000312348-26-000034-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Winslow Capital Management",
+   "role": "Winslow",
+   "tier": 2,
+   "cik": 900973,
+   "edgarName": "Winslow Capital Management, LLC",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 29059630524,
+   "positions": 66,
+   "holdings": [
+    {
+     "issuer": "NVIDIA Corp",
+     "ticker": "NVDA",
+     "valueUsd": 3121479033,
+     "weightPct": 10.7,
+     "shares": 15600375
+    },
+    {
+     "issuer": "Alphabet Inc",
+     "ticker": "",
+     "valueUsd": 3109326613,
+     "weightPct": 10.7,
+     "shares": 8800064
+    },
+    {
+     "issuer": "Broadcom Inc",
+     "ticker": "AVGO",
+     "valueUsd": 1750253252,
+     "weightPct": 6,
+     "shares": 4633364
+    },
+    {
+     "issuer": "Apple Inc",
+     "ticker": "AAPL",
+     "valueUsd": 1411398540,
+     "weightPct": 4.9,
+     "shares": 4877656
+    },
+    {
+     "issuer": "Amazon.com Inc.",
+     "ticker": "AMZN",
+     "valueUsd": 1025971474,
+     "weightPct": 3.5,
+     "shares": 4304655
+    },
+    {
+     "issuer": "Microsoft Corporation",
+     "ticker": "MSFT",
+     "valueUsd": 856165576,
+     "weightPct": 2.9,
+     "shares": 2295227
+    },
+    {
+     "issuer": "Advanced Micro Devices Inc.",
+     "ticker": "AMD",
+     "valueUsd": 848223870,
+     "weightPct": 2.9,
+     "shares": 1460164
+    },
+    {
+     "issuer": "Lilly(Eli) & Co",
+     "ticker": "",
+     "valueUsd": 831953434,
+     "weightPct": 2.9,
+     "shares": 693624
+    },
+    {
+     "issuer": "Meta Platforms Inc",
+     "ticker": "META",
+     "valueUsd": 753887059,
+     "weightPct": 2.6,
+     "shares": 1338364
+    },
+    {
+     "issuer": "Hilton Worldwide Holdings Inc",
+     "ticker": "",
+     "valueUsd": 722766581,
+     "weightPct": 2.5,
+     "shares": 2187153
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/900973/000090097326000006/0000900973-26-000006-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Pzena Investment Management",
+   "role": "Rich Pzena",
+   "tier": 2,
+   "cik": 1027796,
+   "edgarName": "PZENA INVESTMENT MANAGEMENT LLC",
+   "filed": "2026-08-07",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 34066282976,
+   "positions": 161,
+   "holdings": [
+    {
+     "issuer": "MAGNA INTL INC",
+     "ticker": "",
+     "valueUsd": 2227312133,
+     "weightPct": 6.5,
+     "shares": 23882824
+    },
+    {
+     "issuer": "HUMANA INC",
+     "ticker": "",
+     "valueUsd": 1749013682,
+     "weightPct": 5.1,
+     "shares": 4403136
+    },
+    {
+     "issuer": "BAXTER INTL INC",
+     "ticker": "",
+     "valueUsd": 1392097779,
+     "weightPct": 4.1,
+     "shares": 65295393
+    },
+    {
+     "issuer": "CVS HEALTH CORP",
+     "ticker": "",
+     "valueUsd": 1217558500,
+     "weightPct": 3.6,
+     "shares": 11769536
+    },
+    {
+     "issuer": "DOLLAR GEN CORP",
+     "ticker": "",
+     "valueUsd": 1176661326,
+     "weightPct": 3.5,
+     "shares": 10222060
+    },
+    {
+     "issuer": "SKYWORKS SOLUTIONS INC",
+     "ticker": "",
+     "valueUsd": 1082972112,
+     "weightPct": 3.2,
+     "shares": 15973040
+    },
+    {
+     "issuer": "COGNIZANT TECHNOLOGY SOLUTIO",
+     "ticker": "",
+     "valueUsd": 1027474831,
+     "weightPct": 3,
+     "shares": 26529172
+    },
+    {
+     "issuer": "BRISTOL-MYERS SQUIBB CO",
+     "ticker": "",
+     "valueUsd": 979945875,
+     "weightPct": 2.9,
+     "shares": 17007044
+    },
+    {
+     "issuer": "TYSON FOODS INC",
+     "ticker": "",
+     "valueUsd": 974203270,
+     "weightPct": 2.9,
+     "shares": 17016651
+    },
+    {
+     "issuer": "COREBRIDGE FINL INC",
+     "ticker": "",
+     "valueUsd": 967399884,
+     "weightPct": 2.8,
+     "shares": 33789727
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1027796/000102779626000049/0001027796-26-000049-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Dodge & Cox",
+   "role": "Dodge & Cox",
+   "tier": 2,
+   "cik": 200217,
+   "edgarName": "DODGE & COX",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 191008088994,
+   "positions": 222,
+   "holdings": [
+    {
+     "issuer": "Johnson Controls International PLC",
+     "ticker": "",
+     "valueUsd": 8149432237,
+     "weightPct": 4.3,
+     "shares": 55776006
+    },
+    {
+     "issuer": "The Charles Schwab Corp.",
+     "ticker": "",
+     "valueUsd": 7101867203,
+     "weightPct": 3.7,
+     "shares": 76968323
+    },
+    {
+     "issuer": "RTX Corp.",
+     "ticker": "",
+     "valueUsd": 6662036733,
+     "weightPct": 3.5,
+     "shares": 35113249
+    },
+    {
+     "issuer": "CVS Health Corp.",
+     "ticker": "",
+     "valueUsd": 5173820539,
+     "weightPct": 2.7,
+     "shares": 50012765
+    },
+    {
+     "issuer": "Microsoft Corp.",
+     "ticker": "MSFT",
+     "valueUsd": 4788170142,
+     "weightPct": 2.5,
+     "shares": 12836229
+    },
+    {
+     "issuer": "Booking Holdings, Inc.",
+     "ticker": "BKNG",
+     "valueUsd": 4551705968,
+     "weightPct": 2.4,
+     "shares": 25536950
+    },
+    {
+     "issuer": "Humana, Inc.",
+     "ticker": "",
+     "valueUsd": 4345737744,
+     "weightPct": 2.3,
+     "shares": 10940380
+    },
+    {
+     "issuer": "Alphabet, Inc.",
+     "ticker": "",
+     "valueUsd": 4226214403,
+     "weightPct": 2.2,
+     "shares": 11961097
+    },
+    {
+     "issuer": "MetLife, Inc.",
+     "ticker": "",
+     "valueUsd": 4097759602,
+     "weightPct": 2.1,
+     "shares": 48431150
+    },
+    {
+     "issuer": "Sunbelt Rentals Holdings, Inc.",
+     "ticker": "",
+     "valueUsd": 4096716044,
+     "weightPct": 2.1,
+     "shares": 54761610
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/200217/000119312526349535/0001193125-26-349535-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "PRIMECAP Management",
+   "role": "PRIMECAP",
+   "tier": 2,
+   "cik": 763212,
+   "edgarName": "PRIMECAP MANAGEMENT CO/CA/",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 169112441771,
+   "positions": 324,
+   "holdings": [
+    {
+     "issuer": "MICRON TECHNOLOGY INC",
+     "ticker": "MU",
+     "valueUsd": 22182263342,
+     "weightPct": 13.1,
+     "shares": 19217236
+    },
+    {
+     "issuer": "ELI LILLY & CO",
+     "ticker": "",
+     "valueUsd": 11002256246,
+     "weightPct": 6.5,
+     "shares": 9172904
+    },
+    {
+     "issuer": "INTEL CORP",
+     "ticker": "INTC",
+     "valueUsd": 10507291264,
+     "weightPct": 6.2,
+     "shares": 75250958
+    },
+    {
+     "issuer": "KLA CORP",
+     "ticker": "KLAC",
+     "valueUsd": 6196136809,
+     "weightPct": 3.7,
+     "shares": 20536730
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 5310435649,
+     "weightPct": 3.1,
+     "shares": 14859769
+    },
+    {
+     "issuer": "FLEX LTD",
+     "ticker": "FLEX",
+     "valueUsd": 3785772872,
+     "weightPct": 2.2,
+     "shares": 23358875
+    },
+    {
+     "issuer": "ASTRAZENECA PLC",
+     "ticker": "",
+     "valueUsd": 3431207652,
+     "weightPct": 2,
+     "shares": 18095178
+    },
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 3417373127,
+     "weightPct": 2,
+     "shares": 17079180
+    },
+    {
+     "issuer": "BIOGEN INC",
+     "ticker": "",
+     "valueUsd": 3274304389,
+     "weightPct": 1.9,
+     "shares": 15154606
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 2851067887,
+     "weightPct": 1.7,
+     "shares": 11962188
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/763212/000076321226000028/0000763212-26-000028-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Hotchkis & Wiley",
+   "role": "Hotchkis & Wiley",
+   "tier": 2,
+   "cik": 1164833,
+   "edgarName": "HOTCHKIS & WILEY CAPITAL MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 34313644596,
+   "positions": 462,
+   "holdings": [
+    {
+     "issuer": "WORKDAY INC",
+     "ticker": "",
+     "valueUsd": 1552178972,
+     "weightPct": 4.5,
+     "shares": 12679129
+    },
+    {
+     "issuer": "APA CORPORATION",
+     "ticker": "",
+     "valueUsd": 1032316019,
+     "weightPct": 3,
+     "shares": 31695303
+    },
+    {
+     "issuer": "AMERICAN INTL GROUP INC",
+     "ticker": "",
+     "valueUsd": 882511966,
+     "weightPct": 2.6,
+     "shares": 11841030
+    },
+    {
+     "issuer": "F5 INC",
+     "ticker": "",
+     "valueUsd": 857532321,
+     "weightPct": 2.5,
+     "shares": 2061574
+    },
+    {
+     "issuer": "GE HEALTHCARE TECHNOLOGIES I",
+     "ticker": "",
+     "valueUsd": 784154633,
+     "weightPct": 2.3,
+     "shares": 12250502
+    },
+    {
+     "issuer": "ELEVANCE HEALTH INC FORMERLY",
+     "ticker": "",
+     "valueUsd": 779725026,
+     "weightPct": 2.3,
+     "shares": 2016200
+    },
+    {
+     "issuer": "PPG INDS INC",
+     "ticker": "",
+     "valueUsd": 767964979,
+     "weightPct": 2.2,
+     "shares": 6331643
+    },
+    {
+     "issuer": "TELEFONAKTIEBOLAGET LM ERICS",
+     "ticker": "",
+     "valueUsd": 766022539,
+     "weightPct": 2.2,
+     "shares": 68701573
+    },
+    {
+     "issuer": "COMCAST CORP NEW",
+     "ticker": "",
+     "valueUsd": 738574819,
+     "weightPct": 2.2,
+     "shares": 30084514
+    },
+    {
+     "issuer": "DOMINION ENERGY INC",
+     "ticker": "",
+     "valueUsd": 675713707,
+     "weightPct": 2,
+     "shares": 9894768
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1164833/000117266126003763/0001172661-26-003763-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Fairholme Capital Management",
+   "role": "Bruce Berkowitz",
+   "tier": 2,
+   "cik": 1056831,
+   "edgarName": "FAIRHOLME CAPITAL MANAGEMENT LLC",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 1489888626,
+   "positions": 13,
+   "holdings": [
+    {
+     "issuer": "ST JOE CO",
+     "ticker": "",
+     "valueUsd": 1138761645,
+     "weightPct": 76.4,
+     "shares": 18182367
+    },
+    {
+     "issuer": "ENTERPRISE PRODS PARTNERS L",
+     "ticker": "",
+     "valueUsd": 200555208,
+     "weightPct": 13.5,
+     "shares": 5455800
+    },
+    {
+     "issuer": "BANK OZK",
+     "ticker": "",
+     "valueUsd": 47988026,
+     "weightPct": 3.2,
+     "shares": 921252
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 43960262,
+     "weightPct": 3,
+     "shares": 87852
+    },
+    {
+     "issuer": "WR Berkley Corp",
+     "ticker": "",
+     "valueUsd": 18080365,
+     "weightPct": 1.2,
+     "shares": 256350
+    },
+    {
+     "issuer": "PROGRESSIVE CORP",
+     "ticker": "",
+     "valueUsd": 15772090,
+     "weightPct": 1.1,
+     "shares": 72200
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 8237350,
+     "weightPct": 0.6,
+     "shares": 11
+    },
+    {
+     "issuer": "PFIZER INC",
+     "ticker": "",
+     "valueUsd": 5562480,
+     "weightPct": 0.4,
+     "shares": 231000
+    },
+    {
+     "issuer": "KRAFT HEINZ CO",
+     "ticker": "",
+     "valueUsd": 4778326,
+     "weightPct": 0.3,
+     "shares": 202300
+    },
+    {
+     "issuer": "THE CAMPBELLS COMPANY",
+     "ticker": "",
+     "valueUsd": 2594455,
+     "weightPct": 0.2,
+     "shares": 116500
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1056831/000091957426005488/0000919574-26-005488-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Third Avenue Management",
+   "role": "Third Avenue",
+   "tier": 2,
+   "cik": 1099281,
+   "edgarName": "THIRD AVENUE MANAGEMENT LLC",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 625342170,
+   "positions": 55,
+   "holdings": [
+    {
+     "issuer": "Tidewater Inc",
+     "ticker": "",
+     "valueUsd": 62240482,
+     "weightPct": 10,
+     "shares": 934121
+    },
+    {
+     "issuer": "Boise Cascade Co",
+     "ticker": "",
+     "valueUsd": 46739936,
+     "weightPct": 7.5,
+     "shares": 602086
+    },
+    {
+     "issuer": "Valaris Ltd",
+     "ticker": "",
+     "valueUsd": 37484324,
+     "weightPct": 6,
+     "shares": 516313
+    },
+    {
+     "issuer": "Robert Half Inc",
+     "ticker": "",
+     "valueUsd": 37095915,
+     "weightPct": 5.9,
+     "shares": 1208336
+    },
+    {
+     "issuer": "Harley-Davidson Inc",
+     "ticker": "",
+     "valueUsd": 36222325,
+     "weightPct": 5.8,
+     "shares": 1480880
+    },
+    {
+     "issuer": "Warrior Met Coal Inc",
+     "ticker": "",
+     "valueUsd": 23162902,
+     "weightPct": 3.7,
+     "shares": 285398
+    },
+    {
+     "issuer": "Five Point Holdings LLC",
+     "ticker": "",
+     "valueUsd": 19478737,
+     "weightPct": 3.1,
+     "shares": 3696155
+    },
+    {
+     "issuer": "CBRE Group Inc",
+     "ticker": "",
+     "valueUsd": 18303832,
+     "weightPct": 2.9,
+     "shares": 135896
+    },
+    {
+     "issuer": "Brookfield Corp",
+     "ticker": "",
+     "valueUsd": 16820026,
+     "weightPct": 2.7,
+     "shares": 394929
+    },
+    {
+     "issuer": "U-Haul Holding Co",
+     "ticker": "",
+     "valueUsd": 16379414,
+     "weightPct": 2.6,
+     "shares": 283872
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1099281/000109928126000008/0001099281-26-000008-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Cohen & Steers",
+   "role": "Cohen & Steers",
+   "tier": 2,
+   "cik": 1284812,
+   "edgarName": "COHEN & STEERS, INC.",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 63234826000,
+   "positions": 442,
+   "holdings": [
+    {
+     "issuer": "Welltower Inc.",
+     "ticker": "",
+     "valueUsd": 8357326000,
+     "weightPct": 13.2,
+     "shares": 36821274
+    },
+    {
+     "issuer": "Digital Realty Trust Inc.",
+     "ticker": "",
+     "valueUsd": 5249084000,
+     "weightPct": 8.3,
+     "shares": 29229771
+    },
+    {
+     "issuer": "Prologis Inc.",
+     "ticker": "",
+     "valueUsd": 3094394000,
+     "weightPct": 4.9,
+     "shares": 22841902
+    },
+    {
+     "issuer": "Crown Castle Inc.",
+     "ticker": "",
+     "valueUsd": 2959886000,
+     "weightPct": 4.7,
+     "shares": 39084710
+    },
+    {
+     "issuer": "Equinix Inc.",
+     "ticker": "",
+     "valueUsd": 2284092000,
+     "weightPct": 3.6,
+     "shares": 2191196
+    },
+    {
+     "issuer": "American Tower Corporation",
+     "ticker": "",
+     "valueUsd": 2253635000,
+     "weightPct": 3.6,
+     "shares": 13777789
+    },
+    {
+     "issuer": "Extra Space Storage Inc.",
+     "ticker": "",
+     "valueUsd": 1873798000,
+     "weightPct": 3,
+     "shares": 12896053
+    },
+    {
+     "issuer": "Public Storage",
+     "ticker": "",
+     "valueUsd": 1667422000,
+     "weightPct": 2.6,
+     "shares": 5238349
+    },
+    {
+     "issuer": "Sun Communities Inc.",
+     "ticker": "",
+     "valueUsd": 1606659000,
+     "weightPct": 2.5,
+     "shares": 13398864
+    },
+    {
+     "issuer": "Iron Mountain Incorporated",
+     "ticker": "",
+     "valueUsd": 1518214000,
+     "weightPct": 2.4,
+     "shares": 12019735
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1284812/000119312526350257/0001193125-26-350257-index.htm",
+   "unitsScaled": true
+  },
+  {
+   "name": "American Century Companies",
+   "role": "American Century",
+   "tier": 2,
+   "cik": 748054,
+   "edgarName": "AMERICAN CENTURY COMPANIES INC",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 226281255256,
+   "positions": 2884,
+   "holdings": [
+    {
+     "issuer": "NVIDIA CORPORATION",
+     "ticker": "NVDA",
+     "valueUsd": 12130714421,
+     "weightPct": 5.4,
+     "shares": 60626286
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "GOOGL",
+     "valueUsd": 6018668291,
+     "weightPct": 2.7,
+     "shares": 16841559
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 5828696041,
+     "weightPct": 2.6,
+     "shares": 24455378
+    },
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 5530366224,
+     "weightPct": 2.4,
+     "shares": 19112405
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 5413390568,
+     "weightPct": 2.4,
+     "shares": 14512326
+    },
+    {
+     "issuer": "ALPHABET INC",
+     "ticker": "",
+     "valueUsd": 3196592513,
+     "weightPct": 1.4,
+     "shares": 9047039
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 3003811005,
+     "weightPct": 1.3,
+     "shares": 5332613
+    },
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 2972145789,
+     "weightPct": 1.3,
+     "shares": 6223473
+    },
+    {
+     "issuer": "BROADCOM INC",
+     "ticker": "AVGO",
+     "valueUsd": 2964476749,
+     "weightPct": 1.3,
+     "shares": 7847715
+    },
+    {
+     "issuer": "TESLA INC",
+     "ticker": "TSLA",
+     "valueUsd": 2927950421,
+     "weightPct": 1.3,
+     "shares": 6961359
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/748054/000074805426000005/0000748054-26-000005-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Fiduciary Management Inc.",
+   "role": "FMI",
+   "tier": 3,
+   "cik": 764532,
+   "edgarName": "FIDUCIARY MANAGEMENT INC /WI/",
+   "filed": "2026-08-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 7030555164,
+   "positions": 56,
+   "holdings": [
+    {
+     "issuer": "Aramark",
+     "ticker": "",
+     "valueUsd": 371016165,
+     "weightPct": 5.3,
+     "shares": 6520495
+    },
+    {
+     "issuer": "Booking Holdings Inc",
+     "ticker": "BKNG",
+     "valueUsd": 331203607,
+     "weightPct": 4.7,
+     "shares": 1858189
+    },
+    {
+     "issuer": "Insight Enterprises",
+     "ticker": "",
+     "valueUsd": 267658058,
+     "weightPct": 3.8,
+     "shares": 2197521
+    },
+    {
+     "issuer": "Charles Schwab Corp",
+     "ticker": "",
+     "valueUsd": 211828207,
+     "weightPct": 3,
+     "shares": 2295743
+    },
+    {
+     "issuer": "Valvoline Inc.",
+     "ticker": "",
+     "valueUsd": 202537205,
+     "weightPct": 2.9,
+     "shares": 5122337
+    },
+    {
+     "issuer": "Hayward Holdings",
+     "ticker": "",
+     "valueUsd": 202255891,
+     "weightPct": 2.9,
+     "shares": 11684338
+    },
+    {
+     "issuer": "Ferguson Enterprises",
+     "ticker": "",
+     "valueUsd": 200521778,
+     "weightPct": 2.9,
+     "shares": 844907
+    },
+    {
+     "issuer": "CDW Corp",
+     "ticker": "",
+     "valueUsd": 196018125,
+     "weightPct": 2.8,
+     "shares": 1393758
+    },
+    {
+     "issuer": "OneMain Holdings",
+     "ticker": "",
+     "valueUsd": 187828633,
+     "weightPct": 2.7,
+     "shares": 3080673
+    },
+    {
+     "issuer": "Zions Bancorporation",
+     "ticker": "",
+     "valueUsd": 179289072,
+     "weightPct": 2.6,
+     "shares": 2591257
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/764532/000076453226000007/0000764532-26-000007-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Giverny Capital",
+   "role": "Francois Rochon",
+   "tier": 3,
+   "cik": 1641864,
+   "edgarName": "Giverny Capital Inc.",
+   "filed": "2026-08-26",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 2974321189,
+   "positions": 51,
+   "holdings": [
+    {
+     "issuer": "ALPHABET INC C",
+     "ticker": "",
+     "valueUsd": 213927182,
+     "weightPct": 7.2,
+     "shares": 605460
+    },
+    {
+     "issuer": "HEICO CORP NEW",
+     "ticker": "",
+     "valueUsd": 189627812,
+     "weightPct": 6.4,
+     "shares": 735248
+    },
+    {
+     "issuer": "META PLATFORMS INC",
+     "ticker": "META",
+     "valueUsd": 170613782,
+     "weightPct": 5.7,
+     "shares": 302888
+    },
+    {
+     "issuer": "SCHWAB CHARLES CORP",
+     "ticker": "",
+     "valueUsd": 155158187,
+     "weightPct": 5.2,
+     "shares": 1681567
+    },
+    {
+     "issuer": "AUTOMATIC DATA PROC INC",
+     "ticker": "",
+     "valueUsd": 146587816,
+     "weightPct": 4.9,
+     "shares": 654556
+    },
+    {
+     "issuer": "AMETEK INC",
+     "ticker": "",
+     "valueUsd": 144869075,
+     "weightPct": 4.9,
+     "shares": 598781
+    },
+    {
+     "issuer": "MEDPACE HOLDINGS INC",
+     "ticker": "",
+     "valueUsd": 134479318,
+     "weightPct": 4.5,
+     "shares": 253931
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 133770791,
+     "weightPct": 4.5,
+     "shares": 389900
+    },
+    {
+     "issuer": "BERKSHIRE HATHAWAY INC DEL",
+     "ticker": "",
+     "valueUsd": 124320394,
+     "weightPct": 4.2,
+     "shares": 248447
+    },
+    {
+     "issuer": "PROGRESSIVE CORP",
+     "ticker": "",
+     "valueUsd": 118463687,
+     "weightPct": 4,
+     "shares": 542292
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1641864/000164186426000010/0001641864-26-000010-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "AltaRock Partners",
+   "role": "AltaRock",
+   "tier": 3,
+   "cik": 1631014,
+   "edgarName": "ALTAROCK PARTNERS LP",
+   "filed": "2026-08-17",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 4239761490,
+   "positions": 8,
+   "holdings": [
+    {
+     "issuer": "AMAZON.COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 1365681526,
+     "weightPct": 32.2,
+     "shares": 5729972
+    },
+    {
+     "issuer": "TRANSDIGM GROUP INC",
+     "ticker": "",
+     "valueUsd": 1166540690,
+     "weightPct": 27.5,
+     "shares": 875755
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 870808476,
+     "weightPct": 20.5,
+     "shares": 2334482
+    },
+    {
+     "issuer": "MASTERCARD INC-CLASS A",
+     "ticker": "",
+     "valueUsd": 392650795,
+     "weightPct": 9.3,
+     "shares": 764507
+    },
+    {
+     "issuer": "VISA INC-CLASS A SHRS",
+     "ticker": "V",
+     "valueUsd": 286984492,
+     "weightPct": 6.8,
+     "shares": 836470
+    },
+    {
+     "issuer": "MOODYS CORP",
+     "ticker": "",
+     "valueUsd": 137064462,
+     "weightPct": 3.2,
+     "shares": 302624
+    },
+    {
+     "issuer": "ALPHABET INC-CL A",
+     "ticker": "GOOGL",
+     "valueUsd": 15007396,
+     "weightPct": 0.4,
+     "shares": 41994
+    },
+    {
+     "issuer": "HILTON WORLDWIDE",
+     "ticker": "",
+     "valueUsd": 5023653,
+     "weightPct": 0.1,
+     "shares": 15202
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1631014/000110465926097527/0001104659-26-097527-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Torray",
+   "role": "Torray",
+   "tier": 3,
+   "cik": 98758,
+   "edgarName": "TORRAY INVESTMENT PARTNERS LLC",
+   "filed": "2026-07-30",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 741294573,
+   "positions": 91,
+   "holdings": [
+    {
+     "issuer": "Broadcom",
+     "ticker": "AVGO",
+     "valueUsd": 38329537,
+     "weightPct": 5.2,
+     "shares": 101468
+    },
+    {
+     "issuer": "Royalty Pharma Plc",
+     "ticker": "",
+     "valueUsd": 33755710,
+     "weightPct": 4.6,
+     "shares": 602028
+    },
+    {
+     "issuer": "Constellation Energy",
+     "ticker": "",
+     "valueUsd": 26759881,
+     "weightPct": 3.6,
+     "shares": 107742
+    },
+    {
+     "issuer": "CNA Financial",
+     "ticker": "",
+     "valueUsd": 25386135,
+     "weightPct": 3.4,
+     "shares": 522241
+    },
+    {
+     "issuer": "Alphabet Convertible  Pfd",
+     "ticker": "",
+     "valueUsd": 23894331,
+     "weightPct": 3.2,
+     "shares": 469529
+    },
+    {
+     "issuer": "KKR Series D Conv 6.25",
+     "ticker": "",
+     "valueUsd": 22858877,
+     "weightPct": 3.1,
+     "shares": 573623
+    },
+    {
+     "issuer": "Chevron Corp",
+     "ticker": "",
+     "valueUsd": 22427328,
+     "weightPct": 3,
+     "shares": 135300
+    },
+    {
+     "issuer": "Blackstone",
+     "ticker": "BX",
+     "valueUsd": 22217508,
+     "weightPct": 3,
+     "shares": 188812
+    },
+    {
+     "issuer": "Amgen",
+     "ticker": "AMGN",
+     "valueUsd": 21644275,
+     "weightPct": 2.9,
+     "shares": 59771
+    },
+    {
+     "issuer": "Comcast Class A",
+     "ticker": "",
+     "valueUsd": 21195783,
+     "weightPct": 2.9,
+     "shares": 863372
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/98758/000119312526326274/0001193125-26-326274-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Smead Capital Management",
+   "role": "Bill Smead",
+   "tier": 3,
+   "cik": 1427008,
+   "edgarName": "Smead Capital Management, Inc.",
+   "filed": "2026-10-16",
+   "period": "Q3 2026",
+   "periodEnd": "2026-09-30",
+   "portfolioUsd": 4705402906,
+   "positions": 31,
+   "holdings": [
+    {
+     "issuer": "CENOVUS ENERGY INC",
+     "ticker": "",
+     "valueUsd": 421759560,
+     "weightPct": 9,
+     "shares": 13568058
+    },
+    {
+     "issuer": "MERCK & CO INC",
+     "ticker": "",
+     "valueUsd": 335072670,
+     "weightPct": 7.1,
+     "shares": 2305916
+    },
+    {
+     "issuer": "APA CORPORATION",
+     "ticker": "",
+     "valueUsd": 320448151,
+     "weightPct": 6.8,
+     "shares": 7714207
+    },
+    {
+     "issuer": "MACERICH CO",
+     "ticker": "",
+     "valueUsd": 252631357,
+     "weightPct": 5.4,
+     "shares": 11298361
+    },
+    {
+     "issuer": "SIMON PPTY GROUP INC NEW",
+     "ticker": "",
+     "valueUsd": 251958294,
+     "weightPct": 5.4,
+     "shares": 1255022
+    },
+    {
+     "issuer": "AMGEN INC",
+     "ticker": "AMGN",
+     "valueUsd": 247217281,
+     "weightPct": 5.3,
+     "shares": 586504
+    },
+    {
+     "issuer": "CONOCOPHILLIPS",
+     "ticker": "COP",
+     "valueUsd": 195086899,
+     "weightPct": 4.1,
+     "shares": 1558825
+    },
+    {
+     "issuer": "TARGET CORP",
+     "ticker": "",
+     "valueUsd": 193262945,
+     "weightPct": 4.1,
+     "shares": 1233410
+    },
+    {
+     "issuer": "D R HORTON INC",
+     "ticker": "",
+     "valueUsd": 190860960,
+     "weightPct": 4.1,
+     "shares": 1396714
+    },
+    {
+     "issuer": "LENNAR CORP",
+     "ticker": "",
+     "valueUsd": 186410693,
+     "weightPct": 4,
+     "shares": 2284725
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1427008/000117266126004558/0001172661-26-004558-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Harding Loevner",
+   "role": "Harding Loevner",
+   "tier": 3,
+   "cik": 928196,
+   "edgarName": "HARDING LOEVNER LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 10635583518,
+   "positions": 82,
+   "holdings": [
+    {
+     "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "ticker": "",
+     "valueUsd": 1348678169,
+     "weightPct": 12.7,
+     "shares": 2884195
+    },
+    {
+     "issuer": "SPOTIFY TECHNOLOGY S A",
+     "ticker": "",
+     "valueUsd": 741500478,
+     "weightPct": 7,
+     "shares": 1598173
+    },
+    {
+     "issuer": "FOMENTO ECONOMICO MEXICANO S",
+     "ticker": "",
+     "valueUsd": 688657070,
+     "weightPct": 6.5,
+     "shares": 5383731
+    },
+    {
+     "issuer": "CANADIAN NATL RY CO",
+     "ticker": "",
+     "valueUsd": 648387603,
+     "weightPct": 6.1,
+     "shares": 5390831
+    },
+    {
+     "issuer": "CREDICORP LTD",
+     "ticker": "",
+     "valueUsd": 500395004,
+     "weightPct": 4.7,
+     "shares": 1278788
+    },
+    {
+     "issuer": "RYANAIR HOLDINGS PLC",
+     "ticker": "",
+     "valueUsd": 381391686,
+     "weightPct": 3.6,
+     "shares": 5951510
+    },
+    {
+     "issuer": "MERCADOLIBRE INC",
+     "ticker": "MELI",
+     "valueUsd": 318078819,
+     "weightPct": 3,
+     "shares": 184269
+    },
+    {
+     "issuer": "SEA LTD",
+     "ticker": "",
+     "valueUsd": 310954047,
+     "weightPct": 2.9,
+     "shares": 3198265
+    },
+    {
+     "issuer": "NETEASE COM INC",
+     "ticker": "",
+     "valueUsd": 291381617,
+     "weightPct": 2.7,
+     "shares": 2258205
+    },
+    {
+     "issuer": "HDFC BANK LTD",
+     "ticker": "",
+     "valueUsd": 286888652,
+     "weightPct": 2.7,
+     "shares": 11208475
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/928196/000092819626000003/0000928196-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Hawk Ridge Capital Management",
+   "role": "Hawk Ridge",
+   "tier": 3,
+   "cik": 1609074,
+   "edgarName": "HAWK RIDGE CAPITAL MANAGEMENT LP",
+   "filed": "2026-08-14",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 3117933182,
+   "positions": 44,
+   "holdings": [
+    {
+     "issuer": "SILICON MOTION TECHNOLOGY CO",
+     "ticker": "SIMO",
+     "valueUsd": 338401616,
+     "weightPct": 10.9,
+     "shares": 1015215
+    },
+    {
+     "issuer": "RB GLOBAL INC",
+     "ticker": "",
+     "valueUsd": 227412177,
+     "weightPct": 7.3,
+     "shares": 1952874
+    },
+    {
+     "issuer": "OPENLANE INC",
+     "ticker": "",
+     "valueUsd": 204845019,
+     "weightPct": 6.6,
+     "shares": 4967144
+    },
+    {
+     "issuer": "VERISIGN INC",
+     "ticker": "",
+     "valueUsd": 200819090,
+     "weightPct": 6.4,
+     "shares": 798295
+    },
+    {
+     "issuer": "CORPAY INC",
+     "ticker": "",
+     "valueUsd": 183883722,
+     "weightPct": 5.9,
+     "shares": 551756
+    },
+    {
+     "issuer": "SEAGATE TECHNOLOGY HLDNGS PL",
+     "ticker": "",
+     "valueUsd": 153743800,
+     "weightPct": 4.9,
+     "shares": 159320
+    },
+    {
+     "issuer": "CARMAX INC",
+     "ticker": "",
+     "valueUsd": 149914484,
+     "weightPct": 4.8,
+     "shares": 2834458
+    },
+    {
+     "issuer": "ALLEGION PLC",
+     "ticker": "",
+     "valueUsd": 143005754,
+     "weightPct": 4.6,
+     "shares": 1017907
+    },
+    {
+     "issuer": "WOODWARD INC",
+     "ticker": "",
+     "valueUsd": 137684722,
+     "weightPct": 4.4,
+     "shares": 323629
+    },
+    {
+     "issuer": "MARTIN MARIETTA MATLS INC",
+     "ticker": "",
+     "valueUsd": 137632339,
+     "weightPct": 4.4,
+     "shares": 238655
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1609074/000189268826000129/0001892688-26-000129-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Scharf Investments",
+   "role": "Scharf",
+   "tier": 3,
+   "cik": 1463746,
+   "edgarName": "SCHARF INVESTMENTS, LLC",
+   "filed": "2026-07-13",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 3027414440,
+   "positions": 79,
+   "holdings": [
+    {
+     "issuer": "ADVISORS SER TR",
+     "ticker": "",
+     "valueUsd": 238942916,
+     "weightPct": 7.9,
+     "shares": 4419958
+    },
+    {
+     "issuer": "OCCIDENTAL PETE CORP",
+     "ticker": "",
+     "valueUsd": 154829078,
+     "weightPct": 5.1,
+     "shares": 3187747
+    },
+    {
+     "issuer": "UNION PAC CORP",
+     "ticker": "",
+     "valueUsd": 147463790,
+     "weightPct": 4.9,
+     "shares": 542136
+    },
+    {
+     "issuer": "ADVISORS SER TR",
+     "ticker": "",
+     "valueUsd": 131050008,
+     "weightPct": 4.3,
+     "shares": 3036088
+    },
+    {
+     "issuer": "MARKEL GROUP INC",
+     "ticker": "",
+     "valueUsd": 118304948,
+     "weightPct": 3.9,
+     "shares": 60564
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 117075089,
+     "weightPct": 3.9,
+     "shares": 313848
+    },
+    {
+     "issuer": "AMAZON COM INC",
+     "ticker": "AMZN",
+     "valueUsd": 115428199,
+     "weightPct": 3.8,
+     "shares": 484291
+    },
+    {
+     "issuer": "VISA INC",
+     "ticker": "V",
+     "valueUsd": 115277377,
+     "weightPct": 3.8,
+     "shares": 335988
+    },
+    {
+     "issuer": "MCKESSON CORP",
+     "ticker": "",
+     "valueUsd": 113824839,
+     "weightPct": 3.8,
+     "shares": 150631
+    },
+    {
+     "issuer": "BROOKFIELD CORP",
+     "ticker": "",
+     "valueUsd": 110360995,
+     "weightPct": 3.6,
+     "shares": 2591096
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1463746/000146374626000003/0001463746-26-000003-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Olstein Capital Management",
+   "role": "Bob Olstein",
+   "tier": 3,
+   "cik": 947996,
+   "edgarName": "Olstein Capital Management, L.P.",
+   "filed": "2026-04-21",
+   "period": "Q1 2026",
+   "periodEnd": "2026-03-31",
+   "portfolioUsd": 458067000,
+   "positions": 99,
+   "holdings": [
+    {
+     "issuer": "DISNEY WALT CO",
+     "ticker": "",
+     "valueUsd": 10024000,
+     "weightPct": 2.2,
+     "shares": 104000
+    },
+    {
+     "issuer": "SENSATA TECHNOLOGIES HLDNG P",
+     "ticker": "",
+     "valueUsd": 9798000,
+     "weightPct": 2.1,
+     "shares": 278200
+    },
+    {
+     "issuer": "AVANTOR INC",
+     "ticker": "",
+     "valueUsd": 9486000,
+     "weightPct": 2.1,
+     "shares": 1210000
+    },
+    {
+     "issuer": "LKQ CORP",
+     "ticker": "",
+     "valueUsd": 9243000,
+     "weightPct": 2,
+     "shares": 314700
+    },
+    {
+     "issuer": "OMNICOM GROUP INC",
+     "ticker": "",
+     "valueUsd": 8887000,
+     "weightPct": 1.9,
+     "shares": 118000
+    },
+    {
+     "issuer": "INTERNATIONAL FLAVORS&FRAGRANCE",
+     "ticker": "",
+     "valueUsd": 8633000,
+     "weightPct": 1.9,
+     "shares": 119000
+    },
+    {
+     "issuer": "VONTIER CORPORATION",
+     "ticker": "",
+     "valueUsd": 8468000,
+     "weightPct": 1.8,
+     "shares": 238739
+    },
+    {
+     "issuer": "FIDELITY NATL INFORMATION SV",
+     "ticker": "",
+     "valueUsd": 8162000,
+     "weightPct": 1.8,
+     "shares": 174000
+    },
+    {
+     "issuer": "NASDAQ INC",
+     "ticker": "",
+     "valueUsd": 8149000,
+     "weightPct": 1.8,
+     "shares": 96000
+    },
+    {
+     "issuer": "ABM INDS INC",
+     "ticker": "",
+     "valueUsd": 8142000,
+     "weightPct": 1.8,
+     "shares": 211361
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/947996/000089418926012341/000089418926012341-index.htm",
+   "unitsScaled": true
+  },
+  {
+   "name": "Wallace Weitz",
+   "role": "Wally Weitz",
+   "tier": 3,
+   "cik": 883965,
+   "edgarName": "WEITZ INVESTMENT MANAGEMENT, INC.",
+   "filed": "2026-08-12",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 1444222377,
+   "positions": 50,
+   "holdings": [
+    {
+     "issuer": "BERKSHIRE HATHAWAY CL B ORD",
+     "ticker": "",
+     "valueUsd": 135905924,
+     "weightPct": 9.4,
+     "shares": 271600
+    },
+    {
+     "issuer": "ALPHABET CL C ORD",
+     "ticker": "",
+     "valueUsd": 94727773,
+     "weightPct": 6.6,
+     "shares": 268100
+    },
+    {
+     "issuer": "DANAHER ORD",
+     "ticker": "",
+     "valueUsd": 93239960,
+     "weightPct": 6.5,
+     "shares": 489500
+    },
+    {
+     "issuer": "VISA CL A ORD",
+     "ticker": "V",
+     "valueUsd": 91032070,
+     "weightPct": 6.3,
+     "shares": 265330
+    },
+    {
+     "issuer": "MASTERCARD CL A ORD",
+     "ticker": "",
+     "valueUsd": 74651760,
+     "weightPct": 5.2,
+     "shares": 145350
+    },
+    {
+     "issuer": "AON CL A ORD",
+     "ticker": "",
+     "valueUsd": 70935223,
+     "weightPct": 4.9,
+     "shares": 213860
+    },
+    {
+     "issuer": "VULCAN MATERIALS ORD",
+     "ticker": "",
+     "valueUsd": 60123038,
+     "weightPct": 4.2,
+     "shares": 203800
+    },
+    {
+     "issuer": "META PLATFORMS CL A ORD",
+     "ticker": "META",
+     "valueUsd": 57996338,
+     "weightPct": 4,
+     "shares": 102960
+    },
+    {
+     "issuer": "THERMO FISHER SCIENTIFIC ORD",
+     "ticker": "",
+     "valueUsd": 57756672,
+     "weightPct": 4,
+     "shares": 115200
+    },
+    {
+     "issuer": "IDEX ORD",
+     "ticker": "",
+     "valueUsd": 57282180,
+     "weightPct": 4,
+     "shares": 252400
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/883965/000182126826000133/0001821268-26-000133-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Adams Diversified Equity Fund",
+   "role": "Adams Funds",
+   "tier": 3,
+   "cik": 2230,
+   "edgarName": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+   "filed": "2026-10-21",
+   "period": "Q3 2026",
+   "periodEnd": "2026-09-30",
+   "portfolioUsd": 3300552206,
+   "positions": 100,
+   "holdings": [
+    {
+     "issuer": "NVIDIA Corporation",
+     "ticker": "NVDA",
+     "valueUsd": 283625122,
+     "weightPct": 8.6,
+     "shares": 1241900
+    },
+    {
+     "issuer": "Apple Inc.",
+     "ticker": "AAPL",
+     "valueUsd": 245868666,
+     "weightPct": 7.4,
+     "shares": 738300
+    },
+    {
+     "issuer": "Microsoft Corporation",
+     "ticker": "MSFT",
+     "valueUsd": 205365160,
+     "weightPct": 6.2,
+     "shares": 400400
+    },
+    {
+     "issuer": "Alphabet Inc. Class A",
+     "ticker": "GOOGL",
+     "valueUsd": 184254840,
+     "weightPct": 5.6,
+     "shares": 535500
+    },
+    {
+     "issuer": "Amazon.com, Inc.",
+     "ticker": "AMZN",
+     "valueUsd": 130529685,
+     "weightPct": 4,
+     "shares": 523900
+    },
+    {
+     "issuer": "Broadcom Inc.",
+     "ticker": "AVGO",
+     "valueUsd": 87797500,
+     "weightPct": 2.7,
+     "shares": 250000
+    },
+    {
+     "issuer": "Meta Platforms, Inc. Class A",
+     "ticker": "META",
+     "valueUsd": 80132390,
+     "weightPct": 2.4,
+     "shares": 110500
+    },
+    {
+     "issuer": "Adams Natural Resources Fund, Inc.",
+     "ticker": "",
+     "valueUsd": 75030317,
+     "weightPct": 2.3,
+     "shares": 2725402
+    },
+    {
+     "issuer": "Advanced Micro Devices, Inc.",
+     "ticker": "AMD",
+     "valueUsd": 74634720,
+     "weightPct": 2.3,
+     "shares": 122000
+    },
+    {
+     "issuer": "JPMorgan Chase & Co.",
+     "ticker": "",
+     "valueUsd": 67774826,
+     "weightPct": 2.1,
+     "shares": 204863
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/2230/000110465926117771/0001104659-26-117771-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Cooke & Bieler",
+   "role": "Cooke & Bieler",
+   "tier": 3,
+   "cik": 24386,
+   "edgarName": "COOKE & BIELER LP",
+   "filed": "2026-10-21",
+   "period": "Q3 2026",
+   "periodEnd": "2026-09-30",
+   "portfolioUsd": 6355829208,
+   "positions": 100,
+   "holdings": [
+    {
+     "issuer": "Gildan Activewear",
+     "ticker": "",
+     "valueUsd": 221689769,
+     "weightPct": 3.5,
+     "shares": 5200323
+    },
+    {
+     "issuer": "RB Global Inc",
+     "ticker": "",
+     "valueUsd": 197937794,
+     "weightPct": 3.1,
+     "shares": 2431967
+    },
+    {
+     "issuer": "RenaissanceRe",
+     "ticker": "",
+     "valueUsd": 184037182,
+     "weightPct": 2.9,
+     "shares": 578315
+    },
+    {
+     "issuer": "White Mountains Insurance Grou",
+     "ticker": "",
+     "valueUsd": 174971947,
+     "weightPct": 2.8,
+     "shares": 87203
+    },
+    {
+     "issuer": "Arch Capital Group",
+     "ticker": "",
+     "valueUsd": 169171286,
+     "weightPct": 2.7,
+     "shares": 1831651
+    },
+    {
+     "issuer": "Sunbelt Rentals Holdings Inc",
+     "ticker": "",
+     "valueUsd": 153350425,
+     "weightPct": 2.4,
+     "shares": 2094665
+    },
+    {
+     "issuer": "Becton Dickinson and Company",
+     "ticker": "",
+     "valueUsd": 152946908,
+     "weightPct": 2.4,
+     "shares": 854452
+    },
+    {
+     "issuer": "Labcorp Holdings",
+     "ticker": "",
+     "valueUsd": 151171399,
+     "weightPct": 2.4,
+     "shares": 490641
+    },
+    {
+     "issuer": "ESAB Corporation",
+     "ticker": "",
+     "valueUsd": 144980930,
+     "weightPct": 2.3,
+     "shares": 2200682
+    },
+    {
+     "issuer": "Crown Castle Inc",
+     "ticker": "",
+     "valueUsd": 137320461,
+     "weightPct": 2.2,
+     "shares": 2060322
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/24386/000002438626000009/0000024386-26-000009-index.htm",
+   "unitsScaled": false
+  },
+  {
+   "name": "Boston Trust Walden",
+   "role": "Boston Trust",
+   "tier": 3,
+   "cik": 1534866,
+   "edgarName": "Boston Trust Walden Corp",
+   "filed": "2026-07-24",
+   "period": "Q2 2026",
+   "periodEnd": "2026-06-30",
+   "portfolioUsd": 13133396047,
+   "positions": 396,
+   "holdings": [
+    {
+     "issuer": "APPLE INC",
+     "ticker": "AAPL",
+     "valueUsd": 420312472,
+     "weightPct": 3.2,
+     "shares": 1452559
+    },
+    {
+     "issuer": "MICROSOFT CORP",
+     "ticker": "MSFT",
+     "valueUsd": 358585991,
+     "weightPct": 2.7,
+     "shares": 961305
+    },
+    {
+     "issuer": "ALPHABET INC-A",
+     "ticker": "GOOGL",
+     "valueUsd": 290336680,
+     "weightPct": 2.2,
+     "shares": 812426
+    },
+    {
+     "issuer": "ALPHABET INC-CL C",
+     "ticker": "",
+     "valueUsd": 262192413,
+     "weightPct": 2,
+     "shares": 742061
+    },
+    {
+     "issuer": "NVIDIA CORP",
+     "ticker": "NVDA",
+     "valueUsd": 252653043,
+     "weightPct": 1.9,
+     "shares": 1262697
+    },
+    {
+     "issuer": "JPMORGAN CHASE & CO",
+     "ticker": "",
+     "valueUsd": 237818666,
+     "weightPct": 1.8,
+     "shares": 726541
+    },
+    {
+     "issuer": "APPLIED MATERIALS, INC.",
+     "ticker": "",
+     "valueUsd": 167112051,
+     "weightPct": 1.3,
+     "shares": 231137
+    },
+    {
+     "issuer": "DONALDSON CO INC",
+     "ticker": "",
+     "valueUsd": 165769871,
+     "weightPct": 1.3,
+     "shares": 1846607
+    },
+    {
+     "issuer": "HUBBELL INC",
+     "ticker": "",
+     "valueUsd": 165472717,
+     "weightPct": 1.3,
+     "shares": 316270
+    },
+    {
+     "issuer": "APTARGROUP INC",
+     "ticker": "",
+     "valueUsd": 163226495,
+     "weightPct": 1.2,
+     "shares": 1303726
+    }
+   ],
+   "url": "https://www.sec.gov/Archives/edgar/data/1534866/000153486626000005/0001534866-26-000005-index.htm",
+   "unitsScaled": false
+  }
+ ]
+}
