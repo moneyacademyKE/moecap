@@ -6,6 +6,32 @@
 // Sources are tried in order: same-origin /prices.json first (in case a Pages
 // Function is added later), then the moecap-prices Worker URL (rewritten by
 // scripts/setup-cloudflare.sh at deploy time).
+
+// A soft-404 answers with the homepage AND a 200 (Cloudflare's SPA fallback),
+// so `r.ok` alone proves nothing — and r.json() would download the whole page
+// before failing. Refuse anything not declared JSON, without reading the body.
+function cancelBody(res) {
+  try { if (res.body && typeof res.body.cancel === "function") res.body.cancel(); } catch (e) {}
+}
+
+function jsonOrSkip(url, fetchImpl) {
+  var f = fetchImpl || fetch;
+  return f(url, { cache: "no-cache", headers: { Accept: "application/json" } }).then(function (res) {
+    if (!res.ok) { cancelBody(res); return Promise.reject("http " + res.status); }
+    var ct = (res.headers.get("content-type") || "").toLowerCase();
+    if (ct.indexOf("json") === -1) {
+      cancelBody(res);
+      return Promise.reject("not json: " + (ct || "unknown"));
+    }
+    var len = parseInt(res.headers.get("content-length") || "0", 10);
+    if (len > 5242880) { cancelBody(res); return Promise.reject("too large: " + len); }
+    return res.json();
+  });
+}
+
+// Exposed for the unit test; inert in the browser.
+if (typeof globalThis !== "undefined") globalThis.__moecapJsonOrSkip = jsonOrSkip;
+
 (function () {
   "use strict";
 
@@ -56,8 +82,7 @@
 
   function tryNext(i) {
     if (i >= SOURCES.length) return; // silent: authored numbers stand
-    fetch(SOURCES[i], { cache: "no-cache" })
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+    jsonOrSkip(SOURCES[i])
       .then(function (payload) { if (!apply(payload)) tryNext(i + 1); })
       .catch(function () { tryNext(i + 1); });
   }
@@ -135,8 +160,7 @@
 
   function tryNext(i) {
     if (i >= SOURCES.length) return; // silent: slots stay invisible
-    fetch(SOURCES[i], { cache: "no-cache" })
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+    jsonOrSkip(SOURCES[i])
       .then(function (payload) { if (!apply(payload)) tryNext(i + 1); })
       .catch(function () { tryNext(i + 1); });
   }
