@@ -4,6 +4,7 @@ import { CONTENT, METADATA } from "../src/content";
 import { getUsStocksNode } from "../src/us-stocks";
 import { buildNsePage } from "../src/nse";
 import { renderBooksAccordion } from "../src/books";
+import { renderSuperinvestorDirectory } from "../src/superinvestors";
 import { writeSeoFiles } from "./build-seo";
 import { writeTrustPages } from "./build-trust-pages";
 import { writeFileSync, existsSync, mkdirSync, rmSync, cpSync, copyFileSync } from "node:fs";
@@ -53,6 +54,18 @@ try {
     });
 
     const allNodes = [...resolvedContent, ...assetNodes];
+
+    // 2a. 13F directory: 100 most-tracked managers, rendered from EDGAR data and
+    // placed directly after the 13F Letters section it complements.
+    const siNode: ContentNode = {
+        id: "13f-directory",
+        title: "13F Directory — 100 Most-Tracked Managers",
+        type: "ARTICLE",
+        category: "INVESTING",
+        content: renderSuperinvestorDirectory(join(BASE_PATH, "data", "13f-superinvestors.json")),
+    };
+    const siAnchor = allNodes.findIndex(n => n.id === "fund-letters");
+    allNodes.splice(siAnchor >= 0 ? siAnchor + 1 : allNodes.length, 0, siNode);
 
     // 2b. Attach book-notes accordion to the lib node
     const libNode = allNodes.find(n => n.id === "lib");
