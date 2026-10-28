@@ -61,8 +61,13 @@ describe("View Rendering Engine - Phase 5", () => {
         expect(html).toContain('Market Insights & Wise Investing');
         expect(html).toContain('Google');
         expect(html).toContain('Cloudflare');
-        expect(html).toContain('Cerebras');
-        expect(html).toContain('Eli Lilly');
+        expect(html).toContain('[ PORTFOLIO ]');
+        expect(html).toContain('SanDisk');
+        expect(html).toContain('SK Hynix');
+        expect(html).toContain('Nvidia');
+        expect(html).toContain('Bloom Energy');
+        expect(html).not.toContain('Cerebras');
+        expect(html).not.toContain('Eli Lilly');
         expect(html).toContain('Zero percent');
         expect(html).toContain('six percent');
         expect(html).toContain('twenty five percent');

@@ -14,10 +14,10 @@ export const METADATA: SiteMetadata = {
     url: 'https://subs.moecapital.com',
     label: 'substack idea feed'
   },
-  watchlist: {
+  portfolio: {
     date: '28th October 2026',
-    stocks: ['Google', 'Cloudflare', 'Cerebras', 'Eli Lilly'],
-    description: 'We currently hold positions in Sandisk, SK Hynix, Nvidia and Bloom Energy. Stocks on our current watchlist include Google, Cloudflare, Cerebras and Eli Lilly.'
+    stocks: ['SanDisk', 'SK Hynix', 'Nvidia', 'Bloom Energy'],
+    description: 'Our current holdings as of 28th October 2026: concentrated positions in memory, AI compute and energy, bought to hold.'
   },
   historicalPicks: {
     date: '28th October 2026',

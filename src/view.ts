@@ -102,12 +102,12 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
 
             <div class="meta-grid">
                 <div class="meta-card">
-                    <div class="card-tag">[ WATCHLIST ]</div>
-                    <h3>Active Focus</h3>
+                    <div class="card-tag">[ PORTFOLIO ]</div>
+                    <h3>Current Portfolio</h3>
                     <ul>
-                        ${metadata.watchlist.stocks.map(s => `<li>${s}</li>`).join('')}
+                        ${metadata.portfolio.stocks.map(s => `<li>${s}</li>`).join('')}
                     </ul>
-                    <p class="card-desc">${metadata.watchlist.description}</p>
+                    <p class="card-desc">${metadata.portfolio.description}</p>
                 </div>
                 
                 <div class="meta-card">

@@ -36,7 +36,7 @@ export interface SiteMetadata {
     url: string;
     label: string;
   };
-  watchlist: {
+  portfolio: {
     date: string;
     stocks: string[];
     description: string;
