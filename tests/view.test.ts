@@ -77,7 +77,7 @@ describe("View Rendering Engine - Phase 5", () => {
         expect(html).toContain('Part 2: A Behind the Scenes Look at Wall St');
         expect(html).toContain('Part 3: Meeting The Oracle');
         expect(html).toContain('Part 4: Will The Real Warren Buffett');
-        expect(html).toContain('Part 5: Buffett-');
+        expect(html).toContain('Part 5: Buffett —');
         expect(html).toContain('Part 6: Curve Ball');
         
         // Ensure no truncation placeholders remain in output

@@ -3,7 +3,7 @@ import type { ContentNode, SiteMetadata } from './assets';
 export const METADATA: SiteMetadata = {
   title: 'Moe Capital',
   tagline: 'Market Insights & Wise Investing',
-  bio: 'Hello, We are Moe Capital. We provide market insights, host the <a href="/nse" style="color: var(--link); font-weight: bold;">Nairobi Securities Exchange (NSE) ROIC Terminal</a>—a real-time interactive dashboard tracking return on invested capital (ROIC), multi-year financial statements, and efficiency metrics for 46 Kenyan listed companies—and help you invest wisely.',
+  bio: 'Hello, We are Moe Capital. We provide market insights, host the <a href="/nse" style="color: var(--link); font-weight: bold;">Nairobi Securities Exchange (NSE) ROIC Terminal</a>—a real-time interactive dashboard tracking return on invested capital (ROIC), multi-year financial statements, and efficiency metrics for 69 Kenyan listed companies—and help you invest wisely.',
   socials: [
     { platform: 'Twitter', url: 'https://twitter.com/MoneyAcademyKE', handle: '@MoneyAcademyKE' },
     { platform: 'Telegram', url: 'https://t.me/MoneyAcademyKE', handle: 'Telegram' },
@@ -17,7 +17,7 @@ export const METADATA: SiteMetadata = {
   watchlist: {
     date: '17th September 2026',
     stocks: ['Google', 'Cloudflare', 'Cerebras', 'Eli Lilly'],
-    description: 'As of 3rd November 2025 we have cashed out all our investment positions. We are focused on researching new opportunities for the new year. Stocks on our current watchlist include Google, Cloudflare, Cerebras and Eli Lilly.'
+    description: 'We cashed out all our investment positions in November 2025 and have stayed in cash while researching new opportunities. Stocks on our current watchlist include Google, Cloudflare, Cerebras and Eli Lilly.'
   },
   historicalPicks: {
     date: '3rd June 2024',
@@ -47,19 +47,19 @@ export const CONTENT: ContentNode[] = [
 			for those who have read or intend to read Warren’s authorised biography , The Snowball: Warren Buffett and
 			the Business of Life book by Alice Schroeder.</p>
 
-		<h2>Part 1: The Forging of a Skeptic- From Accountant to Buffett’s Voice on Wall St</h2>
+		<h2>Part 1: The Forging of a Skeptic — From Accountant to Buffett’s Voice on Wall St</h2>
 		<p><span style="color:orange;"> Interviewer:</span> Hi Alice Schroeder. I would like to start by thanking you
 			for taking the time to talk with me.</p>
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> Thanks for inviting me to do the interview. This is the
-			first time I’ve ever talked to anyone at length about Warren Buffett Buffett, The Snowball, why I wrote the
+			first time I’ve ever talked to anyone at length about Warren Buffett, The Snowball, why I wrote the
 			book, and the lessons learned.</p>
 
 		<p><span style="color:orange;"> Interviewer:</span> Start by explaining what was special about your experience
 			with The Snowball.</p>
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> When we discussed doing this interview, a theme that
-			emerged was the hidden world of people like Warren Buffett Buffett, people who are in the top tenth of one
+			emerged was the hidden world of people like Warren Buffett, people who are in the top tenth of one
 			percent of society in terms of fame, money, and connections, and how little most of us know of that world
 			and its hierarchy and norms. Instinctively, you know that Snookie doesn’t go to parties with Bob Iger and
 			Willow Bay (Disney CEO and his wife, a television host), but the more granular distinctions aren’t
@@ -84,7 +84,7 @@ export const CONTENT: ContentNode[] = [
 
 		<p><span style="color:orange;"> Interviewer:</span> Let’s talk about your background. Give us a quick tour of
 			your career from working as an auditor, regulator, insurance analyst, to working on the street and meeting
-			Warren Buffett Buffett.</p>
+			Warren Buffett.</p>
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> I came to Wall Street as my third career. I started as
 			an auditor working at Ernst &amp; Whinney, the predecessor to Ernst &amp; Young, in Houston, where I became
@@ -115,7 +115,7 @@ export const CONTENT: ContentNode[] = [
 		<p>There’s a saying on Wall Street that you either have the insurance gene or you don’t. It’s an interesting
 			industry for investors because it requires a lot of probabilistic thinking. If you look at the landscape of
 			investing you’ll see that many distinguished investors have an affinity for insurance, chief among them, of
-			course, Warren Buffett Buffett. I got assigned to this project by chance, but I fell in love with the
+			course, Warren Buffett. I got assigned to this project by chance, but I fell in love with the
 			industry within a couple of weeks.</p>
 
 		<p>The main topic was SFAS 113, Accounting and Reporting for Reinsurance of Short-Duration and Long-Duration
@@ -397,7 +397,7 @@ export const CONTENT: ContentNode[] = [
 			Neither the buy side or sell side, with the exception of a handful of value managers, the majority of whom
 			continue to manage relatively smaller funds by Wall Street standards.</p>
 
-		<p><span style="color:orange;"> Interviewer:</span> So, let’s bring Warren Buffett Buffett into the picture.
+		<p><span style="color:orange;"> Interviewer:</span> So, let’s bring Warren Buffett into the picture.
 			You’re an analyst covering insurance companies. When is the first time you come across Berkshire Hathaway?
 			Do you still remember the day you released the Paine Webber report?</p>
 
@@ -412,7 +412,7 @@ export const CONTENT: ContentNode[] = [
 			Buffett essentially didn’t pay bankers and frequently expressed a negative attitude toward the Street.</p>
 
 		<p>So, I went to my research director at PaineWebber and made a case that our retail brokers would appreciate
-			this coverage because their clients were interested in Berkshire and Warren Buffett Buffett. Being able to
+			this coverage because their clients were interested in Berkshire and Warren Buffett. Being able to
 			call and talk about Berkshire was a service for retail clients that did not involve asking for a
 			transaction. It was something their financial advisors appreciated being able to offer. To its credit,
 			PaineWebber gave me a thumb up.</p>
@@ -445,9 +445,7 @@ export const CONTENT: ContentNode[] = [
 			privacy. People were fine with that for a long time and were rewarded for their trust. As has gotten older,
 			they’re less fine with it, which is reasonable.</p>
 
-		<p>For Part 3: Alice Schroeder Describers Her Experiences with Buffett</p>
-
-		<h2 id="part-3-meeting-the-oracle-of-omaha" id="part-3-meeting-the-oracle-of-omaha">Part 3: Meeting The Oracle
+		<h2 id="part-3-meeting-the-oracle-of-omaha">Part 3: Meeting The Oracle
 			of Omaha</h2>
 
 		<p><span style="color:orange;"> Interviewer:</span> At what point (and I don’t know if this happened or not) do
@@ -465,7 +463,7 @@ export const CONTENT: ContentNode[] = [
 			to meet Buffett asked me to get a meeting with him. The ostensible reason was that they were going to be
 			voting on the General Re merger and their fiduciary obligations as fund managers required them to meet with
 			the management of any company whose stock they owned. Truthfully, I’m not sure how eager they would have
-			been to fly to Omaha to meet anyone but Warren Buffett Buffett.</p>
+			been to fly to Omaha to meet anyone but Warren Buffett.</p>
 
 		<p>So, I wrote him a letter saying that shareholders representing 13% of General Re’s stock wanted to meet with
 			him and we were all willing to fly to Omaha if he would give us an hour of his time.</p>
@@ -515,7 +513,7 @@ export const CONTENT: ContentNode[] = [
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> I thought that it would be interesting to our retail
 			brokers and to a limited number of institutional investors. I knew that a lot of people on Wall Street were
-			indifferent to Warren Buffett Buffett and some even disliked him for one reason or another.</p>
+			indifferent to Warren Buffett and some even disliked him for one reason or another.</p>
 
 		<p>What I didn’t expect was that the new role would become huge, but it did, because, until that time, Warren
 			Buffett had been so inaccessible. The New York Times ran a front-page business section story “The Oracle of
@@ -647,7 +645,7 @@ export const CONTENT: ContentNode[] = [
 			draw judgments about people, all kinds of existential and psychological considerations emerge.</p>
 
 		<p>The dynamic between the author and the subject is fraught with complication in every writing relationship.
-			When the person on the other side of the table is Warren Buffett Buffett, there’s another kind of fear. I
+			When the person on the other side of the table is Warren Buffett, there’s another kind of fear. I
 			learned and observed very early in the project things that had happened to journalists who reported on him
 			in a manner that bothered him. It’s an understatement to say that Warren Buffett is sensitive to criticism.
 		</p>
@@ -690,7 +688,7 @@ export const CONTENT: ContentNode[] = [
 			black-and-white in our judgments of people who commit things that are labelled improprieties in hindsight.
 			Nobody is all good or all bad. Well, almost nobody is all bad. My experiences made me firmer about applying
 			principles, while at the same time, softer toward the people involved. For example, a relationship with
-			Warren Buffett Buffett is extremely valuable. I don’t judge people for protecting it, I just feel freer for
+			Warren Buffett is extremely valuable. I don’t judge people for protecting it, I just feel freer for
 			having been disentangled.</p>
 
 		<p>Backtracking a bit, another advantage of starting as an auditor before Wall Street was that I had to spend a
@@ -721,16 +719,15 @@ export const CONTENT: ContentNode[] = [
 			arbitrage that no amount of computer technology can overcome. Warren Buffett makes it sound so simple to
 			know what is and is not a truly good business?—?and great business do resonate very clearly when you
 			understand why they are great and especially when they’ve been identified as successful investments by an
-			investor like Warren Buffett Buffett and proven so with hindsight?—?but like many things in investing,
+			investor like Warren Buffett and proven so with hindsight?—?but like many things in investing,
 			Buffett makes it sound easier than it is. When it comes to appreciating something that is special about a
 			business that others do not, I’ve learned that the devil really is in the details.</p>
 
-		<h2 id="part-4-will-the-real-warren-buffett-buffett-please-stand-up"
-			id="part-4-will-the-real-warren-buffett-buffett-please-stand-up">Part 4: Will The Real Warren Buffett
-			Buffett Please Stand up</h2>
+		<h2 id="part-4-will-the-real-warren-buffett-please-stand-up">Part 4: Will The Real Warren Buffett
+			Buffett Please Stand Up</h2>
 
 		<p><span style="color:orange;"> Interviewer:</span> Alice Schroeder, tell me about the process of getting to
-			know Warren Buffett Buffett.</p>
+			know Warren Buffett.</p>
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> I would ask him questions, and he was able to pull
 			elaborate modules out of his memory bank. He has thought about so many things over the years that there are
@@ -812,7 +809,7 @@ export const CONTENT: ContentNode[] = [
 			expectations of talking to him get to talk to him.</p>
 
 		<p>You know his saying about potential acquisitions, “If the phone doesn’t ring, you’ll know it’s me.” That’s
-			not coming out of a vacuum. If you want to connect with Warren Buffett Buffett, do it in writing.</p>
+			not coming out of a vacuum. If you want to connect with Warren Buffett, do it in writing.</p>
 
 		<p>Something to keep in mind is that Warren Buffett is extremely precise and literal in what he writes and says.
 			You can tell this from reading his writings closely, but it was even more interesting to watch him create
@@ -822,7 +819,7 @@ export const CONTENT: ContentNode[] = [
 		<p>One thing I found surprising initially, but with hindsight not, is that Warren Buffett relies on those people
 			who do call him as his window on the world. He needs eyes and ears.</p>
 
-		<p>You know, if you’re Warren Buffett Buffett, you can’t walk into a Dairy Queen to check things out. People are
+		<p>You know, if you’re Warren Buffett, you can’t walk into a Dairy Queen to check things out. People are
 			always putting on a show for him. He appreciates the candid information and seeks it out.</p>
 
 		<p>Through this vast network of connections that he’s built, he’s created a sort of database of information
@@ -999,7 +996,7 @@ export const CONTENT: ContentNode[] = [
 			magnificent achievements. That should be enough. Surely people realize that he didn’t get where he is by
 			running a philanthropic institution. But some who are loyal to Warren Buffett equate loyalty with portraying
 			him as infallible. Those two things are not the same. It’s not necessary at all to pretend that someone is
-			infallible in order to be loyal and admire them. I found in the case of Warren Buffett Buffett that there
+			infallible in order to be loyal and admire them. I found in the case of Warren Buffett that there
 			were people who genuinely believed that if they admitted any imperfections in him, it would make them
 			disloyal.</p>
 
@@ -1009,7 +1006,7 @@ export const CONTENT: ContentNode[] = [
 			became. I will never forget a few people insisting to me that Warren Buffett is really not that interested
 			in money.</p>
 
-		<h2 id="part-5-buffett-the-investor-businessman" id="part-5-buffett-the-investor-businessman">Part 5: Buffett-
+		<h2 id="part-5-buffett-the-investor-businessman">Part 5: Buffett —
 			The Investor &amp; Businessman</h2>
 
 		<p><span style="color:orange;"> Interviewer:</span> How is Warren Buffett different than other value investors?
@@ -1354,7 +1351,7 @@ export const CONTENT: ContentNode[] = [
 			recognition is his default way of thinking. It creates an impulse always to connect new knowledge to old and
 			to primarily be interested in new knowledge that genuinely builds on the old.</p>
 
-		<p><span style="color:orange;"> Interviewer:</span> Comment on Warren Buffett Buffett’s emotions. I’m
+		<p><span style="color:orange;"> Interviewer:</span> Comment on Warren Buffett’s emotions. I’m
 			particularly interested in his ability to be so rational and unemotional.</p>
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> This is a great segue. Pattern recognition skills are
@@ -1388,11 +1385,10 @@ export const CONTENT: ContentNode[] = [
 			whatever band they have to work with. Anyone can work at being better at reading other people’s emotions.
 		</p>
 
-		<h2 id="part-6-curve-ball-surprising-facts-about-warren-buffett-buffett"
-			id="part-6-curve-ball-surprising-facts-about-warren-buffett-buffett">Part 6: Curve Ball?—?Surprising Facts
-			About Warren Buffett Buffett</h2>
+		<h2 id="part-6-curve-ball-surprising-facts-about-warren-buffett">Part 6: Curve Ball?—?Surprising Facts
+			About Warren Buffett</h2>
 
-		<p><span style="color:orange;"> Interviewer:</span> How has Warren Buffett Buffett’s intellect surprised you
+		<p><span style="color:orange;"> Interviewer:</span> How has Warren Buffett’s intellect surprised you
 			over the years?</p>
 
 		<p><span style="color:orange;"> Alice Schroeder:</span> For example, he recognizes square roots and sometimes
@@ -1748,7 +1744,7 @@ export const CONTENT: ContentNode[] = [
     category: 'RESEARCH',
     content: `<header>
 
-			<h1>Kevin G. Compilations</h1>
+			<h2>Kevin G. Compilations</h2>
 		</header>
 
 
