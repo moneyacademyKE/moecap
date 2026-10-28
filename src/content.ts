@@ -15,14 +15,14 @@ export const METADATA: SiteMetadata = {
     label: 'substack idea feed'
   },
   watchlist: {
-    date: '17th September 2026',
+    date: '28th October 2026',
     stocks: ['Google', 'Cloudflare', 'Cerebras', 'Eli Lilly'],
-    description: 'We cashed out all our investment positions in November 2025 and have stayed in cash while researching new opportunities. Stocks on our current watchlist include Google, Cloudflare, Cerebras and Eli Lilly.'
+    description: 'We currently hold positions in Sandisk, SK Hynix, Nvidia and Bloom Energy. Stocks on our current watchlist include Google, Cloudflare, Cerebras and Eli Lilly.'
   },
   historicalPicks: {
-    date: '3rd June 2024',
-    stocks: ['Mastercard', 'LVMH', 'Visa', 'Monster Beverage'],
-    description: 'We had previously championed the stocks of Mastercard, LVMH, Visa, Monster Beverage as cornerstone US stocks due to their 25+% long term ROIC as of 3rd June 2024.'
+    date: '28th October 2026',
+    stocks: ['Amazon', 'Cloudflare', 'Meta', 'Google'],
+    description: 'Our cornerstone US stocks, selected on our 25+% long-term ROIC criterion, are Amazon, Cloudflare, Meta and Google as of 28th October 2026.'
   },
   partnershipTerms: {
     fee: 'Zero percent',

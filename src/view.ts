@@ -111,7 +111,7 @@ export function renderPage(nodes: ContentNode[], metadata?: SiteMetadata): strin
                 </div>
                 
                 <div class="meta-card">
-                    <div class="card-tag">[ HISTORICAL ]</div>
+                    <div class="card-tag">[ CORNERSTONE ]</div>
                     <h3>Cornerstone Picks</h3>
                     <ul>
                         ${metadata.historicalPicks.stocks.map(s => `<li>${s}</li>`).join('')}
