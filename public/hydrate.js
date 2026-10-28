@@ -110,6 +110,22 @@ if (typeof globalThis !== "undefined") globalThis.__moecapJsonOrSkip = jsonOrSki
     return "$" + Math.round(v).toLocaleString();
   }
 
+  function fmtShares(v) {
+    return Math.round(v).toLocaleString();
+  }
+
+  // Quarter-over-quarter change, using the deltas build-13f-deltas.ts already
+  // attached. Falls back to nothing when the prior quarter was unknown.
+  function deltaText(x) {
+    if (x.prevStatus === "new") return "new position";
+    if (x.prevStatus === "held" && typeof x.sharesDeltaPct === "number") {
+      var d = x.sharesDeltaPct;
+      if (d === 0) return "shares unchanged";
+      return (d > 0 ? "+" : "") + d.toFixed(1) + "% shares";
+    }
+    return "";
+  }
+
   function apply(payload) {
     var entries = (payload && payload.entries) || {};
     var quarter = payload && payload.dataQuarter ? " — " + payload.dataQuarter : "";
@@ -128,13 +144,28 @@ if (typeof globalThis !== "undefined") globalThis.__moecapJsonOrSkip = jsonOrSki
       note.style.cssText = "font-size:0.75rem;color:var(--meta);margin:0 0 0.5rem 0;";
       note.textContent =
         "Funds with ≥$1B reported portfolios holding ≥3% in this stock. " +
-        "13F data is quarterly and filed up to 45 days after quarter end.";
+        "13F data is quarterly and filed up to 45 days after quarter end, so the " +
+        "quarter shown is the most recent one whose filings are complete.";
+
+      // Largest reported position first — the payload's order is filing order.
+      var ranked = list.slice().sort(function (a, b) {
+        return (b.valueUsd || 0) - (a.valueUsd || 0);
+      });
+      var total = ranked.reduce(function (sum, x) {
+        return sum + (x.valueUsd || 0);
+      }, 0);
+
+      var summary = document.createElement("p");
+      summary.style.cssText = "font-size:0.75rem;color:var(--meta);margin:0 0 0.4rem 0;";
+      summary.textContent =
+        ranked.length + (ranked.length === 1 ? " fund" : " funds") +
+        " reporting " + fmtUsd(total) + " in aggregate";
 
       var ul = document.createElement("ul");
       ul.style.cssText = "margin:0.5rem 0 1.2rem 0;padding-left:1.5rem;";
-      list.forEach(function (x) {
+      ranked.forEach(function (x) {
         var li = document.createElement("li");
-        li.style.cssText = "margin-bottom:0.3rem;";
+        li.style.cssText = "margin-bottom:0.4rem;";
         var a = document.createElement("a");
         a.href = x.url;
         a.target = "_blank";
@@ -143,7 +174,22 @@ if (typeof globalThis !== "undefined") globalThis.__moecapJsonOrSkip = jsonOrSki
         li.appendChild(a);
         li.appendChild(
           document.createTextNode(
-            " — " + x.weightPct + "% of portfolio (" + fmtUsd(x.valueUsd) + "), filed " + x.filed
+            " — " + x.weightPct + "% of portfolio (" + fmtUsd(x.valueUsd) + ")"
+          )
+        );
+
+        var delta = deltaText(x);
+        if (delta) {
+          var span = document.createElement("span");
+          span.style.cssText = "color:var(--accent);font-size:0.8rem;";
+          span.textContent = " · " + delta;
+          li.appendChild(span);
+        }
+
+        li.appendChild(
+          document.createTextNode(
+            (typeof x.shares === "number" ? " · " + fmtShares(x.shares) + " shares" : "") +
+              " · filed " + x.filed
           )
         );
         ul.appendChild(li);
@@ -152,6 +198,7 @@ if (typeof globalThis !== "undefined") globalThis.__moecapJsonOrSkip = jsonOrSki
       el.textContent = "";
       el.appendChild(h);
       el.appendChild(note);
+      el.appendChild(summary);
       el.appendChild(ul);
       rendered++;
     });
