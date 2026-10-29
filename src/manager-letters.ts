@@ -19,6 +19,8 @@ export interface LetterEntry {
   title: string;
   period: string | null;
   root?: boolean;
+  /** Direct PDF that contains the letter, when resolve-13f-letter-pdfs.ts found one. */
+  pdf?: string | null;
 }
 
 interface LettersFile {
@@ -91,7 +93,12 @@ export function describe(e: LetterEntry): string {
 
 function rows(list: LetterEntry[]): string {
   return list
-    .map((e) => `        <li><a href="${esc(e.url)}">${esc(e.manager)}</a> — ${esc(describe(e))}</li>`)
+    .map((e) => {
+      // Link the PDF when we found one — that's the letter itself, not the
+      // page that advertises it. Fall back to the page otherwise.
+      const href = e.pdf ?? e.url;
+      return `        <li><a href="${esc(href)}">${esc(e.manager)}</a> — ${esc(describe(e))}</li>`;
+    })
     .join("\n");
 }
 
@@ -109,8 +116,10 @@ ${rows(group)}
       </ul>`;
   }).filter(Boolean);
 
+  const directPdf = linked.filter((m) => m.pdf).length;
+
   return [
-    `<p>${linked.length} of the ${total} managers in the 13F directory publish something we can link: a quarterly letter, a running archive, or a research desk that does the same work in article form. The rest publish nothing at all, as policy rather than oversight, and are counted here rather than named.</p>`,
+    `<p>${linked.length} of the ${total} managers in the 13F directory publish something we can link: a quarterly letter, a running archive, or a research desk that does the same work in article form. ${directPdf} of those links open the letter's own PDF directly. The rest publish nothing at all, as policy rather than oversight, and are counted here rather than named.</p>`,
     ...blocks,
     `<p>Every link above was fetched during the build that produced it; anything that returned an error, a compliance filing, or a bare homepage was dropped rather than shipped.</p>`,
   ].join("\n      ");

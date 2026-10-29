@@ -10,7 +10,9 @@
       "bytes": 43364,
       "title": "Adams Funds",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Akre Capital Management",
@@ -19,7 +21,9 @@
       "bytes": 109965,
       "title": "Newsletter - Akre Capital Management",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "American Century Companies",
@@ -28,7 +32,11 @@
       "bytes": 1018274,
       "title": "Quarterly Performance Update: Q3 2026 Market Recap",
       "period": "Q3 2026",
-      "root": false
+      "root": false,
+      "pdf": "https://res.americancentury.com/docs/quarterly-performance-update-web.pdf",
+      "pdfBytes": 948903,
+      "pdfDate": null,
+      "pdfWhy": "36: quarterly, json"
     },
     {
       "manager": "AQR Capital Management",
@@ -37,7 +45,9 @@
       "bytes": 70419,
       "title": "Research",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "ARK Investment Management",
@@ -46,7 +56,9 @@
       "bytes": 280825,
       "title": "Innovation Research and Models by ARK Invest",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Artisan Partners",
@@ -54,7 +66,10 @@
       "kind": "pdf",
       "bytes": 199021,
       "title": "",
-      "period": null
+      "period": null,
+      "pdf": "https://www.artisanpartners.com/content/dam/documents/quarterly-commentary/vr/2026/3q/ARTMX-APDMX-APHMX-QCommentary-3Q26-vR.pdf",
+      "pdfBytes": 199021,
+      "pdfWhy": "already a pdf"
     },
     {
       "manager": "Baillie Gifford",
@@ -63,7 +78,9 @@
       "bytes": 3355035,
       "title": "Insights | Individual Investors | Baillie Gifford",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Berkshire Hathaway",
@@ -72,7 +89,11 @@
       "bytes": 53854,
       "title": "Shareholder Letters",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.berkshirehathaway.com/letters/2025ltr.pdf",
+      "pdfBytes": 91423,
+      "pdfDate": null,
+      "pdfWhy": "60: letter, stale title, in letters dir, page, newer year probe"
     },
     {
       "manager": "Boston Trust Walden",
@@ -81,7 +102,9 @@
       "bytes": 60502,
       "title": "Insights - Boston Trust Walden",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Bridgewater Associates",
@@ -90,7 +113,9 @@
       "bytes": 277894,
       "title": "Research &amp; Insights — Bridgewater Associates",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Brown Advisory",
@@ -99,7 +124,9 @@
       "bytes": 148165,
       "title": "Insights — Our latest thinking | Brown Advisory",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Capital World Investors",
@@ -108,7 +135,9 @@
       "bytes": 7594,
       "title": "American Funds",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Davis Advisors",
@@ -117,7 +146,11 @@
       "bytes": 62909,
       "title": "Commentary / Videos | Davis Funds",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://davisfunds.com/documents/DIFAnnualUpdate4Q25.pdf",
+      "pdfBytes": 304738,
+      "pdfDate": null,
+      "pdfWhy": "18: insight, subpage"
     },
     {
       "manager": "Diamond Hill Capital Management",
@@ -126,7 +159,11 @@
       "bytes": 102145,
       "title": "Insights | Diamond Hill",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.diamond-hill.com/sitefiles/live/documents/insights/Blog/2025/A-790/2504_International%20Monthly%20Commentary.pdf",
+      "pdfBytes": 91218,
+      "pdfDate": null,
+      "pdfWhy": "34: commentary, insight, 2025, sitemap"
     },
     {
       "manager": "Dodge & Cox",
@@ -135,7 +172,11 @@
       "bytes": 157606,
       "title": "2026 Semi-Annual Equity Review | Dodge &amp; Cox",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.dodgeandcox.com/content/dam/web/documents/insights/2026-Semi-Annual-Equity-Review-Presentation.pdf",
+      "pdfBytes": 324278,
+      "pdfDate": null,
+      "pdfWhy": "26: insight, 2026, page"
     },
     {
       "manager": "Fiduciary Management Inc.",
@@ -143,7 +184,10 @@
       "kind": "pdf",
       "bytes": 710729,
       "title": "",
-      "period": "Q3 2026"
+      "period": "Q3 2026",
+      "pdf": "https://www.fmimgt.com/fmi/corp/Letters/iso_20260930.pdf",
+      "pdfBytes": 710729,
+      "pdfWhy": "already a pdf"
     },
     {
       "manager": "First Eagle Investment Management",
@@ -152,7 +196,11 @@
       "bytes": 2734145,
       "title": "Insights - Market and Investment Perspectives from First Eagle Investments | First Eagle Investments",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.firsteagle.com/sites/default/files/2026-07/FE-Muni-Market-Overview-2025Q2_M-TL-MUT-MU25Q2-D-LT_v2.pdf",
+      "pdfBytes": 307523,
+      "pdfDate": null,
+      "pdfWhy": "32: 2026, 2025, subpage"
     },
     {
       "manager": "Fisher Asset Management",
@@ -161,7 +209,9 @@
       "bytes": 407763,
       "title": "Insights | Fisher Investments | General | Fisher Investments",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Generation Investment Management",
@@ -169,16 +219,10 @@
       "kind": "pdf",
       "bytes": 2358708,
       "title": "",
-      "period": "Q3 2026"
-    },
-    {
-      "manager": "Giverny Capital",
-      "url": "https://givernycapital.com/en/letters-to-our-partners/",
-      "kind": "page",
-      "bytes": 248500,
-      "title": "Letters to our partners │Giverny Capital",
-      "period": null,
-      "root": false
+      "period": "Q3 2026",
+      "pdf": "https://www.generationim.com/media/ddwbmlos/generation-im-q3-2026-global-equity-investor-letter.pdf",
+      "pdfBytes": 2358708,
+      "pdfWhy": "already a pdf"
     },
     {
       "manager": "Harding Loevner",
@@ -187,7 +231,11 @@
       "bytes": 165865,
       "title": "Insights - Harding Loevner",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://media.hardingloevner.com/fileadmin/pdf/GE/2026/HL-Global-Equity-Quarterly-Report-3Q26.pdf",
+      "pdfBytes": 214849,
+      "pdfDate": null,
+      "pdfWhy": "45: Q3 2026, page"
     },
     {
       "manager": "Harris Oakmark",
@@ -196,7 +244,11 @@
       "bytes": 122962,
       "title": "News &amp; Insights | Mutual Fund Thought Capital - Oakmark Funds",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://oakmark.com/wp-content/uploads/sites/3/2026/10/A-conversation-with-shareholders_International-market-commentary_3Q26_vF.pdf",
+      "pdfBytes": 238974,
+      "pdfDate": null,
+      "pdfWhy": "89: commentary, shaped, Q3 2026, subpage"
     },
     {
       "manager": "Hotchkis & Wiley",
@@ -205,7 +257,9 @@
       "bytes": 97819,
       "title": "HOTCHKIS &amp; WILEY - News &amp; Insights",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Impax Asset Management",
@@ -214,7 +268,9 @@
       "bytes": 105156,
       "title": "Insights - Impax Asset Management",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "top candidates were not PDFs"
     },
     {
       "manager": "Jensen Investment Management",
@@ -223,7 +279,9 @@
       "bytes": 208614,
       "title": "News &amp; Insights",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Loomis Sayles",
@@ -232,7 +290,9 @@
       "bytes": 522246,
       "title": "Insights: Market Commentary Outlook &amp; Research | Loomis Sayles US",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Maverick Capital",
@@ -241,7 +301,9 @@
       "bytes": 3091,
       "title": "Maverick Capital",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "top candidates were not PDFs"
     },
     {
       "manager": "Miller Value Partners",
@@ -250,7 +312,9 @@
       "bytes": 36032,
       "title": "Insights &#8211; Miller Value Funds",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Oaktree Capital Management",
@@ -259,7 +323,9 @@
       "bytes": 132955,
       "title": "Memos",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Olstein Capital Management",
@@ -268,7 +334,9 @@
       "bytes": 30420,
       "title": "Easterly Asset Management",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Parnassus Investments",
@@ -277,7 +345,9 @@
       "bytes": 26073,
       "title": "",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Royce & Associates",
@@ -286,7 +356,9 @@
       "bytes": 201901,
       "title": "3Q26 Small-Cap Recap &#8212; Royce",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "top candidates were not PDFs"
     },
     {
       "manager": "Sequoia Fund",
@@ -295,7 +367,11 @@
       "bytes": 58201,
       "title": "Resources - Sequoia ETF",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.sequoiaetf.com/wp-content/uploads/2026/01/Sequoia-Fund-Letter-Year-End-2025-Final.pdf",
+      "pdfBytes": 445975,
+      "pdfDate": null,
+      "pdfWhy": "85: letter, Q3 2026, 2025, json"
     },
     {
       "manager": "Smead Capital Management",
@@ -304,7 +380,9 @@
       "bytes": 297973,
       "title": "Missives Archives - smeadcap.com",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "top candidates were not PDFs"
     },
     {
       "manager": "Southeastern Asset Management",
@@ -313,7 +391,9 @@
       "bytes": 39185,
       "title": "Research Perspectives - Southeastern",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "top candidates were not PDFs"
     },
     {
       "manager": "Starboard Value",
@@ -322,7 +402,11 @@
       "bytes": 103010,
       "title": "Presentations &#8211; Starboard Value",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.starboardvalue.com/wp-content/uploads/Starboard_Value_LP_Letter_to_FLS_Board_05.28.2026.pdf",
+      "pdfBytes": 374896,
+      "pdfDate": null,
+      "pdfWhy": "48: letter, 2026, page"
     },
     {
       "manager": "T. Rowe Price",
@@ -331,7 +415,9 @@
       "bytes": 101265,
       "title": "Investment and Market Insights | T. Rowe Price",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": null,
+      "pdfWhy": "no candidate pdf found"
     },
     {
       "manager": "Third Avenue Management",
@@ -340,7 +426,11 @@
       "bytes": 153412,
       "title": "Decades of Investment Wisdom | Third Avenue Management Shareholder Letters",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://cdn.prod.website-files.com/649326275bfdeddb91c61d12/6adb5fd43b28c72573d2107d_Third%20Ave%20Shareholder%20Letter_TAREX_Q326.pdf",
+      "pdfBytes": 780249,
+      "pdfDate": null,
+      "pdfWhy": "67: shaped, Q3 2026, subpage"
     },
     {
       "manager": "Trian Fund Management",
@@ -349,7 +439,11 @@
       "bytes": 72055,
       "title": "Press Releases | Trian Partners",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://trianpartners.com/wp-content/uploads/2026/04/Trian-Calls-on-Solventums-Board-to-Create-Value_-Publishes-Open-Letter-and-Slide-Deck-Combined-Wrap-Letter-Slides.pdf",
+      "pdfBytes": 1094219,
+      "pdfDate": null,
+      "pdfWhy": "48: letter, 2026, page"
     },
     {
       "manager": "Wellington Management",
@@ -358,7 +452,11 @@
       "bytes": 2704128,
       "title": "Insights | Wellington Management",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/1966224-quarterly-market-review-3q26.pdf.coredownload.pdf",
+      "pdfBytes": 564453,
+      "pdfDate": null,
+      "pdfWhy": "63: insight, Q3 2026, subpage"
     },
     {
       "manager": "Winslow Capital Management",
@@ -367,7 +465,11 @@
       "bytes": 10128,
       "title": "Growth Investment Insights &amp; Firm Research | Winslow Capital",
       "period": null,
-      "root": false
+      "root": false,
+      "pdf": "https://www.winslowcapital.com/app-content/uploads/2026/01/Winslow-2026-Outlook_for-web.pdf",
+      "pdfBytes": 226331,
+      "pdfDate": null,
+      "pdfWhy": "44: insight, shaped, 2026, js-title"
     }
   ],
   "noPublicLetters": [
