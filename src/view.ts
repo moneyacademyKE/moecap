@@ -36,6 +36,7 @@ export function renderNode(node: ContentNode): string {
 			innerHtml = `
         ${node.metrics ? renderMetricCard('', node.metrics) : ''}
         ${node.content}
+        ${node.extraHtml ?? ''}
       `;
 			break;
 		case 'LINK_LIST':

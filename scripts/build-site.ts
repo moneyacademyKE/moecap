@@ -5,6 +5,7 @@ import { getUsStocksNode } from "../src/us-stocks";
 import { buildNsePage } from "../src/nse";
 import { renderBooksAccordion } from "../src/books";
 import { renderSuperinvestorDirectory } from "../src/superinvestors";
+import { renderManagerLetters } from "../src/manager-letters";
 import { writeSeoFiles } from "./build-seo";
 import { writeTrustPages } from "./build-trust-pages";
 import { writeFileSync, existsSync, mkdirSync, rmSync, cpSync, copyFileSync } from "node:fs";
@@ -67,7 +68,17 @@ try {
     const siAnchor = allNodes.findIndex(n => n.id === "fund-letters");
     allNodes.splice(siAnchor >= 0 ? siAnchor + 1 : allNodes.length, 0, siNode);
 
-    // 2b. Attach book-notes accordion to the lib node
+    // 2b. Manager letters: the 41 of 100 managers who publish something linkable,
+    // attached to the 13F Letters section itself rather than given its own node.
+    const lettersNode = allNodes.find(n => n.id === "fund-letters");
+    if (lettersNode) {
+        const lettersPath = join(BASE_PATH, "data", "13f-letters.json");
+        lettersNode.extraHtml = renderManagerLetters(lettersPath);
+        const letters = JSON.parse(fs.readFileSync(lettersPath, "utf8"));
+        console.log(`✉️  Manager letters attached to fund-letters: ${letters.managers.length} linked, ${letters.noPublicLetters.length} without`);
+    }
+
+    // 2c. Attach book-notes accordion to the lib node
     const libNode = allNodes.find(n => n.id === "lib");
     if (libNode) {
         const bookNotesPath = join(BASE_PATH, "data", "book-notes.json");
