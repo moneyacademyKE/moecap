@@ -3,10 +3,12 @@ import { readFileSync } from "node:fs";
 /**
  * Renders the manager-letters block that sits inside the 13F Letters section.
  *
- * The rest of that section is hand-written prose in src/content.ts. This block
- * is generated from data/13f-letters.json, which only ever contains URLs that
- * scripts/verify-13f-letters.ts fetched successfully. Nothing here is typed by
- * hand, so nothing here can rot without the next build noticing.
+ * Deliberately the same shape as the hand-written quarters above it: an <h3>
+ * per group and a <ul> of links. No cards, no chips, no bespoke CSS. The
+ * section is a reading list, so it looks like one.
+ *
+ * The data in data/13f-letters.json only ever contains URLs that
+ * scripts/verify-13f-letters.ts fetched successfully during the build.
  */
 
 export interface LetterEntry {
@@ -34,8 +36,16 @@ function esc(s: string): string {
     .replace(/'/g, "&#39;");
 }
 
-function bare(url: string): string {
-  return url.replace(/^https?:\/\//, "").replace(/^www\./, "");
+/** Titles arrive as raw page <title> text, entities and all. */
+function decode(s: string): string {
+  return s
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&[a-z]+;/gi, " ");
 }
 
 /** What someone actually gets when they click: a PDF, an archive, a research desk. */
@@ -47,86 +57,61 @@ export function letterKind(e: LetterEntry): "pdf" | "letters" | "research" | "fi
   return "firm";
 }
 
-const GROUPS: Array<{ key: ReturnType<typeof letterKind>; label: string; blurb: string }> = [
-  {
-    key: "pdf",
-    label: "Letter as filed",
-    blurb: "A single quarterly letter, linked as the document itself.",
-  },
-  {
-    key: "letters",
-    label: "Letter archives",
-    blurb: "The firm's own running archive of letters to shareholders and partners.",
-  },
-  {
-    key: "research",
-    label: "Research desks",
-    blurb: "No separate letter, but a public archive of the same market commentary in article form.",
-  },
-  {
-    key: "firm",
-    label: "Firm news",
-    blurb: "Commentary published as press releases or presentations rather than a letter.",
-  },
+const GROUPS: Array<{ key: ReturnType<typeof letterKind>; label: string; fallback: string }> = [
+  { key: "pdf", label: "Quarterly Letters", fallback: "quarterly letter" },
+  { key: "letters", label: "Letter Archives", fallback: "letter archive" },
+  { key: "research", label: "Research & Commentary", fallback: "research & commentary" },
+  { key: "firm", label: "Firm News", fallback: "news & presentations" },
 ];
 
-function tag(e: LetterEntry): string {
-  const kind = letterKind(e);
-  const label = kind === "pdf" ? "PDF" : kind === "letters" ? "archive" : kind === "research" ? "research" : "news";
-  return e.period ? `<span class="ml-tag">${esc(label)} · ${esc(e.period)}</span>` : `<span class="ml-tag">${esc(label)}</span>`;
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+/**
+ * One line of description, the way the hand-written quarters above read:
+ * short, specific, and never a restatement of the group heading.
+ */
+export function describe(e: LetterEntry): string {
+  let t = decode(e.title ?? "").replace(/\s+/g, " ").trim();
+  // Page titles are usually "Thing - Firm | Firm" or "Firm - Thing"; keep the
+  // half that is not simply the firm's own name repeated back at you.
+  const parts = t.split(/\s+[|—–-]\s+/).map((p) => p.trim()).filter(Boolean);
+  if (parts.length > 1) {
+    t = norm(parts[0]) === norm(e.manager) ? parts[1] : parts[0];
+  }
+  // "Letters to our partners │Giverny Capital": no spaces around the divider.
+  const bar = t.split("│").map((p) => p.trim()).filter(Boolean);
+  if (bar.length > 1 && norm(bar[bar.length - 1]) === norm(e.manager)) t = bar[0];
+  if (t.length > 60) t = `${t.slice(0, 57).trimEnd()}…`;
+  if (norm(t) === norm(e.manager)) t = "";
+  const kind = GROUPS.find((g) => g.key === letterKind(e))?.fallback ?? "letter";
+  if (!t) return e.period ? `${kind}, ${e.period}` : kind;
+  if (e.period && !t.includes(e.period)) return `${t}, ${e.period}`;
+  return t;
 }
 
-function row(e: LetterEntry): string {
-  return `      <li class="ml-row"><a href="${esc(e.url)}" rel="noopener">${esc(e.manager)}</a> ${tag(e)}</li>`;
+function rows(list: LetterEntry[]): string {
+  return list
+    .map((e) => `        <li><a href="${esc(e.url)}">${esc(e.manager)}</a> — ${esc(describe(e))}</li>`)
+    .join("\n");
 }
-
-const CSS = `<style>
-  .ml-wrap { margin-top: 1.5rem; }
-  .ml-lede { color: var(--meta); max-width: 62ch; }
-  .ml-stats { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
-  .ml-stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.9rem; min-width: 8rem; }
-  .ml-stat b { display: block; font-size: 1.15rem; color: var(--accent); line-height: 1.2; }
-  .ml-stat span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--meta); }
-  .ml-group { margin-top: 1.75rem; }
-  .ml-head { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--meta); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.25rem; }
-  .ml-blurb { color: var(--meta); font-size: 0.8rem; margin: 0.4rem 0 0.6rem; }
-  .ml-list { list-style: none; margin: 0; padding: 0; }
-  .ml-row { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: baseline; justify-content: space-between; padding: 0.4rem 0.25rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
-  .ml-row:last-child { border-bottom: none; }
-  .ml-row a { color: var(--link); }
-  .ml-tag { color: var(--meta); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
-  .ml-note { color: var(--meta); font-size: 0.78rem; margin-top: 1.5rem; }
-</style>`;
 
 export function renderManagerLetters(dataPath: string): string {
   const data = JSON.parse(readFileSync(dataPath, "utf8")) as LettersFile;
   const linked = data.managers.filter((m) => m.root !== true);
   const total = linked.length + data.noPublicLetters.length;
-  const pdfs = linked.filter((m) => letterKind(m) === "pdf").length;
 
-  const stats = `<div class="ml-stats">
-      <div class="ml-stat"><b>${linked.length}</b><span>of ${total} managers link a letter</span></div>
-      <div class="ml-stat"><b>${pdfs}</b><span>quarterly letters as PDF</span></div>
-      <div class="ml-stat"><b>${esc(data.generatedAt)}</b><span>links last fetched</span></div>
-    </div>`;
+  const blocks = GROUPS.map((g) => {
+    const group = linked.filter((m) => letterKind(m) === g.key);
+    if (!group.length) return "";
+    return `<h3>${esc(g.label)}</h3>
+      <ul>
+${rows(group)}
+      </ul>`;
+  }).filter(Boolean);
 
-  const groups = GROUPS.map((g) => {
-    const rows = linked.filter((m) => letterKind(m) === g.key);
-    if (!rows.length) return "";
-    return `<div class="ml-group">
-    <h3 class="ml-head">${esc(g.label)} (${rows.length})</h3>
-    <p class="ml-blurb">${esc(g.blurb)}</p>
-    <ul class="ml-list">
-${rows.map(row).join("\n")}
-    </ul>
-  </div>`;
-  }).join("\n");
-
-  return `${CSS}
-<div class="ml-wrap">
-  <p class="ml-lede">A 13F tells you what a manager owned. The letter is where they explain why — and it is the only part of the job that is optional. Of the ${total} managers in the 13F directory, ${linked.length} publish something we can link: a quarterly letter, a running archive, or a research desk that does the same work in article form. The biggest multi-managers publish nothing at all, as policy rather than oversight, so ${data.noPublicLetters.length} names below have no entry — that gap is information too.</p>
-  ${stats}
-  ${groups}
-  <p class="ml-note">Every link on this page was fetched during the build that produced it; anything that returned an error, a PDF-shaped compliance filing, or a bare homepage was dropped rather than shipped. Links point at each firm's own publication, so the letter opens where the manager wrote it. Periods shown are taken from the link itself, and not every archive exposes one.</p>
-</div>`;
+  return [
+    `<p>${linked.length} of the ${total} managers in the 13F directory publish something we can link: a quarterly letter, a running archive, or a research desk that does the same work in article form. The rest publish nothing at all, as policy rather than oversight, and are counted here rather than named.</p>`,
+    ...blocks,
+    `<p>Every link above was fetched during the build that produced it; anything that returned an error, a compliance filing, or a bare homepage was dropped rather than shipped.</p>`,
+  ].join("\n      ");
 }

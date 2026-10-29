@@ -53,8 +53,7 @@ describe("renderManagerLetters", () => {
     );
 
     // 2 of 6, not 2 of 2 and not 6 of 6.
-    expect(html).toContain("of 6 managers link a letter");
-    expect(html).toContain("4 names below have no entry");
+    expect(html).toContain("2 of the 6 managers in the 13F directory publish something");
     expect(html).toContain("Maverick Capital");
     expect(html).toContain("Oaktree Capital");
     // The non-publishers are counted, never listed.
@@ -62,27 +61,60 @@ describe("renderManagerLetters", () => {
     expect(html).not.toContain("Millennium");
   });
 
+  test("uses the plain h3 + ul + li shape of the hand-written quarters", () => {
+    const html = renderManagerLetters(
+      fixture([
+        entry({ kind: "pdf", title: "", period: "Q3 2026" }),
+        entry({ url: "https://x.com/letters", title: "Shareholder Letters" }),
+      ]),
+    );
+
+    expect(html).toContain("<h3>Quarterly Letters</h3>\n      <ul>");
+    expect(html).toContain("<li><a href=");
+    // No bespoke block: no styles, no cards, no chips.
+    expect(html).not.toContain("<style");
+    expect(html).not.toContain('class="ml-');
+    expect(html).not.toContain("<div");
+  });
+
   test("drops site-root entries even if they reach the renderer", () => {
     const html = renderManagerLetters(
       fixture([entry({ manager: "Rooty Partners", url: "https://rooty.com/", root: true })], ["Rooty Partners"]),
     );
-    expect(html).not.toContain("<a href=\"https://rooty.com/\"");
-    expect(html).toContain("of 1 managers link a letter");
-    expect(html).not.toContain('class="ml-row"');
+    expect(html).not.toContain('<a href="https://rooty.com/"');
+    expect(html).toContain("0 of the 1 managers");
   });
 
-  test("shows the period when the link exposes one", () => {
+  test("describes each link the way the old section did: short and specific", () => {
     const html = renderManagerLetters(
-      fixture([entry({ manager: "Fiduciary Management", kind: "pdf", period: "Q3 2026" })]),
+      fixture([
+        entry({ manager: "Fiduciary Management", kind: "pdf", title: "", period: "Q3 2026" }),
+        entry({ manager: "Royce", url: "https://x.com/letters", title: "3Q26 Small-Cap Recap &#8212; Royce" }),
+        entry({ manager: "Diamond Hill", url: "https://x.com/insights", title: "Insights | Diamond Hill" }),
+      ]),
     );
-    expect(html).toContain("PDF · Q3 2026");
-    expect(html).toContain('class="ml-tag"');
+
+    expect(html).toContain("Fiduciary Management</a> — quarterly letter, Q3 2026");
+    expect(html).toContain("Royce</a> — 3Q26 Small-Cap Recap");
+    expect(html).toContain("Diamond Hill</a> — Insights");
+  });
+
+  test("never repeats the firm name back as the description", () => {
+    const html = renderManagerLetters(
+      fixture([
+        entry({ manager: "Giverny Capital", title: "Letters to our partners │Giverny Capital" }),
+        entry({ manager: "Maverick Capital", title: "Maverick Capital" }),
+      ]),
+    );
+    expect(html).toContain("Giverny Capital</a> — Letters to our partners");
+    expect(html).toContain("Maverick Capital</a> — letter archive");
   });
 
   test("omits a group header when nothing landed in it", () => {
     const html = renderManagerLetters(fixture([entry({ url: "https://x.com/letters" })]));
-    expect(html).toContain("Letter archives (1)");
-    expect(html).not.toContain("Research desks (0)");
+    expect(html).toContain("Letter Archives");
+    expect(html).not.toContain("Research &amp; Commentary");
+    expect(html).not.toContain("Firm News");
   });
 
   test("escapes manager names and URLs", () => {

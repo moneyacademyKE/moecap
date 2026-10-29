@@ -1677,7 +1677,7 @@ export const CONTENT: ContentNode[] = [
     type: 'ARTICLE',
     category: 'INVESTING',
     content: `
-      <p>Last update date: 28th October 2026</p>
+      <p>Last update date: 29th October 2026</p>
       <p>Quarterly letters from managers whose 13F filings we track. Newest first: a 13F is filed up to 45 days after quarter end, so the freshest letters arrive while the quarter they cover is still settling.</p>
 
       <h3>Q3 2026</h3>
