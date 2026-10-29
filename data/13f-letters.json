@@ -1,0 +1,434 @@
+{
+  "generatedAt": "2026-10-29",
+  "source": "Fund websites and manager letter archives, fetched and verified by scripts/verify-13f-letters.ts",
+  "note": "Every link below returned a document in the verification run. Managers without public letters are listed so the coverage figure is honest rather than flattering.",
+  "managers": [
+    {
+      "manager": "Adams Diversified Equity Fund",
+      "url": "https://www.adamsfunds.com/insights/?filter=insights",
+      "kind": "page",
+      "bytes": 43364,
+      "title": "Adams Funds",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Akre Capital Management",
+      "url": "https://www.akrecapital.com/news",
+      "kind": "page",
+      "bytes": 109965,
+      "title": "Newsletter - Akre Capital Management",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "American Century Companies",
+      "url": "https://www.americancentury.com/insights/quarterly-performance-update/",
+      "kind": "page",
+      "bytes": 1018274,
+      "title": "Quarterly Performance Update: Q3 2026 Market Recap",
+      "period": "Q3 2026",
+      "root": false
+    },
+    {
+      "manager": "AQR Capital Management",
+      "url": "https://www.aqr.com/Insights",
+      "kind": "page",
+      "bytes": 70419,
+      "title": "Research",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "ARK Investment Management",
+      "url": "https://www.ark-invest.com/articles",
+      "kind": "page",
+      "bytes": 280825,
+      "title": "Innovation Research and Models by ARK Invest",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Artisan Partners",
+      "url": "https://www.artisanpartners.com/content/dam/documents/quarterly-commentary/vr/2026/3q/ARTMX-APDMX-APHMX-QCommentary-3Q26-vR.pdf",
+      "kind": "pdf",
+      "bytes": 199021,
+      "title": "",
+      "period": null
+    },
+    {
+      "manager": "Baillie Gifford",
+      "url": "https://www.bailliegifford.com/en/uk/individual-investors/insights/",
+      "kind": "page",
+      "bytes": 3355035,
+      "title": "Insights | Individual Investors | Baillie Gifford",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/letters.html",
+      "kind": "page",
+      "bytes": 53854,
+      "title": "Shareholder Letters",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Boston Trust Walden",
+      "url": "https://www.bostontrustwalden.com/insights/",
+      "kind": "page",
+      "bytes": 60502,
+      "title": "Insights - Boston Trust Walden",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Bridgewater Associates",
+      "url": "https://www.bridgewater.com/research",
+      "kind": "page",
+      "bytes": 277894,
+      "title": "Research &amp; Insights — Bridgewater Associates",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Brown Advisory",
+      "url": "https://www.brownadvisory.com/us/insights",
+      "kind": "page",
+      "bytes": 148165,
+      "title": "Insights — Our latest thinking | Brown Advisory",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Capital World Investors",
+      "url": "https://www.capitalgroup.com/advisor/products/modelportfolios/quarterly-commentary.html",
+      "kind": "page",
+      "bytes": 7594,
+      "title": "American Funds",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Davis Advisors",
+      "url": "https://www.davisfunds.com/insights/",
+      "kind": "page",
+      "bytes": 62909,
+      "title": "Commentary / Videos | Davis Funds",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Diamond Hill Capital Management",
+      "url": "https://www.diamond-hill.com/insights/all/",
+      "kind": "page",
+      "bytes": 102145,
+      "title": "Insights | Diamond Hill",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Dodge & Cox",
+      "url": "https://www.dodgeandcox.com/individual-investor/us/en/insights/2026-semi-annual-equity-review.html",
+      "kind": "page",
+      "bytes": 157606,
+      "title": "2026 Semi-Annual Equity Review | Dodge &amp; Cox",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Fiduciary Management Inc.",
+      "url": "https://www.fmimgt.com/fmi/corp/Letters/iso_20260930.pdf",
+      "kind": "pdf",
+      "bytes": 710729,
+      "title": "",
+      "period": "Q3 2026"
+    },
+    {
+      "manager": "First Eagle Investment Management",
+      "url": "https://www.firsteagle.com/insights",
+      "kind": "page",
+      "bytes": 2734145,
+      "title": "Insights - Market and Investment Perspectives from First Eagle Investments | First Eagle Investments",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Fisher Asset Management",
+      "url": "https://www.fisherinvestments.com/en-us/insights",
+      "kind": "page",
+      "bytes": 407763,
+      "title": "Insights | Fisher Investments | General | Fisher Investments",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Generation Investment Management",
+      "url": "https://www.generationim.com/media/ddwbmlos/generation-im-q3-2026-global-equity-investor-letter.pdf",
+      "kind": "pdf",
+      "bytes": 2358708,
+      "title": "",
+      "period": "Q3 2026"
+    },
+    {
+      "manager": "Giverny Capital",
+      "url": "https://givernycapital.com/en/letters-to-our-partners/",
+      "kind": "page",
+      "bytes": 248500,
+      "title": "Letters to our partners │Giverny Capital",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Harding Loevner",
+      "url": "https://www.hardingloevner.com/insights/",
+      "kind": "page",
+      "bytes": 165865,
+      "title": "Insights - Harding Loevner",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Harris Oakmark",
+      "url": "https://oakmark.com/news-insights/",
+      "kind": "page",
+      "bytes": 122962,
+      "title": "News &amp; Insights | Mutual Fund Thought Capital - Oakmark Funds",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Hotchkis & Wiley",
+      "url": "https://www.hwcm.com/news-insights/",
+      "kind": "page",
+      "bytes": 97819,
+      "title": "HOTCHKIS &amp; WILEY - News &amp; Insights",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Impax Asset Management",
+      "url": "https://impaxam.com/insights-and-news/insights/",
+      "kind": "page",
+      "bytes": 105156,
+      "title": "Insights - Impax Asset Management",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Jensen Investment Management",
+      "url": "https://www.jenseninvestment.com/news-insights/",
+      "kind": "page",
+      "bytes": 208614,
+      "title": "News &amp; Insights",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Loomis Sayles",
+      "url": "https://www.loomissayles.com/insights/?category-name%5B%5D=market-commentary-outlook",
+      "kind": "page",
+      "bytes": 522246,
+      "title": "Insights: Market Commentary Outlook &amp; Research | Loomis Sayles US",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Maverick Capital",
+      "url": "https://www.maverickcapital.com/letters",
+      "kind": "page",
+      "bytes": 3091,
+      "title": "Maverick Capital",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Miller Value Partners",
+      "url": "https://millervaluefunds.com/insights/",
+      "kind": "page",
+      "bytes": 36032,
+      "title": "Insights &#8211; Miller Value Funds",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Oaktree Capital Management",
+      "url": "https://www.oaktreecapital.com/insights/memos",
+      "kind": "page",
+      "bytes": 132955,
+      "title": "Memos",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Olstein Capital Management",
+      "url": "https://www.olsteinfunds.com/letters",
+      "kind": "page",
+      "bytes": 30420,
+      "title": "Easterly Asset Management",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Parnassus Investments",
+      "url": "https://www.parnassus.com/insights/all-insights",
+      "kind": "page",
+      "bytes": 26073,
+      "title": "",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Royce & Associates",
+      "url": "https://www.royceinvest.com/insights/small-cap-recap",
+      "kind": "page",
+      "bytes": 201901,
+      "title": "3Q26 Small-Cap Recap &#8212; Royce",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Sequoia Fund",
+      "url": "https://www.sequoiafund.com/perspectives",
+      "kind": "page",
+      "bytes": 58201,
+      "title": "Resources - Sequoia ETF",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Smead Capital Management",
+      "url": "https://smeadcap.com/missives/",
+      "kind": "page",
+      "bytes": 297973,
+      "title": "Missives Archives - smeadcap.com",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Southeastern Asset Management",
+      "url": "https://southeasternasset.com/research",
+      "kind": "page",
+      "bytes": 39185,
+      "title": "Research Perspectives - Southeastern",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Starboard Value",
+      "url": "https://www.starboardvalue.com/presentations/",
+      "kind": "page",
+      "bytes": 103010,
+      "title": "Presentations &#8211; Starboard Value",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "T. Rowe Price",
+      "url": "https://www.troweprice.com/insights",
+      "kind": "page",
+      "bytes": 101265,
+      "title": "Investment and Market Insights | T. Rowe Price",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Third Avenue Management",
+      "url": "https://thirdave.com/shareholder-letters",
+      "kind": "page",
+      "bytes": 153412,
+      "title": "Decades of Investment Wisdom | Third Avenue Management Shareholder Letters",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Trian Fund Management",
+      "url": "https://trianpartners.com/news/",
+      "kind": "page",
+      "bytes": 72055,
+      "title": "Press Releases | Trian Partners",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Wellington Management",
+      "url": "https://www.wellington.com/en/insights",
+      "kind": "page",
+      "bytes": 2704128,
+      "title": "Insights | Wellington Management",
+      "period": null,
+      "root": false
+    },
+    {
+      "manager": "Winslow Capital Management",
+      "url": "https://www.winslowcapital.com/insights/",
+      "kind": "page",
+      "bytes": 10128,
+      "title": "Growth Investment Insights &amp; Firm Research | Winslow Capital",
+      "period": null,
+      "root": false
+    }
+  ],
+  "noPublicLetters": [
+    "Alger Associates",
+    "AltaRock Partners",
+    "Altimeter Capital Management",
+    "Appaloosa",
+    "Arrowstreet Capital",
+    "Baupost Group",
+    "Brave Warrior Advisors",
+    "Caxton Associates",
+    "Chou Associates",
+    "Citadel Advisors",
+    "Coatue Management",
+    "Cohen & Steers",
+    "Cooke & Bieler",
+    "D. E. Shaw",
+    "D1 Capital Partners",
+    "Daily Journal Corporation",
+    "Dragoneer Investment Group",
+    "Duquesne Family Office",
+    "Elliott Investment Management",
+    "Eminence Capital",
+    "Fairfax Financial",
+    "Fairholme Capital Management",
+    "Fidelity (FMR)",
+    "Fundsmith",
+    "GAMCO Investors",
+    "GQG Partners",
+    "Gotham Asset Management",
+    "Hawk Ridge Capital Management",
+    "Himalaya Capital Management",
+    "Icahn Capital",
+    "JANA Partners",
+    "Lone Pine Capital",
+    "Markel",
+    "Millennium Management",
+    "PRIMECAP Management",
+    "Pabrai Investment Funds",
+    "Paulson & Co.",
+    "Pershing Square",
+    "Point72 Asset Management",
+    "Polen Capital Management",
+    "Pzena Investment Management",
+    "Renaissance Technologies",
+    "Sands Capital Management",
+    "Scharf Investments",
+    "Soros Fund Management",
+    "TCI Fund Management",
+    "Third Point",
+    "Tiger Global Management",
+    "Torray",
+    "Tudor Investment",
+    "Tweedy Browne",
+    "Two Sigma Investments",
+    "ValueAct Capital",
+    "Viking Global Investors",
+    "Wallace Weitz",
+    "Wasatch Advisors",
+    "Wedgewood Partners",
+    "Whale Rock Capital Management",
+    "Yacktman Asset Management"
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "note": "Seed pages where each tracked manager publishes quarterly letters or periodic commentary. Empty urls means the manager does not publish letters publicly. A seed is a starting point, not a claim: every link that reaches the site is fetched and verified first.",
+  "seeds": [
+    {
+      "manager": "Berkshire Hathaway",
+      "urls": [
+        "https://www.berkshirehathaway.com/letters/letters.html"
+      ]
+    },
+    {
+      "manager": "Pershing Square",
+      "urls": [
+        "https://pershingsquareholdings.com/company-reports/"
+      ]
+    },
+    {
+      "manager": "Appaloosa",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Duquesne Family Office",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Baupost Group",
+      "urls": [
+        "https://www.baupost.com/"
+      ]
+    },
+    {
+      "manager": "ARK Investment Management",
+      "urls": [
+        "https://www.ark-invest.com/insights"
+      ]
+    },
+    {
+      "manager": "Himalaya Capital Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Bridgewater Associates",
+      "urls": [
+        "https://www.bridgewater.com/research-and-insights"
+      ]
+    },
+    {
+      "manager": "Renaissance Technologies",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Citadel Advisors",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Point72 Asset Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Third Point",
+      "urls": [
+        "https://www.thirdpoint.com/",
+        "https://www.thirdpointre.com/"
+      ]
+    },
+    {
+      "manager": "Icahn Capital",
+      "urls": [
+        "https://www.icahncapital.com/"
+      ]
+    },
+    {
+      "manager": "Viking Global Investors",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Tiger Global Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Coatue Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Lone Pine Capital",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Maverick Capital",
+      "urls": [
+        "https://www.maverickcapital.com/"
+      ]
+    },
+    {
+      "manager": "Oaktree Capital Management",
+      "urls": [
+        "https://www.oaktreecapital.com/insights/memos"
+      ]
+    },
+    {
+      "manager": "Trian Fund Management",
+      "urls": [
+        "https://trianpartners.com/"
+      ]
+    },
+    {
+      "manager": "Elliott Investment Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Gotham Asset Management",
+      "urls": [
+        "https://www.gothamfunds.com/"
+      ]
+    },
+    {
+      "manager": "Pabrai Investment Funds",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Daily Journal Corporation",
+      "urls": [
+        "https://www.dailyjournal.com/"
+      ]
+    },
+    {
+      "manager": "Markel",
+      "urls": [
+        "https://www.markel.com/investor-relations"
+      ]
+    },
+    {
+      "manager": "Fairfax Financial",
+      "urls": [
+        "https://www.fairfax.ca/"
+      ]
+    },
+    {
+      "manager": "Akre Capital Management",
+      "urls": [
+        "https://www.akrecapital.com/"
+      ]
+    },
+    {
+      "manager": "Fundsmith",
+      "urls": [
+        "https://www.fundsmith.co.uk/"
+      ]
+    },
+    {
+      "manager": "Sequoia Fund",
+      "urls": [
+        "https://www.sequoiafund.com/"
+      ]
+    },
+    {
+      "manager": "Southeastern Asset Management",
+      "urls": [
+        "https://southeasternasset.com/"
+      ]
+    },
+    {
+      "manager": "Harris Oakmark",
+      "urls": [
+        "https://www.oakmark.com/"
+      ]
+    },
+    {
+      "manager": "Davis Advisors",
+      "urls": [
+        "https://www.davisfunds.com/"
+      ]
+    },
+    {
+      "manager": "Yacktman Asset Management",
+      "urls": [
+        "https://yacktmanfund.com/"
+      ]
+    },
+    {
+      "manager": "Tweedy Browne",
+      "urls": [
+        "https://www.tweedy.com/"
+      ]
+    },
+    {
+      "manager": "Chou Associates",
+      "urls": [
+        "https://www.choufunds.com/"
+      ]
+    },
+    {
+      "manager": "Brave Warrior Advisors",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Miller Value Partners",
+      "urls": [
+        "https://www.millervaluefunds.com/"
+      ]
+    },
+    {
+      "manager": "Wedgewood Partners",
+      "urls": [
+        "https://www.wedgewoodpartners.com/"
+      ]
+    },
+    {
+      "manager": "Altimeter Capital Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Millennium Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Two Sigma Investments",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "AQR Capital Management",
+      "urls": [
+        "https://www.aqr.com/Insights"
+      ]
+    },
+    {
+      "manager": "D. E. Shaw",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "ValueAct Capital",
+      "urls": [
+        "https://www.valueact.com/"
+      ]
+    },
+    {
+      "manager": "JANA Partners",
+      "urls": [
+        "https://www.janapartners.com/"
+      ]
+    },
+    {
+      "manager": "Starboard Value",
+      "urls": [
+        "https://www.starboardvalue.com/"
+      ]
+    },
+    {
+      "manager": "Soros Fund Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Tudor Investment",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Paulson & Co.",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Caxton Associates",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Eminence Capital",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "D1 Capital Partners",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Whale Rock Capital Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Dragoneer Investment Group",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "TCI Fund Management",
+      "urls": [
+        "https://www.tcifund.com/"
+      ]
+    },
+    {
+      "manager": "Baillie Gifford",
+      "urls": [
+        "https://www.bailliegifford.com/en/uk/individual-investors/funds/"
+      ]
+    },
+    {
+      "manager": "Fidelity (FMR)",
+      "urls": [],
+      "reason": "fund commentary, no manager letters"
+    },
+    {
+      "manager": "T. Rowe Price",
+      "urls": [
+        "https://www.troweprice.com/"
+      ]
+    },
+    {
+      "manager": "Wellington Management",
+      "urls": [
+        "https://www.wellington.com/en/insights"
+      ]
+    },
+    {
+      "manager": "Capital World Investors",
+      "urls": [
+        "https://www.capitalgroup.com/"
+      ]
+    },
+    {
+      "manager": "GQG Partners",
+      "urls": [
+        "https://gqg.com/"
+      ]
+    },
+    {
+      "manager": "Fisher Asset Management",
+      "urls": [
+        "https://www.fisherinvestments.com/en-us/insights"
+      ]
+    },
+    {
+      "manager": "First Eagle Investment Management",
+      "urls": [
+        "https://www.firsteagle.com/"
+      ]
+    },
+    {
+      "manager": "Artisan Partners",
+      "urls": [
+        "https://www.artisanpartners.com/content/dam/documents/quarterly-commentary/vr/2026/2q/ARTMX-APDMX-APHMX-QCommentary-2Q26-vR.pdf"
+      ]
+    },
+    {
+      "manager": "Polen Capital Management",
+      "urls": [
+        "https://www.polen.com/"
+      ]
+    },
+    {
+      "manager": "Brown Advisory",
+      "urls": [
+        "https://www.brownadvisory.com/"
+      ]
+    },
+    {
+      "manager": "Diamond Hill Capital Management",
+      "urls": [
+        "https://www.diamond-hill.com/"
+      ]
+    },
+    {
+      "manager": "Parnassus Investments",
+      "urls": [
+        "https://www.parnassus.com/"
+      ]
+    },
+    {
+      "manager": "Alger Associates",
+      "urls": [
+        "https://www.alger.com/"
+      ]
+    },
+    {
+      "manager": "Wasatch Advisors",
+      "urls": [
+        "https://wasatchfunds.com/"
+      ]
+    },
+    {
+      "manager": "GAMCO Investors",
+      "urls": [
+        "https://www.gabelli.com/"
+      ]
+    },
+    {
+      "manager": "Royce & Associates",
+      "urls": [
+        "https://www.royceinvest.com/"
+      ]
+    },
+    {
+      "manager": "Jensen Investment Management",
+      "urls": [
+        "https://www.jenseninvestment.com/"
+      ]
+    },
+    {
+      "manager": "Impax Asset Management",
+      "urls": [
+        "https://www.impaxam.com/"
+      ]
+    },
+    {
+      "manager": "Generation Investment Management",
+      "urls": [
+        "https://www.generationim.com/"
+      ]
+    },
+    {
+      "manager": "Arrowstreet Capital",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Sands Capital Management",
+      "urls": [
+        "https://www.sandscapital.com/"
+      ]
+    },
+    {
+      "manager": "Loomis Sayles",
+      "urls": [
+        "https://www.loomissayles.com/"
+      ]
+    },
+    {
+      "manager": "Winslow Capital Management",
+      "urls": [
+        "https://www.winslowcapital.com/"
+      ]
+    },
+    {
+      "manager": "Pzena Investment Management",
+      "urls": [
+        "https://www.pzena.com/"
+      ]
+    },
+    {
+      "manager": "Dodge & Cox",
+      "urls": [
+        "https://www.dodgeandcox.com/"
+      ]
+    },
+    {
+      "manager": "PRIMECAP Management",
+      "urls": [
+        "https://www.primecap.com/"
+      ]
+    },
+    {
+      "manager": "Hotchkis & Wiley",
+      "urls": [
+        "https://www.hwcm.com/"
+      ]
+    },
+    {
+      "manager": "Fairholme Capital Management",
+      "urls": [
+        "https://www.fairholmefunds.com/"
+      ]
+    },
+    {
+      "manager": "Third Avenue Management",
+      "urls": [
+        "https://thirdave.com/"
+      ]
+    },
+    {
+      "manager": "Cohen & Steers",
+      "urls": [
+        "https://www.cohenandsteers.com/"
+      ]
+    },
+    {
+      "manager": "American Century Companies",
+      "urls": [
+        "https://www.americancentury.com/"
+      ]
+    },
+    {
+      "manager": "Fiduciary Management Inc.",
+      "urls": [
+        "https://www.fmimgt.com/fmi/corp/Letters/iso_20260930.pdf"
+      ]
+    },
+    {
+      "manager": "Giverny Capital",
+      "urls": [
+        "https://givernycapital.com/"
+      ]
+    },
+    {
+      "manager": "AltaRock Partners",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Torray",
+      "urls": [
+        "https://www.torray.com/"
+      ]
+    },
+    {
+      "manager": "Smead Capital Management",
+      "urls": [
+        "https://www.smeadcap.com/"
+      ]
+    },
+    {
+      "manager": "Harding Loevner",
+      "urls": [
+        "https://www.hardingloevner.com/"
+      ]
+    },
+    {
+      "manager": "Hawk Ridge Capital Management",
+      "urls": [],
+      "reason": "no public letters"
+    },
+    {
+      "manager": "Scharf Investments",
+      "urls": [
+        "https://www.scharf.com/"
+      ]
+    },
+    {
+      "manager": "Olstein Capital Management",
+      "urls": [
+        "https://www.olsteinfunds.com/"
+      ]
+    },
+    {
+      "manager": "Wallace Weitz",
+      "urls": [
+        "https://www.weitzinvestments.com/"
+      ]
+    },
+    {
+      "manager": "Adams Diversified Equity Fund",
+      "urls": [
+        "https://www.adamsfunds.com/"
+      ]
+    },
+    {
+      "manager": "Cooke & Bieler",
+      "urls": [
+        "https://www.cookeandbieler.com/"
+      ]
+    },
+    {
+      "manager": "Boston Trust Walden",
+      "urls": [
+        "https://www.bostontrustwalden.com/"
+      ]
+    }
+  ]
+}
