@@ -2176,50 +2176,8 @@ function nseCalculateRoic(row) {
 }
 
 
-        // Worker-backed price sync: one KV-cached source (moecap-prices worker),
-        // refreshed hourly server-side. No third-party CORS proxy, no per-visitor
-        // external scraping. Falls back to the static snapshot on any failure.
-        const NSE_PRICES_URL = "https://moecap-prices.iamkingori.workers.dev/nse";
-
-        async function syncPricesRealtime() {
-            console.log("📡 Syncing NSE prices from moecap-prices worker...");
-            try {
-                const response = await fetch(NSE_PRICES_URL);
-                if (!response.ok) throw new Error("worker HTTP error: " + response.status);
-                const payload = await response.json();
-                if (!payload || !payload.prices || Object.keys(payload.prices).length === 0) {
-                    throw new Error("empty payload");
-                }
-
-                if (!db) db = {};
-                if (!db.market) db.market = {};
-                db.market.prices = { ...db.market.prices, ...payload.prices };
-                db.market.lastUpdated = payload.asOf || db.market.lastUpdated;
-                db.market.isLive = !!payload.live;
-
-                updatePricesAsOf();
-                updateDirectoryPrices();
-
-                if (activeTicker) {
-                    const currentPrice = db.market.prices[activeTicker];
-                    if (currentPrice !== undefined) {
-                        document.getElementById('detail-price').innerText = `KES ${currentPrice.toFixed(2)}`;
-                        const priceCol = document.getElementById('detail-price-col');
-                        if (priceCol) {
-                            priceCol.style.display = 'block';
-                            const badge = document.getElementById('detail-price-live-badge');
-                            if (badge) badge.style.display = db.market.isLive ? 'inline-block' : 'none';
-                        }
-                    }
-                }
-            } catch (err) {
-                console.warn("⚠️ Worker price sync failed. Using snapshot prices:", err);
-                if (db && db.market) db.market.isLive = false;
-                updatePricesAsOf();
-            }
-        }
-
-        // Honest "as of" labelling — snapshot dates are shown, never hidden
+        // Prices are served from the build-time NSE snapshot. The retired worker
+        // previously added one request per visitor plus a 60-second poll.
         function updatePricesAsOf() {
             const el = document.getElementById('prices-asof');
             const badge = document.getElementById('prices-live-badge');
@@ -2270,11 +2228,7 @@ function nseCalculateRoic(row) {
                     selectStock(hash);
                 }
 
-                // Initial live sync
-                await syncPricesRealtime();
 
-                // Periodic refresh loop every 60 seconds
-                setInterval(syncPricesRealtime, 60000);
             } catch (e) {
                 console.error('❌ Failed to fetch database:', e);
             }
@@ -2777,6 +2731,5 @@ function nseCalculateRoic(row) {
     </script>
     <script src="/glossary.js" defer></script>
     <script src="/search.js" defer></script>
-    <script src="/watchlist.js" defer></script>
 </body>
 </html>

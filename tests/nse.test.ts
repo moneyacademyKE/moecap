@@ -85,13 +85,10 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(htmlContent).toContain("function nseCalculateAssetTurnover(row, ratios = {})");
     expect(htmlContent).toContain('const rev = nseRevenueFor(latestMetrics);');
 
-    // Real-Time Price Updater elements and functions
-    expect(htmlContent).toContain('id="detail-price-live-badge"');
-    expect(htmlContent).toContain('id="card-price-BAT"');
-    expect(htmlContent).toContain('id="card-price-SCOM"');
-    expect(htmlContent).toContain("async function syncPricesRealtime()");
-    expect(htmlContent).toContain("function updateDirectoryPrices()");
-    expect(htmlContent).toContain("setInterval(syncPricesRealtime, 60000)");
+    // Prices remain build-time snapshots; the retired Worker no longer adds
+    // per-visitor requests or a 60-second polling loop.
+    expect(htmlContent).not.toContain("syncPricesRealtime()");
+    expect(htmlContent).not.toContain("moecap-prices");
   });
 
   test("Tier 2: plain-English layer renders (chips, toggle, grouping, blurbs)", () => {
@@ -128,15 +125,14 @@ describe("Nairobi Securities Exchange (NSE) ROIC Terminal Tests", () => {
     expect(scom?.blurb).toBeTruthy();
   });
 
-  test("Tier 3: prices come from the worker, not a per-visitor proxy scrape", () => {
+  test("Tier 3: prices come from the build-time snapshot without a Worker", () => {
     const htmlContent = readFileSync(join(PUBLIC_DIR, "nse/index.html"), "utf-8");
 
-    // Worker-backed sync + honest as-of labelling
-    expect(htmlContent).toContain("moecap-prices.iamkingori.workers.dev/nse");
+    expect(htmlContent).not.toContain("moecap-prices");
     expect(htmlContent).toContain('id="prices-asof"');
     expect(htmlContent).toContain("function updatePricesAsOf()");
 
-    // The CORS-proxy scrape is dead — these must never come back
+    // The CORS-proxy scrape and retired live worker must never come back.
     expect(htmlContent).not.toContain("allorigins");
     expect(htmlContent).not.toContain("kwayisi");
   });

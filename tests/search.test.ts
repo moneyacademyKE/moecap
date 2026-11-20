@@ -36,13 +36,9 @@ describe("search + watchlist", () => {
         expect(parsed.length).toBeGreaterThan(350);
         const home = readFileSync(join(base, "public", "index.html"), "utf8");
         expect(home).toContain('<script src="/search.js" defer></script>');
-        expect(home).toContain('<script src="/watchlist.js" defer></script>');
         const nse = readFileSync(join(base, "public", "nse", "index.html"), "utf8");
         expect(nse).toContain('<script src="/search.js" defer></script>');
-        expect(nse).toContain('<script src="/watchlist.js" defer></script>');
-        for (const f of ["search.js", "watchlist.js"]) {
-            expect(readFileSync(join(base, "public", f), "utf8").length).toBeGreaterThan(1000);
-        }
+        expect(readFileSync(join(base, "public/search.js"), "utf8").length).toBeGreaterThan(1000);
     });
 
     test("search.js escapes rendered rows and opens entries by hash", () => {
@@ -53,12 +49,10 @@ describe("search + watchlist", () => {
         expect(src).toContain("&lt;");                    // escaping in results
     });
 
-    test("watchlist.js persists to localStorage and reads worker prices", () => {
-        const src = readFileSync(join(base, "src", "watchlist.js"), "utf8");
-        expect(src).toContain('localStorage.getItem');
-        expect(src).toContain("moecap-watch");
-        expect(src).toContain("/prices");
-        expect(src).toContain("/nse");
-        expect(src).toContain("&amp;"); // escaping by construction
+    test("search.js remains the only client-side page enhancer", () => {
+        const src = readFileSync(join(base, "src", "search.js"), "utf8");
+        expect(src).toContain("details[data-ticker");
+        expect(src).toContain("book-");
+        expect(src).toContain("&lt;");
     });
 });
